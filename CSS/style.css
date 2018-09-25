@@ -1,0 +1,90 @@
+.header {
+    background-color: rgba(230, 230, 250, 0.6);
+}
+.without {
+   list-style-type: none;
+}
+.main {
+   background: url(../img/bfon.png); 
+}
+#authorization {
+    background: whitesmoke;
+    width: 15%;
+    color: red;
+}
+#recovery {
+    background: whitesmoke;
+    width: 70%;
+    align: center;
+    }
+h5 {
+    color: blue;
+    font-style: italic;
+    text-align: left;
+}
+.field {
+    background: lightblue;
+    font-size: 12pt;
+    color: midnightblue;
+    border-style: dotted; 
+    border-color: darkgreen; 
+}
+.footer {
+    background: rgba(220, 220, 220, 0.8);
+}
+input[type="radio"] {
+   font-style: italic;
+  }
+#share {
+    font-family: fantasy;
+        box-shadow: 0 0 10px;
+    background: lightblue;
+    color: midnightblue;
+    border-style: dotted; 
+    border-color: darkgreen; 
+}
+ul ol {
+    list-style: url(../img/list.gif);;
+    color: orange;
+}
+p.orange {color: blueviolet; font-size: 14pt; text-align: center;}
+.button {
+border: hidden;
+margin:0 45% 0 45%;
+width:100%;
+}
+a {
+    text-decoration: none; 
+   } 
+   a:hover { 
+    text-decoration: underline; 
+    color: green; 
+   } 
+div > img {
+       margin: 0 40%;
+   }
+span {
+ font-weight: bold;
+ font-size: 16pt;
+ }
+ .letter-red {
+     color: red;
+  }
+  .letter-orange {
+     color: orange;
+  }
+  .letter-yellow {
+     color: yellow;
+  }
+   .letter-green {
+     color: green;
+  }
+   .letter-blue {
+     color: blue;
+  } 
+    .letter-darkblue {
+     color: darkblue;
+  } 
+    .letter-violet {
+     color: violet;
+  }   
