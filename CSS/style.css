@@ -1,11 +1,23 @@
+@import url(grid.css);
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.position-relative {  
+    position: relative;
+    margin-left: 100px; 
+    margin-bottom: 30px;
+ }
 .header {
     background-color: rgba(230, 230, 250, 0.6);
 }
 .without {
-   list-style-type: none;
-}
+    list-style-type: none;
+    }   
 .main {
-   background: url(../img/bfon.png); 
+    background: url(../img/bfon.png);
+    background-color: rgba(248, 248, 255, 0.2);
 }
 #authorization {
     background: whitesmoke;
@@ -16,7 +28,7 @@
     background: whitesmoke;
     width: 70%;
     align: center;
-    }
+}
 h5 {
     color: blue;
     font-style: italic;
@@ -33,11 +45,11 @@ h5 {
     background: rgba(220, 220, 220, 0.8);
 }
 input[type="radio"] {
-   font-style: italic;
-  }
+    font-style: italic;
+}
 #share {
     font-family: fantasy;
-        box-shadow: 0 0 10px;
+    box-shadow: 0 0 10px;
     background: lightblue;
     color: midnightblue;
     border-style: dotted; 
@@ -49,42 +61,98 @@ ul ol {
 }
 p.orange {color: blueviolet; font-size: 14pt; text-align: center;}
 .button {
-border: hidden;
-margin:0 45% 0 45%;
-width:100%;
+    border: hidden;
+    margin:0 45% 0 45%;
+    width:100%;
 }
 a {
     text-decoration: none; 
-   } 
-   a:hover { 
+} 
+a:hover { 
     text-decoration: underline; 
     color: green; 
-   } 
-div > img {
-       margin: 0 40%;
-   }
+} 
 span {
- font-weight: bold;
- font-size: 16pt;
- }
- .letter-red {
+    font-weight: bold;
+    font-size: 16pt;
+}
+.letter-red {
+    color: red;
+}
+.letter-orange {
+    color: orange;
+}
+.letter-yellow {
+    color: yellow;
+}
+.letter-green {
+    color: green;
+}
+.letter-blue {
+    color: blue;
+} 
+.letter-darkblue {
+    color: darkblue;
+} 
+.letter-violet {
+    color: violet;
+}  
+h5 {
+    color: lightseagreen;
+     margin-left: 120px;
+     margin-top: 30px;
+}
+h5:hover {
+    color: forestgreen;
+    font-size: larger;
+}
+.h5-second {
+    color: mediumspringgreen;
+   margin-right: 120px;
+}
+.h5-second:hover {
+    color: darkslateblue;
+    font-size: larger;
+}
+.img-question {
+    margin-left: 70px;
+    margin-bottom: 30px;
+    border: 5px darkcyan double;
+    }
+.img-answer {
+     margin-left: 35%; 
+     padding-bottom: 30px;
+    }
+.p-fly {
+ font-family: "Times New Roman";
+ font-size: 20px;
+ text-align: center;
+    }
+ .p-fly:hover {
+ font-size: x-large;
+     font-weight: bolder;
      color: red;
-  }
-  .letter-orange {
-     color: orange;
-  }
-  .letter-yellow {
-     color: yellow;
-  }
-   .letter-green {
-     color: green;
-  }
-   .letter-blue {
-     color: blue;
-  } 
-    .letter-darkblue {
-     color: darkblue;
-  } 
-    .letter-violet {
-     color: violet;
-  }   
+     border: coral dotted 2px;
+         }    
+.up {
+    float: right;
+}
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+nav ul li:hover > ul {
+    display:inherit;
+}
+nav ul ul li {
+    min-width:170px;
+    float:none;
+    display:list-item;
+    margin-left: -100px;
+    position: relative;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 50px;
+}

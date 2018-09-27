@@ -11,39 +11,41 @@
          <link rel="stylesheet" href="../CSS/style.css">
     </head>
     <body>
-         <header id="header" class="header"> 
-            <img src="../img/main.jpg" alt="Picture must be here" height="200" width="1334">
-        <div align="right"> 
-            <ul class="without">
-                <li><a href="../index.html" target="_parent">Go Home</a></li>
-                <li><a href="Share.html">Share art</a></li>
-                <li><a href="#">Shopping</a> </li>
-                <li><a href="https://vk.com/practicebetter" target="_blank">Watch&Discuss</a> </li>
-                <li><a href="#footer">Join us</a></li>
-            </ul>       
-       </div>
-       </header>
-        <div>
-            <h4 align="left">Do you have a paintbook?</h4>
-            <h3 align="right">Do you have a lot of pencils?</h3>
+        <div class="container main">
+    <div class="row">
+        <div class="col-12">
+            <nav id="header">
+                <img src="../img/main.jpg" alt="Picture must be here">
+                <ul class="without position-relative">
+                    <li><a href="../index.html" target="_parent">Go Home</a></li>
+                    <li><a href="Share.html">Share art</a></li>
+                    <li><a href="#">Shopping</a> </li>
+                    <li><a href="#">Watch&Discuss</a> 
+                    <ul>
+                        <li><a href="https://vk.com/practicebetter" target="_blank">at VK.com</a></li>
+                        <li><a href="#">at facebook.com</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#footer">Join us</a></li>
+                </ul>             
+            </nav>
         </div>
-            <br>
-        <div align="center">  
-            <em>If you answers "YES"</em>
-            <br>
-            <h1>You are one of the us!</h1>   
-            <img src="../img/youamongus.jpg" alt="Picture must be here" width="300">
-        </div>
-            <ul>
-                <ol>You like to paint</ol>
-                <ol>You dream to spend all your time for painting</ol>
-                <ol>You have a lot of colour pencils/pens/so on</ol>
-            </ul>
-        <br>
-        <br>
-        <br>
-        <br>        
-        <footer id="footer" class="footer">
+            <div class="col-6">
+                <h5>Do you have a colourbook?</h5>
+                <img src="../img/colourbook.jpg" class="img-question">
+            </div>
+                <div class="col-6">
+                <h5 class="h5-second">Do you have a lot of pencils</h5>
+                <img src="../img/pencils.jpg" class="img-question">
+            </div>    
+            <div class="col-12">
+                    <p align="center"><em>If you answers "YES"</em></p>
+                </div>    
+            <div class="col-12">
+                <p class="p-fly">You are one of the us!</p> 
+                <img src="../img/youamongus.jpg" alt="Picture must be here" width="300" class="img-answer">
+            </div>    
+        <footer id="footer" class="footer col-12">
         <h3 align="left"><strong>Join us</strong></h3>
            <p>
             <a href="https://www.whatsapp.com" target="_blank">
@@ -56,7 +58,7 @@
             <img src="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" alt="Instagram" height="26" width="26"></a>
             <em> ShareRainbow</em>
             </p>
-        <a href="#header">Up</a>
-        
+        <a href="#header"class="up">Up</a>
+        </div>
     </body>
 </html>
