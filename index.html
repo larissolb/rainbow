@@ -10,35 +10,33 @@
        </head>
        <body class="main">
         <header id="header" class="header"> 
-            <img src="img/main.jpg" alt="Picture must be here" height="200" width="1334">
-            <div align="left">
-            <form action="index.html" method="post" name="authorization">
+            <img src="img/main.jpg" alt="Picture must be here" height="200" width="1334">                   
+            <a href="#authorization" class="a">Sign in to Rainbow</a>
+            <div id="authorization" class="open-window">
+                <form action="index.html" method="post" name="authorization">
                 <fieldset id="authorization">
-                    <legend><h4>Sign in to Rainbow</h4></legend>
-                        <div>
+                    <div>
                         <input id="email" type="email" placeholder="Your Email" required> 
-                        </div>
+                    </div>
                         <div>
                        <input id="psw" type="password" placeholder="Your Password" required> 
                         </div>           
-                        <button type="submit" name="signIN">
+                        <button type="submit" name="signIN" class="close">
                             <span class="letter-orange">S</span>
                             <span class="letter-yellow">I</span>
                             <span class="letter-green">G</span>
-                            <span class="letter-blue">N</span>&nbsp;&nbsp;
+                           <span class="letter-blue">N&nbsp;&nbsp;</span>
                             <span class="letter-darkblue">I</span>
                             <span class="letter-violet">N</span>
                         </button>
-                        <br>
-                        <br>
                         <div>
-                        <a href="html/recovery.html">Forgot?</a>&nbsp;
-                        <a href="html/create.html">Or Register!</a>
+                        <a href="html/recovery.html" class="a-small">Forgot?</a>
+                        <a href="html/create.html" class="a-small">Or Register!</a>
                         </div>
                  </fieldset>
             </form>
             </div>
-            <div align="right">
+            <nav>
                     <ul class="without">
                     <li><a href="html/aboutUs.html">Where I am?</a></li>
                     <li><a href="html/Share.html">Share art &#10000;</a></li>
@@ -46,7 +44,7 @@
                     <li><a href="https://vk.com/practicebetter" target="_blank">Watch&Discuss</a> </li>
                     <li><a href="#footer">Join us</a></li>
                 </ul>       
-            </div>
+            </nav>
         </header>
         <br>
         <div align="center">
@@ -90,7 +88,7 @@
            <img src="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" alt="Instagram" height="26" width="26"></a>
                 <em> ShareRainbow</em>
     </p>
-    <a href="#header">Home</a>
+    <a href="#header" class="up">Home</a>
     </footer>
     </body>
 </html>

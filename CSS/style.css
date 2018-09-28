@@ -8,31 +8,28 @@
     position: relative;
     margin-left: 100px; 
     margin-bottom: 30px;
- }
+}
 .header {
     background-color: rgba(230, 230, 250, 0.6);
 }
 .without {
     list-style-type: none;
-    }   
+    margin: 15px 10px 0 300px;
+    padding-bottom: 50px;
+}   
 .main {
     background: url(../img/bfon.png);
     background-color: rgba(248, 248, 255, 0.2);
 }
 #authorization {
     background: whitesmoke;
-    width: 15%;
+    width: auto;
     color: red;
 }
 #recovery {
     background: whitesmoke;
     width: 70%;
     align: center;
-}
-h5 {
-    color: blue;
-    font-style: italic;
-    text-align: left;
 }
 .field {
     background: lightblue;
@@ -65,13 +62,6 @@ p.orange {color: blueviolet; font-size: 14pt; text-align: center;}
     margin:0 45% 0 45%;
     width:100%;
 }
-a {
-    text-decoration: none; 
-} 
-a:hover { 
-    text-decoration: underline; 
-    color: green; 
-} 
 span {
     font-weight: bold;
     font-size: 16pt;
@@ -99,8 +89,8 @@ span {
 }  
 h5 {
     color: lightseagreen;
-     margin-left: 120px;
-     margin-top: 30px;
+    margin-left: 120px;
+    margin-top: 30px;
 }
 h5:hover {
     color: forestgreen;
@@ -108,7 +98,7 @@ h5:hover {
 }
 .h5-second {
     color: mediumspringgreen;
-   margin-right: 120px;
+    margin-right: 120px;
 }
 .h5-second:hover {
     color: darkslateblue;
@@ -118,22 +108,22 @@ h5:hover {
     margin-left: 70px;
     margin-bottom: 30px;
     border: 5px darkcyan double;
-    }
+}
 .img-answer {
-     margin-left: 35%; 
-     padding-bottom: 30px;
-    }
+    margin-left: 35%; 
+    padding-bottom: 30px;
+}
 .p-fly {
- font-family: "Times New Roman";
- font-size: 20px;
- text-align: center;
-    }
- .p-fly:hover {
- font-size: x-large;
-     font-weight: bolder;
-     color: red;
-     border: coral dotted 2px;
-         }    
+    font-family: "Times New Roman";
+    font-size: 20px;
+    text-align: center;
+}
+.p-fly:hover {
+    font-size: x-large;
+    font-weight: bolder;
+    color: red;
+    border: coral dotted 2px;
+}    
 .up {
     float: right;
 }
@@ -155,4 +145,48 @@ nav ul ul li {
 nav ul li {
     display: inline-block;
     margin-right: 50px;
+}
+/*модальное окно для авторизации на сайте */
+.open-window {
+    position: absolute;
+    display: none;
+    background: rgba (0,0,0, 0.8)
+
+}
+
+.open-window:target {
+    display: block;
+}
+
+.close {
+    background-color: khaki;
+    margin: 10px 0px 10px 15px;
+}
+.close:hover {
+    background: khaki;
+    box-shadow: 1px 1px 10px darkgray;
+
+}
+.a {
+    font-variant: slashed-zero;
+    font-size: 18px;
+    color: red;
+ }
+.a-small {
+    font-size: small;
+    color: darkolivegreen;
+    margin-left: 10px;
+}    
+.a-small:hover {
+    font-size: small;
+    text-align: center;
+    font-weight: bolder;
+    color: maroon;
+}  
+q {
+display: block;
+overflow: scroll;
+width: 350px;
+height: 35px;
+margin-top: 30px;
 }
