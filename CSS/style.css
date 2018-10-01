@@ -63,23 +63,23 @@ h1:hover {
 }
 .close {
     background-color: khaki;
-    margin: 10px 0px 10px 15px;
+    margin: 62.5% 0 62.5% 93.8%;
     font-weight: lighter; 
 }
 .close:hover {
     background: khaki;
-    box-shadow: 1px 1px 10px darkgray;
+    box-shadow: 0.063em 0.063em 0.63em darkgray;
     font-weight: bolder; 
 }
 .a {
     font-variant: historical-forms;
-    font-size: 18px;
+    font-size: 1.125em;
     color: blueviolet;
  }
 .a-small {
     font-size: small;
     color: darkolivegreen;
-    margin-left: 10px;
+    margin-left: 0.625em;
 }    
 .a-small:hover {
     font-size: small;
@@ -132,7 +132,7 @@ h1:hover {
 .menu-main > ul::after{
     display:block;
     width:100%;
-    height:0px;
+    height:0em;
     clear:both;
     content:" ";
 }
@@ -146,15 +146,15 @@ h1:hover {
 }
 .menu-main ul li a{
     display:block;
-    padding:9px 25px 0px 25px;
-    font-size:14px;
+    padding:0.563em 1.563em 0em 1.563em;
+    font-size:0.875em;
     font-family:Arial, sans-serif;
     color:#ffffef;
     line-height:1.3em;
     text-decoration:none;
     font-weight:bold;
     text-transform:uppercase;
-    height:36px;
+    height:2.250em;
     box-sizing:border-box;
 }
 .menu-main ul li > a:hover, .menu-main ul li:hover > a{
@@ -163,10 +163,10 @@ h1:hover {
 }
 .menu-main ul li ul{
     position:absolute;
-    top:36px;
-    left:0px;
+    top:2.250em;
+    left:0em;
     display:none;
-    width:200px;
+    width:1300%
     background:#EBBD5B;
 			}
 .menu-main ul li:hover ul{display:block;}
@@ -178,7 +178,7 @@ h1:hover {
     display:block;
     text-transform:none;
     height:auto;
-    padding:15px 25px;
+    padding:0.938em 1.563em;
     width:100%;
     box-sizing:border-box;
     border-top:1px solid #ffffff;
@@ -191,7 +191,7 @@ h1:hover {
 /*final menu*/
 .pic {
     position: inherit;
-    height: 180px;
+    height: 1100%;
     background: ivory;
     width: 100%;
     justify-content: space-around;
@@ -199,7 +199,7 @@ h1:hover {
     margin: 1em 0 1em -1em;
 }
 .share-inside-form {
-    height: 255px;
+    height: 1600%;
     background: crimson;
     width: 100%;
     border: 1px solid blueviolet;
@@ -265,20 +265,20 @@ p.footer {
 /*old check later*/
 .field {
     background: lightblue;
-    font-size: 12pt;
+    font-size: 1em;
     color: midnightblue;
     border-style: dotted; 
     border-color: darkgreen; 
 }
 p > strong {
-    padding-right: 30px;
+    padding-right: 1.9em;
 }
 input[type="radio"] {
     font-style: italic;
 }
 #share {
     font-family: fantasy;
-    box-shadow: 0 0 10px;
+    box-shadow: 0 0 0.63em;
     background: lightblue;
     color: midnightblue;
     border: dotted darkgreen;
@@ -287,7 +287,7 @@ ul ol {
     list-style: url(../img/list.gif);;
     color: orange;
 }
-p.orange {color: blueviolet; font-size: 14pt; text-align: center;}
+p.orange {color: blueviolet; font-size: 1.2em; text-align: center;}
 .button {
     border: hidden;
     margin:0 45% 0 45%;
@@ -295,7 +295,7 @@ p.orange {color: blueviolet; font-size: 14pt; text-align: center;}
 }
 span {
     font-weight: bold;
-    font-size: 16pt;
+    font-size: 1.3em;
 }
 h5 {
     color: lightseagreen;  
@@ -312,28 +312,28 @@ h5:hover {
     font-size: larger;
 }
 .img-question {
-    border: 5px darkcyan double;
-    margin-bottom: 30px;
+    border: 0.31em darkcyan double;
+    margin-bottom: 1.9em;
 }
 .img-answer {
     margin-left: 35%; 
-    padding-bottom: 30px;
+    padding-bottom: 1.9em;
 }
 .p-fly {
     font-family: "Times New Roman";
-    font-size: 20px;
+    font-size: 1.3em;
     text-align: center;
 }
 .p-fly:hover {
     font-size: x-large;
     font-weight: bolder;
     color: red;
-    border: 2px dotted coral;
+    border: 0.13em dotted coral;
 }    
 q {
 display: block;
 overflow: scroll;
-width: 350px;
-height: 35px;
-margin-top: 30px;
+width: 22em;
+height: 2.2em;
+margin-top: 1.9em;
 }
