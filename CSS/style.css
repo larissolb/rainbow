@@ -199,6 +199,17 @@ h1:hover {
     border-radius: 0.5em;
     margin: 1em 0 1em -1em;
 }
+/*for about.html*/
+.left-pic {
+    position: inherit;
+    max-height: 100%;
+    background: ivory;
+    width: 100%;
+    justify-content: space-around;
+    border-radius: 0.5em;
+    margin: 1em 0 1em 1em;
+}
+/*final for about.html*/
 .share-inside-form {
     height: 1600%;
     background: crimson;

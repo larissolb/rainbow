@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <!--
-Описание, что за сообщество/
-пока сделана сеткой, будет переделана флексом позже
+about
 -->
-<html>
+<html> 
     <head>
-        <title>You are here! Inside rainbow world</title>
+        <title>Rainbow - let's this world colour!</title>
+        <meta charset="UTF-8">
         <meta charset="UTF-8">
         <meta name="description" content="Сообщество любителей раскраски и делать этот мир ярким">
         <meta name="keywords" content="раскраски, хобби, творчество, сообщество, общение, радужные события">
-         <link rel="stylesheet" href="../CSS/style_old.css">
-         <link rel="stylesheet" href="../CSS/grid.css">
+        <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
+        <link rel="stylesheet" href="../CSS/style.css">
     </head>
     <body>
-        <div class="container main">
-    <div class="row">
-        <div class="col-12">
-            <nav id="header">
-                <img src="../img/main.jpg" alt="Picture must be here">
-                <ul class="menu-about position-relative offset-2">
-                    <li><a href="../index.html" target="_parent">Go Home</a></li>
-                    <li><a href="share.html">Share art &#10000;</a></li>
-                    <li><a href="shopping.html">Shopping</a></li>
-                    <ul class="col-3">
-                        <li><a href="#">Create</a></li>
-                        <li><a href="#">Buy</a></li>
-                        <li><a href="#">Sell</a></li>
-                    </ul>
+        <div id="header" class="header"> <!--header-->
+            <h1>Welcome to Rainbow world</h1>
+        </div> <!-- final header-->
+        <div class="menu"> <!--menu -->
+            <nav class="menu-main">
+                <ul>
+                    <li><a href="../index.html">Go home</a></li>
+                    <li><a href="html/share.html">Share art &#10000;</a></li>
+                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
+                    <li><a href="html/rating.html">Watch&Rate</a>
+                    <ul>
+                        <li><a href="#">Pencils</a></li>
+                        <li><a href="#">Paints</a></li>
+                        <li><a href="#">Markers</a></li>
+                    </ul></li>
                     <li><a href="#footer">Join us</a></li>
                 </ul>       
             </nav>
-        </div>
-            <div class="col-6">
-                <h5 class="offset-2">Do you have a colourbook?</h5>
-                <img src="../img/colourbook.jpg" class="img-question offset-1">
-                
+        </div> <!-- final menu -->
+    <div class="container main border"> <!--главная рамка-->
+        <div class="border-2 small-col"> <!--column left main-->
+            <div class="border left-pic">img</div>
+            <div class="border left-pic">img</div>
+            <div class="border left-pic">img</div>
+        </div>  <!--final column left main-->   
+        <div class="border-2 column center-index"> <!--column center main-->
+            <div class="border">txt</div>
+            <div class="border">video</div>
+            <div class="border">
+        <a href="https://www.whatsapp.com" target="_blank">
+            <img src="img/icon/whatsup.png" alt="Whats'up" height="40" width="40"></a>
+        <a href="https://www.viber.com/download" target="_blank">
+            <img src="img/icon/viber.png" alt="Viber" height="40" width="40"></a>
+        <a href="https://www.instagram.com/ShareRainbow" target="_blank">
+            <img src="img/icon/instagram.ico" alt="Instagram" height="40" width="40"></a>
+        <a href="https://vk.com/practicebetter" target="_blank"></a>
+            <img src="img/icon/vk.png" alt="Vkontakte" height="40" width="40">     
+         <a href="#" target="_blank"></a>    
+            <img src="img/icon/donate2.png" alt="Donate" height="50"> 
             </div>
-                <div class="col-6">
-                <h5 class="h5-second offset-2">Do you have a lot of pencils</h5>
-                <img src="../img/pencils.jpg" class="img-question offset-1">
-                
-            </div>    
-            <div class="col-12">
-                    <p align="center"><em>If you answers "YES"</em></p>
-                </div>    
-            <div class="col-12">
-                <p class="p-fly">You are one of the us!</p> 
-                <img src="../img/youamongus.jpg" alt="Picture must be here" width="300" class="img-answer">
-            </div>    
-        <footer id="footer" class="footer col-12">
-        <p>
-            <strong>Join us</strong>
-            <a href="https://www.whatsapp.com" target="_blank" class="offset-1">
-            <img src="https://whatsapp.com/favicon.png" alt="Whats'up" height="32" width="32"></a>
-            <em>777-77-99-88</em>
-            <a href="https://www.viber.com/download" target="_blank" class="offset-1">
-            <img src="https://www.viber.com/app/themes/viber/assets/images/favicon.png" alt="Viber" height="26" width="26"></a>
-            <em>777-77-99-88</em>
-            <a href="https://www.instagram.com/ShareRainbow" target="_blank" class="offset-1">
-            <img src="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" alt="Instagram" height="26" width="26"></a>
-            <em> ShareRainbow</em>
-            </p>
-        <a href="#header"class="up">Up</a>
-        </div>
+         </div>  <!--final column center main-->  
+        <div class="border-2 small-col"> <!--column right main-->
+            <div class="border pic">img</div>
+            <div class="border pic">img</div>
+            <div class="border pic">img</div>
+         </div>  <!--final column right main-->           
+     </div> <!--конец главной рамки-->
+    <div class="row footer"> <!--footer - one row-->
+        <p class="footer">2018, ShareRainbow. All rights reserved</p>
+    </div> <!--final футер-->
+    <a href="#header" class="up">Up</a>
     </body>
 </html>
