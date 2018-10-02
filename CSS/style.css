@@ -45,7 +45,7 @@ h1:hover {
 .signin {
     display: flex;
     background: aquamarine;
-    padding: 0.4em;
+    padding: 0.5em 2em 0.5em;
     border-radius: 0.5em;
     margin-right: 0.5em;
 }
@@ -60,11 +60,13 @@ h1:hover {
     max-height: 100%;
     max-width: 100%;
     position: relative;
+    margin-left: 1em;
 }
 .close {
     background-color: khaki;
-    margin: 62.5% 0 62.5% 93.8%;
-    font-weight: lighter; 
+    margin: 5% 0 1.5% 0%;
+    font-weight: lighter;
+ }
 }
 .close:hover {
     background: khaki;
