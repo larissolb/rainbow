@@ -17,45 +17,65 @@
         <div id="header" class="header"> <!--header-->
             <h1>Welcome to Rainbow world</h1>
         </div> <!-- final header-->
-    <div class="container main border"> <!--главная рамка-->
-        <div class="border-2"> <!--column left main-->
+        <div class="menu"> <!--menu -->
+            <nav class="menu-main">
+                <ul>
+                    <li><a href="html/about.html">Why I am here?</a></li>
+                    <li><a href="html/share.html">Share art &#10000;</a></li>
+                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
+                    <li><a href="html/rating.html">Watch&Rate</a>
+                    <ul>
+                        <li><a href="#">Pencils</a></li>
+                        <li><a href="#">Paints</a></li>
+                        <li><a href="#">Markers</a></li>
+                    </ul></li>
+                    <li><a href="#footer">Join us</a></li>
+                </ul>       
+            </nav>
+        </div> <!-- final menu -->
+    <div class="container main"> <!--главная рамка-->
+        <div> <!--column left main-->
             <div class="column"> <!--position column left main-->
-                <div class="signin"> <!-- authorization form -->
-                    <a href="#authorization" class="a">Sign in</a>
-            <div id="authorization" class="open-window">
+            <div class="signin"> <!-- window sign in -->
+                <a href="#authorization" class="a">Sign in</a>
+                <div id="authorization" class="open-window"> <!-- authorization form -->
                 <form action="index.html" method="post" name="authorization">
-                <fieldset id="authorization">
-                    <div>
-                        <input id="email" type="email" placeholder="Your Email" required> 
-                    </div>
-                        <div>
-                       <input id="psw" type="password" placeholder="Your Password" required> 
-                        </div>           
-                        <button type="submit" name="signIN" class="close">
-                            <span class="letter-orange">S</span>
-                            <span class="letter-yellow">I</span>
-                            <span class="letter-green">G</span>
-                           <span class="letter-blue">N&nbsp;&nbsp;</span>
-                            <span class="letter-darkblue">I</span>
-                            <span class="letter-violet">N</span>
-                        </button>
-                        <div>
-                        <a href="#recovery" class="a-small">Forgot?</a>
-<div id="recovery" class="open-window">
-            <form action="../index.html" method="post" name="recovery">
+                    <fieldset id="signin">
+                    <div><input id="email" type="email" placeholder="Your Email" required></div>
+                    <div><input id="psw" type="password" placeholder="Your Password" required></div>           
+                    <button type="submit" name="signIN" class="close">
+                        <span class="letter-orange">S</span>
+                        <span class="letter-yellow">I</span>
+                        <span class="letter-green">G</span>
+                        <span class="letter-blue">N&nbsp;&nbsp;</span>
+                        <span class="letter-darkblue">I</span>
+                        <span class="letter-violet">N</span>
+                    </button>
+                    <a href="#"><button type="button" class="button-later"><span>later</span></button></a>
+                    <div> <!--links inside form sign in-->
+                        <a href="#forgot" class="a-small">Forgot?</a>
+                        <a href="#register" class="a-small">Register</a>
+                    </div> <!--final links inside form sign in-->
+                    </fieldset>
+                </form>
+            </div> <!-- final authorization form-->
+            <a href="#" class="recovery" id="forgot"></a> <!-- form recovery psw-->
+            <div class="recovery-window">
+                <form action="../index.html" method="post" name="recovery">
                 <fieldset id="recovery">
                     <legend><h4>Recovery your password</h4></legend>
                     <div>
                         <label for="email">Please input your email:</label>
                         <input id="email" type="email" placeholder="Your Email" required> 
                     </div>
-                    <button type="submit" name="Recovery" class="close">Send new password</button>
+                    <button type="submit" name="Recovery" class="letter-darkblue">Send new password</button>
                 </fieldset>
-            </form>
-            </div>
-                        <a href="#register" class="a-small">Register</a>
-<div id="register" class="open-window">
-<form action="../index.html" method="post" name="register">
+                </form>
+                <a  href="#close" class="close-button" title="Закрыть"></a>
+            </div> <!-- final form recovery psw-->
+            <a href="#" class="register" id="register"></a> <!-- form register-->
+            <div class="register-window">
+                <form action="../index.html" method="post" name="register">
                 <fieldset class="field">
                     <legend><h4>Creat an account</h4></legend>
                     <div>
@@ -88,77 +108,42 @@
                         <label for="psw">Your password</label> 
                         <input id="psw" type="password" placeholder="Your password" required>
                     </div>
-                    <br>
-                    <button type="submit" name="signUP">
-                            <span class="letter-red">W</span> 
-                            <span class="letter-orange">E</span>
-                            <span class="letter-yellow">L</span>
-                            <span class="letter-green">C</span>
-                            <span class="letter-blue">O</span>
-                            <span class="letter-darkblue">M</span>
-                            <span class="letter-violet">E</span>
+                    <button type="submit" name="signUP" class="close">
+                            <span class="letter-red">C</span> 
+                            <span class="letter-orange">R</span>
+                            <span class="letter-yellow">E</span>
+                            <span class="letter-green">A</span>
+                            <span class="letter-blue">T</span>
+                            <span class="letter-darkblue">E</span>
                     </button>
-                </fieldset>
-            </form>
-            </div>
-                </div>
-                 </fieldset>
-            </form>
-            </div>
-                </div> <!-- final authorization form -->
+                    <a href="#"><button type="button" class="button-later letter-violet" name="back"><span>later</span></button></a>
+                     </fieldset>
+                </form>
+                 <a  href="#close" class="close-button" title="Закрыть"></a>
+                </div> <!-- final form register-->
+                </div> <!-- final window sign in -->
                 <div class="slider">
                     <img src="img/artist.jpg" alt="advertising">
                 </div>
             </div> <!--final position column left main-->
         </div>  <!--final column left main-->   
-        <div class="border-2 flex-2"> <!--column right main-->
-            <div class="menu"> <!--menu -->
-            <nav class="menu-main">
-                <ul>
-                    <li><a href="html/about.html">Why I am here?</a></li>
-                    <li><a href="html/share.html">Share art &#10000;</a></li>
-                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
-                    <li><a href="html/rating.html">Watch&Rate</a>
-                    <ul>
-                        <li><a href="#">Pencils</a></li>
-                        <li><a href="#">Paints</a></li>
-                        <li><a href="#">Markers</a></li>
-                    </ul></li>
-                    <li><a href="#footer">Join us</a></li>
-                </ul>       
-            </nav>
-            </div> <!-- final menu -->
-            <div class="bigcenter"> <!--bigcenter -->
-                <div class="main border"> <!--position bigcenter-->
-                    <div class="row center-index"> <!-- txt + img + a -->
-                        <div>      
-            <h2>Peace</h2>             
-            <p>It's no just usual place...</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2>Bubblegum</h2>             
-            <p>Something sticky?...</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2>Love</h2>             
-            <img src="img/girl.jpg" alt="Picture must be here" height="100">           
-            <p>Kind.....</p>
-                    </div>
-               </div> <!--final txt + img + a -->
-                    <div class="small-col">  <!--3 pictures-->
-                        <div class="pic">1 picture</div>
-                        <div class="pic">2 picture</div>
-                        <div class="pic">3 picture</div>
-                    </div> <!-- final 3 pictures-->
-                </div> <!--final position bigcenter -->
-            </div> <!--final bigcenter -->
-         </div>  <!--final column right main-->  
+        <div class="column center-index "> <!-- txt + img + a -->
+            <div><h2>Peace</h2>             
+                <p>It's no just usual place...</p></div>
+            <div><h2>Bubblegum</h2>             
+                <p>Something sticky?...</p></div>
+            <div><h2>Love</h2>             
+                <img src="img/girl.jpg" alt="Picture must be here" height="100">           
+                <p>Kind.....</p>
+        </div>
+        </div><!--final txt + img + a -->
+            <div class="small-col pic"> <!--pictures-->
+                <img src="img/icon2.jpg" alt="img" width="300">
+                <img src="img/icon2.jpg" alt="img" width="300">
+                <img src="img/icon2.jpg" alt="img" width="300">
+            </div>  <!--final pictures-->  
+                   
+                
      </div> <!--конец главной рамки-->
     <div id="footer" class="row footer"> <!--футер-->
      <div class="socnet">

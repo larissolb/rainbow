@@ -42,14 +42,15 @@ h1:hover {
     display: flex;
     flex:2;
 }
+/*authorization form*/
 .signin {
     display: flex;
     background: aquamarine;
-    padding: 0.5em 2em 0.5em;
+    padding: 0.5em;
     border-radius: 0.5em;
-    margin-right: 0.5em;
+    margin-top: 1em;
+/*    margin-right: 0.5em;*/
 }
-/*authorization form*/
 .open-window {
     position: absolute;
     display: none;
@@ -65,13 +66,126 @@ h1:hover {
 .close {
     background-color: khaki;
     margin: 5% 0 1.5% 0%;
-    font-weight: lighter;
- }
+    font-size: x-small;
+}
 .close:hover {
     background: khaki;
     box-shadow: 0.063em 0.063em 0.63em darkgray;
     font-weight: bolder; 
 }
+.button-later {
+    position: absolute;
+    background-color: khaki;
+    margin: 4.5% 1.5% 1.5% 4.5%;
+    text-transform: uppercase;
+    color: darkgoldenrod;
+    font-size: x-small;
+}
+.button-later:hover, button-later:focus {
+    cursor: pointer;
+    box-shadow: 0.063em 0.063em 0.63em darkgray;
+    font-weight: bolder; 
+}
+/*final authorization form*/
+/*recovery window = forgot psw*/
+.recovery {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(95, 158, 160, 0.65);
+    position: fixed; 
+ }
+.recovery:target {
+    display: block;
+}
+.recovery-window {
+    top: -100%;
+    right: 0;
+    left: 30%;
+    font-size: 0.875em;
+    margin: 0;
+    width: 85%;
+    min-width: 20em;
+    max-width: 37.5em;
+    position: fixed;
+    padding: 0.938em;
+    background-color: rgba(216, 191, 216, 0.9);
+    -webkit-box-shadow: 0 0.938em 1.250em rgba(0,0,0,.22),0 1.188em 3.750em rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0.938em 1.250em rgba(0,0,0,.22),0 1.188em 3.750em rgba(0,0,0,.3);
+    -ms-box-shadow:0 0.938em 1.250em rgba(0,0,0,.22),0 1.188em 3.750em rgba(0,0,0,.3);
+    box-shadow: 0 0.938em 1.250em rgba(0,0,0,.22),0 1.188em 3.750em rgba(0,0,0,.3);
+}
+.recovery:target+.recovery-window {
+    top: 20%;
+}
+.close-button {
+    top: -0.625em;
+    right: -0.625em;
+    width: 1.250em;
+    height: 1.250em;
+    position: absolute;
+    padding: 0;
+    border: 2px solid lavenderblush;
+    -webkit-border-radius: 0.938em;
+    -moz-border-radius: 0.938em;
+    -ms-border-radius: 0.938em;
+    -o-border-radius: 0.938em;
+    border-radius: 0.938em;
+    background-color: rgba(119, 136, 153, 0.8);
+    -webkit-box-shadow: 0em 0em 1em #000;
+    -moz-box-shadow: 0em 0em 1em #000;
+    box-shadow: 0em 0em 1em #000;
+    text-align: center;
+    text-decoration: none;
+    font: 0.813em/1.250em 'Tahoma', Arial, sans-serif;
+    font-weight: bold;
+}
+.close-button:before {
+    color: lightsteelblue;
+    content: "X";
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.close-button:hover {
+    background-color: highlighttext;
+}
+  /*final recovery window = forgot psw*/
+/*register window*/
+.register {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 100, 0, 0.65);
+    position: fixed; 
+}
+.register:target {
+    display: block;
+}
+.register-window {
+    top: -100%;
+    right: 0;
+    left: 30%;
+    font-size: 0.875em;
+    margin: 0;
+    width: 85%;
+    min-width: 20em;
+    max-width: 37.5em;
+    position: fixed;
+    padding: 0.938em;
+    background-color: rgba(0, 255, 127, 0.9);
+    -webkit-box-shadow: 0 0.938em 1.250em rgba(0,0,0,.22),0 1.188em 3.750em rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0.938em 1.250em rgba(0,0,0,.22),0 1.188em 3.750em rgba(0,0,0,.3);
+    -ms-box-shadow:0 0.938em 1.250em rgba(0,0,0,.22),0 1.188em 3.750em rgba(0,0,0,.3);
+    box-shadow: 0 0.938em 1.250em rgba(0,0,0,.22),0 1.188em 3.750em rgba(0,0,0,.3);
+}
+.register:target+.register-window {
+    top: 20%;
+}
+/*final register form*/
 .a {
     font-variant: historical-forms;
     font-size: 1.125em;
@@ -103,16 +217,22 @@ h1:hover {
     border-radius: 0.5em;
 }
 .center-index {
+    display: flex;
     background: ivory;
     border-radius: 0.5em;
     margin: 1em 2em 1em 1em;
-    padding-left: 1em;
+    align-items: flex-start;
+    align-content: space-around;
+    justify-content: space-around;
+    width: 100%;
+    box-shadow: 0.063em 0.063em 0.63em darkgray;
+    font-weight: bolder; 
 }
+/*menu*/
 .menu {
     display: flex;
     max-width: 100%;
 }
-/*menu*/
 .menu-main{
     position:relative;
     display:block;
@@ -164,11 +284,11 @@ h1:hover {
 }
 .menu-main ul li ul{
     position:absolute;
-    top:2.250em;
     left:0em;
     display:none;
-    width:1300%;
+    width:100%;
     background:#EBBD5B;
+    
 }
 .menu-main ul li:hover ul{display:block;}
     .menu-main ul li ul li{
@@ -184,32 +304,30 @@ h1:hover {
     box-sizing:border-box;
     border-top:1px solid #ffffff;
 }
-.menu-main ul li ul li:first-child a{border-top:0px;}
 .menu-main ul li ul li a:hover{
     background:#FDDC96;
     color:#6572BC;
 }
 /*final menu*/
 .pic {
-    position: inherit;
-    height: 1100%;
+    position: relative;
+    height: 100%;
     background: ivory;
     width: 100%;
     justify-content: space-around;
     border-radius: 0.5em;
     margin: 1em 0 1em -1em;
+    padding: 1em 0 1em 1em;
 }
-/*for about.html*/
 .left-pic {
     position: inherit;
-    max-height: 100%;
+    height: 100%;
     background: ivory;
     width: 100%;
     justify-content: space-around;
     border-radius: 0.5em;
     margin: 1em 0 1em 1em;
 }
-/*final for about.html*/
 .share-inside-form {
     height: 1600%;
     background: crimson;
@@ -243,11 +361,19 @@ h1:hover {
 div > a > img {
     padding-right: 1em;
 }
+div > img {
+    margin: 0.3em;
+    border-radius: 1em;
+}
 p.footer {
     font-size: small;
     font-style: italic; 
     color: white;
     background: transparent;
+}
+p.about {
+    text-align: justify;
+    padding: 0 1em 0 1em;
 }
 .up {
     float:right;
@@ -274,7 +400,6 @@ p.footer {
 .letter-violet {
     color: violet;
 } 
-/*old check later*/
 .field {
     background: lightblue;
     font-size: 1em;
@@ -282,6 +407,16 @@ p.footer {
     border-style: dotted; 
     border-color: darkgreen; 
 }
+.button {
+    border: hidden;
+    margin:0 45% 0 45%;
+    width:100%;
+}
+span {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+/*old check later*/
 p > strong {
     padding-right: 1.9em;
 }
@@ -300,15 +435,6 @@ ul ol {
     color: orange;
 }
 p.orange {color: blueviolet; font-size: 1.2em; text-align: center;}
-.button {
-    border: hidden;
-    margin:0 45% 0 45%;
-    width:100%;
-}
-span {
-    font-weight: bold;
-    font-size: 1.3em;
-}
 h5 {
     color: lightseagreen;  
 }

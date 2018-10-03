@@ -2,51 +2,171 @@
 <!--
 здесь можно посмотреть и оценить загруженные рисунки
 какие-то можно приобрести через связь с владельцем
-пока версия в доработке
 -->
 <html>
     <head>
-        <title>You are here! Inside rainbow world</title>
+        <title>Rainbow - let's this world colour!</title>
+        <meta charset="UTF-8">
         <meta charset="UTF-8">
         <meta name="description" content="Сообщество любителей раскраски и делать этот мир ярким">
         <meta name="keywords" content="раскраски, хобби, творчество, сообщество, общение, радужные события">
-       <link rel="stylesheet" href="../CSS/style_old.css">
-         <link rel="stylesheet" href="../CSS/grid.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
+        <link rel="stylesheet" href="../CSS/style.css">
     </head>
     <body>
-        <div class="container main">
-    <div class="row">
-        <div class="col-12">
-            <nav id="header">
-                <img src="../img/main.jpg" alt="Picture must be here">
-                <ul class="menu-about position-relative offset-2">
-                    <li><a href="../index.html" target="_parent">Go Home</a></li>
-                    <li><a href="about.html">Why I am here?</a></li>
-                    <li><a href="share.html">Share art &#10000;</a></li>
-                    <li><a href="shopping.html">Shopping</a></li>
-                    <ul class="col-3">
-                        <li><a href="#">Create</a></li>
-                        <li><a href="#">Buy</a></li>
-                        <li><a href="#">Sell</a></li>
-                    </ul>
+    <div id="header" class="header"> <!--header-->
+            <h1>Welcome to Rainbow world</h1>
+        </div> <!-- final header-->
+        <div class="menu"> <!--menu -->
+            <nav class="menu-main">
+                <ul>
+                    <li><a href="../index.html">Go home</a></li>
+                    <li><a href="../html/about.html">Why I am here?</a></li>
+                    <li><a href="../html/share.html">Share art &#10000;</a></li>
+                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
+                    <li><a href="../html/rating.html">Watch&Rate</a>
+                    <ul>
+                        <li><a href="#">Pencils</a></li>
+                        <li><a href="#">Paints</a></li>
+                        <li><a href="#">Markers</a></li>
+                    </ul></li>
                     <li><a href="#footer">Join us</a></li>
                 </ul>       
             </nav>
-            
-            
-            
-                <footer id="footer" class="footer">
-        <h3 align="left"><strong>Join us</strong></h3>
-    <p>
+            </div> <!-- final menu -->
+    <div class="container main"> <!--главная рамка-->
+        <div> <!--column left main-->
+            <div class="column"> <!--position column left main-->
+            <div class="signin"> <!-- window sign in -->
+                <a href="#authorization" class="a">Sign in</a>
+                <div id="authorization" class="open-window"> <!-- authorization form -->
+                <form action="index.html" method="post" name="authorization">
+                    <fieldset id="signin">
+                    <div><input id="email" type="email" placeholder="Your Email" required></div>
+                    <div><input id="psw" type="password" placeholder="Your Password" required></div>           
+                    <button type="submit" name="signIN" class="close">
+                        <span class="letter-orange">S</span>
+                        <span class="letter-yellow">I</span>
+                        <span class="letter-green">G</span>
+                        <span class="letter-blue">N&nbsp;&nbsp;</span>
+                        <span class="letter-darkblue">I</span>
+                        <span class="letter-violet">N</span>
+                    </button>
+                    <a href="#"><button type="button" class="button-later"><span>later</span></button></a>
+                    <div> <!--links inside form sign in-->
+                        <a href="#forgot" class="a-small">Forgot?</a>
+                        <a href="#register" class="a-small">Register</a>
+                    </div> <!--final links inside form sign in-->
+                    </fieldset>
+                </form>
+            </div> <!-- final authorization form-->
+            <a href="#" class="recovery" id="forgot"></a> <!-- form recovery psw-->
+            <div class="recovery-window">
+                <form action="../index.html" method="post" name="recovery">
+                <fieldset id="recovery">
+                    <legend><h4>Recovery your password</h4></legend>
+                    <div>
+                        <label for="email">Please input your email:</label>
+                        <input id="email" type="email" placeholder="Your Email" required> 
+                    </div>
+                    <button type="submit" name="Recovery" class="letter-darkblue">Send new password</button>
+                </fieldset>
+                </form>
+                <a  href="#close" class="close-button" title="Закрыть"></a>
+            </div> <!-- final form recovery psw-->
+            <a href="#" class="register" id="register"></a> <!-- form register-->
+            <div class="register-window">
+                <form action="../index.html" method="post" name="register">
+                <fieldset class="field">
+                    <legend><h4>Creat an account</h4></legend>
+                    <div>
+                        <label for="name">Your name</label> 
+                        <input id="name" type="text" placeholder="Your name" required>
+                    </div>
+                    <label for="country">Your country</label>
+                    <select id="country" required> 
+                        <optgroup label="Europe"> 
+                        <option value="E1">Portugal</option> 
+                        <option value="E2">Spain</option> 
+                        <option value="E3">France</option> 
+                        <option value="E4">Italy</option>
+                        <option value="E5">Germany</option>
+                        <option value="E6">Great Britain</option>
+                        <option value="E7">Russia</option>
+                        </optgroup>
+                        <optgroup label="Asia">
+                        <option value="A1">Japan</option> 
+                        <option value="A2">China</option> 
+                        <option value="A3">Thailand</option> 
+                        <option value="A4">Vietnam</option>
+                        </optgroup>
+                    </select>
+                    <div>
+                        <label for="email">Your email</label> 
+                        <input id="email" type="email" placeholder="Your email" required>
+                    </div>                        
+                    <div>
+                        <label for="psw">Your password</label> 
+                        <input id="psw" type="password" placeholder="Your password" required>
+                    </div>
+                    <button type="submit" name="signUP" class="close">
+                            <span class="letter-red">C</span> 
+                            <span class="letter-orange">R</span>
+                            <span class="letter-yellow">E</span>
+                            <span class="letter-green">A</span>
+                            <span class="letter-blue">T</span>
+                            <span class="letter-darkblue">E</span>
+                    </button>
+                    <a href="#"><button type="button" class="button-later letter-violet" name="back"><span>later</span></button></a>
+                     </fieldset>
+                </form>
+                 <a  href="#close" class="close-button" title="Закрыть"></a>
+                </div> <!-- final form register-->
+                </div> <!-- final window sign in -->
+                <div class="slider"> <!--sliders left-->
+                    <img src="../img/artist.jpg" alt="advertising">
+                </div>
+            </div> <!--final position column left main-->
+        </div>  <!--final column left main-->
+                <div> <!--column right main-->
+                    <div> <!--position bigcenter-->
+                    <div class="column center-index"> <!-- img for mark -->
+                        <div class="rate-pic">
+                            <img src="../img/colourbook.jpg" alt="rate me">
+                        </div>
+                        <div>
+                        <button type="button">Next</button>
+                        <button type="button">:-)</button>
+                        <button type="button">:-(</button>
+                        <button type="button">Buy</button>
+                        </div>
+                    </div> <!--final img for mark  -->
+                </div> <!--final position bigcenter -->
+            </div><!--final column bigcenter -->
+        <div> <!--sliders right-->
+            <div class="slider">
+            <img src="../img/artist.jpg" alt="advertising">
+            </div>
+        </div>
+       
+    </div><!--конец главной рамки-->
+    <div id="footer" class="row footer"> <!--футер-->
+     <div class="socnet">
         <a href="https://www.whatsapp.com" target="_blank">
-            <img src="https://whatsapp.com/favicon.png" alt="Whats'up" height="32" width="32"></a>
-            <a href="https://www.viber.com/download" target="_blank">
-            <img src="https://www.viber.com/app/themes/viber/assets/images/favicon.png" alt="Viber" height="26" width="26"></a>
+            <img src="../img/icon/whatsup.png" alt="Whats'up" height="40" width="40"></a>
+        <a href="https://www.viber.com/download" target="_blank">
+            <img src="../img/icon/viber.png" alt="Viber" height="40" width="40"></a>
         <a href="https://www.instagram.com/ShareRainbow" target="_blank">
-           <img src="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" alt="Instagram" height="26" width="26"></a>
+            <img src="../img/icon/instagram.ico" alt="Instagram" height="40" width="40"></a>
         <a href="https://vk.com/practicebetter" target="_blank"></a>
-           <img src="#" alt="Vkontakte" height="26" width="26"></a>
-     <a href="#header" class="up">Home</a>
-    </footer>
+            <img src="../img/icon/vk.png" alt="Vkontakte" height="40" width="40">     
+     </div>  
+        <div class="donate"><img src="../img/icon/donate2.png" alt="Donate" height="50"></div> 
+    </div> <!-- final two columns in footer-->
+    <div class="row footer"> <!--continue footer - one row-->
+        <p class="footer">2018, ShareRainbow. All rights reserved</p>
+    </div> <!--final футер-->
+    <a href="#header" class="up">Home</a>
     </body>
 </html>
