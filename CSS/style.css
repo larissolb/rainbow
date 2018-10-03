@@ -329,10 +329,13 @@ h1:hover {
     margin: 1em 0 1em 1em;
 }
 .share-inside-form {
-    height: 1600%;
-    background: crimson;
-    width: 100%;
-    border: 1px solid blueviolet;
+    max-height: 100%;
+    max-width: 100%;
+    background: lightblue;
+    font-size: 1em;
+    color: midnightblue;
+    padding: 0.5em;
+    margin: 1em;
 }
 .rate-pic {
     height: 80%;
@@ -401,11 +404,16 @@ p.about {
     color: violet;
 } 
 .field {
-    background: lightblue;
+    display: flex;
+    background: mistyrose;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 1em 0 0 0.5em;
     font-size: 1em;
     color: midnightblue;
-    border-style: dotted; 
+    border-style: dotted;
     border-color: darkgreen; 
+    flex-wrap: wrap;
 }
 .button {
     border: hidden;
@@ -416,7 +424,6 @@ span {
     font-weight: bold;
     font-size: 1.3em;
 }
-/*old check later*/
 p > strong {
     padding-right: 1.9em;
 }
@@ -429,49 +436,19 @@ input[type="radio"] {
     background: lightblue;
     color: midnightblue;
     border: dotted darkgreen;
+    margin: 1em 0 1em 0;
+    width: 100%;
+}
+.button-shareit {
+    display: flex;
+    border: hidden;
+    margin: 1em 0 1em 0;
+    width:100%;
+    flex-direction: row;
+    justify-content:  space-around;
+    
 }
 ul ol {
     list-style: url(../img/list.gif);;
     color: orange;
-}
-p.orange {color: blueviolet; font-size: 1.2em; text-align: center;}
-h5 {
-    color: lightseagreen;  
-}
-h5:hover {
-    color: forestgreen;
-    font-size: larger;
-}
-.h5-second {
-    color: mediumspringgreen;   
-}
-.h5-second:hover {
-    color: darkslateblue;
-    font-size: larger;
-}
-.img-question {
-    border: 0.31em darkcyan double;
-    margin-bottom: 1.9em;
-}
-.img-answer {
-    margin-left: 35%; 
-    padding-bottom: 1.9em;
-}
-.p-fly {
-    font-family: "Times New Roman";
-    font-size: 1.3em;
-    text-align: center;
-}
-.p-fly:hover {
-    font-size: x-large;
-    font-weight: bolder;
-    color: red;
-    border: 0.13em dotted coral;
-}    
-q {
-display: block;
-overflow: scroll;
-width: 22em;
-height: 2.2em;
-margin-top: 1.9em;
 }
