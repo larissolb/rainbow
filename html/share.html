@@ -33,14 +33,13 @@
                 </ul>       
             </nav>
         </div> <!-- final menu -->
-    <div class="container main"> <!--главная рамка-->
-        <div> <!--column left main-->
-            <div class="column"> <!--position column left main-->
+    <div class="container"> <!--главная рамка-->
+            <div class="share-ls"> <!--position column left main-->
             <div class="signin"> <!-- window sign in -->
                 <a href="#authorization" class="a">Sign in</a>
                 <div id="authorization" class="open-window"> <!-- authorization form -->
                 <form action="index.html" method="post" name="authorization">
-                    <fieldset id="signin">
+                    <fieldset id="signin" class="field-signin">
                     <div><input id="email" type="email" placeholder="Your Email" required></div>
                     <div><input id="psw" type="password" placeholder="Your Password" required></div>           
                     <button type="submit" name="signIN" class="close">
@@ -52,15 +51,15 @@
                         <span class="letter-violet">N</span>
                     </button>
                     <a href="#"><button type="button" class="button-later"><span>later</span></button></a>
-                    <div> <!--links inside form sign in-->
-                        <a href="#forgot" class="a-small">Forgot?</a>
-                        <a href="#register" class="a-small">Register</a>
+                     <div class="rate-a-small"> <!--links inside form sign in-->
+                        <a href="#forgot">Forgot?</a>
+                        <a href="#register">Register</a>
                     </div> <!--final links inside form sign in-->
                     </fieldset>
                 </form>
             </div> <!-- final authorization form-->
             <a href="#" class="recovery" id="forgot"></a> <!-- form recovery psw-->
-            <div class="recovery-window">
+                <div class="recovery-window">
                 <form action="../index.html" method="post" name="recovery">
                 <fieldset id="recovery">
                     <legend><h4>Recovery your password</h4></legend>
@@ -71,7 +70,7 @@
                     <button type="submit" name="Recovery" class="letter-darkblue">Send new password</button>
                 </fieldset>
                 </form>
-                <a  href="#close" class="close-button" title="Закрыть"></a>
+                <a  href="#close" class="close-button" title="Close"></a>
             </div> <!-- final form recovery psw-->
             <a href="#" class="register" id="register"></a> <!-- form register-->
             <div class="register-window">
@@ -122,13 +121,11 @@
                  <a  href="#close" class="close-button" title="Close"></a>
                 </div> <!-- final form register-->
                 </div> <!-- final window sign in -->
-                <div class="slider">
-                    <img src="../img/artist.jpg" alt="advertising">
-                </div>
-            </div> <!--final position column left main-->
-        </div>  <!--final column left main-->   
-<!--        <div class="row">bigcenter -->
-            <div class="main column">
+                <img src="../img/artist.jpg" alt="advertising" width="200">
+                </div> <!--end share left side -->
+           
+<!--form for upload - center 70% -->
+            <div class="share-center">
                 <form action="#" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">
                     <fieldset class="field"> 
                         <div>
@@ -175,28 +172,27 @@
                     </fieldset>  
                 </form>
             </div>
-            <div class="field column">
+            <div class="share-rs"> <!-- begin share right side -->
                 <h2>Last updates</h2>
                 <img src="../img/share.jpeg" alt="Picture must be here" width="200" height="200">
-                <span>Finally, rainbow people, we have the place where we can share our results from our paintbooks!</span>
-            </div>
+               <div><span>Finally, rainbow people, we have the place where we can share our results from our paintbooks!</span></div>
+              </div> 
+            </div><!-- begin share right side -->
        </div> <!--конец главной рамки-->
-<div id="footer" class="row footer"> <!--футер-->
-     <div class="socnet">
-        <a href="https://www.whatsapp.com" target="_blank">
-            <img src="../img/icon/whatsup.png" alt="Whats'up" height="40" width="40"></a>
-        <a href="https://www.viber.com/download" target="_blank">
-            <img src="../img/icon/viber.png" alt="Viber" height="40" width="40"></a>
-        <a href="https://www.instagram.com/ShareRainbow" target="_blank">
-            <img src="../img/icon/instagram.ico" alt="Instagram" height="40" width="40"></a>
-        <a href="https://vk.com/practicebetter" target="_blank"></a>
-            <img src="../img/icon/vk.png" alt="Vkontakte" height="40" width="40">     
-     </div>  
-        <div class="donate"><img src="../img/icon/donate2.png" alt="Donate" height="50"></div> 
-    </div> <!-- final two columns in footer-->
-    <div class="row footer"> <!--continue footer - one row-->
-        <p class="footer">2018, ShareRainbow. All rights reserved</p>
-    </div> <!--final футер-->
-    <a href="#header" class="up">Up</a>
+<div id="footer" class="footer">
+            <div class="socnet">
+                <a href="https://www.whatsapp.com" target="_blank">
+                <img src="../img/icon/whatsup.png" alt="Whats'up" height="40" width="40"></a>
+                <a href="https://www.viber.com/download" target="_blank">
+                <img src="../img/icon/viber.png" alt="Viber" height="40" width="40"></a>
+                <a href="https://www.instagram.com/ShareRainbow" target="_blank">
+                <img src="../img/icon/instagram.ico" alt="Instagram" height="40" width="40"></a>
+                <a href="https://www.vk.com" target="_blank">
+                <img src="../img/icon/vk.png" alt="Vkontakte" height="40" width="40"></a>
+                <p>2018, ShareRainbow. All rights reserved</p></div>
+                <div class="donate">
+                <a href="#" target="_blank">  
+                <img src="../img/icon/donate2.png" alt="Donate" height="50"></a> 
+                <a href="#header" class="up">Up</a></div>
     </body>
 </html>
