@@ -18,7 +18,7 @@
     <div id="header" class="header"> <!--header-->
             <h1>Welcome to Rainbow world</h1>
         </div> <!-- final header-->
-        <div class="menu"> <!--menu -->
+        <div class="menu-rate"> <!--menu -->
             <nav class="menu-main">
                 <ul>
                     <li><a href="../index.html">Go home</a></li>
@@ -35,17 +35,17 @@
                 </ul>       
             </nav>
             </div> <!-- final menu -->
-    <div class="container main"> <!--главная рамка-->
-        <div> <!--column left main-->
-            <div class="column"> <!--position column left main-->
-            <div class="signin"> <!-- window sign in -->
+        <div class="container"> <!--begin container -->
+            <div class="rate-ls"> <!-- begin left pics -->
+                <div class="signin"> <!-- window sign in -->
                 <a href="#authorization" class="a">Sign in</a>
                 <div id="authorization" class="open-window"> <!-- authorization form -->
                 <form action="index.html" method="post" name="authorization">
-                    <fieldset id="signin">
+                    <fieldset id="signin" class="field-signin">
                     <div><input id="email" type="email" placeholder="Your Email" required></div>
                     <div><input id="psw" type="password" placeholder="Your Password" required></div>           
-                    <button type="submit" name="signIN" class="close">
+                    <div>
+                    <button type="submit" name="signIN" class="rate-close">
                         <span class="letter-orange">S</span>
                         <span class="letter-yellow">I</span>
                         <span class="letter-green">G</span>
@@ -53,10 +53,11 @@
                         <span class="letter-darkblue">I</span>
                         <span class="letter-violet">N</span>
                     </button>
-                    <a href="#"><button type="button" class="button-later"><span>later</span></button></a>
-                    <div> <!--links inside form sign in-->
-                        <a href="#forgot" class="a-small">Forgot?</a>
-                        <a href="#register" class="a-small">Register</a>
+                    <a href="#"><button type="button" class="button-later"><span>not now</span></button></a>
+                    </div>
+                    <div class="rate-a-small"> <!--links inside form sign in-->
+                        <a href="#forgot">Forgot?</a>
+                        <a href="#register">Register</a>
                     </div> <!--final links inside form sign in-->
                     </fieldset>
                 </form>
@@ -91,7 +92,7 @@
                         <option value="E2">Spain</option> 
                         <option value="E3">France</option> 
                         <option value="E4">Italy</option>
-                        <option value="E5">Germany</option>
+                        container<option value="E5">Germany</option>
                         <option value="E6">Great Britain</option>
                         <option value="E7">Russia</option>
                         </optgroup>
@@ -110,7 +111,7 @@
                         <label for="psw">Your password</label> 
                         <input id="psw" type="password" placeholder="Your password" required>
                     </div>
-                    <button type="submit" name="signUP" class="close">
+                    <button type="submit" name="signUP" class="rate-close">
                             <span class="letter-red">C</span> 
                             <span class="letter-orange">R</span>
                             <span class="letter-yellow">E</span>
@@ -118,55 +119,41 @@
                             <span class="letter-blue">T</span>
                             <span class="letter-darkblue">E</span>
                     </button>
-                    <a href="#"><button type="button" class="button-later letter-violet" name="back"><span>later</span></button></a>
                      </fieldset>
                 </form>
-                 <a  href="#close" class="close-button" title="Закрыть"></a>
+                 <a  href="#close" class="close-button" title="Close"></a>
                 </div> <!-- final form register-->
                 </div> <!-- final window sign in -->
-                <div class="slider"> <!--sliders left-->
-                    <img src="../img/artist.jpg" alt="advertising">
-                </div>
-            </div> <!--final position column left main-->
-        </div>  <!--final column left main-->
-                <div> <!--column right main-->
-                    <div> <!--position bigcenter-->
-                    <div class="column center-index"> <!-- img for mark -->
-                        <div class="rate-pic">
-                            <img src="../img/colourbook.jpg" alt="rate me">
-                        </div>
-                        <div>
-                        <button type="button">Next</button>
-                        <button type="button">:-)</button>
-                        <button type="button">:-(</button>
-                        <button type="button">Buy</button>
-                        </div>
-                    </div> <!--final img for mark  -->
-                </div> <!--final position bigcenter -->
-            </div><!--final column bigcenter -->
-        <div> <!--sliders right-->
-            <div class="slider">
-            <img src="../img/artist.jpg" alt="advertising">
-            </div>
+                <img src="../img/artist.jpg" alt="img" width="250">
+   </div> <!-- end left pics -->
+   <div class="center-rate"> <!-- begin center -->
+       <img src="../img/rate-center.jpg" alt="rate me">
+        <div class="rate-btn-dir">
+            <button type="button" class="rate-btn next"></button>
+            <button type="button" class="rate-btn heart"></button>
+            <button type="button" class="rate-btn back"></button>
+            <button type="button" class="rate-btn-buy">buy</button>
         </div>
-       
-    </div><!--конец главной рамки-->
-    <div id="footer" class="row footer"> <!--футер-->
-     <div class="socnet">
-        <a href="https://www.whatsapp.com" target="_blank">
-            <img src="../img/icon/whatsup.png" alt="Whats'up" height="40" width="40"></a>
-        <a href="https://www.viber.com/download" target="_blank">
-            <img src="../img/icon/viber.png" alt="Viber" height="40" width="40"></a>
-        <a href="https://www.instagram.com/ShareRainbow" target="_blank">
-            <img src="../img/icon/instagram.ico" alt="Instagram" height="40" width="40"></a>
-        <a href="https://vk.com/practicebetter" target="_blank"></a>
-            <img src="../img/icon/vk.png" alt="Vkontakte" height="40" width="40">     
-     </div>  
-        <div class="donate"><img src="../img/icon/donate2.png" alt="Donate" height="50"></div> 
-    </div> <!-- final two columns in footer-->
-    <div class="row footer"> <!--continue footer - one row-->
-        <p class="footer">2018, ShareRainbow. All rights reserved</p>
-    </div> <!--final футер-->
-    <a href="#header" class="up">Home</a>
+    </div> <!-- end center-->
+    <div class="rate-rs"> <!-- begin right pics -->
+        <img src="../img/rate_right.jpg" alt="img" width="250">    
+    </div> <!-- end right pics -->
+</div> <!--end container -->
+<div id="footer" class="footer">
+            <div class="socnet">
+                <a href="https://www.whatsapp.com" target="_blank">
+                <img src="../img/icon/whatsup.png" alt="Whats'up" height="40" width="40"></a>
+                <a href="https://www.viber.com/download" target="_blank">
+                <img src="../img/icon/viber.png" alt="Viber" height="40" width="40"></a>
+                <a href="https://www.instagram.com/ShareRainbow" target="_blank">
+                <img src="../img/icon/instagram.ico" alt="Instagram" height="40" width="40"></a>
+                <a href="https://www.vk.com" target="_blank">
+                <img src="../img/icon/vk.png" alt="Vkontakte" height="40" width="40"></a>
+                <p>2018, ShareRainbow. All rights reserved</p></div>
+                <div class="donate">
+                <a href="#" target="_blank">  
+                <img src="../img/icon/donate2.png" alt="Donate" height="50"></a> 
+                <a href="#header" class="up">Up</a></div>
+        </div>
     </body>
 </html>
