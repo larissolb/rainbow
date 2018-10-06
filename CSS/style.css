@@ -852,25 +852,25 @@ input[type="radio"] {
     display: flex;
     flex:2;
 }
-.open-window, .rate-close .letter-red {
+.open-window, .rate-close, .close .letter-red {
     color: red;
 }
-.open-window, .rate-close .letter-orange {
+.open-window, .rate-close, .close .letter-orange {
     color: orange;
 }
-.open-window, .rate-close .letter-yellow {
+.open-window, .rate-close, .close .letter-yellow {
     color: yellow;
 }
-.open-window, .rate-close .letter-green {
+.open-window, .rate-close, .close .letter-green {
     color: green;
 }
-.open-window, .rate-close .letter-blue {
+.open-window, .rate-close, .close.letter-blue {
     color: blue;
 } 
-.open-window, .rate-close .letter-darkblue {
+.open-window, .rate-close, .close .letter-darkblue {
     color: darkblue;
 } 
-.open-window, .rate-close .letter-violet {
+.open-window, .rate-close, .close .letter-violet {
     color: violet;
 } 
 .button {
