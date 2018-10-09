@@ -787,7 +787,18 @@ a .button-later:hover, button-later:focus {
 			height: 30px;
 			text-decoration: none;
 			text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
-			position: absolute;
+		* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  position: relative;
+  min-height: 100%;
+}	position: absolute;
 			width: 30px;
 		}
 .heart:after{
@@ -989,6 +1000,9 @@ input[type="radio"] {
     -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
+    left: 0px;
+    bottom: 0px;
+    position: relative;
 }
 .footer .socnet {
     flex: 1;
@@ -1030,6 +1044,9 @@ input[type="radio"] {
    -ms-box-sizing: border-box;
    margin-right: 0.5em;
    margin-top: -1.5em;
+   left: 0px;
+    bottom: 0px;
+    position: relative;
 }
 /*end footer*/ 
 .a {
@@ -1111,9 +1128,10 @@ p > strong {
 }
 .mmenu .sign-mob > a {
   font-family:Arial, sans-serif;
-  font-size: 1em;
+  font-size: 0.7em;
   color:#ffffef;
   font-weight:bold;
+  padding-top: 0.3em;
 }
 /*  end top row and sign in mob version */
 .mobile {
@@ -1246,9 +1264,10 @@ q {
 }
 .mmenu .sign-mob > a {
   font-family:Arial, sans-serif;
-  font-size: 1em;
+  font-size: 0.7em;
   color:#ffffef;
   font-weight:bold;
+  padding-top: 0.3em;
 }
 /*  end top row and sign in mob version */
 .mobile {
@@ -1380,9 +1399,10 @@ q {
 }
 .mmenu .sign-mob > a {
   font-family:Arial, sans-serif;
-  font-size: 1em;
+  font-size: 0.7em;
   color:#ffffef;
   font-weight:bold;
+  padding-top: 0.3em;
 }
 /*  end top row and sign in mob version */
 .mobile {

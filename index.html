@@ -48,8 +48,8 @@
         </ul>        
         </nav> <!-- final mobile menu -->
       <div class="sign-mob"> 
-                       <a href="#authorization">Sign in</a>
-                <div id="authorization" class="open-window"> <!-- authorization form -->
+                       <a href="#login-mob">Sign in</a>
+                <div id="login-mob" class="open-window"> <!-- authorization form -->
                 <form action="index.html" method="post" name="authorization">
                     <fieldset id="signin" class="field-signin">
                     <div><input id="email" type="email" placeholder="Your Email" required></div>
@@ -66,13 +66,13 @@
                     <a href="#"><button type="button" class="button-later"><span>not now</span></button></a>
                     </div>
                     <div class="rate-a-small"> <!--links inside form sign in-->
-                        <a href="#forgot">Forgot?</a>
-                        <a href="#register">Register</a>
+                        <a href="#forgot-m">Forgot?</a>
+                        <a href="#reg-mob">Register</a>
                     </div> <!--final links inside form sign in-->
                     </fieldset>
                 </form>
             </div> <!-- final authorization form-->
-            <a href="#" class="recovery" id="forgot"></a> <!-- form recovery psw-->
+            <a href="#" class="recovery" id="forgot-m"></a> <!-- form recovery psw-->
             <div class="recovery-window">
                 <form action="../index.html" method="post" name="recovery">
                 <fieldset id="recovery">
@@ -86,7 +86,7 @@
                 </form>
                 <a  href="#close" class="close-button" title="Close"></a>
             </div> <!-- final form recovery psw-->
-            <a href="#" class="register" id="register"></a> <!-- form register-->
+            <a href="#" class="register" id="reg-mob"></a> <!-- form register-->
             <div class="register-window">
                 <form action="../index.html" method="post" name="register">
                 <fieldset class="field">
@@ -138,8 +138,8 @@
         <div class="container"> <!--begin container -->
             <div class="rate-ls"> <!-- begin left pics -->
                 <div class="signin"> <!-- window sign in -->
-                <a href="#authorization1" class="a">Sign in</a>
-                <div id="authorization1" class="open-window"> <!-- authorization form -->
+                <a href="#authorization" class="a">Sign in</a>
+                <div id="authorization" class="open-window"> <!-- authorization form -->
                 <form action="index.html" method="post" name="authorization">
                     <fieldset id="signin" class="field-signin">
                     <div><input id="email" type="email" placeholder="Your Email" required></div>
@@ -249,16 +249,17 @@
     <div class="mobile"> <!--begin mobile contain -->
     <div class="container-mobile"> 
         <div class="row-ml">
-            <div><a href="html/about.html"><img src="http://24.media.tumblr.com/6f2f141a316ce02bc1e8c871ba8b162a/tumblr_mlgy02d4ue1qm2s94o1_500.gif" alt='Where am I?'></a></div>
-            <div><a href="html/share.html"><img src="https://havegoals.files.wordpress.com/2014/02/wpid-share-kindness-front-2-jpg.jpeg" alt='Share your art'></a></div>
+            <div><a href="html/about.html"><img src="img/about-mob.gif" alt='Where am I?'></a></div>
+            <div><a href="html/share.html"><img src="img/share_mob.jpeg" alt='Share your art'></a></div>
         </div> <!-- end of firest column -->
         <div class="row-m">
-            <div><a href="html/rating.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6l6WFeyE62-e21fxQiboaBftDodueXeUM0trb8OHmvIpKmcgF" alt='Watch & Rate'></a></div>
-            <div><a href="https://www.instagram.com"><img src="https://rightanglecreative.co.uk/wp-content/uploads/2015/03/Blog_18_01.jpg" alt='Goods for creation'></a></div>
+            <div><a href="html/rating.html"><img src="img/share_mob.jpeg" alt="Watch&Rate"></a></div>
+            <div><a href="#"><img src="img/share_mob.jpeg" alt="Buy"></a></div>
         </div> <!--end of second column-->
     </div>
     </div> <!--end mobile contaton -->
-        <div id="footer" class="footer container">
+    <div class="footer-all">
+        <div id="footer" class="footer">
             <div class="socnet">
                 <a href="https://www.whatsapp.com" target="_blank">
                 <img src="img/icon/whatsup.png" alt="Whats'up"></a>
@@ -277,6 +278,6 @@
         <div class="footer">
             <span>2018, ShareRainbow. All rights reserved</span>
             <div class="up"><a href="#header"><img src="img/icon/up.png" alt="Up"></a></div>
-        </div>
+        </div></div>
     </body>
 </html>
