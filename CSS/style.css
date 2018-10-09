@@ -1027,7 +1027,10 @@ p > strong {
 .header h1{
     font-size: 1em;
 }
-.menu-main, .menu-about, .menu-rate, .left-img, .about-rs, .share-ls, .signin, .share-rs, .rate-ls, .rate-rs  {
+.menu-main, .menu-about, .menu-rate, .left-img, .about-rs, .share-ls, .signin, .share-rs, .rate-ls, .rate-rs, .center, .right-img  {
+    display: none;
+}
+.container .center img {
     display: none;
 }
 /*top row and sign in mob version*/
@@ -1159,7 +1162,10 @@ q {
 .header h1{
     font-size: 1em;
 }
-.menu-main, .menu-about, .menu-rate, .left-img, .about-rs, .share-ls, .share-rs, .rate-ls, .rate-rs  {
+.menu-main, .menu-about, .menu-rate, .left-img, .about-rs, .share-ls, .signin, .share-rs, .rate-ls, .rate-rs, .center, .right-img  {
+    display: none;
+}
+.container .center img {
     display: none;
 }
 /*top row and sign in mob version*/
@@ -1290,7 +1296,10 @@ q {
 .header h1{
     font-size: 1em;
 }
-.menu-main, .menu-about, .menu-rate, .left-img, .about-rs, .share-ls, .share-rs, .rate-ls, .rate-rs  {
+.menu-main, .menu-about, .menu-rate, .left-img, .about-rs, .share-ls, .signin, .share-rs, .rate-ls, .rate-rs, .center, .right-img  {
+    display: none;
+}
+.container .center img {
     display: none;
 }
 /*top row and sign in mob version*/
