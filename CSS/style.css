@@ -1041,6 +1041,32 @@ q {
 .field {
    font-size: 0.7em; 
 }
+.rate-btn{
+	height: 30px;
+	margin: 0 10px 10px 0;
+	width: 30px;			
+}
+.rate-btn:after{
+	font-size: 10px;
+	height: 10px;
+	width: 10px;
+		}
+.heart:after{
+	left: 7px;
+	top: 10px;
+		}
+.next:after{
+	left: 8px;
+	top: 6px;
+}
+.back:after{
+	left: 8px;
+	top: 6px;
+}
+.rate-btn-buy {
+	font-size: 0.4em;
+	height: 30px;
+}
 .footer img {
     width: 22%;
 }
@@ -1082,6 +1108,32 @@ q {
 }
 .center h2, p {
     display: none;
+}
+.rate-btn{
+	height: 30px;
+	margin: 0 10px 10px 0;
+	width: 30px;			
+}
+.rate-btn:after{
+	font-size: 10px;
+	height: 10px;
+	width: 10px;
+		}
+.heart:after{
+	left: 7px;
+	top: 10px;
+		}
+.next:after{
+	left: 8px;
+	top: 6px;
+}
+.back:after{
+	left: 8px;
+	top: 6px;
+}
+.rate-btn-buy {
+	font-size: 0.4em;
+	height: 30px;
 }
 .footer img {
     width: 10%;
@@ -1126,6 +1178,32 @@ q {
 }
 .center h2, p {
     display: none;
+}
+.rate-btn{
+	height: 30px;
+	margin: 0 10px 10px 0;
+	width: 30px;			
+}
+.rate-btn:after{
+	font-size: 10px;
+	height: 10px;
+	width: 10px;
+		}
+.heart:after{
+	left: 7px;
+	top: 10px;
+		}
+.next:after{
+	left: 8px;
+	top: 6px;
+}
+.back:after{
+	left: 8px;
+	top: 6px;
+}
+.rate-btn-buy {
+	font-size: 0.4em;
+	height: 30px;
 }
 .footer img {
     width: 7%;
