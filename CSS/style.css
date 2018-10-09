@@ -1060,6 +1060,9 @@ p > strong {
   font-weight:bold;
 }
 /*  end top row and sign in mob version */
+.mobile {
+	display:block;
+	}
 q {
     display: none;
 }
@@ -1189,7 +1192,10 @@ q {
   font-weight:bold;
 }
 /*  end top row and sign in mob version */
-q {
+.mobile {
+	display:block;
+	}
+	q {
     display: none;
 }
 .field {
@@ -1317,6 +1323,9 @@ q {
   font-weight:bold;
 }
 /*  end top row and sign in mob version */
+	.mobile {
+	display:block;
+	}
 q {
     display: none;
 }
