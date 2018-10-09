@@ -1019,6 +1019,9 @@ p > strong {
 q {
     display: none;
 }
+.center h2, p {
+    display: none;
+}
 .rate-btn-dir {
     display: none;
 }
@@ -1064,6 +1067,9 @@ q {
 .field {
    font-size: 0.7em; 
 }
+.center h2, p {
+    display: none;
+}
 .footer img {
     width: 10%;
 }
@@ -1104,6 +1110,9 @@ q {
 }
 .field {
    font-size: 0.7em; 
+}
+.center h2, p {
+    display: none;
 }
 .footer img {
     width: 7%;
