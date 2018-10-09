@@ -435,6 +435,13 @@ img {
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
 }
+.left-img > img {
+  opacity: .3;
+  transition-property: opacity;
+}
+.left-img > img:hover {
+  opacity: 1;
+}
 /*60% */
 .container .center {
     display: flex;
@@ -542,9 +549,15 @@ iframe {
     order: 2;
     -webkit-order: 2;
     -moz-flex-order: 2;
-/*    margin-right: 2em;*/
     margin-top: 1em;
     text-align: end;
+}
+.about-rs > img {
+  opacity: .3;
+  transition-property: opacity;
+}
+.about-rs > img:hover {
+  opacity: 1;
 }
 /*end about.html*/
 .container .right-img {
