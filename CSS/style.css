@@ -178,6 +178,50 @@ img {
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
 }
+/* mobile version for index.html */
+.mobile {
+  display:none;
+}
+.container-mobile {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;   
+    max-width: 100%; 
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -ms-box-sizing: border-box;
+}
+.row-ml {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;   
+    max-width: 100%; 
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -ms-box-sizing: border-box;
+}
+.row-m {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;   
+    max-width: 100%; 
+    margin: 0 0 0 0.3em;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -ms-box-sizing: border-box;
+}
 /*authorization form*/
 .signin {
     display: flex;
