@@ -12,6 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
         <link rel="stylesheet" href="../CSS/style.css">
+        <link rel="stylesheet" href="../CSS/normalize.css">
+        <link rel="stylesheet" href="../CSS/media.css">
     </head>
     <body>
         <div id="header" class="header"> <!--header-->
@@ -46,93 +48,19 @@
              </li>      
         </ul>        
         </nav> <!-- final mobile menu -->
-      <div class="sign-mob"> 
-                       <a href="#login-mob">Sign in</a>
-                <div id="login-mob" class="open-window"> <!-- authorization form -->
-                <form action="index.html" method="post" name="authorization">
-                    <fieldset id="signin" class="field-signin">
+        <div class="btn-sign-mob"><a href="#login-mob" target="_self">Sign in</a></div>
+ <form action="index.html" method="post" name="login-mob">
+                    <fieldset id="login-mob" class="open-window-m">
                     <div><input id="email" type="email" placeholder="Your Email" required></div>
                     <div><input id="psw" type="password" placeholder="Your Password" required></div>           
-                    <div>
-                    <button type="submit" name="signIN" class="rate-close">
-                        <span class="letter-orange">S</span>
-                        <span class="letter-yellow">I</span>
-                        <span class="letter-green">G</span>
-                        <span class="letter-blue">N&nbsp;&nbsp;</span>
-                        <span class="letter-darkblue">I</span>
-                        <span class="letter-violet">N</span>
-                    </button>
-                    <a href="#"><button type="button" class="button-later"><span>not now</span></button></a>
-                    </div>
-                    <div class="rate-a-small"> <!--links inside form sign in-->
-                       <a href="#forgot-m">Forgot?</a>
-                        <a href="#reg-mob">Register</a>
-                    </div> <!--final links inside form sign in-->
+                    <button type="submit" name="signIN"><span>sign in</span></button>
+                    <a href="#"><button type="button"><span>not now</span></button></a>
+                    <div class="forg-reg"> <!--links inside form sign in-->
+                       <a href="forgot-m.html" target="_blank">Forgot?</a>
+                        <a href="register-m.html" target="_blank">Register</a>
+                      </div> <!--final links inside form sign in-->
                     </fieldset>
                 </form>
-            </div> <!-- final authorization form-->
-            <a href="#" class="recovery" id="forgot-mob"></a> <!-- form recovery psw-->
-            <div class="recovery-window">
-                <form action="../index.html" method="post" name="recovery">
-                <fieldset id="recovery">
-                    <legend><h4>Recovery your password</h4></legend>
-                    <div>
-                        <label for="email">Please input your email:</label>
-                        <input id="email" type="email" placeholder="Your Email" required> 
-                    </div>
-                    <button type="submit" name="Recovery" class="letter-darkblue">Send new password</button>
-                </fieldset>
-                </form>
-                <a  href="#close" class="close-button" title="Close"></a>
-            </div> <!-- final form recovery psw-->
-            <a href="#" class="register" id="reg-mob"></a> <!-- form register-->
-            <div class="register-window">
-                <form action="../index.html" method="post" name="register">
-                <fieldset class="field">
-                    <legend><h4>Creat an account</h4></legend>
-                    <div>
-                        <label for="name">Your name</label> 
-                        <input id="name" type="text" placeholder="Your name" required>
-                    </div>
-                    <label for="country">Your country</label>
-                    <select id="country" required> 
-                        <optgroup label="Europe"> 
-                        <option value="E1">Portugal</option> 
-                        <option value="E2">Spain</option> 
-                        <option value="E3">France</option> 
-                        <option value="E4">Italy</option>
-                        <option value="E5">Germany</option>
-                        <option value="E6">Great Britain</option>
-                        <option value="E7">Russia</option>
-                        </optgroup>
-                        <optgroup label="Asia">
-                        <option value="A1">Japan</option> 
-                        <option value="A2">China</option> 
-                        <option value="A3">Thailand</option> 
-                        <option value="A4">Vietnam</option>
-                        </optgroup>
-                    </select>
-                    <div>
-                        <label for="email">Your email</label> 
-                        <input id="email" type="email" placeholder="Your email" required>
-                    </div>                        
-                    <div>
-                        <label for="psw">Your password</label> 
-                        <input id="psw" type="password" placeholder="Your password" required>
-                    </div>
-                    <button type="submit" name="signUP" class="rate-close">
-                            <span class="letter-red">C</span> 
-                            <span class="letter-orange">R</span>
-                            <span class="letter-yellow">E</span>
-                            <span class="letter-green">A</span>
-                            <span class="letter-blue">T</span>
-                            <span class="letter-darkblue">E</span>
-                    </button>
-                     </fieldset>
-                </form>
-                 <a  href="#close" class="close-button" title="Close"></a>
-                </div> <!-- final form register-->
-                </div> <!-- final window sign in -->
         </div> <!--final mob top -->
     <div class="container"> <!--главная рамка-->
             <div class="share-ls"> <!--position column left main-->
@@ -269,6 +197,51 @@
                         <input type="submit" value="Share">
                         <input type="reset" value="Reset">
                     </fieldset>  
+                    </fieldset>  
+                </form>
+           </div>
+<div class="share-center-mobile">
+                <form action="#" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">
+                    <fieldset class="field-m"> 
+                        <div class="item-m1">
+                        <label for="name">Name of coloring-book's</label>
+                        <input id="name" type="text" autofocus>
+                        </div>
+                    <div class="item-m2">
+                        <label for="theme">What theme?</label>
+                        <select id="theme" required>
+                        <option value="Nature">Nature</option>
+                        <option value="Space">Space</option>
+                        <option value="Animals">Animals</option>
+                        <option value="Cars">Cars</option>
+                        <option value="Cities">Cities</option>
+                        <option value="Other">Other</option>
+                        </select>
+                    </div> 
+                    <div class="item-m3">
+                        <label for="type">What instruments did you use?</label>
+                        <select id="type" required> 
+                            <option value="pen"> colour pens</option> 
+                            <option selected value="pencil">colour pencils</option> 
+                            <option value="gouache">gouache</option> 
+                            <option value="watercolour">watercolour</option>
+                            <option value="markers">markers</option>
+                        </select> 
+                    </div>
+                    <div class="item-m4">
+                        <label for="amount">How many colours did you use?</label> 
+                       <input id="amount" type="number" min="1" step="1">
+                    </div>
+                    <div class="item-m5">
+                        <label for="describe">&#9999; Describe it</label>
+                        <textarea id="describe" placeholder="I choosed this pic because..." cols="70" rows="3" maxlength="100"></textarea>
+                    </div>  
+                    <div class="item-m6">
+                        <label for="pics">Upload your best picture</label>
+                        <input id="pics" type="file" multiple accept="image/*">
+                    </div>
+                        <input type="submit" value="Share">
+                        <input type="reset" value="Reset">
                     </fieldset>  
                 </form>
            </div>
