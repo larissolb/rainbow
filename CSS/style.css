@@ -671,6 +671,7 @@ iframe {
     -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
+    margin-right: 5em;
 }
 .rate-close:hover {
     background: khaki;
@@ -708,7 +709,7 @@ a .button-later:hover, button-later:focus {
     font-weight: bolder;
     color: maroon;
 }
-.container .center-rate {
+.container .center-rm {
     display: flex;
     flex: 7;
    -webkit-flex: 7;
@@ -717,6 +718,13 @@ a .button-later:hover, button-later:focus {
    -webkit-order: 1;
    -moz-flex-order: 1;
    flex-direction: column;
+   line-height: 1.5;
+   margin: 1em 2em 1em 1em;
+}
+.center-rm .slider {
+    flex: 7;
+   -webkit-flex: 7;
+   -moz-flex: 7;
    line-height: 1.5;
    margin: 1em 2em 1em 1em;
    box-sizing: border-box;
@@ -731,9 +739,9 @@ a .button-later:hover, button-later:focus {
     -20px 0 0 -10px darkturquoise;
 
 }
-.container .center-rate img {
+.container .slider img {
    height: 100%;
-       width: 100%;
+   width: 100%;
 }
 .slider {
     width:100%;
@@ -758,7 +766,6 @@ a .button-later:hover, button-later:focus {
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
-/*   z-index: 100;*/
 }
 .slider > input:checked + div + label + label + label {
    display: block;
@@ -811,14 +818,14 @@ a .button-later:hover, button-later:focus {
    left: 31%;
    top: 92%;
 }
-.slider > input:checked + div + label + label + label:after {
+/*.slider > input:checked + div + label + label + label:after {
     content: "❤";
     bottom: 10%;
 }
 .slider > input:checked + div + label + label + label:hover:after {
    color: #f94e66;
    text-shadow:0px 0px 6px #f94e66;
-}
+}*/
 .slider > div {
     position: absolute;
     top: 0px;
@@ -1077,6 +1084,7 @@ input[type="radio"] {
     -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
+   margin-right: 5em;
 }
 .close:hover {
     background: khaki;
@@ -1165,22 +1173,22 @@ input[type="radio"] {
 .open-window, .rate-close, .close > .letter-red {
     color: red;
 }
-.open-window, .rate-close, .close > .letter-orange {
+.open-window, .rate-close, .close > .letter-orange, .rate-close > .letter-orange{
     color: orange;
 }
-.open-window, .rate-close, .close > .letter-yellow {
+.open-window, .rate-close, .close > .letter-yellow, .rate-close > .letter-yellow {
     color: yellow;
 }
-.open-window, .rate-close, .close > .letter-green {
+.open-window, .rate-close, .close > .letter-green, .rate-close > .letter-green {
     color: green;
 }
-.open-window, .rate-close, .close > .letter-blue {
+.open-window, .rate-close, .close > .letter-blue, .rate-close > .letter-blue {
     color: blue;
 } 
-.open-window, .rate-close, .close > .letter-darkblue {
+.open-window, .rate-close, .close > .letter-darkblue, .rate-close > .letter-darkblue {
     color: darkblue;
 } 
-.open-window, .rate-close, .close > .letter-violet {
+.open-window, .rate-close, .close > .letter-violet, .rate-close > .letter-violet {
     color: violet;
 } 
 p > strong {
@@ -1200,3 +1208,46 @@ body {
 }	position: absolute;
 			width: 30px;
 		}*/
+.actions {
+    display: flex;
+    align-self: center;
+    background: #F0FFF0;
+    width: 93%;
+    margin-right: 1em;
+}
+#print {
+    display: flex;
+    padding: 1em 0 1em 3em;
+    opacity: 0.8;
+}
+
+#like {
+    opacity: 0.8;
+    padding: 1em 0 1em 1.5em;
+}
+
+#like:hover, #print:hover {
+        opacity: 1;
+        cursor: pointer;
+}
+.like {
+    color: lightseagreen;
+    font-weight:bolder;
+    padding: 1em 15em 1em 0;
+    
+    
+}
+#comments {
+    padding: 1em 16em 1em 1em;
+}
+.slider {
+    height: 60vh;
+}
+
+.slider img {
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+}

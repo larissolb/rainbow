@@ -15,8 +15,9 @@
         <link rel="stylesheet" href="../CSS/style.css">
         <link rel="stylesheet" href="../CSS/normalize.css">
         <link rel="stylesheet" href="../CSS/media.css">
+        <script src="../js/slider.js"></script>
     </head>
-    <body>
+<body>
     <div id="header" class="header"> <!--header-->
             <h1>Welcome to Rainbow world</h1>
         </div> <!-- final header-->
@@ -56,7 +57,7 @@
                     <div><input id="email" type="email" placeholder="Your Email" required></div>
                     <div><input id="psw" type="password" placeholder="Your Password" required></div>           
                     <button type="submit" name="signIN"><span>sign in</span></button>
-                    <a href="#"><button type="button"><span>not now</span></button></a>
+                    <a href="#"><button type="button"><span>later</span></button></a>
                     <div class="forg-reg"> <!--links inside form sign in-->
                        <a href="forgot-m.html" target="_blank">Forgot?</a>
                         <a href="register-m.html" target="_blank">Register</a>
@@ -64,8 +65,7 @@
                     </fieldset>
                 </form>
                 </div> <!-- final window sign in -->
-        </div> <!--final mob top -->
-        <div class="container"> <!--begin container -->
+              <div class="container"> <!--begin container -->
             <div class="rate-ls"> <!-- begin left pics -->
                 <div class="signin"> <!-- window sign in -->
                 <a href="#authorization" class="a">Sign in</a>
@@ -83,7 +83,7 @@
                         <span class="letter-darkblue">I</span>
                         <span class="letter-violet">N</span>
                     </button>
-                    <a href="#"><button type="button" class="button-later"><span>not now</span></button></a>
+                    <a href="#"><button type="button" class="button-later"><span>later</span></button></a>
                     </div>
                     <div class="rate-a-small"> <!--links inside form sign in-->
                         <a href="#forgot">Forgot?</a>
@@ -156,44 +156,23 @@
                 </div> <!-- final window sign in -->
                 <img src="../img/picleft.jpg" alt="img">
    </div> <!-- end left pics -->
-   <div class="center-rate"> <!-- begin center -->
-                      <div class="slider">
-            <input type="radio" name="slider" id="slider1" checked="checked">
-            <div><img src="../img/rate-center.jpg" alt="rate me"></div>
-            <label for="slider4"></label>
-            <label for="slider2"></label>
-            <label for="slider2"></label>
-            
-            <input type="radio" name="slider" id="slider2" checked="checked">
-            <div><img src="../img/rate-center.jpg" alt="rate me"></div>
-            <label for="slider1"></label>
-            <label for="slider3"></label>
-            <label for="slider3"></label>
-             
-            <input type="radio" name="slider" id="slider3" checked="checked">
-            <div><img src="../img/rate-center.jpg" alt="rate me"></div>
-            <label for="slider2"></label>
-            <label for="slider4"></label>
-            <label for="slider4"></label>
-            
-            <input type="radio" name="slider" id="slider4" checked="checked">
-            <div><img src="../img/rate-center.jpg" alt="rate me"></div>
-            <label for="slider3"></label>
-            <label for="slider1"></label>
-             <label for="slider1"></label>
+   <div class='center-rm'><!-- begin center -->
+       <div id="slider"></div>
+    <div class="actions">
+        <div id="like"><img src='../img/icon/like.png' alt='like'></div>
+        <span class="like"></span>
+        <script src="../js/like.js"></script>
+        <div id="comments">add comments</div>
+        <div id="print">
+        <img src="../img/icon/print.png" alt="print">
         </div>
-<!--       <img src="../img/rate-center.jpg" alt="rate me">
-         <div class="rate-btn-dir">
-            <button type="button" class="rate-btn next"></button>
-            <button type="button" class="rate-btn heart"></button>
-            <button type="button" class="rate-btn back"></button>
-            <button type="button" class="rate-btn-buy">buy</button>
-        </div>-->
-    </div> <!-- end center-->
+        <script src="../js/print.js"></script>
+      </div>
+</div><!-- end center-->
     <div class="rate-rs"> <!-- begin right pics -->
         <img src="../img/rate-right.png" alt="img">    
     </div> <!-- end right pics -->
-</div> <!--end container -->
+</div> <!--end container --> 
         <div id="footer" class="footer container">
             <div class="socnet">
                 <a href="https://www.whatsapp.com" target="_blank">
@@ -214,5 +193,6 @@
             <span>2018, ShareRainbow. All rights reserved</span>
             <div class="up"><a href="#header"><img src="../img/icon/up.png" alt="Up"></a></div>
         </div>
-    </body>
+<script src="../js/index.js"></script>
+</body>
 </html>
