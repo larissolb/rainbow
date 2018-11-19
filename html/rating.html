@@ -12,14 +12,14 @@
         <meta name="keywords" content="раскраски, хобби, творчество, сообщество, общение, радужные события">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
-        <link rel="stylesheet" href="../CSS/style.css">
         <link rel="stylesheet" href="../CSS/normalize.css">
         <link rel="stylesheet" href="../CSS/media.css">
+        <link rel="stylesheet" href="../CSS/style.css">
         <script src="../js/slider.js"></script>
     </head>
 <body>
     <div id="header" class="header"> <!--header-->
-            <h1>Welcome to Rainbow world</h1>
+            <h1 id="txt">Welcome to Rainbow world</h1>
         </div> <!-- final header-->
         <div class="menu-rate"> <!--menu -->
             <nav class="menu-main">
@@ -154,21 +154,31 @@
                  <a  href="#close" class="close-button" title="Close"></a>
                 </div> <!-- final form register-->
                 </div> <!-- final window sign in -->
-                <img src="../img/picleft.jpg" alt="img">
+                <div><img src="../img/picleft.jpg" alt="img"></div>
    </div> <!-- end left pics -->
+   <div class="center-rate">
    <div class='center-rm'><!-- begin center -->
        <div id="slider"></div>
     <div class="actions">
         <div id="like"><img src='../img/icon/like.png' alt='like'></div>
         <span class="like"></span>
-        <script src="../js/like.js"></script>
-        <div id="comments">add comments</div>
-        <div id="print">
-        <img src="../img/icon/print.png" alt="print">
+        <div class="comments">
+            <form name='formComment'>
+                <fieldset>
+                  <div>
+                  <textarea name='text'> </textarea> 
+                  </div>
+                  <div><input type='submit' name='commentBtn' value='comment' class="btn-comment"></div>
+                </fieldset>
+                <fieldset>
+                    <div id="comments"> </div>
+                </fieldset>
+            </form>
         </div>
-        <script src="../js/print.js"></script>
+        <div id="print"><img src="../img/icon/print.png" alt="print"></div>
       </div>
 </div><!-- end center-->
+</div>
     <div class="rate-rs"> <!-- begin right pics -->
         <img src="../img/rate-right.png" alt="img">    
     </div> <!-- end right pics -->
@@ -194,5 +204,9 @@
             <div class="up"><a href="#header"><img src="../img/icon/up.png" alt="Up"></a></div>
         </div>
 <script src="../js/index.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/like.js"></script>
+<script src="../js/print.js"></script>
+<script src="../js/comments.js"></script>
 </body>
 </html>

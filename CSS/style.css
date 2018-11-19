@@ -19,9 +19,9 @@ img {
    -ms-box-sizing: border-box;
 }
 .header {
-    background-color: rgba(230, 230, 250, 0.6);
+/*    background-color: rgba(230, 230, 250, 0.6);*/
     background: url(../img/main.jpg);
-    box-shadow: 0 0 20px black, 20px 15px 30px yellow, -20px 15px 30px lime, -20px -15px 30px blue, 20px -15px 30px red;
+   /*    box-shadow: 0 0 20px black, 20px 15px 30px yellow, -20px 15px 30px lime, -20px -15px 30px blue, 20px -15px 30px red;*/
     display: flex;
     flex:1;
     -webkit-flex: 1;
@@ -31,7 +31,9 @@ img {
     -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
-    
+}
+.header:hover {
+    background-image: url(../img/main-hover.jpg);
 }
 /*menu*/
 .menu {
@@ -248,7 +250,10 @@ img {
    -ms-box-sizing: border-box;
 }
 .field-signin {
-   border: none;
+    border: none;
+}
+#email, #psw {
+    width: 95%;
 }
 .open-window {
     position: absolute;
@@ -258,6 +263,7 @@ img {
     -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
+   width: 235px;
 }
 .open-window ::-webkit-input-placeholder {
    color:#333333;
@@ -620,9 +626,9 @@ iframe {
 }
 /*begin rating.html*/
 .rate-ls {
-    display: flex;
+/*    display: flex;
     display: -webkit-flex;
-    display: -moz-flex;
+    display: -moz-flex;*/
     flex-direction: column;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;    
@@ -634,9 +640,9 @@ iframe {
    -ms-box-sizing: border-box;
 }
 .container .rate-ls {
-    flex: 1;
+/*    flex: 1;
     -webkit-flex: 1;
-    -moz-flex: 1;
+    -moz-flex: 1;*/
     order: 0;
     -webkit-order: 0;
     -moz-flex-order: 0;
@@ -655,37 +661,42 @@ iframe {
     -moz-flex-order: 0;
 }
 .rate-ls img {
-    flex:8;
+/*    flex:8;
     -webkit-flex: 8;
-    -moz-flex: 8;
+    -moz-flex: 8;*/
     order: 0;
     -webkit-order: 0;
     -moz-flex-order: 0;
     margin-bottom: 1em;
+/*    max-width: ;*/
+/*    height: 100%;*/
+/*    max-height: 100%;*/
  }
 .rate-close {
     background-color: khaki;
-    margin: 6% 0 0 0;
+    margin: 0.5em 2em 0 0;
     font-size: small;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
-    margin-right: 5em;
+  
 }
 .rate-close:hover {
     background: khaki;
     box-shadow: 0.063em 0.063em 0.63em darkgray;
     font-weight: bolder; 
+    margin: 0.5em 1em 0 0;
 }
 a .button-later {
     background-color: khaki;
-    margin: 12% 0 0 0;
+    margin: 0.5em 0 0 0.5em;
     text-transform: uppercase;
     color: darkgreen;
     font-size: small;
 }
 a .button-later:hover, button-later:focus {
+    background: khaki;
     box-shadow: 0.063em 0.063em 0.63em darkgray;
     font-weight: bolder; 
 }
@@ -709,14 +720,18 @@ a .button-later:hover, button-later:focus {
     font-weight: bolder;
     color: maroon;
 }
+
+.container .center-rate {
+    width: 75%;
+}
 .container .center-rm {
     display: flex;
-    flex: 7;
+/*    flex: 7;
    -webkit-flex: 7;
-   -moz-flex: 7;
-   order: 1;
+   -moz-flex: 7;*/
+/*   order: 1;
    -webkit-order: 1;
-   -moz-flex-order: 1;
+   -moz-flex-order: 1;*/
    flex-direction: column;
    line-height: 1.5;
    margin: 1em 2em 1em 1em;
@@ -845,12 +860,12 @@ a .button-later:hover, button-later:focus {
     transition: opacity 0.8s ease-out 0.1s visibility 0.1s ease-out 0s;
 }
 .container .rate-rs {
-    flex: 2;
+/*    flex: 2;
     -webkit-flex: 2;
     -moz-flex: 2;
     order: 2;
     -webkit-order: 2;
-    -moz-flex-order: 2;
+    -moz-flex-order: 2;*/
     margin-top: 1em;
     margin-bottom: 1em;
     box-sizing: border-box;
@@ -1212,18 +1227,18 @@ body {
     display: flex;
     align-self: center;
     background: #F0FFF0;
-    width: 93%;
-    margin-right: 1em;
+    width: 100%;
+    margin-left: 1.813em;
 }
 #print {
-    display: flex;
-    padding: 1em 0 1em 3em;
+    padding: 1em 0 1em 0;
     opacity: 0.8;
+    margin-right: 11px;
 }
 
 #like {
     opacity: 0.8;
-    padding: 1em 0 1em 1.5em;
+    padding: 1em 0 1em 0.5em;
 }
 
 #like:hover, #print:hover {
@@ -1233,12 +1248,45 @@ body {
 .like {
     color: lightseagreen;
     font-weight:bolder;
-    padding: 1em 15em 1em 0;
-    
-    
+ }
+.comments {
+    width: 100%;
+    padding-top: 0.5em;
+ }
+ 
+textarea {
+  resize: none;
+  width: 100%;
+  background: #0088cc; 
+  box-shadow: 0 0 4em 4em floralwhite inset;
+  margin-bottom: 0.5em;
 }
-#comments {
-    padding: 1em 16em 1em 1em;
+
+.btn-comment {
+  background: lavender;
+  font-weight: 500; 
+  font-family: "FunSized";
+  letter-spacing: 5px;
+  color: #0088cc;
+  text-transform: uppercase;
+  padding: 0.5em;
+}
+.btn-comment:hover {
+  background: lightblue;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  resize: none;
+}
+
+#comments  > div{
+  border-bottom: 0.5px dotted grey;
+  padding: 0.5em;
+  font-size: 1.1em;
+  font-weight: 300;
+  color: darkcyan;
 }
 .slider {
     height: 60vh;
@@ -1251,3 +1299,9 @@ body {
 .slider img.active {
     display: block;
 }
+@font-face {
+font-family: "FunSized"; 
+src: url("../fonts/FunSized.ttf"); 
+font-style: normal; 
+font-weight: normal; 
+} 

@@ -14,10 +14,11 @@ Register form for mobile version
         <link rel="stylesheet" href="../CSS/style.css">
         <link rel="stylesheet" href="../CSS/normalize.css">
         <link rel="stylesheet" href="../CSS/media.css">
-    </head>
+<!--        <script src="../js/users.js"></script>-->
+        </head>
     <body>
     <div id="header"> <!--header-->
-        <h2>Rainbow world</h2>
+        <h2 id="txt">Rainbow world</h2>
         </div> <!-- final header-->
   <div class="register-window-m">
                 <form action="../index.html" method="post" name="register">
@@ -29,6 +30,7 @@ Register form for mobile version
                     </div>
                     <label for="country">Your country</label>
                     <select id="country" required> 
+                        <option selected>Choose country</option> 
                         <optgroup label="Europe"> 
                         <option value="E1">Portugal</option> 
                         <option value="E2">Spain</option> 
@@ -53,13 +55,17 @@ Register form for mobile version
                         <label for="psw">Your password</label> 
                         <input id="psw" type="password" placeholder="Your password" required>
                     </div>
-                    <button type="submit" name="signUP">CREATE</button>
-                    <a href="../index.html"><button type="button">Back</button></a>
+                    <input type="submit" name="signUP" id="create" value="JOIN">
+                    <input type="button" value="Back">
+                    <input type="reset" value="Reset">
                 </fieldset>
                 </form>
                   </div> <!-- final form register-->
      <div class="footer-m">
             <span>2018, ShareRainbow. All rights reserved</span>
            </div>
+                  
+    <script src='../js/header.js'></script>
+    <script src="../js/users.js"></script>
     </body>
 </html>
