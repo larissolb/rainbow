@@ -10,40 +10,43 @@ function checkPresence(arr, item) {
   if(arr.includes(item.value)) { 
       console.log('It is occupied');
       item.style.borderColor = "red";
+      //функция раскрытия блока снизу, что занят
+      showText();
+    function showText(){  
+        let yes = document.getElementById('yes');
+         return yes.style.display = 'block'; 
+        }
    } else {
-     arr.push(item.value);
      item.style.borderColor = "green";
-     userData.push(item.value);
+           hideText();
+    function hideText(){  
+        let yes = document.getElementById('yes');
+         return yes.style.display = 'none'; 
+        }
+    
   }
- 
- return console.log('получившийся массив',arr);
-  
+ return;
 }
 
 let login = document.getElementById("name"); //получение логина из формы
-let logins = []; //массив логинов
+let logins = ['fox', 'bear']; //массив логинов
 let psw = document.getElementById("psw"); //получение пароля из формы
 let email = document.getElementById("email"); //получение емейла из формы
-let emails = []; //массив емейлов
+let emails = ['fox@ab.com', 'bear@bear.com']; //массив емейлов
 let country = document.getElementsByTagName("option"); //получение стран из формы
 let userData = []; //массив, куда попадают данные пользователей
-let i, num, Big;
+let i, num, Big, checkPsw;
 
 //получение логина с предварительной проверкой возможного повтора по имеющейся базе
     login.onchange = function () {
     checkPresence(logins, login);
-//    userData.push(login.value);
-//    return console.log(userData);
  };
 
-//получение пароля с предварительной проверкой на выполнение условий
-//требования для пароля: минимум 5 знаков, 1 цифра, 1 заглавная
-
-
+//получение пароля с предварительной проверкой на выполнение условий (минимум 5 знаков, 1 цифра, 1 заглавная)
 //функция проверки наличия цифры в строке
 function checkNum(a)
 {
-var regexp= /\d/;
+var regexp= /\d/; 
 regexp.test(a);
 return num = regexp.test(a);
 } 
@@ -56,73 +59,79 @@ function checkBigLetters(b) {
 }
 
 psw.onchange = function () {
-//преобразование в строку и проверка кол-во знаков
+//преобразование в строку и проверка на условия(минимум 5 знаков, 1 цифра, 1 заглавная)
 let str = psw.value;
-//console.log('str',str);
-//console.log('str длина',str.length);
-
-//проверка наличия цифры в строке
 checkNum(str);
-//console.log(num);
-
-//проверка наличия заглавной буквы в строке
 checkBigLetters(str);
-//console.log(Big);
-
 
 if(str.length > 4 && num === true && Big === true){
         psw.style.borderColor = "green";
-        userData.push(psw.value);}
+        checkPsw = 1;
+        doneRight();
+        function doneRight(){  
+        let div = document.getElementById('info');
+          div.style.color = 'darkgreen'; 
+          div.innerHTML = "success!";
+          }
+    }
 else {
     psw.style.borderColor = "red";
-    console.log('check conditions for password');
-   
-    //функция раскрытия блока с требованиями
+    checkPsw = 0;
+    
 }
-console.log(userData);
-};
+//console.log(userData);
 
+};
 //получение емейла
     email.onchange = function () {
          checkPresence(emails, email);
-
-    
-// //получение страны
-//   for (i = 0; i < country.length; i++){
-//    if(country[i].selected && country[i].selected !== "Choose country"){
-//    userData.push(country[i].innerHTML);
-//       }else {
-//           alert('Choose your country');
-//       }
-//    }
  };
 
 
-//при нажатии на кнопку создать, данные забираются 
+//при нажатии на кнопку создать, данные попадают в массив(если все условия выполнены) и забираются 
 let createBtn = document.getElementById('create');
 createBtn.addEventListener('click', startEvents);
 
+let choose;
 function startEvents(event){
     //получение страны
-   for (i = 0; i < country.length; i++){
+    for (i = 1; i < country.length; i++){
+        
     if(country[i].selected){
-        userData.push(country[i].innerHTML);
-        }   
+        choose = country[i].innerHTML;
+//        console.log(choose);
+        hideRemind();
+    function hideRemind(){  
+        let remind = document.getElementById('remind');
+         return remind.style.display = 'none'; 
+        }
     }
-  if(logins.length === emails.length && logins.length !== 0 && emails.length !== 0 && login.value !== "" && email.value !== ""){
-    event.preventDefault();
-    return  console.log(userData);
-    
-  } else if(logins.length === emails.length || logins.length !== 0 || emails.length !== 0 || login.value !== "" || email.value !== ""){
-    
-    console.log("fix your one of which data");
-   
-  } else {
+}
+if(choose === undefined) {
+//    console.log('choose your country');
+       showRemind();
+    function showRemind(){  
+        let remind= document.getElementById('remind');
+         return remind.style.display = 'block'; 
+        }
+}
+
+  if(login.value === "" || email.value === "" || psw.value === "") {
+      //работает submit по умолчанию
+      psw.value = "";
+    } else if(checkPsw === 0 || logins.includes(login.value)||emails.includes(email.value) || choose === undefined) {
        event.preventDefault();
-        console.log("fix your data");
+       psw.value = "";
+       alert('Ups..check your input info');
+  }
+      else {
+      event.preventDefault();
+      logins.includes(login.value);
+      emails.includes(email.value);
+      userData.push('UserData:',login.value, email.value, psw.value, choose);
+      console.log(userData);
+  }
     }
-    }
+
 
 }(window));
-
-

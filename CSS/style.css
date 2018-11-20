@@ -253,7 +253,7 @@ img {
     border: none;
 }
 #email, #psw {
-    width: 95%;
+    width: 50%;
 }
 .open-window {
     position: absolute;
@@ -1299,6 +1299,21 @@ fieldset {
 .slider img.active {
     display: block;
 }
+
+#info {
+    display: block;
+    font-style: italic;
+    color: #EBBD5B;
+    margin-top: 0.2em;
+}
+
+#yes, #remind {
+    display: none;
+    font-style: italic;
+    color: firebrick;
+    margin: 0.2em;
+}
+
 @font-face {
 font-family: "FunSized"; 
 src: url("../fonts/FunSized.ttf"); 
