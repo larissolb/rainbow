@@ -105,26 +105,23 @@ createBtn.addEventListener('click', startEvents);
 function startEvents(event){
     //получение страны
    for (i = 0; i < country.length; i++){
-    if(country[i].selected !== "Choose country"){
-        if(country[i].selected){
+    if(country[i].selected){
         userData.push(country[i].innerHTML);
-       } 
-       }    else {
-         console.log('choose your country');
-       }
+        }   
     }
-  if(logins.length === emails.length && logins.length !== 0 && emails.length !== 0){
+  if(logins.length === emails.length && logins.length !== 0 && emails.length !== 0 && login.value !== "" && email.value !== ""){
     event.preventDefault();
-
     return  console.log(userData);
     
+  } else if(logins.length === emails.length || logins.length !== 0 || emails.length !== 0 || login.value !== "" || email.value !== ""){
+    
+    console.log("fix your one of which data");
+   
   } else {
-    event.preventDefault();
-     console.log("fix your data");
-  
-  }
-}
-
+       event.preventDefault();
+        console.log("fix your data");
+    }
+    }
 
 }(window));
 
