@@ -124,5 +124,4 @@ if(choose === undefined) {
   }
     }
 
-
 }(window));

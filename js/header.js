@@ -46,3 +46,38 @@ Array.prototype.randomColor = function() {
 
 // Set the text
 document.querySelector('#txt').innerHTML = letters.randomColor();
+
+//авторизация
+let pswI = document.getElementById("psw1"); //получение пароля из формы
+let emailI = document.getElementById("email1"); //получение емейла из формы
+let emails = ['fox@ab.com', 'bear@bear.com']; //массив емейлов
+
+console.log(emailI);
+
+let InBtn = document.getElementById('inBtn');
+InBtn.addEventListener('click', goInto);
+
+emailI.onchange = function () {
+   return console.log(emailI.value);
+ };
+ 
+pswI.onchange = function () {
+   return console.log(emailI.value);
+ }; 
+ 
+function goInto(event){
+
+    if(emailI.value === "" || pswI.value === "") {
+      //работает submit по умолчанию
+      pswI.value = "";
+    } else if(emails.includes(emailI.value) === false) {
+       event.preventDefault();
+       pswI.value = "";
+       alert('Ups..your email is not found. Pass registration :-)');
+  } 
+  //здесь еще должна быть проверка на совпадение емейла и пароля
+      else {
+      event.preventDefault();
+      alert("Oh, good! We glad to see you!");
+  }
+    }
