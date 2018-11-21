@@ -35,7 +35,7 @@ let email = document.getElementById("email"); //получение емейла 
 let emails = ['fox@ab.com', 'bear@bear.com']; //массив емейлов
 let country = document.getElementsByTagName("option"); //получение стран из формы
 let userData = []; //массив, куда попадают данные пользователей
-let i, num, Big, checkPsw;
+let i, checkPsw, result;
 
 //получение логина с предварительной проверкой возможного повтора по имеющейся базе
     login.onchange = function () {
@@ -44,27 +44,19 @@ let i, num, Big, checkPsw;
 
 //получение пароля с предварительной проверкой на выполнение условий (минимум 5 знаков, 1 цифра, 1 заглавная)
 //функция проверки наличия цифры в строке
-function checkNum(a)
+function checkCond(a)
 {
-var regexp= /\d/; 
+var regexp= /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}/; 
 regexp.test(a);
-return num = regexp.test(a);
-} 
-
-//функция проверки наличия заглавной буквы в строке
-function checkBigLetters(b) {
-    var regex = /[A-Z]/;
-    regex.test(b);
-    return Big = regex.test(b);
+return result = regexp.test(a);
 }
 
 psw.onchange = function () {
 //преобразование в строку и проверка на условия(минимум 5 знаков, 1 цифра, 1 заглавная)
 let str = psw.value;
-checkNum(str);
-checkBigLetters(str);
+checkCond(str);
 
-if(str.length > 4 && num === true && Big === true){
+if(result === true){
         psw.style.borderColor = "green";
         checkPsw = 1;
         doneRight();
@@ -79,8 +71,6 @@ else {
     checkPsw = 0;
     
 }
-//console.log(userData);
-
 };
 //получение емейла
     email.onchange = function () {
@@ -130,6 +120,7 @@ if(choose === undefined) {
       emails.includes(email.value);
       userData.push('UserData:',login.value, email.value, psw.value, choose);
       console.log(userData);
+      alert("Welcome to Rainbow world!");
   }
     }
 

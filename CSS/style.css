@@ -237,11 +237,11 @@ img {
    -ms-box-sizing: border-box;
 }
 .container .signin {
-    max-width: 78%;
-	display: flex;
-    background: #00FF7F;
-    border: 1px solid forestgreen;
-    box-shadow: 3px 5px 7px mediumseagreen;
+    display: flex;
+    position: absolute;
+    background: #FF8C00;
+    border: 1px solid #A0522D;
+    box-shadow: 3px 5px 7px #8B4513;
     margin-bottom: 1em;
     flex-direction: column;
     align-items: center;
@@ -253,18 +253,14 @@ img {
 .field-signin {
     border: none;
 }
-#email, #psw {
-    width: 50%;
-}
 .open-window {
     position: absolute;
     display: none;
-    background: #00FF7F;
+    background:  #FFDAB9;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    -ms-box-sizing: border-box;
-   width: 235px;
 }
 .open-window ::-webkit-input-placeholder {
    color:#333333;
