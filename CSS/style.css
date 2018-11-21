@@ -237,7 +237,8 @@ img {
    -ms-box-sizing: border-box;
 }
 .container .signin {
-    display: flex;
+    max-width: 78%;
+	display: flex;
     background: #00FF7F;
     border: 1px solid forestgreen;
     box-shadow: 3px 5px 7px mediumseagreen;
