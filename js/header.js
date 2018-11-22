@@ -81,3 +81,27 @@ function goInto(event){
       alert("Oh, good! We glad to see you!");
   }
     }
+
+//восстановление пароля
+let emailRec = document.getElementById('emailRec');
+console.log(emailRec);
+let recBtn = document.querySelector('button[name="Recovery"]');
+console.log(recBtn);
+
+recBtn.addEventListener('click', checkEmail);
+function checkEmail(event){
+
+    if(emailRec.value === "") {
+      //работает submit по умолчанию
+    } else if(emails.includes(emailRec.value) === false) {
+       event.preventDefault();
+        alert('Ups..your email is not found. Pass registration or try again');
+  } 
+  //здесь еще должна быть проверка на совпадение емейла и пароля
+      else {
+      event.preventDefault();
+      alert("Wait a few minutes and check your email :-)");
+  }
+    }
+
+

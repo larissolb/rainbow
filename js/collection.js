@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 /* данные с формы   */
-let name = document.getElementById('name');
+let nameBook = document.getElementById('nameBook');
 let theme = document.querySelector('input[name="theme"]:checked').value;
     // console.log(theme);
 let instrument = document.getElementById('type'); 
@@ -15,6 +15,7 @@ let describe = document.getElementById('describe');
 let pic = document.getElementById('pics');
 
 let shareBtn = document.getElementById('shareBtn');
+console.log(shareBtn);
   
  //массивы, где все будет храниться
   let fullInfo = [];
@@ -24,6 +25,7 @@ let shareBtn = document.getElementById('shareBtn');
   
   shareBtn.addEventListener('click', getInfo);
   function getInfo(event) {
+      event.preventDefault();
     //получение типа используемого инструмента
       for (let i = 0; i < instrument.length; i++){
         if(instrument[i].selected) {
@@ -31,8 +33,8 @@ let shareBtn = document.getElementById('shareBtn');
         }  
       }
      
-    event.preventDefault();
-    fullInfo.push(name.value, theme, inst, quanColor.value, describe.value, pic.value);
+    
+    fullInfo.push(nameBook.value, theme, inst, quanColor.value, describe.value, pic.value);
     return console.log(fullInfo);
   }
   
