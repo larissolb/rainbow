@@ -17,23 +17,24 @@ Recovery password for mobile version
     </head>
     <body>
     <div id="header"> <!--header-->
-            <h2>Rainbow world</h2>
+            <h2 id="txt">Rainbow world</h2>
         </div> <!-- final header-->
-          <div class="recovery-mob">
+          <div class="recovery-mob" id="psw1">
                 <form action="../index.html" method="post" name="recovery">
                 <fieldset id="recovery">
                     <legend><h3>Recovery your password</h3></legend>
                     <div>
-                        <label for="email">Please input your email:</label>
-                        <input id="email" type="email" placeholder="Your Email" required> 
+                        <label for="email" id="email1">Please input your email:</label>
+                        <input id="emailRec" type="email" placeholder="Your Email" required> 
                     </div>
-                    <button type="submit" name="Recovery">Send new password</button>
-                 <a href="../index.html"><button type="button">Back</button></a>
+                    <button type="submit" name="Recovery" id="recBtn">Send new password</button>
+                 <a href="../index.html"><button type="button" id="inBtn">Back</button></a>
                 </fieldset>
                 </form>
                   </div> <!-- final form recovery psw-->
      <div class="footer-m">
             <span>2018, ShareRainbow. All rights reserved</span>
            </div>
+                  <script src="../js/header.js"></script>
     </body>
 </html>

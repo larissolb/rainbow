@@ -52,7 +52,7 @@ let pswI = document.getElementById("psw1"); //получение пароля и
 let emailI = document.getElementById("email1"); //получение емейла из формы
 let emails = ['fox@ab.com', 'bear@bear.com']; //массив емейлов
 
-console.log(emailI);
+//console.log(emailI);
 
 let InBtn = document.getElementById('inBtn');
 InBtn.addEventListener('click', goInto);
@@ -73,20 +73,20 @@ function goInto(event){
     } else if(emails.includes(emailI.value) === false) {
        event.preventDefault();
        pswI.value = "";
-       alert('Ups..your email is not found. Pass registration :-)');
+       alert('Ups..your email is not found. Pass registration or try again :-)');
   } 
   //здесь еще должна быть проверка на совпадение емейла и пароля
       else {
       event.preventDefault();
-      alert("Oh, good! We glad to see you!");
+      alert("Wow! We glad to see you!");
   }
     }
 
 //восстановление пароля
 let emailRec = document.getElementById('emailRec');
-console.log(emailRec);
+//console.log(emailRec);
 let recBtn = document.querySelector('button[name="Recovery"]');
-console.log(recBtn);
+//console.log(recBtn);
 
 recBtn.addEventListener('click', checkEmail);
 function checkEmail(event){

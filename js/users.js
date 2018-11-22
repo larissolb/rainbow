@@ -33,7 +33,7 @@ let logins = ['fox', 'bear']; //массив логинов
 let psw = document.getElementById("psw"); //получение пароля из формы
 let email = document.getElementById("email"); //получение емейла из формы
 let emails = ['fox@ab.com', 'bear@bear.com']; //массив емейлов
-let country = document.getElementsByTagName("option"); //получение стран из формы
+let country = document.getElementById("country"); //получение стран из формы
 let userData = []; //массив, куда попадают данные пользователей
 let i, checkPsw, result;
 

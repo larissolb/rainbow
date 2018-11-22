@@ -15,7 +15,6 @@ let describe = document.getElementById('describe');
 let pic = document.getElementById('pics');
 
 let shareBtn = document.getElementById('shareBtn');
-console.log(shareBtn);
   
  //массивы, где все будет храниться
   let fullInfo = [];
