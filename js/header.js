@@ -1,9 +1,16 @@
-/**
-header sign in rainbow style
+/*
+* РАЗНОЦВЕТНЫЕ БУКВЫ РАНДОМНЫЕ ПРИ КАЖДОМ ОБНОВЛЕНИИ СТРАНИЦЫ:
+* ЗАГОЛОВОК, НЕКОТОРЫЕ КНОПКИ
  */
 
-//Get arrays of the text
+
+(function () {
+    'use strict';
+
+//Получение данных, где нужно применить разноцветные буквы
 let letters = document.querySelector('#txt').innerHTML.split('');
+let letters1 = document.querySelector('#BtnEnter').innerHTML.split('');
+let letters2 = document.querySelector('#createBtn').innerHTML.split('');
 
 
 // Converts integer to hex 
@@ -28,10 +35,7 @@ const getRandomColor = () => {
     Math.floor(Math.random() * 255));
 };
 
-// This is the prototype function
-// that changes the color of each
-// letter by wrapping it in a span
-// element.
+//применение
 Array.prototype.randomColor = function() {
   let html = '';
   this.map( (letter) => {
@@ -44,64 +48,10 @@ Array.prototype.randomColor = function() {
   return html;
 };
 
-// Set the text
+// установка каждой отдельной букве рандомного цвета
 document.querySelector('#txt').innerHTML = letters.randomColor();
-
-//авторизация
-let pswI = document.getElementById("psw1"); //получение пароля из формы
-let emailI = document.getElementById("email1"); //получение емейла из формы
-let emails = ['fox@ab.com', 'bear@bear.com']; //массив емейлов
-
-//console.log(emailI);
-
-let InBtn = document.getElementById('inBtn');
-InBtn.addEventListener('click', goInto);
-
-emailI.onchange = function () {
-   return console.log(emailI.value);
- };
- 
-pswI.onchange = function () {
-   return console.log(emailI.value);
- }; 
- 
-function goInto(event){
-
-    if(emailI.value === "" || pswI.value === "") {
-      //работает submit по умолчанию
-      pswI.value = "";
-    } else if(emails.includes(emailI.value) === false) {
-       event.preventDefault();
-       pswI.value = "";
-       alert('Ups..your email is not found. Pass registration or try again :-)');
-  } 
-  //здесь еще должна быть проверка на совпадение емейла и пароля
-      else {
-      event.preventDefault();
-      alert("Wow! We glad to see you!");
-  }
-    }
-
-//восстановление пароля
-let emailRec = document.getElementById('emailRec');
-//console.log(emailRec);
-let recBtn = document.querySelector('button[name="Recovery"]');
-//console.log(recBtn);
-
-recBtn.addEventListener('click', checkEmail);
-function checkEmail(event){
-
-    if(emailRec.value === "") {
-      //работает submit по умолчанию
-    } else if(emails.includes(emailRec.value) === false) {
-       event.preventDefault();
-        alert('Ups..your email is not found. Pass registration or try again');
-  } 
-  //здесь еще должна быть проверка на совпадение емейла и пароля
-      else {
-      event.preventDefault();
-      alert("Wait a few minutes and check your email :-)");
-  }
-    }
+document.querySelector('#BtnEnter').innerHTML = letters1.randomColor();
+document.querySelector('#createBtn').innerHTML = letters2.randomColor();
 
 
+}(window));

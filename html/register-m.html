@@ -11,31 +11,31 @@ Register form for mobile version
         <meta name="keywords" content="раскраски, хобби, творчество, сообщество, общение, радужные события">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
-        <link rel="stylesheet" href="../CSS/style.css">
-        <link rel="stylesheet" href="../CSS/normalize.css">
-        <link rel="stylesheet" href="../CSS/media.css">
-<!--        <script src="../js/users.js"></script>-->
+<!--        <link rel="stylesheet" href="../CSS/style.css">-->
+        <link rel="stylesheet" href="../CSS/newcss.css">
+        
         </head>
     <body>
     <div id="header"> <!--header-->
-        <h2 id="txt">Rainbow world</h2>
+        <h1 id="txt">Rainbow world</h1>
         </div> <!-- final header-->
-  <div class="register-window-m">
-                <form action="../index.html" method="post" name="register">
-                <fieldset>
-                    <legend><h3>Creat an account</h3></legend>
+             <div class="register-window-m"> <!-- form register-->
+                <form action="../index.html" method="post" name="create">
+                <fieldset id="create">
+                    <legend><h4>Creat an account</h4></legend>
                     <div>
-                        <label for="name">Your name</label> 
-                        <input id="name" type="text" placeholder="Your name" required>
+                        <label for="loginReg">Your name</label> 
+                        <input id="loginReg" type="text" placeholder="Your name" required>
                     </div>
-                     <div id="yes">It is occupied!</div>
+                     <div id="busyLogin">It is occupied!</div>
                     <div>
-                        <label for="email">Your email</label> 
-                        <input id="email" type="email" placeholder="Your email" required>
+                        <label for="emailReg">Your email</label> 
+                        <input id="emailReg" type="email" placeholder="Your email" required>
                     </div>
+                      <div id="busyEmail">It is occupied!</div>
                     <div>
-                        <label for="psw">Your password</label> 
-                        <input id="psw" type="password" placeholder="Your password" required>
+                        <label for="pswReg">Your password</label> 
+                        <input id="pswReg" type="password" placeholder="Your password" required>
                     </div>
                     <div id="info">Password must content min 5 characters, 1 upper letter and 1 number</div>
                     <div><label for="country">Your country</label>
@@ -58,13 +58,13 @@ Register form for mobile version
                             </optgroup>
                         </select>
                     </div>
-                    <div id="remind">Choose your country</div>
-                    <input type="submit" name="signUP" id="create" value="JOIN">
-                    <input type="button" value="Back">
-                    <input type="reset" value="Reset">
+                    <div id="noCountry">Choose your country</div>
+                    <button type="submit" name="signUP" id="createBtn">join</button>
+                    <button type="reset" class="Btn" id="BtnEnter">reset</button>
+                    <a href="../index.html" target="_self" class="Btn">back</a>
                 </fieldset>
                 </form>
-                  </div> <!-- final form register-->
+                </div> <!-- final form register--> 
      <div class="footer-m">
             <span>2018, ShareRainbow. All rights reserved</span>
            </div>
