@@ -158,18 +158,27 @@ body .container-mobile {
   body .actions {
     width: 94%;
   }
+  
+   /*about.html*/
+ body .container-about .right, body .container-about .left, body .container-about q  {
+    display:none;
+  }
+   body .container-about iframe {
+      margin-top: 0;
+      height: 100%;
+  }
+
 
 /*footer
 for 768 px, 480 px
 */
-.footer-m {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    font-size: small;
-    padding: 1em 1em 0 1em;
-    align-self: center;
+body .footer {
+    position: fixed;
+    bottom: 0;
+}
+body .footer-m {
+    right: 0;
+    background: none;
 }
 .up {
     display: none;
@@ -195,27 +204,29 @@ for 768 px, 480 px
     display: none;
   }
 
-
-
-
-
+.btn-comment {
+font-size: 59%;
 }
 
-@media screen and (max-width: 320px) {
-  
-/*index.html*/
-body #mob-text {
-    display: block;
-    font-size: small;
-    line-height: 1.8;
-    text-align: justify;
-    padding: 0.5em;
-}    
+fieldset {
+    padding-bottom: 0;
+}
 
- 
-/*footer
-for 320px
-*/
+.actions #comments  > div{
+  font-size: 0.7em;
+}
+
+  /*about.html*/
+  body .container-about .center {
+      margin: 0.3em 0 0.3em 0;
+      padding: 1.2em;
+  }
+   body .container-about p{
+      font-size: small;
+      margin: 0.2em;
+  }
+
+/*footer*/
 body .footer {
     display: none;
 }
@@ -231,6 +242,23 @@ body .footer-m {
 .footer-m img {
     position: relative;
     z-index: -1;
+}
+
+
+}
+
+@media screen and (max-width: 320px) {
+  
+/*index.html*/
+body #mob-text {
+    display: block;
+    font-size: small;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0.5em;
+}    
+body .footer-m {
+    background: rgba(30, 144, 255, 0.3);
 }
 
 }
