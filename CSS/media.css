@@ -149,6 +149,15 @@ body .container-mobile {
 .col-last-container-mobile{
    padding-left: 0.3em;
 }
+  
+ /*rating.html*/
+ body .container-rating .right {
+    display:none;
+  } 
+  
+  body .actions {
+    width: 94%;
+  }
 
 /*footer
 for 768 px, 480 px
@@ -168,7 +177,23 @@ for 768 px, 480 px
 }
 
 @media screen and (max-width: 480px){
-
+ /*rating.html*/
+ body .container-rating .left, body .container-rating .right {
+    display:none;
+  } 
+ 
+ body .container-rating .center {
+    flex: 1;
+    margin: 1em 0 1em 1em;
+}
+  
+  body .actions {
+    width: 90%;
+  }
+  
+  #print {
+    display: none;
+  }
 
 
 
@@ -186,7 +211,8 @@ body #mob-text {
     text-align: justify;
     padding: 0.5em;
 }    
-    
+
+ 
 /*footer
 for 320px
 */
@@ -208,4 +234,3 @@ body .footer-m {
 }
 
 }
-
