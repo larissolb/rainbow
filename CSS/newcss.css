@@ -376,6 +376,128 @@ h4 {
     border-radius: 30px;
 }
 
+/*rating.html*/
+.container-rating {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;    
+}
+
+.container-rating .left {
+    flex: 1;
+    margin: 1em 1em 1em 0;
+}
+
+.left img {
+    border: none;
+    border-radius: 5px;    
+}
+
+.right img {
+    border: outset violet 4px;
+    border-radius: 0;  
+    float: right;
+    margin-bottom: 0.3em;
+}
+
+.container-rating .center {
+    flex: 4;
+    margin: 1em 0 1em 1em;
+}
+
+.container-rating .right {
+    flex: 1;
+    margin: 1em 0 1em 1em;
+}
+/*for sliders*/
+.actions {
+    display: flex;
+    align-self: center;
+    background: #F0FFF0;
+}
+
+.slider {
+     box-shadow: 0 0 0 1px silver,
+    0 -20px 0 -10px coral,
+    20px 0 0 -10px chartreuse, 
+    0 20px 0 -10px gold, 
+    -20px 0 0 -10px darkturquoise;
+    margin: 1em 2em 1em 1em;
+/*     width: 97%;
+    height: 50%; */
+}
+
+.slider img {
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+}
+
+#print {
+    padding: 1em 0 1em 0;
+    opacity: 0.8;
+    margin-right: 11px;
+}
+
+#like {
+    opacity: 0.8;
+    padding: 1em 0 1em 0.5em;
+}
+
+#like:hover, #print:hover {
+        opacity: 1;
+        cursor: pointer;
+}
+.like {
+    color: lightseagreen;
+    font-weight:bolder;
+ }
+.comments {
+    width: 100%;
+    padding-top: 0.5em;
+ }
+ 
+textarea {
+  resize: none;
+  width: 100%;
+  background: #0088cc; 
+  box-shadow: 0 0 4em 4em floralwhite inset;
+  margin-bottom: 0.5em;
+}
+
+.btn-comment {
+  background: lavender;
+  font-weight: 500; 
+  font-family: "FunSized";
+  letter-spacing: 5px;
+  color: #0088cc;
+  text-transform: uppercase;
+  padding: 0.5em;
+}
+.btn-comment:hover {
+  background: lightblue;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  resize: none;
+}
+
+#comments  > div{
+  border-bottom: 0.5px dotted grey;
+  padding: 0.5em;
+  font-size: 1.1em;
+  font-weight: 300;
+  color: darkcyan;
+}
+
+
 /*footer*/
 .footer {
     display: flex;
