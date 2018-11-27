@@ -6,24 +6,23 @@
     <head>
         <title>Rainbow - let's this world colour!</title>
         <meta charset="UTF-8">
-        <meta charset="UTF-8">
         <meta name="description" content="Сообщество любителей раскраски и делать этот мир ярким">
         <meta name="keywords" content="раскраски, хобби, творчество, сообщество, общение, радужные события">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
-        <link rel="stylesheet" href="../CSS/style.css">
-        <link rel="stylesheet" href="../CSS/normalize.css">
-        <link rel="stylesheet" href="../CSS/media.css">
+        <link rel="shortcut icon" type="image/x-icon" href="../img/icon.jpg">
+       <link rel="stylesheet" href="../CSS/style.css">
+<!--         <link rel="stylesheet" href="../CSS/newcss.css"> -->
     </head>
     <body>
         <div id="header" class="header"> <!--header-->
             <h1 id='txt'>Welcome to Rainbow world</h1>
         </div> <!-- final header-->
-        <div class="menu"> <!--menu -->
-            <nav class="menu-main">
+    <div class="top">  <!-- top -->
+        <nav class="menu"> <!-- menu -->
                 <ul>
-                    <li><a href="../index.html">Go home</a></li>
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">Why I am here?</a></li>
+                    <li><a href="share.html">Share art &#10000;</a></li>
                     <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
                     <li><a href="rating.html">Watch&Rate</a>
                     <ul>
@@ -33,91 +32,71 @@
                     </ul></li>
                     <li><a href="#footer">Join us</a></li>
                 </ul>       
-            </nav>
-        </div> <!-- final menu -->
- <div class="mmenu">
-      <nav class="top">  <!--menu for mobile version-->
-        <ul>
-            <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
-                <ul>
-                    <li><a href="../index.html">Go home</a></li>
-                    <li><a href="rating.html">Watch&Rate</a></li>
-                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
-                    <li><a href="#footer">Join us</a></li>
-                </ul>
-             </li>      
-        </ul>        
+        </nav> <!-- final menu -->
+        <nav class="mobile-menu"> <!-- mobile menu -->
+            <ul>
+                <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">Why I am here?</a></li>
+                        <li><a href="share.html">Share art &#10000;</a></li>
+                        <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
+                        <li><a href="#footer">Join us</a></li>
+                    </ul>
+                </li>      
+            </ul>        
         </nav> <!-- final mobile menu -->
-        <div class="btn-sign-mob"><a href="#login-mob" target="_self">Sign in</a></div>
- <form action="index.html" method="post" name="login-mob">
-                    <fieldset id="login-mob" class="open-window-m">
-                    <div><input id="emailM" type="email" placeholder="Your Email" required></div>
-                    <div><input id="pswM" type="password" placeholder="Your Password" required></div>           
-                    <button type="submit" name="signIN"><span>sign in</span></button>
-                    <a href="#"><button type="button"><span>not now</span></button></a>
-                    <div class="forg-reg"> <!--links inside form sign in-->
-                       <a href="forgot-m.html" target="_blank">Forgot?</a>
-                        <a href="register-m.html" target="_blank">Register</a>
-                      </div> <!--final links inside form sign in-->
-                    </fieldset>
-                </form>
-        </div> <!--final mob top -->
-    <div class="container"> <!--главная рамка-->
-            <div class="share-ls"> <!--position column left main-->
-            <div class="signin"> <!-- window sign in -->
-                <a href="#authorization" class="a">Sign in</a>
-                <div id="authorization" class="open-window"> <!-- authorization form -->
-                <form action="index.html" method="post" name="authorization">
-                    <fieldset id="signin" class="field-signin">
-                    <div><input id="email1" type="email" placeholder="Your Email" required></div>
-                    <div><input id="psw1" type="password" placeholder="Your Password" required></div>           
-                    <button type="submit" name="signIN" class="close" id='inBtn'>
-                        <span class="letter-orange">S</span>
-                        <span class="letter-yellow">I</span>
-                        <span class="letter-green">G</span>
-                        <span class="letter-blue">N&nbsp;&nbsp;</span>
-                        <span class="letter-darkblue">I</span>
-                        <span class="letter-violet">N</span>
-                    </button>
-                    <a href="#"><button type="button" class="button-later"><span>later</span></button></a>
-                     <div class="rate-a-small"> <!--links inside form sign in-->
+        <div class="authorization"><a href="#authorization">Sign in</a> <!-- authorization -->
+            <form action="index.html" method="post" name="authorization">
+                <fieldset id="authorization" class="open-window">
+                    <div><input id="email" type="email" placeholder="Your Email" required></div>
+                    <div><input id="psw" type="password" placeholder="Your Password" required></div>           
+                    <button type="submit" name="signIN"  id='BtnEnter'>enter</button>
+                    <a href="#" id="aBtnlater"><input type="button" value="later" class="Btn"></a>
+                    <div class="links-authorization"> <!-- links inside form authorization-->
                         <a href="#forgot">Forgot?</a>
                         <a href="#register">Register</a>
-                    </div> <!--final links inside form sign in-->
-                    </fieldset>
-                </form>
-            </div> <!-- final authorization form-->
-            <a href="#" class="recovery" id="forgot"></a> <!-- form recovery psw-->
-                <div class="recovery-window">
-                <form action="../index.html" method="post" name="recovery">
+                    </div> <!-- final links inside authorization-->
+                    <div class="mobile-links-authorization"> <!-- links inside form  mobile authorization-->
+                       <a href="forgot-m.html" target="_self">Forgot?</a>
+                       <a href="register-m.html" target="_self">Register</a>
+                    </div> <!-- final links inside mobile authorization-->
+                </fieldset>
+            </form>
+            </div> <!-- final authorization-->
+        <a href="#" class="recovery" id="forgot"></a> <!--recovery psw -->
+        <div class="recovery-window">
+            <form action="../index.html" method="post" name="recovery">
                 <fieldset id="recovery">
                     <legend><h4>Recovery your password</h4></legend>
                     <div>
-                        <label for="email">Please input your email:</label>
+                        <label for="emailRec">Please input your email:</label>
                         <input id="emailRec" type="email" placeholder="Your Email" required> 
                     </div>
-                    <button type="submit" name="Recovery" class="letter-darkblue">Send new password</button>
-                </fieldset>
+                    <button type="submit" name="Recovery" class="Btn">Send new password</button>
+                    <a href="#register">Register</a>
+                </fieldset>  
                 </form>
                 <a  href="#close" class="close-button" title="Close"></a>
-            </div> <!-- final form recovery psw-->
+        </div><!--final recovery psw -->
             <a href="#" class="register" id="register"></a> <!-- form register-->
             <div class="register-window">
-                <form action="../index.html" method="post" name="register">
-                <fieldset class="field">
-                    <h4>Creat an account</h4>
+                <form action="../index.html" method="post" name="create">
+                <fieldset id="create">
+                    <legend><h4>Creat an account</h4></legend>
                     <div>
-                        <label for="name">Your name</label> 
-                        <input id="name" type="text" placeholder="Your name" required>
+                        <label for="loginReg">Your name</label> 
+                        <input id="loginReg" type="text" placeholder="Your name" required>
                     </div>
-                     <div id="yes">It is occupied!</div>
+                     <div id="busyLogin">It is occupied!</div>
                     <div>
-                        <label for="email">Your email</label> 
-                        <input id="email" type="email" placeholder="Your email" required>
+                        <label for="emailReg">Your email</label> 
+                        <input id="emailReg" type="email" placeholder="Your email" required>
                     </div>
+                      <div id="busyEmail">It is occupied!</div>
                     <div>
-                        <label for="psw">Your password</label> 
-                        <input id="psw" type="password" placeholder="Your password" required>
+                        <label for="pswReg">Your password</label> 
+                        <input id="pswReg" type="password" placeholder="Your password" required>
                     </div>
                     <div id="info">Password must content min 5 characters, 1 upper letter and 1 number</div>
                     <div><label for="country">Your country</label>
@@ -140,32 +119,32 @@
                             </optgroup>
                         </select>
                     </div>
-                    <div id="remind">Choose your country</div>
-                    <button type="submit" name="signUP" class="close" id="create">
-                            <span class="letter-red">C</span> 
-                            <span class="letter-orange">R</span>
-                            <span class="letter-yellow">E</span>
-                            <span class="letter-green">A</span>
-                            <span class="letter-blue">T</span>
-                            <span class="letter-darkblue">E</span>
-                    </button>
-                    <button type="reset" class="close">Reset</button>
+                    <div id="noCountry">Choose your country</div>
+                    <button type="submit" name="signUP" id="createBtn">join</button>
+                    <button type="reset" class="Btn">Reset</button>
                 </fieldset>
                 </form>
-                 <a  href="#close" class="close-button" title="Close"></a>
-                </div> <!-- final form register-->
-                </div> <!-- final window sign in -->
-                <img src="../img/advert.jpg" alt="advertising">
+                 <a  href="#close" class="close-button" title="Закрыть"></a>
+                </div> <!-- final form register-->        
+</div> <!-- final top -->
+    
+      <div class="container-share"> <!--главная рамка-->
+            <div class="left"> <!--position column left main-->
+                <h2>Last updates</h2>
+                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/girl.jpg" alt="Picture must be here">
+               <div><p>Finally, rainbow people, we have the place where we can share our results from our paintbooks!</p></div>
+              <img src="https://raw.githubusercontent.com/larissolb/study/master/img/colourbook.jpg" alt="Picture must be here">
+              <div><p><a href='#authorization'>Join us!</a>  Share your pics all the world ;-)</p></div>
                 </div> <!--end share left side -->
 <!--form for upload - center 70% -->
-            <div class="share-center">
+            <div class="center">
                 <form action="#" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">
                     <fieldset class="field"> 
                         <div class="item">
-                        <label for="nameBook">Name of coloring-book's</label>
-                        <input id="nameBook" type="text" autofocus>
+                        <label for="name">Name of coloring-book's</label>
+                        <input id="name" type="text" autofocus>
                         </div>
-                    <div class="item">
+                    <div class="item" id="theme">
                         <label for="theme">What theme?</label>
                         <label><input type="radio" name='theme' value='Nature' checked='checked'>Nature</label>
                         <label><input type="radio" name='theme' value='Space' >Space</label>
@@ -174,6 +153,17 @@
                         <label><input type="radio" name='theme' value='Cities'>Cities</label>
                         <label><input type="radio" name='theme' value='Other'>Other</label>
                     </div> 
+                    <div class="item-mobile">
+                        <label for="themeM">What theme?</label>
+                        <select id="themeM" required> 
+                            <option value="Nature"> Nature</option> 
+                            <option selected value="Space">Space</option> 
+                            <option value="Animals">Animals</option> 
+                            <option value="Cars">Cars</option>
+                            <option value="Cities">Cities</option>
+                            <option value="Other">Other</option>
+                        </select> 
+                    </div>
                     <div class="item">
                         <label for="type">What instruments did you use?</label>
                         <select id="type" required> 
@@ -199,85 +189,44 @@
                     </div>
                     </fieldset>
                     <fieldset class="button-shareit">
-                        <input type="submit" value="Share" id="shareBtn">
-                        <input type="reset" value="Reset">
-                    </fieldset>  
-                    </fieldset>  
-                </form>
-           </div>
-<div class="share-center-mobile">
-                <form action="#" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">
-                    <fieldset class="field-m"> 
-                        <div class="item-m1">
-                        <label for="name">Name of coloring-book's</label>
-                        <input id="name" type="text" autofocus>
-                        </div>
-                    <div class="item-m2">
-                        <label for="theme">What theme?</label>
-                        <select id="theme" required>
-                        <option value="Nature">Nature</option>
-                        <option value="Space">Space</option>
-                        <option value="Animals">Animals</option>
-                        <option value="Cars">Cars</option>
-                        <option value="Cities">Cities</option>
-                        <option value="Other">Other</option>
-                        </select>
-                    </div> 
-                    <div class="item-m3">
-                        <label for="type">What instruments did you use?</label>
-                        <select id="type" required> 
-                            <option value="pen"> colour pens</option> 
-                            <option selected value="pencil">colour pencils</option> 
-                            <option value="gouache">gouache</option> 
-                            <option value="watercolour">watercolour</option>
-                            <option value="markers">markers</option>
-                        </select> 
-                    </div>
-                    <div class="item-m4">
-                        <label for="amount">How many colours did you use?</label> 
-                       <input id="amount" type="number" min="1" step="1">
-                    </div>
-                    <div class="item-m5">
-                        <label for="describe">&#9999; Describe it</label>
-                        <textarea id="describe" placeholder="I choosed this pic because..." cols="70" rows="3" maxlength="100"></textarea>
-                    </div>  
-                    <div class="item-m6">
-                        <label for="pics">Upload your best picture</label>
-                        <input id="pics" type="file" multiple accept="image/*">
-                    </div>
                         <input type="submit" value="Share">
                         <input type="reset" value="Reset">
                     </fieldset>  
+                    </fieldset>  
                 </form>
-           </div>
-            <div class="share-rs"> <!-- begin share right side -->
-                <h2>Last updates</h2>
-                <img src="../img/share.jpeg" alt="Picture must be here">
-               <div><span>Finally, rainbow people, we have the place where we can share our results from our paintbooks!</span></div>
+              <div><img src='https://lh5.googleusercontent.com/-ppVpOWkjNt8/Uv6Bw_g9ZUI/AAAAAAAACMc/Dfsuei4XUkA/w1200-h200-no/Thank+You.png' alt='horizontal adv'></div>
+           </div>    
+            <div class="right"> <!-- begin share right side -->
+               <img src="http://www.shipbuildingandrepair.com/ad.png" alt="advertising">
             </div><!-- begin share right side -->
        </div> <!--конец главной рамки-->
-        <div id="footer" class="footer container">
+      
+    <div> <!-- footer -->
+        <div id='footer' class="footer">
             <div class="socnet">
                 <a href="https://www.whatsapp.com" target="_blank">
-                <img src="../img/icon/whatsup.png" alt="Whats'up"></a>
+                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/whatsup.png" alt="Whats'up"></a>
                 <a href="https://www.viber.com/download" target="_blank">
-                <img src="../img/icon/viber.png" alt="Viber"></a>
+                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/viber.png" alt="Viber"></a>
                 <a href="https://www.instagram.com/ShareRainbow" target="_blank">
-                <img src="../img/icon/instagram.png" alt="Instagram"></a>
+                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/instagram.png" alt="Instagram"></a>
                 <a href="https://www.vk.com" target="_blank">
-                <img src="../img/icon/vk.png" alt="Vkontakte"></a>
+                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/vk.png" alt="Vkontakte"></a>
             </div>
-            <div class="donate">
+            <div>
                 <a href="#" target="_blank">  
-                <img src="../img/icon/donate2.png" alt="Donate"></a> 
+                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/donate2.png" alt="Donate"></a> 
             </div>
         </div>
-        <div class="footer">
+        <div class="footer footer-m">
             <span>2018, ShareRainbow. All rights reserved</span>
             <div class="up"><a href="#header"><img src="../img/icon/up.png" alt="Up"></a></div>
         </div>
-         <script src="../js/header.js"></script>
-         <script src="../js/collection.js"></script>
-         <script src="../js/users.js"></script>
+    </div>     <!-- finish footer -->          
+                
+<!--      скрипты          -->
+       <script src="../js/header.js"></script>
+       <script src="../js/users.js"></script>
+       <script src="../js/collections.js"></script>
     </body>
 </html>
