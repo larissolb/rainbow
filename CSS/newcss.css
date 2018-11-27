@@ -7,7 +7,7 @@
 
 
 body {
-    background: url(../img/bfon.png);
+    background: url(https://raw.githubusercontent.com/larissolb/study/master/img/bfon.png);
     background-color: rgba(248, 248, 255, 0.2);
 }
 
@@ -19,7 +19,7 @@ img {
 
 /*header */
 #header {
-    background: url(../img/main.jpg);
+    background: url(https://raw.githubusercontent.com/larissolb/study/master/img/main.jpg);
     display: flex;
     flex:1;
     -webkit-flex: 1;
@@ -32,7 +32,7 @@ img {
 }
 
 #header:hover {
-    background-image: url(../img/main-hover.jpg);
+    background-image: url(https://raw.githubusercontent.com/larissolb/study/master/img/main-hover.jpg);
 }
 
 h1 {
@@ -135,9 +135,12 @@ h1 {
 .open-window:target {
     display: block;
     position: fixed;
-    right: -1%;
+    right: 0.3%;
     background:  #AAF0D1;
     z-index: 1;
+}
+#email, #psw {
+  width: 97%;
 }
 
 /*recovery psw*/
@@ -392,12 +395,12 @@ h4 {
     margin: 1em 0 1em 0;
 }
 
-.left img {
+.container-rating .left img {
     border: none;
     border-radius: 5px;    
 }
 
-.right img {
+.container-rating  .right img {
     border: outset violet 4px;
     border-radius: 0;  
     float: right;
@@ -406,20 +409,19 @@ h4 {
 
 .container-rating .center {
     flex: 4;
-    margin: 1em 0 1em 2em;
+    margin: 1em 0 0 2em;
 }
 
 .container-rating .right {
     flex: 1;
-    margin: 1em 0 1em 1em;
+    margin: 1em 0 1em 0;
 }
 
-.container-rating .right a {
+.container-rating .right a > img {
         opacity: 0.5;
-        z-index: -1;
 }
 
-.container-rating .right a:hover {
+.container-rating .right a > img:hover {
     opacity: 1;
 }
 
@@ -438,7 +440,8 @@ h4 {
     20px 0 0 -10px chartreuse, 
     0 20px 0 -10px gold, 
     -20px 0 0 -10px darkturquoise;
-    margin: 1em 2em 1em 1em;
+    margin: 1em 0 1em 1em;
+    background: white;
 }
 
 .slider img {
@@ -447,6 +450,7 @@ h4 {
 
 .slider img.active {
     display: block;
+    text-align: center;
 }
 
 #print {
@@ -606,6 +610,101 @@ iframe {
     color: violet;
     font-weight: bold;
     font-style: italic;
+}
+
+/*share.html*/
+.container-share {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;    
+}
+
+.container-share .center .item-mobile {
+  display:none;
+}
+
+.container-share .left {
+    flex: 1;
+    margin: 0 0 1em 0;
+}
+
+.container-share .left p{
+  font-family: fantasy;
+  color: green;
+  text-align: justify;
+}
+
+.container-share .left a{
+  text-decoration: none;
+  color: green;
+}
+.container-share .left a:hover{
+  color: darkblue;
+}
+
+.container-share .center {
+    flex: 4;
+    margin: 0.5em 2em 1em 1em;
+}
+
+/*form*/
+.container-share .center ::-webkit-input-placeholder {
+    color:#333333;
+}
+.container-share .center ::-moz-placeholder {
+    color:#333333;
+  }
+
+.container-share .center input[type="radio"] {
+    font-style: italic;
+}
+.container-share .center #share {
+    font-family: fantasy;
+    color: midnightblue;
+}
+.container-share .center  .item {
+    margin-bottom: 1em; 
+}
+.container-share .center .button-shareit {
+    display: flex;
+    border: hidden;
+    margin: 1em 0 1em 0;
+    width:100%;
+    flex-direction: row;
+    justify-content:  space-around;
+}
+
+.container-share .center .field {
+    display: flex;
+    background:  #e6e6ff;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 1em 0 0 0.5em;
+    font-size: 1em;
+    color: midnightblue;
+    border: 10px outset #eee6ff;
+    flex-direction: column;
+}
+
+.container-share .center textarea, .container-share .center input {
+  background: #e6fff7;
+}
+
+.container-share .center img {
+  margin: 1em;
+}
+
+
+.container-share .right {
+    flex: 1;
+    margin: 1em 0 1em 0;
+}
+
+.container-share .right img, .container-share .left img  {
+border: none;
 }
 
 /*footer*/
