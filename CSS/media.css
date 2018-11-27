@@ -163,12 +163,20 @@ body .container-mobile {
  body .container-about .right, body .container-about .left, body .container-about q  {
     display:none;
   }
-   body .container-about iframe {
+ body .container-about iframe {
       margin-top: 0;
       height: 100%;
   }
 
-
+/*share.html*/
+ .container-share .left, .container-share .right,  .container-share .center #theme{
+    display:none;
+  }
+  
+body .container-share .center .item-mobile {
+  display:block;
+  margin-bottom: 1em;
+}
 /*footer
 for 768 px, 480 px
 */
