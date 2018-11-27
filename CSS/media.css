@@ -169,7 +169,7 @@ body .container-mobile {
   }
 
 /*share.html*/
- .container-share .left, .container-share .right,  .container-share .center #theme{
+ .container-share .left, .container-share .right,  .container-share .center #theme, .container-share .center img{
     display:none;
   }
   
@@ -267,6 +267,15 @@ body #mob-text {
 }    
 body .footer-m {
     background: rgba(30, 144, 255, 0.3);
+}
+
+/*share.html*/
+body .container-share .center .field {
+    border: none;
+    font-size: small;
+}
+body .container-share .center textarea {
+   font-size: small;
 }
 
 }

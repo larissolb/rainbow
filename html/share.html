@@ -11,10 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="../img/icon.jpg">
        <link rel="stylesheet" href="../CSS/style.css">
-<!--         <link rel="stylesheet" href="../CSS/newcss.css"> -->
     </head>
     <body>
-        <div id="header" class="header"> <!--header-->
+        <div id="header"> <!--header-->
             <h1 id='txt'>Welcome to Rainbow world</h1>
         </div> <!-- final header-->
     <div class="top">  <!-- top -->
@@ -39,7 +38,7 @@
                     <ul>
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="about.html">Why I am here?</a></li>
-                        <li><a href="share.html">Share art &#10000;</a></li>
+                        <li><a href="rating.html">Watch&Rate</a></li>
                         <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
                         <li><a href="#footer">Join us</a></li>
                     </ul>
@@ -131,9 +130,9 @@
       <div class="container-share"> <!--главная рамка-->
             <div class="left"> <!--position column left main-->
                 <h2>Last updates</h2>
-                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/girl.jpg" alt="Picture must be here">
+                <img src="../img/girl.jpg" alt="Picture must be here">
                <div><p>Finally, rainbow people, we have the place where we can share our results from our paintbooks!</p></div>
-              <img src="https://raw.githubusercontent.com/larissolb/study/master/img/colourbook.jpg" alt="Picture must be here">
+              <img src="../img/colourbook.jpg" alt="Picture must be here">
               <div><p><a href='#authorization'>Join us!</a>  Share your pics all the world ;-)</p></div>
                 </div> <!--end share left side -->
 <!--form for upload - center 70% -->
@@ -141,17 +140,17 @@
                 <form action="#" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">
                     <fieldset class="field"> 
                         <div class="item">
-                        <label for="name">Name of coloring-book's</label>
-                        <input id="name" type="text" autofocus>
+                        <label for="nameBook">Name of coloring-book's</label>
+                        <input id="nameBook" type="text" autofocus>
                         </div>
                     <div class="item" id="theme">
                         <label for="theme">What theme?</label>
-                        <label><input type="radio" name='theme' value='Nature' checked='checked'>Nature</label>
+                        <label><input type="radio" name='theme' value='Nature'>Nature</label>
                         <label><input type="radio" name='theme' value='Space' >Space</label>
                         <label><input type="radio" name='theme' value='Animals'>Animals</label>
                         <label><input type="radio" name='theme' value='Cars'>Cars</label>
                         <label><input type="radio" name='theme' value='Cities'>Cities</label>
-                        <label><input type="radio" name='theme' value='Other'>Other</label>
+                        <label><input type="radio" name='theme' value='Other' checked>Other</label>
                     </div> 
                     <div class="item-mobile">
                         <label for="themeM">What theme?</label>
@@ -189,15 +188,15 @@
                     </div>
                     </fieldset>
                     <fieldset class="button-shareit">
-                        <input type="submit" value="Share">
-                        <input type="reset" value="Reset">
+                        <input type="submit" value="Share" id='shareBtn' class="Btn">
+                        <input type="reset" value="Reset" class="Btn">
                     </fieldset>  
                     </fieldset>  
                 </form>
-              <div><img src='https://lh5.googleusercontent.com/-ppVpOWkjNt8/Uv6Bw_g9ZUI/AAAAAAAACMc/Dfsuei4XUkA/w1200-h200-no/Thank+You.png' alt='horizontal adv'></div>
+                <div><img src="../img/horizont_adv.png" alt='horizontal adv'></div>
            </div>    
             <div class="right"> <!-- begin share right side -->
-               <img src="http://www.shipbuildingandrepair.com/ad.png" alt="advertising">
+                <img src="../img/ad.png" alt="advertising">
             </div><!-- begin share right side -->
        </div> <!--конец главной рамки-->
       
@@ -205,17 +204,17 @@
         <div id='footer' class="footer">
             <div class="socnet">
                 <a href="https://www.whatsapp.com" target="_blank">
-                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/whatsup.png" alt="Whats'up"></a>
+                <img src="../img/icon/whatsup.png" alt="Whats'up"></a>
                 <a href="https://www.viber.com/download" target="_blank">
-                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/viber.png" alt="Viber"></a>
+                <img src="../img/icon/viber.png" alt="Viber"></a>
                 <a href="https://www.instagram.com/ShareRainbow" target="_blank">
-                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/instagram.png" alt="Instagram"></a>
+                <img src="../img/icon/instagram.png" alt="Instagram"></a>
                 <a href="https://www.vk.com" target="_blank">
-                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/vk.png" alt="Vkontakte"></a>
+                <img src="../img/icon/vk.png" alt="Vkontakte"></a>
             </div>
             <div>
                 <a href="#" target="_blank">  
-                <img src="https://raw.githubusercontent.com/larissolb/study/master/img/icon/donate2.png" alt="Donate"></a> 
+                <img src="../img/icon/donate2.png" alt="Donate"></a> 
             </div>
         </div>
         <div class="footer footer-m">
@@ -227,6 +226,6 @@
 <!--      скрипты          -->
        <script src="../js/header.js"></script>
        <script src="../js/users.js"></script>
-       <script src="../js/collections.js"></script>
+       <script src="../js/collection.js"></script>
     </body>
 </html>
