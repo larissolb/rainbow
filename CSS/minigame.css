@@ -1,0 +1,599 @@
+div.wrapper {
+  left: 20%;
+  top: 45%;
+}
+div.wrapper .seal {
+  animation-delay: 0.4s;
+}
+div.wrapper .eye,
+div.wrapper .eye__inner-left,
+div.wrapper .eye__inner-right {
+  animation-delay: 1s;
+}
+
+div.wrapper2 {
+  left: 20%;
+  top: 72%;
+  z-index: 100;
+}
+div.wrapper2 .seal {
+  animation-delay: 0.5s;
+}
+div.wrapper2 .eye,
+div.wrapper2 .eye__inner-left,
+div.wrapper2 .eye__inner-right {
+  animation-delay: 2s;
+}
+
+div.wrapper3 {
+  left: 71%;
+  top: 30%;
+  z-index: 10;
+}
+div.wrapper3 .seal {
+  animation-delay: 1s;
+}
+div.wrapper3 .eye,
+div.wrapper3 .eye__inner-left,
+div.wrapper3 .eye__inner-right {
+  animation-delay: 1.8s;
+}
+
+div.wrapper4 {
+  left: 50%;
+  top: 60%;
+}
+div.wrapper4 .seal {
+  animation-delay: 1.2s;
+}
+div.wrapper4 .eye,
+div.wrapper4 .eye__inner-left,
+div.wrapper4 .eye__inner-right {
+  animation-delay: 2s;
+}
+
+div.wrapper5 {
+  left: 5%;
+  top: 30%;
+  z-index: 99999;
+}
+div.wrapper5 .seal {
+  animation-delay: 0.7s;
+}
+div.wrapper5 .eye,
+div.wrapper5 .eye__inner-left,
+div.wrapper5 .eye__inner-right {
+  animation-delay: 2.5s;
+}
+
+div.wrapper6 {
+  left: 83%;
+  top: 70%;
+  z-index: 101;
+}
+div.wrapper6 .seal {
+  animation-delay: 0.2s;
+}
+div.wrapper6 .eye,
+div.wrapper6 .eye__inner-left,
+div.wrapper6 .eye__inner-right {
+  animation-delay: 1.7s;
+}
+
+div.wrapper,
+div.wrapper4 {
+  width: 300px;
+  height: 300px;
+/*  position: absolute;*/
+  margin: auto;
+  overflow: hidden;
+  z-index: 1000000;
+}
+.wrapper:hover .seal,
+.wrapper2:hover .seal,
+.wrapper3:hover .seal,
+.wrapper4:hover .seal,
+.wrapper5:hover .seal,
+.wrapper6:hover .seal {
+  transition: top 1s;
+  top: 100%;
+  animation-name: jumpin;
+  animation-fill-mode: backwards;
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+.wrapper .eye,
+.wrapper2 .eye,
+.wrapper3 .eye,
+.wrapper4 .eye,
+.wrapper5 .eye,
+.wrapper6 .eye {
+  animation: twinkle  5s infinite ease-in-out;
+}
+.wrapper .eye__inner-left,
+.wrapper .eye__inner-right,
+.wrapper2 .eye__inner-left,
+.wrapper2 .eye__inner-right,
+.wrapper3 .eye__inner-left,
+.wrapper3 .eye__inner-right,
+.wrapper4 .eye__inner-left,
+.wrapper4 .eye__inner-right,
+.wrapper5 .eye__inner-left,
+.wrapper5 .eye__inner-right,
+.wrapper6 .eye__inner-left,
+.wrapper6 .eye__inner-right {
+  animation: twinkle-inner  5s infinite ease-in-out;
+}
+
+.seal {
+  transition: top 1s;
+  animation-name: jumpout;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  position: relative;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  top: 50px;
+}
+
+.eye {
+  background-color: #000;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 9999;
+}
+
+.eye__left {
+  top: 25%;
+  left: 51%;
+}
+.eye__left .eye__inner-left {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: 0%;
+  bottom: 0%;
+  left: -9px;
+  transform-origin: 20% 100%;
+  transform: rotate(25deg) skewX(-5deg);
+  background-color: transparent;
+}
+.eye__left .eye__inner-left:before {
+  display: block;
+  border: solid 3px white;
+  width: 300%;
+  height: 300%;
+  border-radius: 50%;
+  transform: skewX(33deg);
+  content: '';
+}
+
+.eye__right {
+  top: 25%;
+  right: 51%;
+}
+.eye__right .eye__inner-right {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: 0%;
+  bottom: 0%;
+  left: -9px;
+  transform-origin: 20% 100%;
+  transform: rotate(25deg) skewX(-5deg);
+  background-color: transparent;
+}
+.eye__right .eye__inner-right:before {
+  display: block;
+  border: solid 3px white;
+  width: 300%;
+  height: 300%;
+  border-radius: 50%;
+  transform: skewX(33deg);
+  content: '';
+}
+
+.head {
+  background-color: #c0c0c0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.snout {
+  background-color: #d5d5d5;
+  width: 40%;
+  height: 25%;
+  border-radius: 45%;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+}
+.snout:before {
+  background-color: transparent;
+  width: 85%;
+  height: 110%;
+  border: 8px solid #c0c0c0;
+  border-radius: 45%;
+  position: absolute;
+  top: -25%;
+  left: -2.5%;
+  z-index: 1000;
+  content: ' ';
+}
+
+.nose {
+  background-color: #000;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  position: absolute;
+  left: 37.5%;
+}
+
+.nose__line {
+  height: 100%;
+  width: 4%;
+  background-color: black;
+  margin: auto;
+}
+
+.nose__hears--left,
+.nose__hears--left:before,
+.nose__hears--left:after,
+.nose__hears--right,
+.nose__hears--right:before,
+.nose__hears--right:after {
+  width: 20px;
+  height: 20px;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-radius: 20px 0 20px 0;
+  position: absolute;
+  z-index: 10000;
+}
+
+.nose__hears--left {
+  top: 5%;
+  left: 75%;
+  transform: rotate(35deg);
+}
+.nose__hears--left:before {
+  left: 25%;
+  top: 37%;
+  content: ' ';
+  transform: rotate(15deg);
+}
+.nose__hears--left:after {
+  left: 45%;
+  top: 65%;
+  content: ' ';
+  transform: rotate(15deg);
+}
+
+.nose__hears--right {
+  top: 53%;
+  right: 75%;
+  transform: rotate(-140deg);
+}
+.nose__hears--right:before {
+  left: 25%;
+  top: 37%;
+  content: ' ';
+  transform: rotate(0deg);
+}
+.nose__hears--right:after {
+  left: 45%;
+  top: 65%;
+  content: ' ';
+  transform: rotate(0deg);
+}
+
+.mouth {
+  background-color: #000;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  position: absolute;
+  left: 38%;
+  top: 90%;
+}
+
+.body {
+  background-color: #c0c0c0;
+  width: 140%;
+  height: 170%;
+  border-radius: 50%;
+  position: absolute;
+  left: -19%;
+  top: 50%;
+  z-index: -1;
+}
+.body::after {
+  background-color: #c0c0c0;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  content: ' ';
+  top: 50%;
+}
+
+.body__womb {
+  background-color: #d5d5d5;
+  width: 115%;
+  height: 120%;
+  border-radius: 47%;
+  position: absolute;
+  left: -7%;
+  top: 90%;
+  z-index: 1;
+}
+.body__womb::after {
+  background-color: #d5d5d5;
+  width: 100%;
+  height: 50%;
+  z-index: 10;
+  position: absolute;
+  content: ' ';
+  top: 50%;
+}
+
+.ice {
+  position: relative;
+  top: 20%;
+}
+
+.ice__mask {
+  fill: #fff;
+  z-index: 10000;
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 81%;
+}
+
+.ice__circle {
+  background-color: #dceeee;
+  width: 85%;
+  height: 70%;
+  position: absolute;
+  border-radius: 50%;
+  border: 25px solid #e4f2f2;
+  left: 0%;
+  top: -19%;
+  z-index: -100;
+}
+
+.wrapper2,
+.wrapper3,
+.wrapper5,
+.wrapper6 {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: absolute;
+}
+.wrapper2 .ice__circle,
+.wrapper3 .ice__circle,
+.wrapper5 .ice__circle,
+.wrapper6 .ice__circle {
+  border: 15px solid #e4f2f2;
+}
+.wrapper2 .nose__hears--left,
+.wrapper3 .nose__hears--left,
+.wrapper5 .nose__hears--left,
+.wrapper6 .nose__hears--left {
+  top: -5%;
+}
+.wrapper2 .nose__hears--left,
+.wrapper2 .nose__hears--left:before,
+.wrapper2 .nose__hears--left:after,
+.wrapper2 .nose__hears--right,
+.wrapper2 .nose__hears--right:before,
+.wrapper2 .nose__hears--right:after,
+.wrapper3 .nose__hears--left,
+.wrapper3 .nose__hears--left:before,
+.wrapper3 .nose__hears--left:after,
+.wrapper3 .nose__hears--right,
+.wrapper3 .nose__hears--right:before,
+.wrapper3 .nose__hears--right:after,
+.wrapper5 .nose__hears--left,
+.wrapper5 .nose__hears--left:before,
+.wrapper5 .nose__hears--left:after,
+.wrapper5 .nose__hears--right,
+.wrapper5 .nose__hears--right:before,
+.wrapper5 .nose__hears--right:after,
+.wrapper6 .nose__hears--left,
+.wrapper6 .nose__hears--left:before,
+.wrapper6 .nose__hears--left:after,
+.wrapper6 .nose__hears--right,
+.wrapper6 .nose__hears--right:before,
+.wrapper6 .nose__hears--right:after {
+  width: 15px;
+  height: 15px;
+}
+.wrapper2 .eye__left .eye__inner-left:before,
+.wrapper2 .eye__right .eye__inner-right:before,
+.wrapper3 .eye__left .eye__inner-left:before,
+.wrapper3 .eye__right .eye__inner-right:before,
+.wrapper5 .eye__left .eye__inner-left:before,
+.wrapper5 .eye__right .eye__inner-right:before,
+.wrapper6 .eye__left .eye__inner-left:before,
+.wrapper6 .eye__right .eye__inner-right:before {
+  border: solid 2px white;
+  width: 150%;
+  height: 150%;
+}
+.wrapper2 .eye__left .eye__inner-left,
+.wrapper2 .eye__right .eye__inner-right,
+.wrapper3 .eye__left .eye__inner-left,
+.wrapper3 .eye__right .eye__inner-right,
+.wrapper5 .eye__left .eye__inner-left,
+.wrapper5 .eye__right .eye__inner-right,
+.wrapper6 .eye__left .eye__inner-left,
+.wrapper6 .eye__right .eye__inner-right {
+  width: 70%;
+  height: 70%;
+  left: 0%;
+  top: -1px;
+}
+.wrapper2 .snout:before,
+.wrapper3 .snout:before,
+.wrapper5 .snout:before,
+.wrapper6 .snout:before {
+  top: -40%;
+  left: -12.5%;
+}
+
+.text {
+  position: fixed;
+  bottom: 0;
+  font-family: helvetica, non-serif;
+  font-size: 11px;
+}
+
+.link {
+  text-decoration: none;
+  color: seagreen;
+}
+.link:hover {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+@keyframes jumpin {
+  0% {
+    top: 50px;
+  }
+  30% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes jumpout {
+  0% {
+    top: 100%;
+  }
+  30% {
+    top: 0;
+  }
+  100% {
+    top: 50px;
+  }
+}
+@keyframes twinkle {
+  0% {
+    height: 20%;
+    top: 25%;
+  }
+  1% {
+    height: 0%;
+    top: 30%;
+  }
+  2% {
+    height: 20%;
+    top: 25%;
+  }
+  98% {
+    height: 20%;
+    top: 25%;
+  }
+  99% {
+    height: 0%;
+    top: 30%;
+  }
+  100% {
+    height: 20%;
+    top: 25%;
+  }
+}
+@keyframes twinkle-inner {
+  0% {
+    opacity: 1;
+  }
+  2% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes jumpout {
+  0% {
+    top: 100%;
+  }
+  30% {
+    top: 0;
+  }
+  100% {
+    top: 50px;
+  }
+}
+@media screen and (max-width: 769px) {
+  div.wrapper {
+    left: 0;
+  }
+
+  div.wrapper2 {
+    left: 15px;
+  }
+
+  div.wrapper3 {
+    left: 45%;
+  }
+
+  div.wrapper5 {
+    left: 40%;
+  }
+
+  div.wrapper6 {
+    left: 70%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wrapper2,
+  .wrapper5 {
+    display: none;
+  }
+
+  div.wrapper {
+    left: 5%;
+    top: 20%;
+  }
+
+  div.wrapper4 {
+    left: 25%;
+    top: 40%;
+  }
+
+  div.wrapper6 {
+    left: 45%;
+    top: 20%;
+  }
+
+  div.wrapper3 {
+    left: 25%;
+    top: 0%;
+  }
+}

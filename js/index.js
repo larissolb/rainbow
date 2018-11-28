@@ -1,12 +1,19 @@
 sliderInit('slider');
 
-/*1200x600*/
+/*830x400*/
 
-sliderAdd('../img/slide2.jpg', 'null');
-sliderAdd('../img/slide.jpg', 'main');
-sliderAdd('../img/slide1.jpeg', 'first');
-sliderAdd('../img/slide3.jpg', 'second');
-
+sliderAdd('../img/slide2.jpg', 'by user1');
+sliderAdd('../img/slide.jpg', 'by user2');
+sliderAdd('../img/slide1.jpeg', 'by user3');
+sliderAdd('../img/slide3.jpg', 'by user2');
+sliderAdd('../img/slide2.jpg', 'by user1');
+sliderAdd('../img/slide.jpg', 'by user2');
+sliderAdd('../img/slide1.jpeg', 'by user3');
+sliderAdd('../img/slide3.jpg', 'by user2');
+sliderAdd('../img/slide2.jpg', 'by user1');
+sliderAdd('../img/slide.jpg', 'by user2');
+sliderAdd('../img/slide1.jpeg', 'by user3');
+sliderAdd('../img/slide3.jpg', 'by user2');
 
 
 sliderRun();
