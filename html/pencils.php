@@ -7,7 +7,7 @@ $pics = [
 'type' => 'pencil',
 'amount' => 5,
 'describe' => 'It is my favorite pic among my arts',
-'img' => 'cat.png'
+'img' => 'slide.jpg'
 ],
 [
 'id' => 2,
@@ -16,7 +16,7 @@ $pics = [
 'type' => 'gouache',
 'amount' => 15,
 'describe' => 'from my dreams about Australia',
-'img' => 'kengoo.png'
+'img' => 'slide1.jpeg'
 ],
 [
 'id' => 3,
@@ -25,7 +25,7 @@ $pics = [
 'type' => 'watercolour',
 'amount' => 10,
 'describe' => 'Summer..where are u?',
-'img' => 'flowers.jpg'
+'img' => 'youamongus.jpg'
 ],
 [
 'id' => 4,
@@ -34,7 +34,7 @@ $pics = [
 'type' => 'pen',
 'amount' => 1,
 'describe' => 'it is my mood today',
-'img' => 'ferrari.jpg'
+'img' => 'slide3.jpg'
 ],
 [
 'id' => 5,
@@ -43,12 +43,12 @@ $pics = [
 'type' => 'markers',
 'amount' => 3,
 'describe' => 'the house of Spider-man',
-'img' => 'house.png'
+'img' => 'slide2.jpg'
 ]
-
-
 ];
+
 ?>
+
 
 
 
@@ -79,8 +79,8 @@ $pics = [
                     <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
                     <li><a href="rating.html">Watch&Rate</a>
                     <ul>
-                        <li><a href="#">Pencils</a></li>
-                        <li><a href="#">Paints</a></li>
+                        <li><a href="pencils.php">Pencils</a></li>
+                        <li><a href="paints.html">Paints</a></li>
                         <li><a href="#">Markers</a></li>
                     </ul></li>
                     <li><a href="#footer">Join us</a></li>
@@ -219,7 +219,7 @@ $pics = [
     $image2  = $images2[array_rand($images2)];
     $output = "<img src=\"../img/" . $image2 . "\" alt=\"random pic\" />";
     echo $output;
-?> -->
+?> 
               <div><p><a href='#authorization'>Join us!</a>  Share your pics all the world ;-)</p></div>
                 </div> <!--end share left side -->
 <!--form for upload - center 70% -->
@@ -311,8 +311,8 @@ $pics = [
     </div>     <!-- finish footer -->          
                 
 <!--      скрипты          -->
-       <script src="../js/header.js"></script>
-       <script src="../js/users.js"></script>
-       <script src="../js/collection.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/users.js"></script>
+<script src="../js/collection.js"></script>
     </body>
 </html>

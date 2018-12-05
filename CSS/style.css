@@ -457,7 +457,6 @@ h4 {
   height: 90px;
   border-radius: 10px 10px 0px 0px;
   background-color: #c0ca33;
-  /* overflow: hidden;*/
   animation: bounce 0.5s linear 0.4s infinite;
   animation-play-state: paused;
 }
@@ -1014,6 +1013,43 @@ iframe {
 
 .container-share .right img, .container-share .left img  {
 border: none;
+}
+
+/*pic.php*/
+.about-pic h2{
+       text-align: center;
+       position: relative;
+       margin-bottom: 0; 
+       color: #fff;
+       text-shadow: 0 1px rgba(0,0,0,.8);
+       background: #D2691E;
+       background-image: -moz-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+       background-image: -webkit-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+       background-image: -o-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+       background-image: -ms-linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+       background-image:  linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+       -moz-box-shadow: 0 2px 0 rgba(0,0,0,.3);
+       -webkit-box-shadow: 0 2px 0 rgba(0,0,0,.3);
+       box-shadow: 0 2px 0 rgba(0,0,0,.3);
+       z-index: -1;
+}
+
+.about-pic p {
+    font-style: italic;
+    left: 40vw;
+    position: relative;
+    margin-bottom: 1.5em;
+    color: #FF4500;
+}
+
+.about-pic div{
+    font-family: "FunSized";
+    text-align: center;
+    margin-bottom: 1em;
+    color: #8B0000;
+}
+.about-pic span {
+    margin: 2em;
 }
 
 /*footer*/

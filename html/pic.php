@@ -7,7 +7,7 @@ $pics = [
 'type' => 'pencil',
 'amount' => 5,
 'describe' => 'It is my favorite pic among my arts',
-'img' => 'cat.png'
+'img' => 'slide.jpg'
 ],
 [
 'id' => 2,
@@ -16,7 +16,7 @@ $pics = [
 'type' => 'gouache',
 'amount' => 15,
 'describe' => 'from my dreams about Australia',
-'img' => 'kengoo.png'
+'img' => 'slide1.jpeg'
 ],
 [
 'id' => 3,
@@ -25,7 +25,7 @@ $pics = [
 'type' => 'watercolour',
 'amount' => 10,
 'describe' => 'Summer..where are u?',
-'img' => 'flowers.jpg'
+'img' => 'youamongus.jpg'
 ],
 [
 'id' => 4,
@@ -34,7 +34,7 @@ $pics = [
 'type' => 'pen',
 'amount' => 1,
 'describe' => 'it is my mood today',
-'img' => 'ferrari.jpg'
+'img' => 'slide3.jpg'
 ],
 [
 'id' => 5,
@@ -43,12 +43,11 @@ $pics = [
 'type' => 'markers',
 'amount' => 3,
 'describe' => 'the house of Spider-man',
-'img' => 'house.png'
+'img' => 'slide2.jpg'
 ]
-
-
 ];
-?>
+
+
 
 function getInfoAboutPic($id, $pics) {
     foreach ($pics as $arr){
@@ -61,7 +60,7 @@ function getInfoAboutPic($id, $pics) {
 $get = $_GET;
 $id = $get['id']; 
 $info = getInfoAboutPic($id, $pics);
-
+?>
 <!DOCTYPE html>
 <!--
 Страница на php: карточка описания загруженной картинки(страницы раскраски)
@@ -89,8 +88,8 @@ $info = getInfoAboutPic($id, $pics);
                     <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>
                     <li><a href="rating.html">Watch&Rate</a>
                     <ul>
-                        <li><a href="#">Pencils</a></li>
-                        <li><a href="#">Paints</a></li>
+                        <li><a href="pencils.php">Pencils</a></li>
+                        <li><a href="paints.html">Paints</a></li>
                         <li><a href="#">Markers</a></li>
                     </ul></li>
                     <li><a href="#footer">Join us</a></li>
@@ -200,9 +199,9 @@ $info = getInfoAboutPic($id, $pics);
 <h2>About <?php echo $info['nameBook'];?> </h2>
 <img src="/img/<?php echo $info['img']; ?> " alt=’<?php echo $info['img'];?> ">
 <p><?php echo $info['describe'];?></p>
-<p>Theme: <?php echo $info['theme'];?></p>
-<p>Instruments: <?php echo $info['type'];?></p>
-<p>Amount of colours: <?php echo $info['amount'];?></p>
+<div><span>Theme: <?php echo $info['theme'];?></span>
+<span>Instruments: <?php echo $info['type'];?></span>
+<span>Amount of colours: <?php echo $info['amount'];?></span></div>
 </div>
 
     <div class="actions">
@@ -256,9 +255,11 @@ $info = getInfoAboutPic($id, $pics);
     </div>     <!-- finish footer -->          
                 
 <!--      скрипты          -->
-       <script src="../js/header.js"></script>
-       <script src="../js/users.js"></script>
-       <script src="../js/collection.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/users.js"></script>
+<script src="../js/like.js"></script>
+<script src="../js/print.js"></script>
+<script src="../js/comments.js"></script>
     </body>
 </html>
 
