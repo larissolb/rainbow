@@ -2,9 +2,7 @@
 
 --Обновление 20.12.18---
 Создана структура проекта: public и private
-Созданы простые Controllers и базовый Controller, добавлено пару страниц в View
-
-
+Созданы Controllers и Models(пока один) и базовый Controller, добавлено пару страниц в View
 
 --Обновление 10.12.18---
 Страница share.html -> share.php 

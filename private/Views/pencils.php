@@ -52,8 +52,8 @@ $pics = [
             <div class="left"> <!--position column left main-->
                 <h2>Last updates</h2>
 <?php foreach($pics as $arr): ?>
-<img src="/img/<?php echo $arr['img']; ?> " alt=’<?php echo $arr['img'];?> ">
-<p><a href="pic.php?id=<?php echo $arr['id'];?>"> Подробнее </a></p>
+<img src="/img/<?php echo $arr['img']; ?> " alt="<?php echo $arr['img'];?> ">
+<p><a href="/pencils/pic/<?php echo $arr['id'];?>"> Подробнее </a></p>
 <?php endforeach;?>
 
                 <?php

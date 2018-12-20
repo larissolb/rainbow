@@ -1,14 +1,15 @@
 <?php
 
-class ShareController extends Controller
+class IndexController extends Controller
 {
     public function indexAction(){
-        $title = 'Share with us!';
-        $view = 'share.php';
+        $title = 'Main page';
+        $view = 'index_view.php';
         
         $data = [
             'title'=>$title,
         ];
         parent::generateResponse($view, $data);
     }
+   
 }

@@ -1,4 +1,4 @@
-   <div class="container"> <!--begin container -->
+<div class="container"> <!--begin container -->
         <div class="left"> <!-- left -->
                 <img src="img/leftpic.png" alt="advertising">
                  <div class="logocontainer">
