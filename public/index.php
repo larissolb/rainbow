@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 'On');
+
 require_once __DIR__ . '/../private/Base/Controller.php';
 require_once __DIR__ . '/../private/Controllers/IndexController.php';
 require_once __DIR__ . '/../private/Controllers/ShareController.php';
@@ -16,11 +18,11 @@ function run() {
     if($routes[1]) {
         $controller = $routes[1]; //след.страницы
     }
-        if($routes[2]) {
+        if(isset($routes[2])) {
         $action = $routes[2]; // метод для pic
     }
 
-    if($routes[3]) {
+    if(isset($routes[3])) {
        $get = $routes[3]; //получение id для pic
     }
     $controller = ucfirst(strtolower($controller)) . 'Controller';
