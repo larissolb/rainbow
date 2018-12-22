@@ -53,7 +53,7 @@ $pics = [
                 <h2>Last updates</h2>
 <?php foreach($pics as $arr): ?>
 <img src="/img/<?php echo $arr['img']; ?> " alt="<?php echo $arr['img'];?> ">
-<p><a href="/pencils/pic/<?php echo $arr['id'];?>"> Подробнее </a></p>
+<p><a href="/rating/pic/<?php echo $arr['id'];?>"> Подробнее </a></p>
 <?php endforeach;?>
 
                 <?php
@@ -70,7 +70,6 @@ $pics = [
     echo $output;
 ?>
                <div><p>Finally, rainbow people, we have the place where we can share our results from our paintbooks!</p></div>
-<!--              <img src="../img/colourbook.jpg" alt="Picture must be here">-->
                                <?php
     $images2 = array(
         'girl.jpg',
@@ -88,6 +87,7 @@ $pics = [
                 </div> <!--end share left side -->
 <!--form for upload - center 70% -->
             <div class="center">
+                <h1><?php echo $header;?></h1>
                 <form action="#" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">
                     <fieldset class="field"> 
                         <div class="item">
@@ -144,12 +144,12 @@ $pics = [
                     </fieldset>  
                     </fieldset>  
                 </form>
-                <div><img src="../img/horizont_adv.png" alt='horizontal adv'></div>
+                <div><img src="/img/horizont_adv.png" alt='horizontal adv'></div>
            </div>    
             <div class="right"> <!-- begin share right side -->
-                <img src="../img/ad.png" alt="advertising">
+                <img src="/img/ad.png" alt="advertising">
             </div><!-- begin share right side -->
        </div> <!--конец главной рамки-->
       
 
-<script src="../js/collection.js"></script>
+<script src="/js/collection.js"></script>

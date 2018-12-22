@@ -1,0 +1,38 @@
+{
+"urls": {
+    "index":{
+        "path":"/",
+        "controller":"IndexController::IndexAction"
+},
+    "about":{
+        "path":"/about",
+        "controller":"IndexController::IndexAction"
+},
+    "share":{
+        "path":"/share",
+        "controller":"ShareController::IndexAction"
+},
+    "rating":{
+        "path":"/rating",
+        "controller":"IndexController::IndexAction"
+},
+    "ratingPencils":{
+        "path":"/pencils",
+        "controller":"RatingController::PencilsAction"
+},
+    "ratingPaints":{
+        "path":"/paints",
+        "controller":"RatingController::PaintsAction"
+},
+    "ratingMarkers":{
+        "path":"/markers",
+        "controller":"RatingController::MarkersAction"
+},
+    "AboutPic":{
+        "path":"/rating/pic",
+        "controller":"RatingController::PicAction"
+}
+}
+}
+
+

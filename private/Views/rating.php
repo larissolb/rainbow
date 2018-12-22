@@ -1,16 +1,19 @@
-        <div class="container-share"> <!--главная рамка-->
+<!DOCTYPE html>
+<!--
+здесь можно посмотреть и оценить загруженные рисунки
+-->
+       <script src="/js/slider.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <script src="/galleria/galleria-1.4.2.min.js"></script>
 
-<!--form for upload - center 70% -->
-            <div class="center">
-                <div class="about-pic">
-<h2>About <?php echo $pics['nameBook'];?> </h2>
-<img src="/img/<?php echo $pics['img']; ?> " alt="<?php echo $pics['img'];?> ">
-<p><?php echo $pics['describe'];?></p>
-<div><span>Theme: <?php echo $pics['theme'];?></span>
-<span>Instruments: <?php echo $pics['type'];?></span>
-<span>Amount of colours: <?php echo $pics['amount'];?></span></div>
-</div>
-   <div class="actions">
+      <div class="container-rating"> <!--begin container -->
+        <div class="left"> <!-- left advertising  -->
+            <img src="/img/ad.png" alt="advertising">
+         </div>  <!--final left -->   
+        <div class="center"> <!-- center -->
+    <div class="galleria">
+    <div id="slider"></div></div>
+    <div class="actions">
         <div id="like"><img src='/img/icon/like.png' alt='like'></div>
         <span class="like"></span>
         <div class="comments">
@@ -29,14 +32,15 @@
         <div id="print"><img src="/img/icon/print.png" alt="print"></div>
       </div>
           </div> <!--finish center--> 
-
-        <div class="right"> <!—begin right side-->
+        <div class="right"> <!-- right last updates random pics php  -->
           <a href='/pencils'><img src="/img/a_pencils.jpg" alt="watch paints by pencils"></a>
           <a href='/paints'><img src="/img/a_watercolors.png" alt="watch paints by watercolors"></a>
           <a href='/markers'><img src="/img/a_markers.jpg" alt="watch paints by markers"></a>
           </div><!-- finish right  -->
-          </div> <!--finish container-->  
-
+          </div> <!--finish container-->                         
+<!--      скрипты          -->
+<script src="/js/index.js"></script>
+<script src="/js/galleria.js"></script>
 <script src="/js/like.js"></script>
 <script src="/js/print.js"></script>
 <script src="/js/comments.js"></script>

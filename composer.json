@@ -1,0 +1,19 @@
+{
+    "name": "joy/rainbow",
+    "description": "rainbow is the first project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "larissolb",
+            "email": "fasolya@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "Larissolb\\Rainbow\\": "private/"
+        }
+    }
+}

@@ -1,4 +1,9 @@
 # study
+--Обновление 23.12.18---
+Полностью перенесен проект на MVC с FrontController
+Инициализирован Composer c файлом composer.json
+Создан файл config.json
+
 
 --Обновление 20.12.18---
 Создана структура проекта: public и private

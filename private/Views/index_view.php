@@ -1,6 +1,6 @@
 <div class="container"> <!--begin container -->
         <div class="left"> <!-- left -->
-                <img src="img/leftpic.png" alt="advertising">
+                <img src="/img/leftpic.png" alt="advertising">
                  <div class="logocontainer">
                     <div class="yellowpencil">
                       <div class="yellowstrip"></div>
@@ -81,8 +81,8 @@
         </div>
         </div> <!-- finish center -->
         <div class="right"> <!-- right  -->
-            <img src="img/icon2.jpg" alt="img">
-          <img src="img/icon2.jpg" alt="img">
+            <img src="/img/icon2.jpg" alt="img">
+          <img src="/img/icon2.jpg" alt="img">
             </div> <!-- finish right  -->
                 </div> <!--finish container-->
             <!--mobile version -->

@@ -37,7 +37,7 @@ img {
 
 h1 {
     margin-left: 0.5em;
-    color: #8B4513;
+    color: #088A85;
 }
 
 /*menu*/
@@ -65,6 +65,7 @@ h1 {
     position:relative;
     float:left;    
     justify-content: center;
+    z-index: 100;
 }
 
 .menu ul li:hover ul{
@@ -1011,7 +1012,12 @@ iframe {
     margin: 1em 0 1em 0;
 }
 
-.container-share .right img, .container-share .left img  {
+.container-share .right img{
+    border: none;
+    margin-top: 0.5em;
+}
+
+.container-share .left img  {
 border: none;
 }
 
@@ -1036,7 +1042,7 @@ border: none;
 
 .about-pic p {
     font-style: italic;
-    left: 40vw;
+    text-align: end;
     position: relative;
     margin-bottom: 1.5em;
     color: #FF4500;
@@ -1050,6 +1056,15 @@ border: none;
 }
 .about-pic span {
     margin: 2em;
+}
+
+.center .about-pic img {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.container-share .right a img {
+    margin-left: 1.5em;
 }
 
 /*footer*/

@@ -1,4 +1,7 @@
 <?php
+
+namespace Larissolb\Rainbow\Base;
+
 class Controller
 {
     public function generateResponse($view, array $data,

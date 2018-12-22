@@ -1,5 +1,8 @@
 <?php
 
+namespace Larissolb\Rainbow\Controllers;
+use Larissolb\Rainbow\Base\Controller;
+
 class ShareController extends Controller
 {
 

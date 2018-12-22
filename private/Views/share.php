@@ -16,7 +16,7 @@
     echo $output;
 ?>
                <div><p>Finally, rainbow people, we have the place where we can share our results from our paintbooks!</p></div>
-<!--              <img src="../img/colourbook.jpg" alt="Picture must be here">-->
+
                                <?php
     $images2 = array(
         'girl.jpg',
@@ -97,4 +97,4 @@
             </div><!-- begin share right side -->
        </div> <!--конец главной рамки-->
       
-       <script src="../js/collection.js"></script>
+       <script src="/js/collection.js"></script>

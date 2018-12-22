@@ -40,8 +40,8 @@ let shareBtn = document.getElementById('shareBtn');
          return;
       }
      
-    
     fullInfo.push(nameBook.value, theme, themeM, inst, quanColor.value, describe.value, pic.value);
+        alert("Thank you for your pic!");
         return console.log(fullInfo);
   }
   

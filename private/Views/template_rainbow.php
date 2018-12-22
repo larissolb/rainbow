@@ -8,7 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
         <link rel="stylesheet" href="/CSS/style.css">
-   
     </head>
     <body>
     <div id="header"> <!--header-->
@@ -17,14 +16,15 @@
     <div class="top">  <!-- top -->
         <nav class="menu"> <!-- menu -->
                 <ul>
-                    <li><a href="html/about.html">Why I am here?</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">Why I am here?</a></li>
                     <li><a href="/share">Share art &#10000;</a></li>
 <!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
-                    <li><a href="html/rating.html">Watch&Rate</a>
+                    <li><a href="/rating">Watch&Rate</a>
                     <ul>
                         <li><a href="/pencils">Pencils</a></li>
-                        <li><a href="html/paints.html">Paints</a></li>
-                        <li><a href="#">Markers</a></li>
+                        <li><a href="/paints">Paints</a></li>
+                        <li><a href="/markers">Markers</a></li>
                     </ul></li>
                     <li><a href="#footer">Join us</a></li>
                 </ul>       
@@ -124,33 +124,33 @@
                 </div> <!-- final form register-->        
 </div> <!-- final top -->
         
-        <div><?php include_once $view; ?></div> 
+        <?php include_once $view; ?>
         
     <div> <!-- footer -->
         <div id="footer" class="footer">
             <div class="socnet">
                 <a href="https://www.whatsapp.com" target="_blank">
-                <img src="img/icon/whatsup.png" alt="Whats'up"></a>
+                <img src="/img/icon/whatsup.png" alt="Whats'up"></a>
                 <a href="https://www.viber.com/download" target="_blank">
-                <img src="img/icon/viber.png" alt="Viber"></a>
+                <img src="/img/icon/viber.png" alt="Viber"></a>
                 <a href="https://www.instagram.com/ShareRainbow" target="_blank">
-                <img src="img/icon/instagram.png" alt="Instagram"></a>
+                <img src="/img/icon/instagram.png" alt="Instagram"></a>
                 <a href="https://www.vk.com" target="_blank">
-                <img src="img/icon/vk.png" alt="Vkontakte"></a>
+                <img src="/img/icon/vk.png" alt="Vkontakte"></a>
             </div>
             <div>
                 <a href="#" target="_blank">  
-                <img src="img/icon/donate2.png" alt="Donate"></a> 
+                <img src="/img/icon/donate2.png" alt="Donate"></a> 
             </div>
         </div>
         <div class="footer footer-m">
             <span>2018, ShareRainbow. All rights reserved</span>
-            <div class="up"><a href="#header"><img src="img/icon/up.png" alt="Up"></a></div>
+            <div class="up"><a href="#header"><img src="/img/icon/up.png" alt="Up"></a></div>
         </div>
     </div>     <!-- finish footer -->          
                 
 <!--      скрипты          -->
-    <script src="../../js/header.js"></script>
-    <script src="../../js/users.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/users.js"></script>
     </body>
 </html>

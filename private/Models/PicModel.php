@@ -1,4 +1,5 @@
 <?php
+namespace Larissolb\Rainbow\Models;
 
 class PicModel 
 {
