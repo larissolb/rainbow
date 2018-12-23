@@ -1,26 +1,31 @@
 Table #1 Pics
-id = idLikes = idComments
+id = idComments
 nameBook
-theme
-type
+theme =idThemes
+type = idTypes
 amount
 describe
 img
 author = loginUsers
-country = countryUsers
-
-Table #2 Likes
-id = idPics
 like
 
-Table #3 Comments
+Table #2 Themes
+id = idPics
+theme 
+
+Table #3 Types
+id = idPics
+type
+
+Table #4 Comments
 id = idPics
 comment
+author = loginUsers
+date
 
-Table #4 Users
+Table #5 Users
 email
 login = authorPics
 psw
-country = countryPics
 
 
