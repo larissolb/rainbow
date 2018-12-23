@@ -33,10 +33,11 @@
             <ul>
                 <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
                     <ul>
-                        <li><a href="html/about.html">Why I am here?</a></li>
-                        <li><a href="html/share.html">Share art &#10000;</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">Why I am here?</a></li>
+                        <li><a href="/share">Share art &#10000;</a></li>
 <!--                        <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
-                        <li><a href="html/rating.html">Watch&Rate</a></li>
+                        <li><a href="/rating">Watch&Rate</a></li>
                         <li><a href="#footer">Join us</a></li>
                     </ul>
                 </li>      
@@ -62,7 +63,7 @@
             </div> <!-- final authorization-->
         <a href="#" class="recovery" id="forgot"></a> <!--recovery psw -->
         <div class="recovery-window">
-            <form action="../index.html" method="post" name="recovery">
+            <form action="/" method="post" name="recovery">
                 <fieldset id="recovery">
                     <legend><h4>Recovery your password</h4></legend>
                     <div>
@@ -77,7 +78,7 @@
         </div><!--final recovery psw -->
             <a href="#" class="register" id="register"></a> <!-- form register-->
             <div class="register-window">
-                <form action="../index.html" method="post" name="create">
+                <form action="/" method="post" name="create">
                 <fieldset id="create">
                     <legend><h4>Creat an account</h4></legend>
                     <div>

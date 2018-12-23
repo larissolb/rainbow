@@ -1,0 +1,26 @@
+Table #1 Pics
+id = idLikes = idComments
+nameBook
+theme
+type
+amount
+describe
+img
+author = loginUsers
+country = countryUsers
+
+Table #2 Likes
+id = idPics
+like
+
+Table #3 Comments
+id = idPics
+comment
+
+Table #4 Users
+email
+login = authorPics
+psw
+country = countryPics
+
+
