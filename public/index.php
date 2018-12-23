@@ -1,38 +1,14 @@
 <?php
 ini_set('display_errors', 'On');
 
-//соединение с базой данных rainbow
-$server = 'rainbow';
-$db_name = 'rainbow'; //имя базы данных
-$username = 'larissolb';
-$pwd = 'pwd';
-
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-
-];
-
-function dbConnect($server, $db_name, $username, $pwd, array $opt=[]) {
-    return new PDO("mysql:host=$server;dbname=$db_name",
-            $username, $pwd, $opt);
-}
-
-try {
-
-$connection = dbConnect($server, $db_name, $username, $pwd, $options); 
-var_dump("connection is good");
-
-} catch (PDOException $exception) {
-    var_dump($exception->getTrace());
-}
-
 //require_once __DIR__ . '/../private/Base/Controller.php';
 //require_once __DIR__ . '/../private/Controllers/IndexController.php';
 //require_once __DIR__ . '/../private/Controllers/ShareController.php';
 //require_once __DIR__ . '/../private/Controllers/PencilsController.php';
 //require_once __DIR__ . '/../private/Models/PicModel.php';
 require_once __DIR__ . '/../vendor/autoload.php';
-
+//setcookie('rainbow', 'mainpage', time() + 900);
+   
 run();
 
 function run() {
