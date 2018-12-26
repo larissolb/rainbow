@@ -1,13 +1,11 @@
 <?php
 ini_set('display_errors', 'On');
 
-//require_once __DIR__ . '/../private/Base/Controller.php';
-//require_once __DIR__ . '/../private/Controllers/IndexController.php';
-//require_once __DIR__ . '/../private/Controllers/ShareController.php';
-//require_once __DIR__ . '/../private/Controllers/PencilsController.php';
-//require_once __DIR__ . '/../private/Models/PicModel.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 //setcookie('rainbow', 'mainpage', time() + 900);
+
+//$file = __DIR__ . '/../config.json';
+
    
 run();
 

@@ -1,36 +1,45 @@
+
 {
+"db": {
+"server":"rainbow",
+"db_name":"rainbow",
+"username":"larissolb",
+"pwd":"pwd",
+"options":"[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]"
+    },
+    
 "urls": {
     "index":{
         "path":"/",
-        "controller":"IndexController::IndexAction"
+        "controller":"Larissolb/Rainbow/Controllers/IndexController::IndexAction"
 },
     "about":{
         "path":"/about",
-        "controller":"IndexController::IndexAction"
+        "controller":"Larissolb/Rainbow/Controllers/IndexController::IndexAction"
 },
     "share":{
         "path":"/share",
-        "controller":"ShareController::IndexAction"
+        "controller":"Larissolb/Rainbow/Controllers/ShareController::IndexAction"
 },
     "rating":{
         "path":"/rating",
-        "controller":"IndexController::IndexAction"
+        "controller":"Larissolb/Rainbow/Controllers/IndexController::IndexAction"
 },
     "ratingPencils":{
         "path":"/pencils",
-        "controller":"RatingController::PencilsAction"
+        "controller":"Larissolb/Rainbow/Controllers/RatingController::PencilsAction"
 },
     "ratingPaints":{
         "path":"/paints",
-        "controller":"RatingController::PaintsAction"
+        "controller":"Larissolb/Rainbow/Controllers/RatingController::PaintsAction"
 },
     "ratingMarkers":{
         "path":"/markers",
-        "controller":"RatingController::MarkersAction"
+        "controller":"Larissolb/Rainbow/Controllers/RatingController::MarkersAction"
 },
     "AboutPic":{
-        "path":"/rating/pic",
-        "controller":"RatingController::PicAction"
+        "path":"/rating/pic/{id}",
+        "controller":"Larissolb/Rainbow/Controllers/RatingController::PicAction"
 }
 }
 }
