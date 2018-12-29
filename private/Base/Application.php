@@ -24,8 +24,7 @@ class Application
 
         $routeInfo = $router->dispatch($request->getMethod(), $request->getUri());
         $controllerData = Controller::create($routeInfo);
-        var_dump($controllerData);
-
+       
         $request->setParams($controllerData[1]);
        
         $response = call_user_func_array($controllerData[0], [$request]);

@@ -15,6 +15,6 @@ class ShareController extends Controller
             'title'=>$title,
         ];
         
-        parent::generateResponse($view, $data);
+        return parent::generateResponse($view, $data);
     }
 }

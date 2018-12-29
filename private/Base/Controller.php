@@ -34,6 +34,7 @@ class Controller
                 $vars = $routeInfo[2];
 
                 $controllerData = [[new $controller(), $action], $vars];
+                
                 break;
         }
         return $controllerData;

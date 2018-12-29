@@ -12,7 +12,7 @@ class IndexController extends Controller
         $data = [
             'title'=>$title,
         ];
-        parent::generateResponse($view, $data);
+        return parent::generateResponse($view, $data);
     }
     public function aboutAction(){
         $title = ' ';
@@ -21,7 +21,7 @@ class IndexController extends Controller
         $data = [
             'title'=>$title,
         ];
-        parent::generateResponse($view, $data);
+        return parent::generateResponse($view, $data);
     }
    
 }

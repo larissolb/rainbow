@@ -12,7 +12,7 @@ class RatingController extends Controller
         $data = [
             'title'=>$title,
         ];
-        parent::generateResponse($view, $data);
+        return parent::generateResponse($view, $data);
     }
     
     public function pencilsAction(){
@@ -23,7 +23,7 @@ class RatingController extends Controller
             'title'=>$title,
             'header'=>$header,
         ];
-        parent::generateResponse($view, $data);
+        return parent::generateResponse($view, $data);
     }
     
     public function markersAction(){
@@ -34,7 +34,7 @@ class RatingController extends Controller
             'title'=>$title,
             'header'=>$header,
         ];
-        parent::generateResponse($view, $data);
+        return parent::generateResponse($view, $data);
     }
     public function paintsAction(){
         $title = 'Watch&Rate|Paints by watercolours';
@@ -44,15 +44,17 @@ class RatingController extends Controller
             'title'=>$title,
             'header'=>$header,
         ];
-        parent::generateResponse($view, $data);
+        return parent::generateResponse($view, $data);
     }
         
-    private $picModel;
+    protected $picModel;
     
     public function __construct() 
             {
             $this->picModel = new PicModel();
     }
+    
+
     public function picAction($get){
         $title = 'About pic';
         $view = 'pic.php';
@@ -63,7 +65,7 @@ class RatingController extends Controller
             'title'=>$title,
             'pics'=>$pics,
         ];
-        parent::generateResponse($view, $data);
+        return parent::generateResponse($view, $data);
     }
     
 }
