@@ -56,7 +56,7 @@ class RatingController extends Controller
     public function picAction($get){
         $title = 'About pic';
         $view = 'pic.php';
-        $id = $get;
+        $id = $get['id'];
         $pics = $this->picModel->getPics($id);
                      
         $data = [

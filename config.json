@@ -11,35 +11,43 @@
 "urls": {
     "index":{
         "path":"/",
-        "controller":"Larissolb/Rainbow/Controllers/IndexController::IndexAction"
+        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::IndexAction",
+        "method": "GET"
 },
     "about":{
         "path":"/about",
-        "controller":"Larissolb/Rainbow/Controllers/IndexController::IndexAction"
+        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::IndexAction",
+        "method": "GET"    
 },
     "share":{
         "path":"/share",
-        "controller":"Larissolb/Rainbow/Controllers/ShareController::IndexAction"
+        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::IndexAction",
+        "method": "GET"
 },
     "rating":{
         "path":"/rating",
-        "controller":"Larissolb/Rainbow/Controllers/IndexController::IndexAction"
+        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::IndexAction",
+        "method": "GET"
 },
     "ratingPencils":{
         "path":"/pencils",
-        "controller":"Larissolb/Rainbow/Controllers/RatingController::PencilsAction"
+        "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::PencilsAction",
+        "method": "GET"
 },
     "ratingPaints":{
         "path":"/paints",
-        "controller":"Larissolb/Rainbow/Controllers/RatingController::PaintsAction"
+        "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::PaintsAction",
+        "method": "GET"
 },
     "ratingMarkers":{
         "path":"/markers",
-        "controller":"Larissolb/Rainbow/Controllers/RatingController::MarkersAction"
+        "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::MarkersAction",
+        "method": "GET"
 },
     "AboutPic":{
         "path":"/rating/pic/{id}",
-        "controller":"Larissolb/Rainbow/Controllers/RatingController::PicAction"
+        "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::PicAction",
+        "method": "GET"
 }
 }
 }

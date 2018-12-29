@@ -1,6 +1,15 @@
 <?php
 
 //соединение с базой данных rainbow
+//$server = 'rainbow';
+//$db_name = 'rainbow'; // имя базы данных
+//$username = 'larissolb';
+//$pwd = 'pwd';
+//$options = [
+//    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+//];
+//
+
 
 class DBConnection
 {
@@ -14,7 +23,7 @@ class DBConnection
 
         try {
 
-        new \PDO("mysql:host=$server;dbname=$db_name",
+       $connection = new \PDO("mysql:host=$server;dbname=$db_name",
             $username, $pwd, $opt);
         var_dump("connection is good");
 
