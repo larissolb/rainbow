@@ -1,4 +1,8 @@
 # study
+--Обновление на 30.12.18--
+1. Добавлены в Base Application, Request, Response, Router, Session
+2. Обновлен index.php
+
 --Обновление на 26.12.18--
 1. Обновлен DBConnection.php
 2. Обонвлен config.json
