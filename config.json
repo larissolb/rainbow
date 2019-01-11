@@ -48,6 +48,18 @@
         "path":"/rating/pic/{id}",
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::PicAction",
         "method": "GET"
+},
+    "LoadPics":{
+        "path":"/share/loadpics",
+        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::LoadPicsAction",
+        "method": "POST"
+},
+
+    "registration":{
+        "path":"/user/registration",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::registrationAction",
+        "method": "GET"
+          
 }
 }
 }

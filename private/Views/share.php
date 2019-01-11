@@ -1,4 +1,4 @@
-        <div class="container-share"> <!--главная рамка-->
+<div class="container-share"> <!--главная рамка-->
             <div class="left"> <!--position column left main-->
                 <h2>Last updates</h2>
 <!--                <img src="../img/girl.jpg" alt="Picture must be here">-->
@@ -34,7 +34,7 @@
                 </div> <!--end share left side -->
 <!--form for upload - center 70% -->
             <div class="center">
-                <form action="#" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">
+                <form action="/share/loadpics" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">
                     <fieldset class="field"> 
                         <div class="item">
                         <label for="nameBook">Name of coloring-book's</label>
@@ -81,7 +81,8 @@
                     <fieldset id="share">
                     <div>
                         <label for="pics">Upload your best picture</label>
-                        <input id="pics" type="file" multiple accept="image/*">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="51200">         
+                        <input id="pics" name="picture[]" type="file" multiple accept="image/*">
                     </div>
                     </fieldset>
                     <fieldset class="button-shareit">
@@ -97,4 +98,4 @@
             </div><!-- begin share right side -->
        </div> <!--конец главной рамки-->
       
-       <script src="/js/collection.js"></script>
+<!--       <script src="/js/collection.js"></script>-->

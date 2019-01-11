@@ -1,5 +1,7 @@
 <?php
 namespace Larissolb\Rainbow\Models;
+//use Larissolb\Rainbow\Base\DBConnection;
+
 
 class PicModel 
 {
@@ -62,4 +64,59 @@ foreach ($pics as $pic) {
     
 }
     }
+    
+//protected $conn;
+//    
+//    public function __construct() 
+//            {
+//            $this->DBConnection = new DBConnection();
+//    }
+//    
+//    
+    
+public function loadPics($data){
+
+    $conn = connect('rainbow',
+        'rainbow', 'larissolb', 'pwd');
+    
+    $pics = $_FILES;   
+    $types = ['image/png'];
+    $finfo = finfo_open(FILEINFO_MIME_TYPE); 
+
+foreach ($pics["picture"]["error"] as $key => $error) {
+    $tmp_name = $pics["picture"]["tmp_name"][$key];
+    $name = basename($pics["picture"]["name"][$key]);
+    $type = finfo_file($finfo, $tmp_name);
+
+   //check size 
+    if($error == UPLOAD_ERR_FORM_SIZE){
+        return SIZE_ERROR;
+//        echo "$name size is more than 50kb";
+    } elseif(!in_array($type, $types)){
+        return TYPE_ERROR;
+//        echo "<p>Sorry, this pic '$name' has bad type. Use only .png images</p>";
+    }
+    else {
+//        move_uploaded_file($tmp_name, "/public/img/$name");
+    $sql = "INSERT INTO Types (type)
+              VALUES (:type)";
+    $params = [
+        'type'=>$data['nameBook'],
+//        'amount'=>$data['amount'],
+//        'describe'=>$data['describe'],
+//        'img_path'=>$_FILES
+    ];
+    
+    $statement = $conn->prepare($sql);
+    $statement->execute($params);
+
+          return LOAD_SUCCESS;
+//        echo "<p>Your pic '$name' has uploaded!</p>";
+    }
+}
+finfo_close($finfo);
+
+}
+    
+    
 }
