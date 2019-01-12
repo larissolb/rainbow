@@ -1,4 +1,16 @@
 # study
+
+--Обновление на 13.01.19--
+1. Подключение ajax с загрузкой в БД, обновленные файлы:
+- config.json
+- private/Base/Controller.php
+- private/Base/DBConnection.php
+- private/Base/Request.php
+- private/Controllers/ShareController.php
+- private/Models/PicModel.php
+- private/Views/share.php
+- public/js/collection.js
+
 --Обновление на 11.01.19--
 
 Обновленные файлы:
