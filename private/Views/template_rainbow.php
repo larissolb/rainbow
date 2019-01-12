@@ -44,7 +44,7 @@
             </ul>        
         </nav> <!-- final mobile menu -->
         <div class="authorization"><a href="#authorization">Sign in</a> <!-- authorization -->
-            <form action="index.html" method="post" name="authorization">
+            <form action="/ajax/obrabotchik.php" method="post" name="authorization">
                 <fieldset id="authorization" class="open-window">
                     <div><input id="email" type="email" placeholder="Your Email" required></div>
                     <div><input id="psw" type="password" placeholder="Your Password" required></div>           
@@ -59,7 +59,7 @@
                        <a href="html/register-m.html" target="_self">Register</a>
                     </div> <!-- final links inside mobile authorization-->
                 </fieldset>
-            </form>
+            </form>         
             </div> <!-- final authorization-->
         <a href="#" class="recovery" id="forgot"></a> <!--recovery psw -->
         <div class="recovery-window">

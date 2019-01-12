@@ -10,22 +10,28 @@
 //];
 //
 
+namespace Larissolb\Rainbow\Base;
 
 class DBConnection
 {
-    private $connection;
+    protected $connection;
+    
+    private $server = "localhost";
+    private $db_name = 'rainbow';
+    private $username = 'larissolb';
+    private $pwd = 'pwd';
 
     public function __construct() {
-        $this->connection = $this->connect();
+        $this->connection = $this->connect($this->server,$this->db_name, $this->username, $this->pwd);
     }
     
-    private function connect($server, $db_name, $username, $pwd, array $opt=[]) {
+    protected function connect($server, $db_name, $username, $pwd, array $opt=[]) {
 
         try {
 
        $connection = new \PDO("mysql:host=$server;dbname=$db_name",
             $username, $pwd, $opt);
-        var_dump("connection is good");
+//        var_dump("connection is good");
 
         } catch (\PDOException $exception) {
             //здесь надо логировать, т.е. записывать все исключения в файл=ошибки
@@ -38,7 +44,7 @@ class DBConnection
         return $this->connection->exec($sql_string); //будет возвращено либо true, либо false
     }
     
-    public function queryAll($sql_string) {  //будет брать запрос и получать данные, есть еще fetch и fetchall
+    public function queryAll($sql_string) {  
         $statement = $this->query($sql_string);
         if(!$statement){
             return FALSE; //либо сообщение
@@ -48,7 +54,7 @@ class DBConnection
         var_dump($data);
     }
     
-    public function query($sql_string) {  //будет брать запрос и получать данные, есть еще fetch и fetchall
+    public function query($sql_string) {  
         $statement = $this->query($sql_string);
         if(!$statement){
             return FALSE; //либо сообщение
@@ -58,8 +64,8 @@ class DBConnection
         var_dump($data);
     }
 
-    public function execute($sql_string, $param, $all=true) {
-        $statement = $connection->prepare($sql_string);
+    public function execute($sql_string, $params, $all=true) {
+        $statement = $this->connection->prepare($sql_string);
         $statement->execute($params);
         
         if(!$all) {

@@ -38,7 +38,7 @@
                     <fieldset class="field"> 
                         <div class="item">
                         <label for="nameBook">Name of coloring-book's</label>
-                        <input id="nameBook" type="text" autofocus>
+                        <input id="nameBook" name="nameBook" type="text" autofocus>
                         </div>
                     <div class="item" id="theme">
                         <label for="theme">What theme?</label>
@@ -98,4 +98,4 @@
             </div><!-- begin share right side -->
        </div> <!--конец главной рамки-->
       
-<!--       <script src="/js/collection.js"></script>-->
+       <script src="/js/collection.js"></script>

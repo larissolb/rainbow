@@ -51,6 +51,18 @@ class Controller
 
         return $response;
     }
+    
+    protected function generateAjaxResponse($text)
+    {
+        $response = new Response();
+
+        $response->setBody(
+            $text
+        );
+
+        return $response;
+    }
+    
     public function render($view, array $data,
                                      $template='template_rainbow.php')
     {

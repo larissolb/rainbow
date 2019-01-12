@@ -14,7 +14,7 @@ class Request
     public function __construct()
     {
         $this->cookies = $_COOKIE;
-        $this->get['id'] = $_GET;
+        $this->get = $_GET;
         $this->post = $_POST;
         $this->files = $_FILES;
         $this->server = $_SERVER;

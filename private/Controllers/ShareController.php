@@ -27,20 +27,9 @@ class ShareController extends Controller
             $this->picModel = new PicModel();
     }
             
-    public function LoadPicsAction($post){
-//        $title = 'About pic';
-        $view = 'share.php';
-        $post = $_POST;
-        $type = $this->picModel->loadPics($post);
-                     
-        $data = [
-//            'title'=>$title,
-            'type'=>$data['nameBook'],
-        ];
-        return parent::generateResponse($view, $data);
+    public function LoadPicsAction($request){
+        $postData = $request->post();
+        $type = $this->picModel->loadPics($postData);
+        return parent::generateAjaxResponse($type);
     }
-    
-    
-    
-    
 }

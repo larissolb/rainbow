@@ -1,7 +1,7 @@
 
 {
 "db": {
-"server":"rainbow",
+"server":"localhost",
 "db_name":"rainbow",
 "username":"larissolb",
 "pwd":"pwd",
@@ -26,7 +26,7 @@
 },
     "rating":{
         "path":"/rating",
-        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::IndexAction",
+        "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::IndexAction",
         "method": "GET"
 },
     "ratingPencils":{
@@ -58,7 +58,7 @@
     "registration":{
         "path":"/user/registration",
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::registrationAction",
-        "method": "GET"
+        "method": "POST"
           
 }
 }

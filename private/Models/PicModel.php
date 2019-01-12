@@ -1,11 +1,17 @@
 <?php
 namespace Larissolb\Rainbow\Models;
-//use Larissolb\Rainbow\Base\DBConnection;
+use Larissolb\Rainbow\Base\DBConnection;
 
 
 class PicModel 
 {
 
+const SIZE_ERROR = "SIZE_ERROR";
+const TYPE_ERROR = "TYPE_ERROR";
+const LOAD_SUCCESS = "LOAD_SUCCESS";
+const NO_PIC = "NO_PIC";
+  
+    
     public function getPics($id) {
 $pics = [
 [
@@ -57,7 +63,6 @@ $pics = [
 
 foreach ($pics as $pic) { 
         if ($pic["id"] == $id){
-//            var_dump($pic);
             return $pic;       
 }
     
@@ -65,58 +70,51 @@ foreach ($pics as $pic) {
 }
     }
     
-//protected $conn;
-//    
-//    public function __construct() 
-//            {
-//            $this->DBConnection = new DBConnection();
-//    }
-//    
-//    
+protected $DBConnection;
     
-public function loadPics($data){
-
-    $conn = connect('rainbow',
-        'rainbow', 'larissolb', 'pwd');
-    
-    $pics = $_FILES;   
-    $types = ['image/png'];
-    $finfo = finfo_open(FILEINFO_MIME_TYPE); 
-
-foreach ($pics["picture"]["error"] as $key => $error) {
-    $tmp_name = $pics["picture"]["tmp_name"][$key];
-    $name = basename($pics["picture"]["name"][$key]);
-    $type = finfo_file($finfo, $tmp_name);
-
-   //check size 
-    if($error == UPLOAD_ERR_FORM_SIZE){
-        return SIZE_ERROR;
-//        echo "$name size is more than 50kb";
-    } elseif(!in_array($type, $types)){
-        return TYPE_ERROR;
-//        echo "<p>Sorry, this pic '$name' has bad type. Use only .png images</p>";
+    public function __construct() 
+            {
+            $this->DBConnection = new DBConnection();
     }
-    else {
-//        move_uploaded_file($tmp_name, "/public/img/$name");
+    
+   //check size and type
+    public function loadPics($data) {
+        
+        $pics = $_FILES;
+        
+        foreach ($pics["picture"]["error"] as $key => $error) {
+        $tmp_name = $pics["picture"]["tmp_name"][$key];
+        $name = basename($pics["picture"]["name"][$key]);
+    
+        if($error == UPLOAD_ERR_FORM_SIZE){
+        return self::SIZE_ERROR;
+    } 
+
+    $types = ['image/png'];
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);   
+        
+        foreach ($pics["picture"]["error"] as $key => $error) {
+        $tmp_name = $pics["picture"]["tmp_name"][$key];
+        $type = finfo_file($finfo, $tmp_name);
+        
+        if(!in_array($type, $types)){
+        finfo_close($finfo);
+        return self::TYPE_ERROR;
+    }
+        move_uploaded_file($tmp_name, "img/$name");
+    }
+    }
+ 
     $sql = "INSERT INTO Types (type)
               VALUES (:type)";
     $params = [
         'type'=>$data['nameBook'],
 //        'amount'=>$data['amount'],
 //        'describe'=>$data['describe'],
-//        'img_path'=>$_FILES
+//        'img_path'=>$name
     ];
     
-    $statement = $conn->prepare($sql);
-    $statement->execute($params);
-
-          return LOAD_SUCCESS;
-//        echo "<p>Your pic '$name' has uploaded!</p>";
+    $statement = $this->DBConnection->execute($sql, $params, false);
+          return self::LOAD_SUCCESS;
     }
-}
-finfo_close($finfo);
-
-}
-    
-    
 }

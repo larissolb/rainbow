@@ -1,49 +1,53 @@
-/* 
-обработка формы с share.html
-//как правильно нужно получать картинки загруженные пользоваталем?!.
- */
 (function () {
     'use strict';
-/* данные с формы   */
-let nameBook = document.getElementById('nameBook');
-let theme = document.querySelector('input[name="theme"]:checked').value;
-let themeM = document.getElementById('themeM');
-let instrument = document.getElementById('type'); 
-let inst;
-let quanColor = document.getElementById('amount');
-let describe = document.getElementById('describe');
-let pic = document.getElementById('pics');
 
-let shareBtn = document.getElementById('shareBtn');
-  
- //массив, куда все попадает
-  let fullInfo = [];
- 
-  //действия, чтобы загрузилось все в базу
-   shareBtn.addEventListener('click', getInfo);
-  function getInfo(event) {
-      event.preventDefault();
-    //получение типа используемого инструмента
-      for (let i = 0; i < instrument.length; i++){
-        if(instrument[i].selected) {
-          inst = instrument[i].innerHTML;
-        }  
-      }
-      for (let i = 0; i < themeM.length; i++){
-        if(themeM[i].selected) {
-          themeM = themeM[i].innerHTML;
-        }  
-      }      
-      if(pic.value === "") {
-          alert("you've forgotten your pic :-('");
-          console.log("you've forgotten your pic :-('");
-         return;
-      }
-     
-    fullInfo.push(nameBook.value, theme, themeM, inst, quanColor.value, describe.value, pic.value);
-        alert("Thank you for your pic!");
-        return console.log(fullInfo);
-  }
-  
+    function sendForm(event) {
+        event.preventDefault();
 
-}(window));
+        let form_data = new FormData(this);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", this.action, true);
+        xhr.send(form_data);
+
+        xhr.onload = function (oEvent) {
+            if (xhr.status == 200) {
+                let pic = document.getElementById('pics');
+                if(pic.value === "") {
+                return responseHandler("NO_PIC");
+                }
+                console.log("xhr response", xhr.responseText);
+                responseHandler(xhr.responseText);
+            }
+        };
+    }
+
+    function responseHandler(response) {
+        if (response === "LOAD_SUCCESS") {
+            alert("Your pic has uploaded!");
+            window.location.href = "/share";
+        } else if (response === "TYPE_ERROR"){
+            alert("Sorry, this pic has bad type. Use only .png images");
+            window.location.href = "/share";
+        } else if (response === "SIZE_ERROR"){
+            alert("Size is more than 50kb");
+            window.location.href = "/share";            
+        }else if (response === "NO_PIC"){
+            alert("You've forgotten your pic :-('");
+            window.location.href = "/share";            
+        }
+        
+        else {
+            console.log("system error");
+        }
+    }
+
+    function addFormListener() {
+        for (let i = 0; i < document.forms.length; i++) {
+            document.forms[i].addEventListener('submit', sendForm);
+        }
+    }
+
+    addFormListener();
+
+}());
