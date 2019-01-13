@@ -38,9 +38,9 @@
                     <fieldset class="field"> 
                         <div class="item">
                         <label for="nameBook">Name of coloring-book's</label>
-                        <input id="nameBook" name="nameBook" type="text" autofocus>
+                        <input id="nameBook" name="nameBook" type="text" autofocus required>
                         </div>
-                    <div class="item" id="theme">
+                    <div class="item" id="theme" name='theme'>
                         <label for="theme">What theme?</label>
                         <label><input type="radio" name='theme' value='Nature'>Nature</label>
                         <label><input type="radio" name='theme' value='Space' >Space</label>
@@ -51,9 +51,9 @@
                     </div> 
                     <div class="item-mobile">
                         <label for="themeM">What theme?</label>
-                        <select id="themeM" required> 
+                        <select id="themeM" name="themeM" required> 
                             <option value="Nature"> Nature</option> 
-                            <option selected value="Space">Space</option> 
+                            <option value="Space">Space</option> 
                             <option value="Animals">Animals</option> 
                             <option value="Cars">Cars</option>
                             <option value="Cities">Cities</option>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="item">
                         <label for="type">What instruments did you use?</label>
-                        <select id="type" required> 
+                        <select id="type" name="type" required> 
                             <option value="pen"> colour pens</option> 
                             <option selected value="pencil">colour pencils</option> 
                             <option value="gouache">gouache</option> 
@@ -72,11 +72,11 @@
                     </div>
                     <div class="item">
                         <label for="amount">How many colours did you use?</label> 
-                       <input id="amount" type="number" min="1" step="1">
+                       <input id="amount" name="amount" type="number" min="1" step="1">
                     </div>
                     <div>
                         <label for="describe">&#9999; Describe it</label>
-                        <textarea id="describe" placeholder="I choosed this pic because..." cols="70" rows="3" maxlength="100"></textarea>
+                        <textarea id="describe" name="text" placeholder="I choosed this pic because..." cols="70" rows="3" maxlength="100"></textarea>
                     </div>  
                     <fieldset id="share">
                     <div>

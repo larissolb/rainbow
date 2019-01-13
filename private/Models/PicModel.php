@@ -76,10 +76,10 @@ protected $DBConnection;
             {
             $this->DBConnection = new DBConnection();
     }
-    
+
    //check size and type
     public function loadPics($data) {
-        
+
         $pics = $_FILES;
         
         foreach ($pics["picture"]["error"] as $key => $error) {
@@ -95,26 +95,58 @@ protected $DBConnection;
         
         foreach ($pics["picture"]["error"] as $key => $error) {
         $tmp_name = $pics["picture"]["tmp_name"][$key];
-        $type = finfo_file($finfo, $tmp_name);
+        $type_pic = finfo_file($finfo, $tmp_name);
         
-        if(!in_array($type, $types)){
+        //choose theme
+        if($data["theme"] === "Nature") {
+            $themes = 1;    
+        }elseif($data["theme"] === "Space"){
+            $themes = 2;    
+        }elseif($data["theme"] === "Animals"){
+            $themes = 3;    
+        }elseif($data["theme"] === "Cars"){
+            $themes = 4;    
+        }elseif($data["theme"] === "Cities"){
+            $themes = 5;    
+        }else{
+            $themes = 6;
+        }
+            
+        //choose type
+        if($data["type"] === "pen") {
+            $type = 1;    
+        }elseif($data["type"] === "pencil"){
+            $type = 3;    
+        }elseif($data["type"] === "gouache"){
+            $type = 4;    
+        }elseif($data["type"] === "watercolour"){
+            $type = 5;    
+        }else{
+            $type = 6;    
+        }
+        
+        if(!in_array($type_pic, $types)){
         finfo_close($finfo);
         return self::TYPE_ERROR;
     }
         move_uploaded_file($tmp_name, "img/$name");
-    }
+        
     }
  
-    $sql = "INSERT INTO Types (type)
-              VALUES (:type)";
+    $sql = "INSERT INTO Pics (nameBook, amount, text, img_path, Themes_id, Types_id, Users_login)
+              VALUES (:nameBook, :amount, :text, :img_path, :Themes_id, :Types_id, :Users_login)";
     $params = [
-        'type'=>$data['nameBook'],
-//        'amount'=>$data['amount'],
-//        'describe'=>$data['describe'],
-//        'img_path'=>$name
+        'nameBook'=>$data['nameBook'],
+        'amount'=>$data['amount'],
+        'text'=>$data['text'],
+        'img_path'=>$name,
+        'Themes_id'=>$themes,
+        'Types_id'=>$type,
+        'Users_login'=>"fox"        
     ];
     
     $statement = $this->DBConnection->execute($sql, $params, false);
           return self::LOAD_SUCCESS;
     }
+}
 }

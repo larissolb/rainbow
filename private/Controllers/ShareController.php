@@ -29,6 +29,7 @@ class ShareController extends Controller
             
     public function LoadPicsAction($request){
         $postData = $request->post();
+//        var_dump($postData);
         $type = $this->picModel->loadPics($postData);
         return parent::generateAjaxResponse($type);
     }
