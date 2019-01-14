@@ -60,6 +60,12 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::registrationAction",
         "method": "POST"
           
+},
+        "authorization":{
+        "path":"/user/authorization",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::authorizationAction",
+        "method": "POST"
+          
 }
 }
 }
