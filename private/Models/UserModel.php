@@ -29,7 +29,9 @@ protected $DBConnection;
     
     public function recData($userData){
         $sql = 'SELECT email FROM Users WHERE email =:email';
-        $params = ['email'=>$userData['emailRec']];
+        $params = [
+            'email'=>$userData['emailRec']
+        ];
         $statement = $this->DBConnection->execute($sql, $params, false);
         if(!$statement){
             return self::EMAIL_ERROR;
@@ -64,7 +66,7 @@ protected $DBConnection;
        
         $statement = $this->DBConnection->execute($sql, $params, false);
         $psw = $statement['psw'];
-        $login = $statement['login'];
+//        $login = $statement['login'];
                 
         if (!$statement){
             return self::EMAIL_ERROR;
