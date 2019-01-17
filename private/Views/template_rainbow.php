@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">Why I am here?</a></li>
-                    <li><a href="/share">Share art &#10000;</a></li>
+<!--                    <li><a href="/share">Share art &#10000;</a></li>-->
 <!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
                     <li><a href="/rating">Watch&Rate</a>
                     <ul>
@@ -35,7 +35,7 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">Why I am here?</a></li>
-                        <li><a href="/share">Share art &#10000;</a></li>
+<!--                        <li><a href="/share">Share art &#10000;</a></li>-->
 <!--                        <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
                         <li><a href="/rating">Watch&Rate</a></li>
                         <li><a href="#footer">Join us</a></li>
@@ -43,11 +43,12 @@
                 </li>      
             </ul>        
         </nav> <!-- final mobile menu -->
+<!--        <div class="authorization"><a href="/">Quit</a>  active -->
         <div class="authorization"><a href="#authorization">Sign in</a> <!-- authorization -->
-            <form action="/ajax/obrabotchik.php" method="post" name="authorization">
+            <form action="/user/authorization" method="post" name="authorization">
                 <fieldset id="authorization" class="open-window">
-                    <div><input id="email" type="email" placeholder="Your Email" required></div>
-                    <div><input id="psw" type="password" placeholder="Your Password" required></div>           
+                    <div><input id="email" name="email" type="email" placeholder="Your Email" required></div>
+                    <div><input id="psw" name="psw" type="password" placeholder="Your Password" required></div>           
                     <button type="submit" name="signIN"  id='BtnEnter'>enter</button>
                     <a href="#" id="aBtnlater"><input type="button" value="later" class="Btn"></a>
                     <div class="links-authorization"> <!-- links inside form authorization-->
@@ -63,12 +64,12 @@
             </div> <!-- final authorization-->
         <a href="#" class="recovery" id="forgot"></a> <!--recovery psw -->
         <div class="recovery-window">
-            <form action="/" method="post" name="recovery">
+            <form action="/user/recovery" method="post" name="recovery">
                 <fieldset id="recovery">
                     <legend><h4>Recovery your password</h4></legend>
                     <div>
                         <label for="emailRec">Please input your email:</label>
-                        <input id="emailRec" type="email" placeholder="Your Email" required> 
+                        <input id="emailRec" type="email" name="emailRec" placeholder="Your Email" required> 
                     </div>
                     <button type="submit" name="Recovery" class="Btn">Send new password</button>
                     <a href="#register">Register</a>
@@ -83,21 +84,21 @@
                     <legend><h4>Creat an account</h4></legend>
                     <div>
                         <label for="loginReg">Your name</label> 
-                        <input id="loginReg" type="text" placeholder="Your name" required>
+                        <input id="loginReg" type="text" name='login' placeholder="Your name" required>
                     </div>
                      <div id="busyLogin">It is occupied!</div>
                     <div>
                         <label for="emailReg">Your email</label> 
-                        <input id="emailReg" type="email" placeholder="Your email" required>
+                        <input id="emailReg" type="email" name="email" placeholder="Your email" required>
                     </div>
                       <div id="busyEmail">It is occupied!</div>
                     <div>
                         <label for="pswReg">Your password</label> 
-                        <input id="pswReg" type="password" placeholder="Your password" required>
+                        <input id="pswReg" type="password" name='psw' placeholder="Your password" required>
                     </div>
                     <div id="info">Password must content min 5 characters, 1 upper letter and 1 number</div>
                     <div><label for="country">Your country</label>
-                        <select id="country" required> 
+                        <select id="country" name='country' required> 
                             <option selected>Choose country</option> 
                             <optgroup label="Europe"> 
                             <option value="E1">Portugal</option> 

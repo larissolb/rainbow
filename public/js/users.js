@@ -4,14 +4,63 @@
 * требования для пароля: минимум 5 знаков, минимум 1 цифра, минимум 1 заглавная
  */
 
-
-
 (function () {
     'use strict';
+
+//    function sendForm(event) {
+//        event.preventDefault();
+//
+//        let form_data = new FormData(this);
+//        console.log(form_data);
+//
+//        let xhr = new XMLHttpRequest();
+//        xhr.open("POST", this.action, true);
+//        xhr.send(form_data);
+//
+//        xhr.onload = function (oEvent) {
+//            if (xhr.status == 200) {
+//                console.log("xhr response", xhr.responseText);
+//                responseHandler(xhr.responseText);
+//            }
+//        };
+//    }
+//
+//    function responseHandler(response) {
+//        if (response === "USER_ADDED") {
+//            window.location.href = "/";
+//        } else if (response === "USER_AUTH"){
+//            window.location.href = "/share/user";
+//        }else if (response === "LOGIN_ERROR"){
+//            alert("Ups..your email is not found. Pass registration or try again")
+//            window.location.href = "/"; 
+//        }else if (response === "PSW_ERROR"){
+//           alert("Password is wrong, try again or recovery"); 
+//        }
+//        else {
+//            console.log("вывод ошибки данных");
+//        }
+//    }
+//
+//    function addFormListener() {
+//        for (let i = 0; i < document.forms.length; i++) {
+//            document.forms[i].addEventListener('submit', sendForm);
+//        }
+//    }
+//
+//    addFormListener();
+
+//}());
+
+
+//(function () {
+//    'use strict';
+//    
+//    
+//    
 let userData = []; //массив, куда попадают данные пользователя
 
-let logins = ['fox', 'bear']; //массив логинов
-let emails = ['fox@ab.com', 'bear@bear.com']; //массив емейлов
+let logins = ['bear']; //массив логинов
+let emails = ['bear@bear.com']; //массив емейлов
 
 //registration
 let loginReg = document.getElementById("loginReg"); //получение логина из формы
@@ -81,11 +130,6 @@ if(result === true){
 
     div.style.color = 'darkgreen'; 
     div.innerHTML = "success!";
-//    doneRight();
-//    function doneRight(){  
-//    let div = document.getElementById('info');
-//    div.style.color = 'darkgreen'; 
-//    div.innerHTML = "success!";
     } else {
     pswReg.style.borderColor = "red";
     checkPsw = 0;
@@ -128,8 +172,9 @@ function startEvents(event){
       logins.includes(loginReg.value);
       emails.includes(emailReg.value);
       userData.push('UserData:',loginReg.value, emailReg.value, pswReg.value, choose);
-      console.log(userData);
-      alert("Welcome to Rainbow world!");
+//      console.log(userData);
+//      alert("Welcome to Rainbow world!");
+       return responseHandler("USER_ADDED");
   }
     }
 
@@ -147,42 +192,114 @@ function goInto(event){
     } else if(emails.includes(email.value) === false) {
        event.preventDefault();
        psw.value = "";
-       alert('Ups..your email is not found. Pass registration or try again :-)');
-       console.log('Ups..your email is not found. Pass registration or try again :-)');
-  } 
-  /*здесь еще должна быть проверка на совпадение емейла и пароля, видимо, через php, 
-  *пока просто получение пароля и отправка в базу
-  *let UserEmailPsw =[];
-  *UserEmailPsw.push(email.value, psw.value);
-  */
-    
+//       alert('Ups..your email is not found. Pass registration or try again :-)');
+//       console.log('Ups..your email is not found. Pass registration or try again :-)');
+       return responseHandler("EMAIL_ERROR");
+  }     
       else {
       event.preventDefault();
-      alert("Wow! We glad to see you!");
-      console.log("Wow! We glad to see you!");
+//      alert("Wow! We glad to see you!");
+//      console.log("Wow! We glad to see you!");
+     return responseHandler("USER_AUTH");
   }
     }
     
 //восстановление пароля
-let recBtn = document.querySelector('button[name="Recovery"]');
-recBtn.addEventListener('click', checkEmail);
+//let recBtn = document.querySelector('button[name="Recovery"]');
+//recBtn.addEventListener('click', checkEmail);
 
-function checkEmail(event){
-let emailRec = document.getElementById('emailRec');
-    if(emailRec.value === "") {
-      //работает submit по умолчанию
-    } else if(emails.includes(emailRec.value) === false) {
-       event.preventDefault();
-        alert('Ups..your email is not found. Pass registration or try again');
-        console.log('Ups..your email is not found. Pass registration or try again');
-  } 
+//function checkEmail(event){
+//let emailRec = document.getElementById('emailRec');
+//    if(emailRec.value === "") {
+//      //работает submit по умолчанию
+//    } else if(emails.includes(emailRec.value) === false) {
+//       event.preventDefault();
+////        alert('Ups..your email is not found. Pass registration or try again');
+////        console.log('Ups..your email is not found. Pass registration or try again');
+//         return responseHandler("EMAIL_ERROR");
+//  } 
+//
+//      else {
+//      event.preventDefault();
+////      alert("Wait a few minutes and check your email :-)");
+////      console.log('Wait a few minutes and check your email :-)');
+//       return responseHandler("USER_EXISTS");
+//  }
+//    }
 
-      else {
-      event.preventDefault();
-      alert("Wait a few minutes and check your email :-)");
-      console.log('Wait a few minutes and check your email :-)');
-  }
+        function recForm(event) {
+        event.preventDefault();
+
+        let emailRec = document.getElementById('emailRec');
+        let value = emailRec.value;
+        console.log(value);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", this.action, true);
+        xhr.send(value);
+
+        xhr.onload = function (oEvent) {
+            if (xhr.status == 200) {
+                console.log("xhr response", xhr.responseText);
+                responseHandler(xhr.responseText);
+            }
+        };
     }
+        function recFormListener() {
+        for (let i = 0; i < document.forms.length; i++) {
+            document.forms[i].addEventListener('submit', recForm);
+        }
+    }
+    recFormListener();
+
+        function sendForm(event) {
+        event.preventDefault();
+
+        let userData = new UserData(this);
+        console.log(userData);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", this.action, true);
+        xhr.send(userData);
+
+        xhr.onload = function (oEvent) {
+            if (xhr.status == 200) {
+                console.log("xhr response", xhr.responseText);
+                responseHandler(xhr.responseText);
+            }
+        };
+    }
+
+    function responseHandler(response) {
+        if (response === "USER_ADDED") {
+            alert("Welcome to Rainbow world!");
+            window.location.href = "/rating";
+        } else if (response === "USER_AUTH"){
+            alert("Wow! We glad to see you!");
+            window.location.href = "/share";
+        }else if (response === "USER_EXISTS"){
+            alert("Wait a few minutes and check your email :-)");
+            window.location.href = "/";
+        }else if (response === "EMAIL_ERROR"){
+            alert("Ups..your email is not found. Pass registration or try again")
+            window.location.href = "#authorization"; 
+        }else if (response === "PSW_ERROR"){
+           alert("Password is wrong, try again or recovery"); 
+        }
+        else {
+            console.log("вывод ошибки данных");
+        }
+    }
+
+    function addFormListener() {
+        for (let i = 0; i < document.forms.length; i++) {
+            document.forms[i].addEventListener('submit', sendForm);
+        }
+    }
+
+//    addFormListener();
+//    
+    
 
 }(window));
 

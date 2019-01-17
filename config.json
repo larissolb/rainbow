@@ -16,12 +16,12 @@
 },
     "about":{
         "path":"/about",
-        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::IndexAction",
+        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::AboutAction",
         "method": "GET"    
 },
     "share":{
         "path":"/share",
-        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::IndexAction",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::userAction",
         "method": "GET"
 },
     "rating":{
@@ -64,6 +64,12 @@
         "authorization":{
         "path":"/user/authorization",
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::authorizationAction",
+        "method": "POST"
+          
+},
+        "recovery":{
+        "path":"/user/recovery",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::recAction",
         "method": "POST"
           
 }

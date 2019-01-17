@@ -1,4 +1,14 @@
 # study
+--Обновление на 17.01.19--
+1. Вывод авторизации/регистрации/восстановления в MVC модель
+2. Соедение с ajax и БД (пока не совсем успешно)
+3. Обновленные и новые файлы:
+- config.json
+- private/Controller/UserController.php
+- private/Models/UserModel.php
+- private/Views/share.php
+- private/Controllers/ShareController.php
+
 --Обновление на 14.01.19--
 
 Доделана загрузка картинок пользователем в БД через ajax 
