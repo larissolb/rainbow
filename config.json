@@ -61,13 +61,13 @@
         "method": "POST"
           
 },
-        "authorization":{
+    "authorization":{
         "path":"/user/authorization",
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::authorizationAction",
         "method": "POST"
           
 },
-        "recovery":{
+    "recovery":{
         "path":"/user/recovery",
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::recAction",
         "method": "POST"

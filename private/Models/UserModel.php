@@ -7,9 +7,10 @@ class UserModel
 {    
     const USER_ADDED = "USER_ADDED";
     const USER_EXISTS = "USER_EXISTS";
+    const LOGIN_EXISTS = "LOGIN_EXISTS";
     const EMAIL_ERROR = "EMAIL_ERROR";
     const PSW_ERROR = "PSW_ERROR";
-    const USER_AUTH = "/share";
+    const USER_AUTH = "USER_AUTH";
     const DB_ERROR = "DB_ERROR";
 
 protected $DBConnection;
@@ -23,8 +24,7 @@ protected $DBConnection;
         $sql = 'SELECT login FROM Users WHERE login =:login';
         $params = ['login'=>$userData['login']];
         $statement = $this->DBConnection->execute($sql, $params, false);
-        $answer = $statement->fetch(\PDO::FETCH_ASSOC);
-        return $answer;
+        return $statement;
     }
     
     public function recData($userData){
@@ -41,45 +41,39 @@ protected $DBConnection;
     
     public function addUser($userData){
         if ($this->loginExists($userData)){
-            return self::USER_EXISTS;
+            return self::LOGIN_EXISTS;
         }
-        $sql = "INSERT INTO user (login, hash, email)
-              VALUES (:login, :hash, :email)";
+        $sql = "INSERT INTO Users (login, psw, email)
+              VALUES (:login, :psw, :email)";
         $params = [
             'login'=>$userData['login'],
-            'hash'=>password_hash($userData['psw'], PASSWORD_DEFAULT),
+            'psw'=>password_hash($userData['psw'], PASSWORD_DEFAULT),
             'email'=>$userData['email'],
         ];
-       $statement = $this->DBConnection->execute($sql, $params, false);
-        if($statement->execute($params) === false) {
+        $statement = $this->DBConnection->execute($sql, $params, false);
+        if($statement) {
             return self::DB_ERROR;
         }
         return self::USER_ADDED;
     }
 
     public function authUser($userData){
-        $sql = "SELECT email, login, psw FROM Users 
+        $sql = "SELECT email, psw FROM Users 
       WHERE email=:email";
         $params = [
             'email'=>$userData['email']
         ];
-       
+             
         $statement = $this->DBConnection->execute($sql, $params, false);
-        $psw = $statement['psw'];
-//        $login = $statement['login'];
                 
         if (!$statement){
             return self::EMAIL_ERROR;
-        }elseif($psw != $userData['psw']){
-            return self::PSW_ERROR;
         }else{
-//        
- //        $hash = $answer['hash'];
-//        if (!password_verify($userData['psw'], $hash)){
-//            return self::PWD_ERROR;
-//        }
+         $hash = $statement['psw'];
+         if (!password_verify($userData['psw'], $hash)){
+            return self::PSW_ERROR;
+        }
         return self::USER_AUTH;
-            
     }
 }
 }

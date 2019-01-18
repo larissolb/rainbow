@@ -79,7 +79,7 @@
         </div><!--final recovery psw -->
             <a href="#" class="register" id="register"></a> <!-- form register-->
             <div class="register-window">
-                <form action="/" method="post" name="create">
+                <form action="/user/registration" method="post" name="create">
                 <fieldset id="create">
                     <legend><h4>Creat an account</h4></legend>
                     <div>

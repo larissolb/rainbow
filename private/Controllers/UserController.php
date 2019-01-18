@@ -32,9 +32,9 @@ class UserController extends Controller
         return parent::generateAjaxResponse($answer);
     }
     public function authorizationAction($request){
-        $postData = $request->post(); // массив $_POST
-        $answer = $this->userModel->authUser($postData);
-        return parent::generateAjaxResponse($answer);
+       $postData = $request->post(); // массив $_POST
+       $answer = $this->userModel->authUser($postData);
+       return parent::generateAjaxResponse($answer);
     }
     public function recAction($request){
         $postData = $request->post(); // массив $_POST
