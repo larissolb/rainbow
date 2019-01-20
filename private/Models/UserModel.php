@@ -1,7 +1,8 @@
 <?php
 namespace Larissolb\Rainbow\Models;
-
+use Larissolb\Rainbow\Base\Session;
 use Larissolb\Rainbow\Base\DBConnection;
+
 
 class UserModel
 {    
@@ -12,12 +13,16 @@ class UserModel
     const PSW_ERROR = "PSW_ERROR";
     const USER_AUTH = "USER_AUTH";
     const DB_ERROR = "DB_ERROR";
+    const COUNTRY_EMPTY = "COUNTRY_EMPTY";
+    const PSW_WRONG = "PSW_WRONG";
 
 protected $DBConnection;
+
     
     public function __construct() 
             {
             $this->DBConnection = new DBConnection();
+  
     }
 
     public function loginExists($userData){
@@ -43,6 +48,14 @@ protected $DBConnection;
         if ($this->loginExists($userData)){
             return self::LOGIN_EXISTS;
         }
+        if($userData['country'] === "Choose country"){
+            return self::COUNTRY_EMPTY;
+        }
+        if($userData['psw'] === "PSW_WRONG"){
+            return self::PSW_WRONG;
+        }
+        
+        
         $sql = "INSERT INTO Users (login, psw, email)
               VALUES (:login, :psw, :email)";
         $params = [
@@ -54,18 +67,19 @@ protected $DBConnection;
         if($statement) {
             return self::DB_ERROR;
         }
+       
         return self::USER_ADDED;
     }
 
     public function authUser($userData){
-        $sql = "SELECT email, psw FROM Users 
+        $sql = "SELECT email, psw, login FROM Users 
       WHERE email=:email";
         $params = [
             'email'=>$userData['email']
         ];
              
         $statement = $this->DBConnection->execute($sql, $params, false);
-                
+                        
         if (!$statement){
             return self::EMAIL_ERROR;
         }else{
@@ -73,7 +87,11 @@ protected $DBConnection;
          if (!password_verify($userData['psw'], $hash)){
             return self::PSW_ERROR;
         }
+         $_SESSION['auth'] = true;
+         $_SESSION['login'] = $statement['login'];
+         
         return self::USER_AUTH;
     }
 }
+
 }

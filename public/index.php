@@ -5,7 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 //setcookie('rainbow', 'mainpage', time() + 900);
 
 $request = new \Larissolb\Rainbow\Base\Request(); // получаем запрос
-
+session_start();
 $file = __DIR__ . '/../config.json';
 $app = new Larissolb\Rainbow\Base\Application($file);
 $response = $app->handleRequest($request);  // обрабатываем запрос

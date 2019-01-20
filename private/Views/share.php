@@ -1,52 +1,3 @@
-<!DOCTYPE html>
- <html>
-    <head>
-        <title>Rainbow - let's this world colour! <?php echo  $title; ?> </title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Сообщество любителей раскраски и делать этот мир ярким">
-        <meta name="keywords" content="раскраски, хобби, творчество, сообщество, общение, радужные события">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
-        <link rel="stylesheet" href="/CSS/style.css">
-    </head>
-    <body>
-    <div id="header"> <!--header-->
-            <h1 id='txt'>Welcome to Rainbow world</h1>
-    </div> <!-- final header-->
-    
-<div class="top">  <!-- top -->
-        <nav class="menu"> <!-- menu -->
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">Why I am here?</a></li>
-                    <li><a href="/share">Share art &#10000;</a></li>
-<!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
-                    <li><a href="/rating">Watch&Rate</a>
-                    <ul>
-                        <li><a href="/pencils">Pencils</a></li>
-                        <li><a href="/paints">Paints</a></li>
-                        <li><a href="/markers">Markers</a></li>
-                    </ul></li>
-                    <li><a href="#footer">Join us</a></li>
-                </ul>       
-        </nav> <!-- final menu -->
-        <nav class="mobile-menu"> <!-- mobile menu -->
-            <ul>
-                <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">Why I am here?</a></li>
-                        <li><a href="/share">Share art &#10000;</a></li>
-<!--                        <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
-                        <li><a href="/rating">Watch&Rate</a></li>
-                        <li><a href="#footer">Join us</a></li>
-                    </ul>
-                </li>      
-            </ul>        
-        </nav> <!-- final mobile menu -->
-        <div class="authorization"><a href="/">Go out</a> <!-- login -->
-            </div> <!-- final authorization-->
-</div> <!-- final top -->
 <div class="container-share"> <!--главная рамка-->
             <div class="left"> <!--position column left main-->
                 <h2>Last updates</h2>
@@ -141,39 +92,12 @@
                     </fieldset>  
                 </form>
                 <div><img src="../img/horizont_adv.png" alt='horizontal adv'></div>
-           </div>    
+           </div>
+    
             <div class="right"> <!-- begin share right side -->
                 <img src="../img/ad.png" alt="advertising">
             </div><!-- begin share right side -->
        </div> <!--конец главной рамки-->
-      <div> <!-- footer -->
-        <div id="footer" class="footer">
-            <div class="socnet">
-                <a href="https://www.whatsapp.com" target="_blank">
-                <img src="/img/icon/whatsup.png" alt="Whats'up"></a>
-                <a href="https://www.viber.com/download" target="_blank">
-                <img src="/img/icon/viber.png" alt="Viber"></a>
-                <a href="https://www.instagram.com/ShareRainbow" target="_blank">
-                <img src="/img/icon/instagram.png" alt="Instagram"></a>
-                <a href="https://www.vk.com" target="_blank">
-                <img src="/img/icon/vk.png" alt="Vkontakte"></a>
-            </div>
-            <div>
-                <a href="#" target="_blank">  
-                <img src="/img/icon/donate2.png" alt="Donate"></a> 
-            </div>
-        </div>
-        <div class="footer footer-m">
-            <span>2018, ShareRainbow. All rights reserved</span>
-            <div class="up"><a href="#header"><img src="/img/icon/up.png" alt="Up"></a></div>
-        </div>
-    </div>     <!-- finish footer -->          
-                
-<!--      скрипты          -->
-    <script src="/js/header.js"></script>
       <script src="/js/collection.js"></script>
       
- 
       
- </body>
-</html> 

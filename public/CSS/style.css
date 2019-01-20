@@ -43,6 +43,7 @@ h1 {
 /*menu*/
 .top {
     display: flex;
+    margin-bottom: 1em;
 }
 .menu {
     flex: 1;
@@ -52,16 +53,20 @@ h1 {
 
 .menu ul{
     display: flex;
-    justify-content: space-around;
-    position:absolute;
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    justify-content: space-between;
+/*    position:absolute;*/
     list-style:none;
     margin: 0;
-    padding:0.5em 0 0.5em 1.5em;
+/*    padding:0 0 0.5em 1.5em;*/
     background: #40E0D0;
-    width: 92%;
+/*    width: 99%;*/
 }
 
 .menu ul li {
+    padding: 0.5em 0 0.5em 0.5em;
     position:relative;
     float:left;    
     justify-content: center;
@@ -74,7 +79,7 @@ h1 {
 }
 
 .menu ul li a, .authorization a{
-    padding:0.7em 1.7em 0.7em 1.7em;
+    padding:0.7em 1.7em 0.6em 1.7em;
     font-size:0.875em;
     font-family:Arial, sans-serif;
     color:#ffffef;
@@ -86,8 +91,9 @@ h1 {
   
 }
 
-.menu ul li > a:hover, nav ul li:hover > a, .authorization a:hover{
-    background:#DDA0DD;
+.menu ul > li:hover, nav ul > li:hover, .authorization a:hover{
+/*    background:#DDA0DD;*/
+    background: #256D7B;
     color:#F0FFF0;
 }
 
@@ -95,12 +101,23 @@ h1 {
 .menu ul li ul {
     background: #AAF0D1;
     display: none;   
+    flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    justify-content: space-between;
+    position:absolute;
+    list-style:none;
+    margin: 0;
+    padding:0.5em 0 0.5em 1.5em;
+    background: #40E0D0;
+
 }
 
 .menu ul li ul li  {
     position:relative;   
     width: 100%;
     text-align: center;
+    padding: 0em; 
 }
 
 .menu ul li ul li a {
@@ -138,7 +155,7 @@ h1 {
     position: fixed;
     right: -1%;
     background:  #AAF0D1;
-    z-index: 1;
+    z-index: 2;
 }
 #email, #psw {
   width: 97%;
@@ -159,6 +176,7 @@ h1 {
  }
 .recovery:target {
     display: block;
+    height: 100%;
 }
 .recovery-window {
     display: none;
@@ -190,6 +208,7 @@ h1 {
 }
 .recovery:target+.recovery-window {
     display:block;
+    height: 100%;
 }
 
 /*register*/
@@ -204,7 +223,9 @@ h1 {
 }
 .register:target {
     display: block;
+    height: 100%;
 }
+
 .register-window {
     display:none;
     right: 0;

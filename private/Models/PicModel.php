@@ -132,6 +132,8 @@ protected $DBConnection;
         move_uploaded_file($tmp_name, "img/$name");
         
     }
+    
+    $login = $_SESSION['login'];
  
     $sql = "INSERT INTO Pics (nameBook, amount, text, img_path, Themes_id, Types_id, Users_login)
               VALUES (:nameBook, :amount, :text, :img_path, :Themes_id, :Types_id, :Users_login)";
@@ -142,7 +144,7 @@ protected $DBConnection;
         'img_path'=>$name,
         'Themes_id'=>$themes,
         'Types_id'=>$type,
-        'Users_login'=>"fox"        
+        'Users_login'=>$login        
     ];
     
     $statement = $this->DBConnection->execute($sql, $params, false);

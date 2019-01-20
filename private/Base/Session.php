@@ -37,5 +37,6 @@ class Session
     public function close(){
         session_destroy();
         unset($this->session);
+        
     }
 }

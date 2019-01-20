@@ -28,13 +28,10 @@
             window.location.href = "/share";
         } else if (response === "TYPE_ERROR"){
             alert("Sorry, this pic has bad type. Use only .png images");
-            window.location.href = "/share";
         } else if (response === "SIZE_ERROR"){
-            alert("Size is more than 50kb");
-            window.location.href = "/share";            
+            alert("Size is more than 50kb");         
         }else if (response === "NO_PIC"){
-            alert("You've forgotten your pic :-('");
-            window.location.href = "/share";            
+            alert("You've forgotten your pic :-('");          
         }
         
         else {

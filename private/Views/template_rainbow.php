@@ -18,8 +18,10 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">Why I am here?</a></li>
-<!--                    <li><a href="/share">Share art &#10000;</a></li>-->
+                           <?php if (isset($_SESSION['auth'])): ?>                        
+                    <li><a href="/share">Share art &#10000;</a></li>
 <!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
+                    <?php endif; ?>
                     <li><a href="/rating">Watch&Rate</a>
                     <ul>
                         <li><a href="/pencils">Pencils</a></li>
@@ -27,24 +29,16 @@
                         <li><a href="/markers">Markers</a></li>
                     </ul></li>
                     <li><a href="#footer">Join us</a></li>
-                </ul>       
-        </nav> <!-- final menu -->
-        <nav class="mobile-menu"> <!-- mobile menu -->
-            <ul>
-                <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
+                   <?php if (isset($_SESSION['auth'])): ?>                        
+                    <li><a href="#" class="authorization"><?php echo $_SESSION['login'] . " ;-)"; ?></a>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">Why I am here?</a></li>
-<!--                        <li><a href="/share">Share art &#10000;</a></li>-->
-<!--                        <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
-                        <li><a href="/rating">Watch&Rate</a></li>
-                        <li><a href="#footer">Join us</a></li>
+                        <li><a href="/out">Go out</a> </li>
                     </ul>
-                </li>      
-            </ul>        
-        </nav> <!-- final mobile menu -->
-<!--        <div class="authorization"><a href="/">Quit</a>  active -->
-        <div class="authorization"><a href="#authorization">Sign in</a> <!-- authorization -->
+                    </li>
+                        <?php else: ?>     
+                    <li>
+<!--                               <div class="authorization">-->
+                                   <a href="#authorization" class="authorization">Sign in</a> <!-- authorization -->
             <form action="/user/authorization" method="post" name="authorization">
                 <fieldset id="authorization" class="open-window">
                     <div><input id="email" name="email" type="email" placeholder="Your Email" required></div>
@@ -61,7 +55,7 @@
                     </div> <!-- final links inside mobile authorization-->
                 </fieldset>
             </form>         
-            </div> <!-- final authorization-->
+<!--            </div>  final authorization-->
         <a href="#" class="recovery" id="forgot"></a> <!--recovery psw -->
         <div class="recovery-window">
             <form action="/user/recovery" method="post" name="recovery">
@@ -99,7 +93,7 @@
                     <div id="info">Password must content min 5 characters, 1 upper letter and 1 number</div>
                     <div><label for="country">Your country</label>
                         <select id="country" name='country' required> 
-                            <option selected>Choose country</option> 
+                            <option>Choose country</option> 
                             <optgroup label="Europe"> 
                             <option value="E1">Portugal</option> 
                             <option value="E2">Spain</option> 
@@ -124,6 +118,25 @@
                 </form>
                  <a  href="#close" class="close-button" title="Закрыть"></a>
                 </div> <!-- final form register-->        
+                <?php endif; ?>
+                        
+                    </li>
+                </ul>       
+        </nav> <!-- final menu -->
+        <nav class="mobile-menu"> <!-- mobile menu -->
+            <ul>
+                <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">Why I am here?</a></li>
+<!--                    <li><a href="/share">Share art &#10000;</a></li>-->
+<!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
+                        <li><a href="/rating">Watch&Rate</a></li>
+                        <li><a href="#footer">Join us</a></li>
+                    </ul>
+                </li>      
+            </ul>        
+        </nav> <!-- final mobile menu -->
 </div> <!-- final top -->
         
         <?php include_once $view; ?>
@@ -150,7 +163,8 @@
             <div class="up"><a href="#header"><img src="/img/icon/up.png" alt="Up"></a></div>
         </div>
     </div>     <!-- finish footer -->          
-                
+    <p id='BtnEnter'></p>
+        <p id='createBtn'></p>
 <!--      скрипты          -->
     <script src="/js/header.js"></script>
     <script src="/js/users.js"></script>

@@ -21,7 +21,7 @@
 },
     "share":{
         "path":"/share",
-        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::userAction",
+        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::shareAction",
         "method": "GET"
 },
     "rating":{
@@ -72,7 +72,14 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::recAction",
         "method": "POST"
           
+},
+    "out":{
+        "path":"/{out}",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::outAction",
+        "method": "GET"
+          
 }
+
 }
 }
 

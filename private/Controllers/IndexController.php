@@ -15,7 +15,7 @@ class IndexController extends Controller
         return parent::generateResponse($view, $data);
     }
     public function aboutAction(){
-        $title = ' ';
+        $title = 'Why I am here?';
         $view = 'about.php';
         
         $data = [
@@ -23,5 +23,22 @@ class IndexController extends Controller
         ];
         return parent::generateResponse($view, $data);
     }
-   
+    
+    public function shareAction(){
+        if((isset($_SESSION['auth']))){
+        $title1 = 'Share with this world ';
+        $view1 = 'share.php';
+        } else {
+        $title1 = '';
+        $view1 = 'index_view.php';
+        }
+        $title = $title1;
+        $view = $view1;
+        
+        $data = [
+            'title'=>$title,
+        ];
+        
+        return parent::generateResponse($view, $data);
+    }
 }
