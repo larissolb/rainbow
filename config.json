@@ -49,6 +49,11 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::PicAction",
         "method": "GET"
 },
+    "CommentPics":{
+        "path":"/rating/comment",
+        "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::CommentAction",
+        "method": "POST"
+},
     "LoadPics":{
         "path":"/share/loadpics",
         "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::LoadPicsAction",

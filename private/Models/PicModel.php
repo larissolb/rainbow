@@ -10,9 +10,25 @@ const SIZE_ERROR = "SIZE_ERROR";
 const TYPE_ERROR = "TYPE_ERROR";
 const LOAD_SUCCESS = "LOAD_SUCCESS";
 const NO_PIC = "NO_PIC";
+const COMMENT_SAVED =  "COMMENT_SAVED";
   
+protected $DBConnection;
     
+    public function __construct() 
+            {
+            $this->DBConnection = new DBConnection();
+    }
+
+
     public function getPics($id) {
+        
+        //получение комментариев к картинке
+//    $sql = "SELECT Comment FROM Comments WHERE idComments = 1";
+//    $statement = $this->DBConnection->queryAll($sql);
+//    
+//                              
+        
+        
 $pics = [
 [
 'id' => 1,
@@ -30,7 +46,8 @@ $pics = [
 'type' => 'gouache',
 'amount' => 15,
 'describe' => 'from my dreams about Australia',
-'img' => 'slide1.jpeg'
+'img' => 'slide1.jpeg',
+ 'comment' => "o! that's good"
 ],
 [
 'id' => 3,
@@ -63,19 +80,16 @@ $pics = [
 
 foreach ($pics as $pic) { 
         if ($pic["id"] == $id){
+            $_SESSION['idPics'] =  $pic['id'];
             return $pic;       
 }
-    
-    
 }
+
+
+
     }
     
-protected $DBConnection;
-    
-    public function __construct() 
-            {
-            $this->DBConnection = new DBConnection();
-    }
+
 
    //check size and type
     public function loadPics($data) {
@@ -151,4 +165,31 @@ protected $DBConnection;
           return self::LOAD_SUCCESS;
     }
 }
+
+public function saveComment($comData) {
+
+       $login = $_SESSION['login'];
+       $idPic = $_SESSION['idPics'];
+        
+        $sql = "INSERT INTO Comments (Comment, Users_login, Pics_id)
+              VALUES (:Comment, :Users_login, :Pics_id)";
+        $params = [
+            'Comment'=>$comData['comment'],
+            'Users_login'=>$login,
+            'Pics_id'=> $idPic
+        ];
+//        var_dump($params);
+        $statement = $this->DBConnection->execute($sql, $params, false);
+        if($statement) {
+            return self::DB_ERROR;
+        }
+               
+        return self::COMMENT_SAVED; 
+        
+    }
+    
+   
 }
+
+
+

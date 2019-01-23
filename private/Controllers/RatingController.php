@@ -62,12 +62,21 @@ class RatingController extends Controller
         $title = 'About pic';
         $view = 'pic.php';
         $pics = $this->picModel->getPics($id);
-                     
+                            
         $data = [
             'title'=>$title,
-            'pics'=>$pics,
+            'pics'=>$pics
+                
         ];
         return parent::generateResponse($view, $data);
     }
+    
+        public function commentAction($request){
+       
+        $postData = $request->post(); // массив $_POST
+        $answer = $this->picModel->saveComment($postData);
+        return parent::generateAjaxResponse($answer);    
+        
+        }
     
 }

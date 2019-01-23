@@ -1,6 +1,5 @@
 <?php
 namespace Larissolb\Rainbow\Models;
-use Larissolb\Rainbow\Base\Session;
 use Larissolb\Rainbow\Base\DBConnection;
 
 

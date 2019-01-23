@@ -17,12 +17,13 @@
         <div id="like"><img src='/img/icon/like.png' alt='like'></div>
         <span class="like"></span>
         <div class="comments">
-            <form name='formComment'>
+            <form action="/rating/comment" method="post" name='formComment'>
                 <fieldset>
                   <div>
-                  <textarea name='text'> </textarea> 
+                  <textarea name='comment'> </textarea> 
                   </div>
-                  <div><input type='submit' name='commentBtn' value='comment' class="btn-comment"></div>
+                  <div>
+                    <input type='submit' name='commentBtn' value='comment' class="btn-comment"></div>
                 </fieldset>
                 <fieldset>
                     <div id="comments"> </div>
