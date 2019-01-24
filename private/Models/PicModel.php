@@ -20,13 +20,22 @@ protected $DBConnection;
     }
 
 
-    public function getPics($id) {
+    public function getComments($id) {
+             //получение комментариев к картинке
+        $sql = "SELECT comment FROM Comments WHERE Pics_id=:Pics_id";
+        $params = [
+            'Pics_id'=>$id
+                ];
+        $statement = $this->DBConnection->execute($sql, $params, false);
         
-        //получение комментариев к картинке
-//    $sql = "SELECT Comment FROM Comments WHERE idComments = 1";
-//    $statement = $this->DBConnection->queryAll($sql);
-//    
-//                              
+        $comments = $statement['comment'];
+        var_dump($comments);
+        return $comments;
+   
+    }
+    
+    
+    public function getPics($id) {
         
         
 $pics = [
@@ -46,8 +55,7 @@ $pics = [
 'type' => 'gouache',
 'amount' => 15,
 'describe' => 'from my dreams about Australia',
-'img' => 'slide1.jpeg',
- 'comment' => "o! that's good"
+'img' => 'slide1.jpeg'
 ],
 [
 'id' => 3,
@@ -187,6 +195,9 @@ public function saveComment($comData) {
         return self::COMMENT_SAVED; 
         
     }
+
+
+
     
    
 }

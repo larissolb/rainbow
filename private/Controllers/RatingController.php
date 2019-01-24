@@ -62,10 +62,12 @@ class RatingController extends Controller
         $title = 'About pic';
         $view = 'pic.php';
         $pics = $this->picModel->getPics($id);
+        $comments = $this->picModel->getComments($id);
                             
         $data = [
             'title'=>$title,
-            'pics'=>$pics
+            'pics'=>$pics,
+            'comments'=>$comments
                 
         ];
         return parent::generateResponse($view, $data);

@@ -61,7 +61,7 @@ class DBConnection
         }
         
         $data = $statement->fetch(\PDO::FETCH_ASSOC);
-        var_dump($data);
+//        var_dump($data);
     }
 
     public function execute($sql_string, $params, $all=true) {
@@ -69,9 +69,9 @@ class DBConnection
         $statement->execute($params);
         
         if(!$all) {
-            return $statement->fetch(\PDO::FETCH_ASSOC);;
+            return $statement->fetch(\PDO::FETCH_ASSOC);
         }
-        return $statement->fetchAll(\PDO::FETCH_ASSOC);;
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
         
     }
     

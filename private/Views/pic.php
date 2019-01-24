@@ -23,7 +23,10 @@
                 </fieldset>
                 <fieldset>
                     <div id="comments">
-                        <div><?php echo $pics['comment'];?></div>
+                       <?php foreach ($comments as $comment):?>
+                        <div><?php echo $comment; ?></div>
+                        <?php endforeach;?>
+                        
                     </div>
                 </fieldset>
             </form>
