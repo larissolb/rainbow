@@ -23,8 +23,10 @@
                 </fieldset>
                 <fieldset>
                     <div id="comments">
-                       <?php foreach ($comments as $comment):?>
-                        <div><?php echo $comment; ?></div>
+                        
+                        
+                       <?php foreach ($comments as $key=>$comment):?>
+                        <div><?php echo $comment['comment']; ?></div>
                         <?php endforeach;?>
                         
                     </div>
@@ -35,7 +37,7 @@
       </div>
           </div> <!--finish center--> 
 
-        <div class="right"> <!—begin right side-->
+        <div class="right"> 
           <a href='/pencils'><img src="/img/a_pencils.jpg" alt="watch paints by pencils"></a>
           <a href='/paints'><img src="/img/a_watercolors.png" alt="watch paints by watercolors"></a>
           <a href='/markers'><img src="/img/a_markers.jpg" alt="watch paints by markers"></a>

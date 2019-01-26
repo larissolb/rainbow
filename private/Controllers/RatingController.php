@@ -56,14 +56,14 @@ class RatingController extends Controller
     
 
     public function picAction($request){
-//        var_dump($request);
+
         $params = $request->params();
         $id = $params['id'];
         $title = 'About pic';
         $view = 'pic.php';
         $pics = $this->picModel->getPics($id);
         $comments = $this->picModel->getComments($id);
-                            
+                                    
         $data = [
             'title'=>$title,
             'pics'=>$pics,
@@ -75,7 +75,7 @@ class RatingController extends Controller
     
         public function commentAction($request){
        
-        $postData = $request->post(); // массив $_POST
+        $postData = $request->post(); 
         $answer = $this->picModel->saveComment($postData);
         return parent::generateAjaxResponse($answer);    
         

@@ -26,11 +26,16 @@ protected $DBConnection;
         $params = [
             'Pics_id'=>$id
                 ];
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->DBConnection->execute($sql, $params, true);
         
-        $comments = $statement['comment'];
-        var_dump($comments);
+        $comments = [];
+        foreach ($statement as $comment) {
+
+            array_push($comments, $comment);     
+  }
+  
         return $comments;
+        
    
     }
     
