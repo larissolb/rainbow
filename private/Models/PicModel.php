@@ -1,6 +1,7 @@
 <?php
 namespace Larissolb\Rainbow\Models;
 use Larissolb\Rainbow\Base\DBConnection;
+use Larissolb\Rainbow\Base\Response;
 
 
 class PicModel 
@@ -13,10 +14,12 @@ const NO_PIC = "NO_PIC";
 const COMMENT_SAVED =  "COMMENT_SAVED";
   
 protected $DBConnection;
+protected $response;
     
     public function __construct() 
             {
             $this->DBConnection = new DBConnection();
+            $this->response = new Response();
     }
 
 
@@ -29,81 +32,80 @@ protected $DBConnection;
         $statement = $this->DBConnection->execute($sql, $params, true);
         
         $comments = [];
+        
         foreach ($statement as $comment) {
 
             array_push($comments, $comment);     
   }
   
         return $comments;
-        
-   
     }
     
+    public function getLastLoadPics() {
+        $sql = "SELECT id, nameBook, amount, text, img_path, Themes_id, Types_id, Users_login  FROM Pics ORDER BY id DESC LIMIT 1";
+        $last_pics = $this->DBConnection->queryAll($sql);
+        foreach($last_pics as $arr){
+            $last_pic = $arr;
+        }
+        
+        return $last_pic;
+    }
     
+    public function getRandomPics() {
+        $sql = "SELECT id, img_path  FROM Pics ORDER BY id ASC LIMIT 3";
+        $pics_arr = $this->DBConnection->queryAll($sql);
+        
+        $pics = [];
+        
+        $rand_pics = array_rand($pics_arr, 2);
+        $rand_pic1 = $pics_arr[$rand_pics[0]];
+        array_push($pics, $rand_pic1);
+        $rand_pic2 = $pics_arr[$rand_pics[1]];
+        array_push($pics, $rand_pic2);
+        
+        return $pics;
+    }
+     
     public function getPics($id) {
+        $sql = "SELECT id, nameBook, amount, text, img_path, Themes_id, Types_id, Users_login  FROM Pics WHERE id=:id";
+        $params = [
+            'id'=>$id
+                ];
+        $pic_arr = $this->DBConnection->execute($sql, $params, true);
         
+  foreach ($pic_arr as $pics) { 
+        //choose theme
+        $id_theme = $pics['Themes_id'];   
+        $sql = "SELECT theme FROM Themes WHERE id=:id";
+        $params = [
+            'id'=>$id_theme
+                ];
+        $theme_arr = $this->DBConnection->execute($sql, $params, true);
+        foreach ($theme_arr as $key => $value) {
+            $theme = $value["theme"];            
+        }
+        $pics['Themes_id'] = $theme;
         
-$pics = [
-[
-'id' => 1,
-'nameBook' => 'Cat',
-'theme' => 'Animals',
-'type' => 'pencil',
-'amount' => 5,
-'describe' => 'It is my favorite pic among my arts',
-'img' => 'slide.jpg'
-],
-[
-'id' => 2,
-'nameBook' => 'Kengo',
-'theme' => 'Animals',
-'type' => 'gouache',
-'amount' => 15,
-'describe' => 'from my dreams about Australia',
-'img' => 'slide1.jpeg'
-],
-[
-'id' => 3,
-'nameBook' => 'flowers',
-'theme' => 'Nature',
-'type' => 'watercolour',
-'amount' => 10,
-'describe' => 'Summer..where are u?',
-'img' => 'youamongus.jpg'
-],
-[
-'id' => 4,
-'nameBook' => 'Speedy',
-'theme' => 'Cars',
-'type' => 'pen',
-'amount' => 1,
-'describe' => 'it is my mood today',
-'img' => 'slide3.jpg'
-],
-[
-'id' => 5,
-'nameBook' => 'Houses',
-'theme' => 'Cities',
-'type' => 'markers',
-'amount' => 3,
-'describe' => 'the house of Spider-man',
-'img' => 'slide2.jpg'
-]
-];
-
-foreach ($pics as $pic) { 
-        if ($pic["id"] == $id){
-            $_SESSION['idPics'] =  $pic['id'];
-            return $pic;       
-}
-}
-
-
-
+        //choose instrument
+        $id_type = $pics['Types_id'];   
+        $sql_type = "SELECT type FROM Types WHERE id=:id";
+        $params_type = [
+            'id'=>$id_type
+                ];
+        $type_arr = $this->DBConnection->execute($sql_type, $params_type, true);
+        foreach ($type_arr as $key => $value) {
+            $type = $value["type"];
+        }
+         $pics['Types_id'] = $type;
+      
+        if ($pics["id"] == $id){
+            $_SESSION['idPics'] =  $pics['id'];
+            return $pics;       
+        }  
     }
     
-
-
+}
+ 
    //check size and type
     public function loadPics($data) {
 
@@ -199,11 +201,7 @@ public function saveComment($comData) {
                
         return self::COMMENT_SAVED; 
         
-    }
-
-
-
-    
+    }    
    
 }
 

@@ -1,13 +1,12 @@
-        <div class="container-share"> <!--главная рамка-->
+<div class="container-share"> <!--главная рамка-->
 
-<!--form for upload - center 70% -->
             <div class="center">
                 <div class="about-pic">
-<h2>About <?php echo $pics['nameBook'];?> </h2>
-<img src="/img/<?php echo $pics['img']; ?> " alt="<?php echo $pics['img'];?> ">
-<p><?php echo $pics['describe'];?></p>
-<div><span>Theme: <?php echo $pics['theme'];?></span>
-<span>Instruments: <?php echo $pics['type'];?></span>
+<h2><?php echo $pics['nameBook'];?> </h2>
+<img src="/img/<?php echo $pics['img_path']; ?> " alt="<?php echo $pics['img_path'];?> ">
+<p><?php echo $pics['text'];?></p>
+<div><span>Theme: <?php echo $pics['Themes_id'];?></span>
+<span>Instruments: <?php echo $pics['Types_id'];?></span>
 <span>Amount of colours: <?php echo $pics['amount'];?></span></div>
 </div>
    <div class="actions">

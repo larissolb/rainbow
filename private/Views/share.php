@@ -1,37 +1,15 @@
 <div class="container-share"> <!--главная рамка-->
-            <div class="left"> <!--position column left main-->
-                <h2>Last updates</h2>
-<!--                <img src="../img/girl.jpg" alt="Picture must be here">-->
-                <?php
-    $images1 = array(
-        'girl.jpg',
-        'pencils.jpg',
-        'icon2.jpg',
-        'colourbook.jpg',
-        'share.jpeg',
-        'leftpic.png',
-        );
-    $image1  = $images1[array_rand($images1)];
-    $output = "<img src=\"../img/" . $image1 . "\" alt=\"random pic\" />";
-    echo $output;
-?>
-               <div><p>Finally, rainbow people, we have the place where we can share our results from our paintbooks!</p></div>
-
-                               <?php
-    $images2 = array(
-        'girl.jpg',
-        'pencils.jpg',
-        'icon2.jpg',
-        'colourbook.jpg',
-        'share.jpeg',
-        'leftpic.png',
-    );
-    $image2  = $images2[array_rand($images2)];
-    $output = "<img src=\"../img/" . $image2 . "\" alt=\"random pic\" />";
-    echo $output;
-?>
-              <div><p><a href='#authorization'>Join us!</a>  Share your pics all the world ;-)</p></div>
-                </div> <!--end share left side -->
+    <div class="left"> <!--position column left main-->
+        <h2>Last updates</h2>
+        <div><?php echo "<img src=\"../img/" . $last_pic['img_path'] . "\" alt=\"last loaded pic\" />";?>
+        <a href="/rating/pic/<?php echo $last_pic['id'];?>"> More details </a></div>
+    
+        <?php foreach ($pics as $rand_pic):?>
+        <div class="hrefleft"><img src="/img/<?php echo $rand_pic['img_path']; ?> " alt="<?php echo $rand_pic['img_path'];?> ">
+        <a href="/rating/pic/<?php echo $rand_pic['id'];?>"> More details </a></div>
+        <?php endforeach;?>
+        <div><p><a href="#authorization">Join us and Share your pics!</a></div>
+    </div> <!--end share left side -->
 <!--form for upload - center 70% -->
             <div class="center">
                 <form action="/share/loadpics" method="post" autocomplete="on" enctype="multipart/form-data" name="Upload">

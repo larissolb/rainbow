@@ -45,23 +45,25 @@ class DBConnection
     }
     
     public function queryAll($sql_string) {  
-        $statement = $this->query($sql_string);
+        $statement = $this->connection->query($sql_string);
         if(!$statement){
             return FALSE; //либо сообщение
         }
         
-        $data = $statement->fetchAll(\PDO::FETCH_ASSOC);
-        var_dump($data);
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+        
+//        $data = $statement->fetchAll(\PDO::FETCH_ASSOC);
+//        var_dump($data);
     }
     
     public function query($sql_string) {  
-        $statement = $this->query($sql_string);
+        $statement = $this->connection->query($sql_string);
         if(!$statement){
             return FALSE; //либо сообщение
         }
         
         $data = $statement->fetch(\PDO::FETCH_ASSOC);
-//        var_dump($data);
+        var_dump($data);
     }
 
     public function execute($sql_string, $params, $all=true) {

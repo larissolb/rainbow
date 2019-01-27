@@ -2,6 +2,7 @@
 
 namespace Larissolb\Rainbow\Controllers;
 use Larissolb\Rainbow\Base\Controller;
+use Larissolb\Rainbow\Models\PicModel;
 
 class IndexController extends Controller
 {
@@ -24,6 +25,13 @@ class IndexController extends Controller
         return parent::generateResponse($view, $data);
     }
     
+        protected $picModel;
+    
+    public function __construct() 
+            {
+            $this->picModel = new PicModel();
+    }
+    
     public function shareAction(){
         if((isset($_SESSION['auth']))){
         $title1 = 'Share with this world ';
@@ -34,9 +42,13 @@ class IndexController extends Controller
         }
         $title = $title1;
         $view = $view1;
+        $last_pic = $this->picModel->getLastLoadPics();
+        $pics = $this->picModel->getRandomPics();
         
         $data = [
             'title'=>$title,
+            'last_pic'=>$last_pic,
+            'pics'=>$pics
         ];
         
         return parent::generateResponse($view, $data);
