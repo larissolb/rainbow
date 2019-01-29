@@ -20,11 +20,13 @@ class RatingController extends Controller
         $pics = $this->picModel->getLastLoadPics();
         $id = $this->picModel->getLastLoadPics()['id'];
         $comments = $this->picModel->getComments($id);
-                
+        $likes = $this->picModel->getLikes($id);
+           
         $data = [
             'title'=>$title,
             'pics'=>$pics,
-            'comments'=>$comments
+            'comments'=>$comments,
+            'likes'=>$likes
         ];
         return parent::generateResponse($view, $data);
     }
@@ -84,12 +86,13 @@ class RatingController extends Controller
         $view = 'pic.php';
         $pics = $this->picModel->getPics($id);
         $comments = $this->picModel->getComments($id);
+        $likes = $this->picModel->getLikes($id);
                                     
         $data = [
             'title'=>$title,
             'pics'=>$pics,
-            'comments'=>$comments
-                
+            'comments'=>$comments,
+            'likes'=>$likes
         ];
         return parent::generateResponse($view, $data);
     }
@@ -100,6 +103,12 @@ class RatingController extends Controller
         $answer = $this->picModel->saveComment($postData);
         return parent::generateAjaxResponse($answer);    
         
-        }
+    }
+        
+        public function likeAction(){
+        $answer = $this->picModel->addLike();
+        return parent::generateAjaxResponse($answer);    
+        
+    }
     
 }

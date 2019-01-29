@@ -59,6 +59,11 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::LoadPicsAction",
         "method": "POST"
 },
+    "LikePics":{
+        "path":"/rating/like",
+        "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::LikeAction",
+        "method": "POST"
+},
 
     "registration":{
         "path":"/user/registration",

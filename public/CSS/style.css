@@ -367,7 +367,7 @@ h4 {
     background-color: highlighttext;
 }
 
-/*index.html*/
+/*index*/
 .container-mobile, #mob-text {
     display: none;
 }
@@ -396,21 +396,26 @@ h4 {
     margin: 1em;
 }
 
+.center > div > h3, p {
+    margin: 1em 1em 0 3em;
+    text-align: justify; 
+}
+
 .right {
     flex: 1;
     margin: 1em;
 }
 
 .right img {
-    border: ridge 10px #FDD5B1;
     border-radius: 30px;
+    margin-bottom: 1.5em;
 }
 
 /*figure office equipment*/
 .logocontainer {
   position: relative;
   margin: auto;
-  top: 6.5%;
+  top: 14.5%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -729,12 +734,12 @@ h4 {
 
 .container-rating .center {
     flex: 4;
-    margin: 1em 0 1em 2em;
+    margin: 1em 0 1em 3em;
 }
 
 .container-rating .right {
     flex: 1;
-    margin: 1em 0 1em 1em;
+    margin: 1em 1em 1em 0;
 }
 
 .container-rating .right a > img {
@@ -758,7 +763,7 @@ h4 {
     20px 0 0 -10px chartreuse, 
     0 20px 0 -10px gold, 
     -20px 0 0 -10px darkturquoise;
-    margin: 1em 1em 1em 1em;
+    margin: 1em 0 1em 2em;
  }
 
  .galleria-theme-classic {
@@ -771,6 +776,12 @@ h4 {
     align-self: center;
     background: #F0FFF0;
     width: 99%;
+}
+
+.icons-rate {
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 .slider {
@@ -803,20 +814,33 @@ h4 {
     padding: 1em 0 1em 0.5em;
 }
 
+#info {
+    opacity: 0.8;
+    padding: 1em 0 1em 0;
+    margin: 0 15em 0 0;
+}
+
 #like:hover, #print:hover {
         opacity: 1;
         cursor: pointer;
 }
-.like {
+.like, .container-share .like{
     color: lightseagreen;
     font-weight:bolder;
+    resize: none;
+    background: none;
+    margin-bottom: 0.5em;
+    border: none;
+ }
+ .container-share .like{
+  width: 30%;
  }
 .comments {
     width: 100%;
     padding-top: 0.5em;
  }
  
-textarea {
+.comments textarea {
   resize: none;
   width: 100%;
   background: #0088cc; 
@@ -981,6 +1005,12 @@ iframe {
 .left p > a{
 text-transform: uppercase;
 font-weight:bold; 
+
+}
+
+.link-instr p, p > a {
+    margin: 0;
+    text-align: left;
 }
 
 .container-share .center {
@@ -1046,6 +1076,14 @@ font-weight:bold;
 
 .container-share .center img {
   margin: 1em;
+}
+
+.container-share .center #like >img {
+  margin: 0;
+}
+
+#formLike {
+    width: 10%;
 }
 
 .container-share .Btn:hover {

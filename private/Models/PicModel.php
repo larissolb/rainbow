@@ -12,6 +12,9 @@ const TYPE_ERROR = "TYPE_ERROR";
 const LOAD_SUCCESS = "LOAD_SUCCESS";
 const NO_PIC = "NO_PIC";
 const COMMENT_SAVED =  "COMMENT_SAVED";
+const LIKE =  "LIKE";
+const GO_AUTH = "GO_AUTH";
+
   
 protected $DBConnection;
 protected $response;
@@ -39,6 +42,20 @@ protected $response;
   }
   
         return $comments;
+    }
+    
+        public function getLikes($id) {
+             //получение комментариев к картинке
+        $sql = "SELECT `like` FROM Pics WHERE id=:id";
+        $params = [
+            'id'=>$id
+                ];
+        $statement = $this->DBConnection->execute($sql, $params, FALSE);
+        $likes = $statement['like'];
+
+        $_SESSION['idPic'] = $id;
+          
+        return $likes;
     }
     
     public function getLastLoadPics() {
@@ -201,7 +218,34 @@ public function saveComment($comData) {
                
         return self::COMMENT_SAVED; 
         
-    }    
+    }
+
+public function addLike() {
+
+        $idPic = $_SESSION['idPic'];
+        
+        if(!isset($_SESSION['login'])){
+         return self::GO_AUTH;   
+        } else {
+        
+        $sql = "UPDATE Pics SET `like`=:like
+              WHERE `id`=:id";
+        
+        $current = $this->getLikes($idPic);
+        
+        $params = [
+            'like'=>$current+1,
+            'id'=>$idPic
+        ];
+
+        $statement = $this->DBConnection->execute($sql, $params, false);
+        if($statement) {
+            return self::DB_ERROR;
+        }
+               
+        return self::LIKE; 
+        }  
+    }        
    
 }
 

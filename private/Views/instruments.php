@@ -1,7 +1,3 @@
-<script src="/js/slider.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script src="/galleria/galleria-1.4.2.min.js"></script>
-
 <div class="container-rating"> 
     <div class="left"> <!--position column left main-->
         <h2>Last updates</h2>
@@ -15,13 +11,11 @@
         <a href="/rating/pic/<?php echo $rand_pic['id'];?>"> More details </a></div>
         <?php endforeach;?>
 
-        <div><p><a href="#authorization">Join us and Share your pics!</a></div>
+        <div class="link-instr"><p><a href="#authorization">Join us and Share your pics!</a></div>
     </div> <!--end share left side -->
     <div class="center"> <!-- center -->
         <h1><?php echo $header; ?></h1>
-        <div class="galleria">
-            
-        <div id="slider"></div></div>
+
     </div> <!--finish center--> 
     <div class="right"> <!-- beginright   -->
         <h2>Watch others</h2> 
@@ -38,5 +32,3 @@
         ?>
     </div><!-- finish right  -->
 </div> <!--finish container-->    
-<script src="/js/index.js"></script>
-<script src="/js/galleria.js"></script>

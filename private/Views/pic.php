@@ -10,8 +10,11 @@
 <span>Amount of colours: <?php echo $pics['amount'];?></span></div>
 </div>
    <div class="actions">
-        <div id="like"><img src='/img/icon/like.png' alt='like'></div>
-        <span class="like"></span>
+        <form action="/rating/like" name="like" id="formLike">
+            <div id="like"><img src='/img/icon/like.png' alt='like'>
+                <textarea name='like' class="like"><?php echo $likes; ?></textarea>   
+            </div>
+        </form>
         <div class="comments">
             <form action="/rating/comment" method="post" name='formComment'>
                 <fieldset>
