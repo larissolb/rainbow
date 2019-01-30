@@ -215,13 +215,13 @@ protected $response;
         if($data["type"] === "pen") {
             $type = 1;    
         }elseif($data["type"] === "pencil"){
-            $type = 3;    
+            $type = 2;    
         }elseif($data["type"] === "gouache"){
-            $type = 4;    
+            $type = 3;    
         }elseif($data["type"] === "watercolour"){
-            $type = 5;    
+            $type = 4;    
         }else{
-            $type = 6;    
+            $type = 5;    
         }
         
         if(!in_array($type_pic, $types)){
