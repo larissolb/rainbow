@@ -66,7 +66,8 @@ protected $DBConnection;
         if($statement) {
             return self::DB_ERROR;
         }
-       
+        $_SESSION['auth'] = true;
+        $_SESSION['login'] = $userData['login'];
         return self::USER_ADDED;
     }
 

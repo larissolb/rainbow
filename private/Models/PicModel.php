@@ -58,9 +58,17 @@ protected $response;
         return $likes;
     }
     
+    public function getAllPics() {
+        $sql = "SELECT *  FROM Pics";
+        $all_pics = $this->DBConnection->queryAll($sql);
+        
+        return $all_pics;
+    }
+    
     public function getLastLoadPics() {
-        $sql = "SELECT id, nameBook, amount, text, img_path, Themes_id, Types_id, Users_login  FROM Pics ORDER BY id DESC LIMIT 1";
+        $sql = "SELECT *  FROM Pics ORDER BY id ASC";
         $last_pics = $this->DBConnection->queryAll($sql);
+//        var_dump($last_pics);
         foreach($last_pics as $arr){
             $last_pic = $arr;
         }
@@ -131,12 +139,14 @@ protected $response;
         foreach ($pics["picture"]["error"] as $key => $error) {
         $tmp_name = $pics["picture"]["tmp_name"][$key];
         $name = basename($pics["picture"]["name"][$key]);
+//        var_dump($name);
     
         if($error == UPLOAD_ERR_FORM_SIZE){
         return self::SIZE_ERROR;
     } 
 
-    $types = ['image/png'];
+    $types = ['image/jpeg'];
+    
     $finfo = finfo_open(FILEINFO_MIME_TYPE);   
         
         foreach ($pics["picture"]["error"] as $key => $error) {
@@ -175,7 +185,8 @@ protected $response;
         finfo_close($finfo);
         return self::TYPE_ERROR;
     }
-        move_uploaded_file($tmp_name, "img/$name");
+    
+    move_uploaded_file($tmp_name, "img/$name");
         
     }
     
@@ -200,9 +211,13 @@ protected $response;
 
 public function saveComment($comData) {
 
-       $login = $_SESSION['login'];
-       $idPic = $_SESSION['idPics'];
         
+       if(!isset($_SESSION['login'])){
+         return self::GO_AUTH;   
+        } else {
+            $login = $_SESSION['login'];
+            $idPic = $_SESSION['idPics'];
+            
         $sql = "INSERT INTO Comments (Comment, Users_login, Pics_id)
               VALUES (:Comment, :Users_login, :Pics_id)";
         $params = [
@@ -217,7 +232,7 @@ public function saveComment($comData) {
         }
                
         return self::COMMENT_SAVED; 
-        
+        }
     }
 
 public function addLike() {

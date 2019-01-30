@@ -16,6 +16,7 @@ let text = formComment.elements.comment; //нахождение элемента
         // console.log(place); //проверка места родителя
         place.insertBefore(newDiv, place.childNodes[0]); //местоположение создаваемых дивов, после родителя, т.е. будет каждый новый коммент сверху
         newDiv.innerHTML += (text.value); //вывод самого текста комментария
+        formComment.reset();
         }
         }else { 
           alert('Add comment into field');
@@ -48,19 +49,14 @@ let text = formComment.elements.comment; //нахождение элемента
         if (response === "COMMENT_SAVED") {
             saveNewComment(1);
             console.log("comment add!");
-        } else if (response === "TYPE_ERROR"){
-            alert("Sorry, this pic has bad type. Use only .png images");
+        }else if (response === "GO_AUTH"){
+            alert("Please, sign in or register");
+            return "GO_AUTH";
         }   else {
             console.log("system error");
         }
     }
 
-    function addFormListener() {
-        for (let i = 0; i < document.forms.length; i++) {
-            document.forms[i].addEventListener('submit', sendForm);
-        }
-    }
-
-    addFormListener();
+            formComment.addEventListener('submit', sendForm);
 
 }());

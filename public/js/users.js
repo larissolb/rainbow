@@ -102,14 +102,14 @@ if(result === true){
         }
     }
     
-   function addFormListener() {
-       for (let i = 0; i < document.forms.length; i++) {
-           document.forms[i].addEventListener('submit', sendForm);
-       }
-   }
+    
+    let authorization = document.forms.authorization; //определена форма авторизации
+    authorization.addEventListener('submit', sendForm);
+    
+   let recovery = document.forms.recovery; //форма восстановления пароля
+    recovery.addEventListener('submit', sendForm);
 
-   addFormListener();
-
-
+    let create = document.forms.create; //форма регистрации
+    create.addEventListener('submit', sendForm);
 
 }());

@@ -21,13 +21,13 @@
 },
     "share":{
         "path":"/share",
-        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::shareAction",
+        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::shareAction",
         "method": "GET"
 },
-    "rating":{
-        "path":"/rating",
-        "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::IndexAction",
-        "method": "GET"
+    "LoadPics":{
+        "path":"/share/loadpics",
+        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::LoadPicsAction",
+        "method": "POST"
 },
     "ratingPencils":{
         "path":"/pencils",
@@ -54,17 +54,11 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::CommentAction",
         "method": "POST"
 },
-    "LoadPics":{
-        "path":"/share/loadpics",
-        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::LoadPicsAction",
-        "method": "POST"
-},
     "LikePics":{
         "path":"/rating/like",
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::LikeAction",
         "method": "POST"
 },
-
     "registration":{
         "path":"/user/registration",
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::registrationAction",

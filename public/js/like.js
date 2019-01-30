@@ -31,7 +31,7 @@ let current = Number.parseInt(plus.value);
             plus.innerHTML = plus.value; //вывод кол-ва кликов
         } else if (response === "GO_AUTH"){
             alert("Please, sign in or register");
-//            plus.innerHTML = plus.value; //вывод кол-ва кликов
+            return "GO_AUTH";
         }   else {
             console.log("system error");
         }

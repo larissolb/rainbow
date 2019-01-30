@@ -6,51 +6,33 @@ use Larissolb\Rainbow\Models\PicModel;
 
 class IndexController extends Controller
 {
+    protected $picModel;
+    
+    public function __construct() 
+            {
+            $this->picModel = new PicModel();
+            
+    }
     public function indexAction(){
         $title = 'Main page';
         $view = 'index_view.php';
+        $last_pic = $this->picModel->getLastLoadPics();
         
         $data = [
             'title'=>$title,
+            'last_pic'=>$last_pic
         ];
         return parent::generateResponse($view, $data);
     }
     public function aboutAction(){
         $title = 'Why I am here?';
         $view = 'about.php';
-        
-        $data = [
-            'title'=>$title,
-        ];
-        return parent::generateResponse($view, $data);
-    }
-    
-        protected $picModel;
-    
-    public function __construct() 
-            {
-            $this->picModel = new PicModel();
-    }
-    
-    public function shareAction(){
-        if((isset($_SESSION['auth']))){
-        $title1 = 'Share with this world ';
-        $view1 = 'share.php';
-        } else {
-        $title1 = '';
-        $view1 = 'index_view.php';
-        }
-        $title = $title1;
-        $view = $view1;
         $last_pic = $this->picModel->getLastLoadPics();
-        $pics = $this->picModel->getRandomPics();
-        
         $data = [
             'title'=>$title,
-            'last_pic'=>$last_pic,
-            'pics'=>$pics
+            'last_pic'=>$last_pic
         ];
-        
         return parent::generateResponse($view, $data);
     }
+    
 }

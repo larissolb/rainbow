@@ -22,7 +22,7 @@
                     <li><a href="/share">Share art &#10000;</a></li>
 <!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
                     <?php endif; ?>
-                    <li><a href="/rating">Watch&Rate</a>
+                    <li><a href="/rating/pic/<?php echo $last_pic['id'];?>">Watch&Rate</a>
                     <ul>
                         <li><a href="/pencils">Pencils</a></li>
                         <li><a href="/paints">Paints</a></li>

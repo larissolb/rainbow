@@ -8,7 +8,7 @@
         <div class="hrefleft"><img src="/img/<?php echo $rand_pic['img_path']; ?> " alt="<?php echo $rand_pic['img_path'];?> ">
         <a href="/rating/pic/<?php echo $rand_pic['id'];?>"> More details </a></div>
         <?php endforeach;?>
-        <div><p><a href="#authorization">Join us and Share your pics!</a></div>
+    
     </div> <!--end share left side -->
 <!--form for upload - center 70% -->
             <div class="center">
@@ -59,7 +59,7 @@
                     <fieldset id="share">
                     <div>
                         <label for="pics">Upload your best picture</label>
-                        <input type="hidden" name="MAX_FILE_SIZE" value="51200">         
+                        <input type="hidden" name="MAX_FILE_SIZE" value="512000">         
                         <input id="pics" name="picture[]" type="file" multiple accept="image/*">
                     </div>
                     </fieldset>

@@ -14,6 +14,28 @@ class ShareController extends Controller
             
     }
 
+    public function shareAction(){
+        if((isset($_SESSION['auth']))){
+        $title1 = 'Share with this world ';
+        $view1 = 'share.php';
+        } else {
+        $title1 = '';
+        $view1 = 'index_view.php';
+        }
+        $title = $title1;
+        $view = $view1;
+        $last_pic = $this->picModel->getLastLoadPics();
+        $pics = $this->picModel->getRandomPics();
+        
+        $data = [
+            'title'=>$title,
+            'last_pic'=>$last_pic,
+            'pics'=>$pics
+        ];
+        
+        return parent::generateResponse($view, $data);
+    }
+
     public function LoadPicsAction($request){
         $postData = $request->post();
         $type = $this->picModel->loadPics($postData);

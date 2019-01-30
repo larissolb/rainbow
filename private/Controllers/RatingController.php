@@ -14,23 +14,6 @@ class RatingController extends Controller
             
     }
     
-    public function indexAction(){
-        $title = 'Watch&Rate';
-        $view = 'rating.php';
-        $pics = $this->picModel->getLastLoadPics();
-        $id = $this->picModel->getLastLoadPics()['id'];
-        $comments = $this->picModel->getComments($id);
-        $likes = $this->picModel->getLikes($id);
-           
-        $data = [
-            'title'=>$title,
-            'pics'=>$pics,
-            'comments'=>$comments,
-            'likes'=>$likes
-        ];
-        return parent::generateResponse($view, $data);
-    }
-    
     public function pencilsAction(){
         $title = 'Watch&Rate|Paints by pencils';
         $header = 'Paints by pencils';
@@ -79,20 +62,30 @@ class RatingController extends Controller
     }
         
     public function picAction($request){
-
         $params = $request->params();
-        $id = $params['id'];
-        $title = 'About pic';
-        $view = 'pic.php';
+        $all_pics = $this->picModel->getAllPics();
+        $last_id = count($all_pics);
+                
+        if(!isset($params)){
+            $id = $this->picModel->getLastLoadPics()['id'];
+            
+        }else if($params['id']<1){
+            $id = $last_id;
+        }else{
+        $id = $params['id'];}
+        $title = 'Watch&Rate || About pic';
+        $view = 'rating.php';
         $pics = $this->picModel->getPics($id);
         $comments = $this->picModel->getComments($id);
         $likes = $this->picModel->getLikes($id);
+        $last_pic = $this->picModel->getLastLoadPics();
                                     
         $data = [
             'title'=>$title,
             'pics'=>$pics,
             'comments'=>$comments,
-            'likes'=>$likes
+            'likes'=>$likes,
+            'last_pic'=>$last_pic
         ];
         return parent::generateResponse($view, $data);
     }
