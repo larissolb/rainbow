@@ -19,13 +19,21 @@ class RatingController extends Controller
         $header = 'Paints by pencils';
         $view = 'instruments.php';
         $last_pic = $this->picModel->getLastLoadPics();
-        $pics = $this->picModel->getRandomPics();
+        $rand_pics = $this->picModel->getRandomPics();
+        $id = $this->picAction->$id;
+        $type = 2;
+        $pics = $this->picModel->getPicsByType($id, $type);
+        $comments = $this->picModel->getComments($id);
+        $likes = $this->picModel->getLikes($id);
      
         $data = [
             'title'=>$title,
             'header'=>$header,
             'last_pic'=>$last_pic,
-            'pics'=>$pics
+            'rand_pics'=>$rand_pics,
+            'pics'=>$pics,
+            'comments'=>$comments,
+            'likes'=>$likes
         ];
         return parent::generateResponse($view, $data);
     }
