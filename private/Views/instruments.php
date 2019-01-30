@@ -6,7 +6,7 @@
     
         
         
-        <?php foreach ($pics as $rand_pic):?>
+        <?php foreach ($rand_pics as $rand_pic):?>
         <div class="hrefleft"><img src="/img/<?php echo $rand_pic['img_path']; ?> " alt="<?php echo $rand_pic['img_path'];?> ">
         <a href="/rating/pic/<?php echo $rand_pic['id'];?>"> More details </a></div>
         <?php endforeach;?>
