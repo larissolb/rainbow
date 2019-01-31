@@ -44,7 +44,7 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::MarkersAction",
         "method": "GET"
 },
-    "AboutPic":{
+    "rating":{
         "path":"/rating/pic/{id}",
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::PicAction",
         "method": "GET"

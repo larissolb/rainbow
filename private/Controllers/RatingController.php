@@ -20,20 +20,15 @@ class RatingController extends Controller
         $view = 'instruments.php';
         $last_pic = $this->picModel->getLastLoadPics();
         $rand_pics = $this->picModel->getRandomPics();
-        $id = $this->picAction->$id;
         $type = 2;
-        $pics = $this->picModel->getPicsByType($id, $type);
-        $comments = $this->picModel->getComments($id);
-        $likes = $this->picModel->getLikes($id);
-     
+        $pics = $this->picModel->getPicsByType($type);
+      
         $data = [
             'title'=>$title,
             'header'=>$header,
             'last_pic'=>$last_pic,
             'rand_pics'=>$rand_pics,
-            'pics'=>$pics,
-            'comments'=>$comments,
-            'likes'=>$likes
+            'pics'=>$pics
         ];
         return parent::generateResponse($view, $data);
     }
@@ -43,12 +38,15 @@ class RatingController extends Controller
         $header = 'Paints by markers';
         $view = 'instruments.php';
         $last_pic = $this->picModel->getLastLoadPics();
-        $pics = $this->picModel->getRandomPics();
-     
+        $rand_pics = $this->picModel->getRandomPics();
+        $type = 5;
+        $pics = $this->picModel->getPicsByType($type);
+      
         $data = [
             'title'=>$title,
             'header'=>$header,
             'last_pic'=>$last_pic,
+            'rand_pics'=>$rand_pics,
             'pics'=>$pics
         ];
         return parent::generateResponse($view, $data);
@@ -58,12 +56,15 @@ class RatingController extends Controller
         $header = 'Paints by paints';
         $view = 'instruments.php';
         $last_pic = $this->picModel->getLastLoadPics();
-        $pics = $this->picModel->getRandomPics();
-     
+        $rand_pics = $this->picModel->getRandomPics();
+        $type = 3;
+        $pics = $this->picModel->getPicsByType($type);
+      
         $data = [
             'title'=>$title,
             'header'=>$header,
             'last_pic'=>$last_pic,
+            'rand_pics'=>$rand_pics,
             'pics'=>$pics
         ];
         return parent::generateResponse($view, $data);
@@ -77,21 +78,20 @@ class RatingController extends Controller
         $pics = $this->picModel->getPics($id);
         $comments = $this->picModel->getComments($id);
         $likes = $this->picModel->getLikes($id);
-        $last_pic = $this->picModel->getLastLoadPics();
         if ($id>1) {
         $link = $id-1;
-        
         }else{
                 $link = 1;
             }
-        
+        $last_pic = $this->picModel->getLastLoadPics();
+            
         $data = [
             'title'=>$title,
             'pics'=>$pics,
             'comments'=>$comments,
             'likes'=>$likes,
-            'last_pic'=>$last_pic,
-            'link'=>$link
+            'link'=>$link,
+            'last_pic'=>$last_pic
         ];
         return parent::generateResponse($view, $data);
     

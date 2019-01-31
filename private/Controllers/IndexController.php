@@ -17,7 +17,6 @@ class IndexController extends Controller
         $title = 'Main page';
         $view = 'index_view.php';
         $last_pic = $this->picModel->getLastLoadPics();
-        
         $data = [
             'title'=>$title,
             'last_pic'=>$last_pic

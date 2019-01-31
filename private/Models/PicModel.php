@@ -61,7 +61,7 @@ protected $response;
     public function getLastLoadPics() {
         $sql = "SELECT *  FROM Pics ORDER BY id ASC";
         $last_pics = $this->DBConnection->queryAll($sql);
-//        var_dump($last_pics);
+
         foreach($last_pics as $arr){
             $last_pic = $arr;
         }
@@ -70,7 +70,7 @@ protected $response;
     }
     
     public function getRandomPics() {
-        $sql = "SELECT id, img_path  FROM Pics ORDER BY id ASC LIMIT 3";
+        $sql = "SELECT id, img_path  FROM Pics ORDER BY id DESC LIMIT 4";
         $pics_arr = $this->DBConnection->queryAll($sql);
         
         $pics = [];
@@ -124,50 +124,17 @@ protected $response;
     
 }
   //get pics for different types of instruments
-   public function getPicsByType($id, $type) {
-        $sql = "SELECT id, nameBook, amount, text, img_path, Themes_id, Types_id, Users_login  FROM Pics WHERE id=:id AND Types_id:=Types_id";
+   public function getPicsByType($type) {
+          $sql = "SELECT id, nameBook, amount, text, img_path, Themes_id, Types_id, Users_login  FROM Pics WHERE Types_id=:Types_id ORDER BY id ASC";
         $params = [
-            'id'=>$id,
             'Types_id'=>$type
                 ];
-        $pic_arr = $this->DBConnection->execute($sql, $params, true);
+        $pics = $this->DBConnection->execute($sql, $params, true);
         
-  foreach ($pic_arr as $pics) { 
-        //choose theme
-        $id_theme = $pics['Themes_id'];   
-        $sql = "SELECT theme FROM Themes WHERE id=:id";
-        $params = [
-            'id'=>$id_theme
-                ];
-        $theme_arr = $this->DBConnection->execute($sql, $params, true);
-        foreach ($theme_arr as $key => $value) {
-            $theme = $value["theme"];            
-        }
-        $pics['Themes_id'] = $theme;
-        
-        //choose instrument
-        $id_type = $pics['Types_id'];   
-        $sql_type = "SELECT type FROM Types WHERE id=:id";
-        $params_type = [
-            'id'=>$id_type
-                ];
-        $type_arr = $this->DBConnection->execute($sql_type, $params_type, true);
-        foreach ($type_arr as $key => $value) {
-            $type = $value["type"];
-        }
-         $pics['Types_id'] = $type;
-      
-        if ($pics["id"] == $id){
-            $_SESSION['idPics'] =  $pics['id'];
             return $pics;       
         }  
-    }
-    
-}
- 
-  
- 
-   //check size and type
+
+ //check size and type
     public function loadPics($data) {
 
         $pics = $_FILES;
