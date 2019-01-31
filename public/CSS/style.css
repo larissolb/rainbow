@@ -212,7 +212,7 @@ h1 {
 }
 .recovery:target+.recovery-window {
     display:block;
-    height: 100%;
+/*    height: 100%;*/
 }
 
 /*register*/

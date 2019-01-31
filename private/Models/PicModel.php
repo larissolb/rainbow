@@ -148,7 +148,7 @@ protected $response;
         return self::SIZE_ERROR;
     } 
 
-    $types = ['image/jpeg'];
+    $types = ['image/png'];
     
     $finfo = finfo_open(FILEINFO_MIME_TYPE);   
         
@@ -176,9 +176,9 @@ protected $response;
             $type = 1;    
         }elseif($data["type"] === "pencil"){
             $type = 2;    
-        }elseif($data["type"] === "gouache"){
+        }elseif($data["type"] === "paints"){
             $type = 3;    
-        }elseif($data["type"] === "watercolour"){
+        }elseif($data["type"] === "monochrome"){
             $type = 4;    
         }else{
             $type = 5;    
@@ -195,8 +195,8 @@ protected $response;
     
     $login = $_SESSION['login'];
  
-    $sql = "INSERT INTO Pics (nameBook, amount, text, img_path, Themes_id, Types_id, Users_login)
-              VALUES (:nameBook, :amount, :text, :img_path, :Themes_id, :Types_id, :Users_login)";
+    $sql = "INSERT INTO Pics (nameBook, amount, text, `like`, img_path, Themes_id, Types_id, Users_login)
+              VALUES (:nameBook, :amount, :text, :like, :img_path, :Themes_id, :Types_id, :Users_login)";
     $params = [
         'nameBook'=>$data['nameBook'],
         'amount'=>$data['amount'],
@@ -204,7 +204,8 @@ protected $response;
         'img_path'=>$name,
         'Themes_id'=>$themes,
         'Types_id'=>$type,
-        'Users_login'=>$login        
+        'Users_login'=>$login,
+        'like'=>0
     ];
     
     $statement = $this->DBConnection->execute($sql, $params, false);
@@ -241,10 +242,10 @@ public function saveComment($comData) {
 public function addLike() {
 
         $idPic = $_SESSION['idPic'];
-        
-        if(!isset($_SESSION['login'])){
-         return self::GO_AUTH;   
-        } else {
+//        
+//        if(!isset($_SESSION['login'])){
+//         return self::GO_AUTH;   
+//        } else {
         
         $sql = "UPDATE Pics SET `like`=:like
               WHERE `id`=:id";
@@ -262,7 +263,7 @@ public function addLike() {
         }
                
         return self::LIKE; 
-        }  
+//        }  
     }        
    
 }

@@ -51,6 +51,7 @@ let text = formComment.elements.comment; //нахождение элемента
             console.log("comment add!");
         }else if (response === "GO_AUTH"){
             alert("Please, sign in or register");
+            formComment.reset();
             return "GO_AUTH";
         }   else {
             console.log("system error");

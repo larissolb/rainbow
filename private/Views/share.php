@@ -3,7 +3,7 @@
         <h2>Last updates</h2>
         <div><?php echo "<img src=\"../img/" . $last_pic['img_path'] . "\" alt=\"last loaded pic\" />";?>
         <a href="/rating/pic/<?php echo $last_pic['id'];?>"> More details </a></div>
-    
+        <p></p>
         <?php foreach ($pics as $rand_pic):?>
         <div class="hrefleft"><img src="/img/<?php echo $rand_pic['img_path']; ?> " alt="<?php echo $rand_pic['img_path'];?> ">
         <a href="/rating/pic/<?php echo $rand_pic['id'];?>"> More details </a></div>
@@ -43,8 +43,8 @@
                         <select id="type" name="type" required> 
                             <option value="pen"> colour pens</option> 
                             <option selected value="pencil">colour pencils</option> 
-                            <option value="gouache">gouache</option> 
-                            <option value="watercolour">watercolour</option>
+                            <option value="paints">paints</option> 
+                            <option value="monochrome">monochrome</option>
                             <option value="markers">markers</option>
                         </select> 
                     </div>

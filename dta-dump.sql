@@ -70,7 +70,7 @@ CREATE TABLE `Pics` (
   CONSTRAINT `fk_Pics_Themes1` FOREIGN KEY (`Themes_id`) REFERENCES `Themes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pics_Types1` FOREIGN KEY (`Types_id`) REFERENCES `Types` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pics_Users1` FOREIGN KEY (`Users_login`) REFERENCES `Users` (`login`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +79,7 @@ CREATE TABLE `Pics` (
 
 LOCK TABLES `Pics` WRITE;
 /*!40000 ALTER TABLE `Pics` DISABLE KEYS */;
-INSERT INTO `Pics` VALUES (1,'',NULL,NULL,'default.png',NULL,6,6,'123'),(2,'A story in forest',15,'from my trip in Australia','slide1.jpeg',1,3,5,'123'),(3,'Village',100,'My summer time in village','slide2.jpg',2,6,2,'123'),(4,'Houses',17,'this is my first project','slide3.jpg',4,5,2,'123'),(5,'Birds in winter',14,'Last time I often ask myself where are the winter birds??','slide5.jpg',NULL,3,3,'123'),(6,'Funny bears',25,'Fantasy about bears','slide.jpg',1,3,3,'123');
+INSERT INTO `Pics` VALUES (1,'',NULL,NULL,'default.png',NULL,6,6,'123'),(2,'A story in forest',15,'from my trip in Australia','slide1.jpeg',1,3,5,'123'),(3,'Village',100,'My summer time in village','slide2.jpg',2,6,2,'123'),(4,'Houses',17,'this is my first project','slide3.jpg',4,5,2,'123'),(5,'Birds in winter',14,'Last time I often ask myself where are the winter birds??','slide5.jpg',3,3,3,'123'),(6,'Funny bears',25,'Fantasy about bears','slide.jpg',2,3,3,'123'),(7,'Bridge and Moon',5,'Moon light scenery of bridge with oil pastels','slide4.png',1,1,3,'123');
 /*!40000 ALTER TABLE `Pics` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +127,7 @@ CREATE TABLE `Types` (
 
 LOCK TABLES `Types` WRITE;
 /*!40000 ALTER TABLE `Types` DISABLE KEYS */;
-INSERT INTO `Types` VALUES (1,'colour pens'),(2,'colour pencils'),(3,'paints'),(4,'black&white pen'),(5,'markers'),(6,'other');
+INSERT INTO `Types` VALUES (1,'colour pens'),(2,'colour pencils'),(3,'paints'),(4,'monochrome'),(5,'markers'),(6,'other');
 /*!40000 ALTER TABLE `Types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-31 23:56:37
+-- Dump completed on 2019-02-01  0:35:11
