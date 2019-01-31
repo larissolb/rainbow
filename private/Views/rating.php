@@ -6,7 +6,13 @@
     <div class="center">
         <div class="about-pic">
     <h2><?php echo $pics['nameBook'];?> </h2>
-    <a href="/rating/pic/<?php echo $pics['id']-1;?>" title="next"> 
+    <?php if($pics['id'] != 1):?>
+    
+    <a href="/rating/pic/<?php echo $link;?>" title="next">
+        <?php else:?>
+        <a href="/share" title="share">
+            <?php endif;?>
+        
       <img src="/img/<?php echo $pics['img_path']; ?> " alt="<?php echo $pics['img_path'];?> ">
     </a>
 <p><?php echo $pics['text'];?></p>
@@ -14,7 +20,7 @@
 <span>Instruments: <?php echo $pics['Types_id'];?></span>
 <span>Amount of colours: <?php echo $pics['amount'];?></span></div>
 </div>
-        
+              
         <div class="actions">
             <div id="like">
             <form action="/rating/like" name="like" id="formLike">

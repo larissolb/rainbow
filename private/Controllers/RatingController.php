@@ -71,31 +71,31 @@ class RatingController extends Controller
         
     public function picAction($request){
         $params = $request->params();
-        $all_pics = $this->picModel->getAllPics();
-        $last_id = count($all_pics);
-                
-        if(!isset($params)){
-            $id = $this->picModel->getLastLoadPics()['id'];
-            
-        }else if($params['id']<1){
-            $id = $last_id;
-        }else{
-        $id = $params['id'];}
+        $id = $params['id'];
         $title = 'Watch&Rate || About pic';
         $view = 'rating.php';
         $pics = $this->picModel->getPics($id);
         $comments = $this->picModel->getComments($id);
         $likes = $this->picModel->getLikes($id);
         $last_pic = $this->picModel->getLastLoadPics();
-                                    
+        if ($id>1) {
+        $link = $id-1;
+        
+        }else{
+                $link = 1;
+            }
+        
         $data = [
             'title'=>$title,
             'pics'=>$pics,
             'comments'=>$comments,
             'likes'=>$likes,
-            'last_pic'=>$last_pic
+            'last_pic'=>$last_pic,
+            'link'=>$link
         ];
         return parent::generateResponse($view, $data);
+    
+    
     }
     
         public function commentAction($request){

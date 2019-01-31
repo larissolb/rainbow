@@ -58,13 +58,6 @@ protected $response;
         return $likes;
     }
     
-    public function getAllPics() {
-        $sql = "SELECT *  FROM Pics";
-        $all_pics = $this->DBConnection->queryAll($sql);
-        
-        return $all_pics;
-    }
-    
     public function getLastLoadPics() {
         $sql = "SELECT *  FROM Pics ORDER BY id ASC";
         $last_pics = $this->DBConnection->queryAll($sql);
