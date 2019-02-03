@@ -166,9 +166,7 @@ h1 {
 }
 
 /*recovery psw*/
-.mobile-links-authorization, .hide {
-    display: none;
-}
+
 .recovery {
     top: 0;
     right: 0;
@@ -978,7 +976,7 @@ iframe {
     font-style: italic;
 }
 
-/*share.html*/
+/*share*/
 .container-share {
     display: flex;
     display: -webkit-flex;
@@ -995,6 +993,10 @@ iframe {
 .container-share .left {
     flex: 1;
     margin: 0 0 1em 0;
+}
+
+.center-mobile {
+    display: none;
 }
 
 .left a{
@@ -1182,6 +1184,15 @@ border: none;
     -moz-flex: 1;
     text-align: end;
     margin-top: -1.5em;
+}
+
+#back {
+    display: none;
+    width: auto;
+}
+
+#red {
+    color: red;
 }
 
 @font-face {

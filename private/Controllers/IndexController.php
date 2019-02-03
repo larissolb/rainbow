@@ -23,6 +23,7 @@ class IndexController extends Controller
         ];
         return parent::generateResponse($view, $data);
     }
+
     public function aboutAction(){
         $title = 'Why I am here?';
         $view = 'about.php';
@@ -33,5 +34,5 @@ class IndexController extends Controller
         ];
         return parent::generateResponse($view, $data);
     }
-    
+
 }

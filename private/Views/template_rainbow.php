@@ -14,7 +14,7 @@
             <h1 id='txt'>Welcome to Rainbow world</h1>
     </div> <!-- final header-->
     <div class="top">  <!-- top -->
-        <nav class="menu"> <!-- menu -->
+        <nav class="menu" > <!-- menu -->
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">Why I am here?</a></li>
@@ -37,8 +37,7 @@
                     </li>
                         <?php else: ?>     
                     <li>
-<!--                               <div class="authorization">-->
-                                   <a href="#authorization" class="authorization">Sign in</a> <!-- authorization -->
+            <a href="#authorization" class="authorization">Sign in</a> <!-- authorization -->
             <form action="/user/authorization" method="post" name="authorization">
                 <fieldset id="authorization" class="open-window">
                     <div><input id="email" name="email" type="email" placeholder="Your Email" required></div>
@@ -49,24 +48,21 @@
                         <a href="#forgot">Forgot?</a>
                         <a href="#register">Register</a>
                     </div> <!-- final links inside authorization-->
-                    <div class="mobile-links-authorization"> <!-- links inside form  mobile authorization-->
-                       <a href="html/forgot-m.html" target="_self">Forgot?</a>
-                       <a href="html/register-m.html" target="_self">Register</a>
-                    </div> <!-- final links inside mobile authorization-->
                 </fieldset>
             </form>         
-<!--            </div>  final authorization-->
         <a href="#" class="recovery" id="forgot"></a> <!--recovery psw -->
         <div class="recovery-window">
             <form action="/user/recovery" method="post" name="recovery">
                 <fieldset id="recovery">
                     <legend><h4>Recovery your password</h4></legend>
                     <div>
-                        <label for="emailRec">Please input your email:</label>
+                        <label for="emailRec" id="emtext">Please input your email:</label>
                         <input id="emailRec" type="email" name="emailRec" placeholder="Your Email" required> 
                     </div>
-                    <button type="submit" name="Recovery" class="Btn">Send new password</button>
-                    <a href="#register">Register</a>
+                    <button id="send" type="submit" name="Recovery" class="Btn">Send new password</button>
+                    <a href="/" id="back" class="Btn">OK</a>
+                    <a href="#register" id="sendhref">Register</a>
+                    
                 </fieldset>  
                 </form>
                 <a  href="#close" class="close-button" title="Close"></a>
@@ -123,21 +119,50 @@
                     </li>
                 </ul>       
         </nav> <!-- final menu -->
-        <nav class="mobile-menu"> <!-- mobile menu -->
-            <ul>
-                <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">Why I am here?</a></li>
-<!--                    <li><a href="/share">Share art &#10000;</a></li>-->
+        
+        <nav class="mobile-menu" > <!-- mobile menu -->
+                <ul>
+                    <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
+                    <ul>    
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">Why I am here?</a></li>
+                           <?php if (isset($_SESSION['auth'])): ?>                        
+                    <li><a href="/share">Share art &#10000;</a></li>
 <!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
-                        <li><a href="/rating">Watch&Rate</a></li>
-                        <li><a href="#footer">Join us</a></li>
+                    <?php endif; ?>
+                    <li><a href="/rating/pic/<?php echo $last_pic['id'];?>">Watch&Rate</a></li>
+                </ul>
+               </li>      
+            </ul>                               
+        </nav> 
+        <nav class="mobile-menu">    <ul>    
+                   <?php if (isset($_SESSION['auth'])): ?>                        
+                    <li><a href="#" class="authorization"><?php echo $_SESSION['login'] . " ;-)"; ?></a>
+                    <ul>
+                        <li><a href="/out">Go out</a> </li>
                     </ul>
-                </li>      
-            </ul>        
-        </nav> <!-- final mobile menu -->
-</div> <!-- final top -->
+                    </li>
+                        <?php else: ?>     
+                    <li>
+            <a href="#openwindow" class="authorization">Sign in</a> <!-- authorization -->
+            <form action="/user/authorizationM" method="post" name="authorization">
+                <fieldset id="openwindow" class="open-window">
+                    <div><input id="email" name="email" type="email" placeholder="Your Email" required></div>
+                    <div><input id="psw" name="psw" type="password" placeholder="Your Password" required></div>           
+                    <button type="submit" name="signIN"  id='BtnEnter'>enter</button>
+                    <a href="#" id="aBtnlater"><input type="button" value="later" class="Btn"></a>
+                    <div class="links-authorization"> 
+                        <a href="/forgot">Forgot?</a>
+                        <a href="/register">Register</a>
+                    </div>  <!--final links inside authorization-->
+                 </fieldset>
+            </form>         
+                <?php endif; ?>   
+                    </li>
+        </ul>
+        </nav> <!-- final mobile menu         -->
+        
+    </div> <!-- final top -->
         
         <?php include_once $view; ?>
         

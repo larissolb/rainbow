@@ -24,7 +24,7 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::shareAction",
         "method": "GET"
 },
-    "LoadPics":{
+    "loadPics":{
         "path":"/share/loadpics",
         "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::LoadPicsAction",
         "method": "POST"
@@ -49,12 +49,12 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::PicAction",
         "method": "GET"
 },
-    "CommentPics":{
+    "commentPics":{
         "path":"/rating/comment",
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::CommentAction",
         "method": "POST"
 },
-    "LikePics":{
+    "likePics":{
         "path":"/rating/like",
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::LikeAction",
         "method": "POST"
@@ -65,9 +65,25 @@
         "method": "POST"
           
 },
+    "registrationM":{
+        "path":"/register/",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::registerMAction",
+        "method": "POST"
+},
+    "registrationMob":{
+        "path":"/register",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::registerMAction",
+        "method": "GET"
+},
     "authorization":{
         "path":"/user/authorization",
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::authorizationAction",
+        "method": "POST"
+          
+},
+    "authorizationM":{
+        "path":"/user/authorizationM",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::authorizationMAction",
         "method": "POST"
           
 },
@@ -75,7 +91,16 @@
         "path":"/user/recovery",
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::recAction",
         "method": "POST"
-          
+},
+    "recoveryM":{
+        "path":"/forgot/",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::recmAction",
+        "method": "POST"
+},
+    "recoveryMob":{
+        "path":"/forgot",
+        "controller":"Larissolb\\Rainbow\\Controllers\\UserController::recmAction",
+        "method": "GET"
 },
     "out":{
         "path":"/{out}",

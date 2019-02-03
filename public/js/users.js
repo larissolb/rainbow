@@ -19,6 +19,11 @@ return result = regexp.test(a);
 }
 
 let div = document.getElementById('info');
+let emailRec = document.getElementById('emailRec');
+let emtext = document.getElementById('emtext');
+let back = document.getElementById('back');
+let send = document.getElementById('send');
+let sendhref = document.getElementById('sendhref');
 pswReg.onchange = function () {
 //преобразование в строку и проверка на условия(минимум 5 знаков, 1 цифра, 1 заглавная)
 let str = pswReg.value;
@@ -61,13 +66,16 @@ if(result === true){
             alert("Wow! We glad to see you!");
             window.location.href = "/share";
         }else if (response === "EMAIL_ERROR"){ //при попытке авторизации емейл не найден в БД
-            alert("Ups..your email is not found. Pass registration or try again")
-            window.location.href = "#authorization"; 
+            emtext.innerHTML = "Ups..your email is not found. Pass registration or try again";
         }else if (response === "PSW_ERROR"){ //при попытке авторизации пароль введен неверно
            alert("Password is wrong, try again or recovery"); 
           }else if (response === "USER_EXISTS"){ //пользователь найден, ему будет направлен пароль
-            alert("Wait a few minutes and check your email :-)");
-            window.location.href = "/";
+            emtext.innerHTML = "Wait a few minutes and check your email :-)";
+            send.style.display = 'none';
+            sendhref.style.display = 'none';
+            emailRec.style.display = 'none';
+            back.style.display = 'block';
+            
         }else if (response === "COUNTRY_EMPTY"){ //проверка заполнения страны при регистрации
             let field = document.getElementById("country"); //список стран
             let remind = document.getElementById('noCountry');
@@ -106,7 +114,7 @@ if(result === true){
     let authorization = document.forms.authorization; //определена форма авторизации
     authorization.addEventListener('submit', sendForm);
     
-   let recovery = document.forms.recovery; //форма восстановления пароля
+    let recovery = document.forms.recovery; //форма восстановления пароля
     recovery.addEventListener('submit', sendForm);
 
     let create = document.forms.create; //форма регистрации

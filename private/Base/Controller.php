@@ -2,15 +2,6 @@
 
 namespace Larissolb\Rainbow\Base;
 
-//class Controller
-//{
-//    public function generateResponse($view, array $data,
-//                                     $template='template_rainbow.php')
-//    {
-//        extract($data);
-//        require_once __DIR__ . '/../Views/' . $template;
-//    }
-//}
 class Controller
 {
     public static function create(array $routeInfo){
@@ -59,7 +50,7 @@ class Controller
         $response->setBody(
             $text
         );
-
+        
         return $response;
     }
     

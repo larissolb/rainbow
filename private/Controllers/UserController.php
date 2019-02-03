@@ -19,21 +19,57 @@ class UserController extends Controller
     }
 
     public function registrationAction($request){
-        $postData = $request->post(); // массив $_POST
+        $postData = $request->post(); 
         $answer = $this->userModel->addUser($postData);
         return parent::generateAjaxResponse($answer);
     }
     
+    public function registerMAction($request){
+        $postData = $request->post(); 
+        $answer = $this->userModel->addMUser($postData);   
+        $title = 'Register';
+        $view = 'reg_mob.php';
+        $data = [
+            'title'=>$title,
+            'answer'=>$answer
+        ];
+        return parent::generateResponse($view, $data, $template='template_mobile.php');
+    }    
+    
     public function authorizationAction($request){
-       $postData = $request->post(); // массив $_POST
+       $postData = $request->post(); 
        $answer = $this->userModel->authUser($postData);
        return parent::generateAjaxResponse($answer);
     }
     
+    public function authorizationMAction($request){
+       $postData = $request->post(); 
+       $answer = $this->userModel->authMUser($postData);
+       $title = 'Error';
+        $view = 'index_view.php';
+        $data = [
+            'title'=>$title,
+            'answer'=>$answer
+        ];
+        return parent::generateResponse($view, $data, $template='template_mobile.php');
+    }
+    
     public function recAction($request){
-        $postData = $request->post(); // массив $_POST
+        $postData = $request->post(); 
         $answer = $this->userModel->recData($postData);
         return parent::generateAjaxResponse($answer);
+    }
+    
+    public function recmAction($request){
+        $postData = $request->post(); 
+        $not = $this->userModel->recmData($postData);
+        $title = 'Recovery';
+        $view = 'rec_mob.php';
+        $data = [
+            'title'=>$title,
+            'not'=>$not
+        ];
+        return parent::generateResponse($view, $data, $template='template_mobile.php');
     }
     
     public function outAction($request){

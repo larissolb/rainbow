@@ -90,12 +90,10 @@ for 768 px, 480 px, 320 px
 /*recovery psw
 for 768 px, 480 px, 320 px
 */
-.links-authorization, .hide {
-    display: none;
-}
-.open-window .mobile-links-authorization {
+.links-authorization {
     display: block;
 }
+
 #emailRec {
     width: 97%;
 }
@@ -182,6 +180,47 @@ body .container-share .center .item-mobile {
   display:block;
   margin-bottom: 1em;
 }
+
+.container-share .center {
+    display: none;
+}
+
+.container-share .center-mobile{
+    display: block;  
+}
+
+.container-share .center-mobile .item-mobile{
+    width: 52%;
+    margin: 1em;
+}
+
+.container-share textarea {
+    width: 180%;
+}
+.container-share .center-mobile .field {
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+.container-share .center-mobile .item-list {
+    margin: 1em;
+}
+
+.container-share .center-mobile input {
+    background-color: #e6fff7;
+}
+
+.container-share .center-mobile [type="radio"]{
+    margin-right: 0.3em;
+}
+
+#label {
+    color: darkblue;
+    font-weight: bold;
+}
+
 /*footer
 for 768 px, 480 px
 */
@@ -264,7 +303,7 @@ body .footer-m {
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 319px) {
   
 /*index.html*/
 body #mob-text {
@@ -286,6 +325,10 @@ body .container-share .center .field {
 body .container-share .center textarea {
    font-size: small;
 }
+
+
+
+
 /*rating.html*/
   body .galleria {
     width: 300px; 

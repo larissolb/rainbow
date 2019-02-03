@@ -75,6 +75,10 @@
             <p>It's no just usual place...
                 Esse, itaque, nemo, nisi, excepturi labore perferendis tempore dolorem laborum eligendi autem neque ad at sequi ullam sunt velit dignissimos harum aperiam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, voluptatem, mollitia, provident iusto at et fugit modi inventore ex necessitatibus saepe magni quibusdam dolorum possimus pariatur suscipit sit asperiores nobis.</p>
         </div>
+        <div><h3>Bubblegum..</h3>             
+            <p>It's no just usual place...
+                Esse, itaque, nemo, nisi, excepturi labore perferendis tempore dolorem laborum eligendi autem neque ad at sequi ullam sunt velit dignissimos harum aperiam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, voluptatem, mollitia, provident iusto at et fugit modi inventore ex necessitatibus saepe magni quibusdam dolorum possimus pariatur suscipit sit asperiores nobis.</p>
+        </div>
     </div> <!-- finish center -->
     <div class="right"> <!-- right  -->
         <img src="/img/icon2.jpg" alt="img">
@@ -83,10 +87,10 @@
 </div> <!--finish container-->
             <!--mobile version -->
 <div class="container-mobile"> <!--begin mobile contain 4pics -->
-    <div><a href="/about"><img src="img/about-mob.gif" alt='Where am I?'></a>
-    <a href="/share"><img src="img/share_mob.jpeg" alt='Share your art'></a></div>
-    <div class="col-last-container-mobile"><a href="/rating"><img src="img/share_mob.jpeg" alt="Watch&Rate"></a>
-    <a href="#"><img src="img/share_mob.jpeg" alt="Buy"></a></div>
+    <div><a href="/about"><img src="/img/about-mob.gif" alt='Where am I?'></a>
+    <a href="/share"><img src="/img/share_mob.jpeg" alt='Share your art'></a></div>
+    <div class="col-last-container-mobile"><a href="/rating"><img src="/img/share_mob.jpeg" alt="Watch&Rate"></a>
+    <a href="#"><img src="/img/share_mob.jpeg" alt="Buy"></a></div>
 </div>   <!--finish mobile contain 4pics -->
 <div id="mob-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, itaque, nemo, nisi, excepturi labore perferendis tempore dolorem laborum eligendi autem neque ad at sequi ullam sunt velit dignissimos harum aperiam!</div>
     <!--end mobile content -->  
