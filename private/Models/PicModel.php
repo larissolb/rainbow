@@ -148,7 +148,7 @@ protected $response;
         return self::SIZE_ERROR;
     } 
 
-    $types = ['image/png'];
+    $types = array('image/png','image/jpeg', 'image/jpg');
     
     $finfo = finfo_open(FILEINFO_MIME_TYPE);   
         
