@@ -89,7 +89,7 @@
                 <p></p>
                 <label><input type="radio" name='type' value='pen'> Colour pens</label>
                 <label><input type="radio" name='type' value='pencil' checked> Colour pencils</label>
-                <label><input type="radio" name='type' value='paints'> Paints </label> <br>
+                <label><input type="radio" name='type' value='paints'> Paints </label> 
                 <label><input type="radio" name='type' value='monochrome'>Monochrome</label>
                 <label><input type="radio" name='type' value='markers'> Markers</label>
             </div>

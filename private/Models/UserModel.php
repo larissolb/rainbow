@@ -172,7 +172,7 @@ protected $DBConnection;
          $_SESSION['auth'] = true;
          $_SESSION['login'] = $statement['login'];
         
-        header("Location: /share");
+        header("Location: /");
         return self::USER_AUTH;
     }
 }

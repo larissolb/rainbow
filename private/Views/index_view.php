@@ -88,10 +88,17 @@
             <!--mobile version -->
 <div class="container-mobile"> <!--begin mobile contain 4pics -->
     <div><a href="/about"><img src="/img/about-mob.gif" alt='Where am I?'></a>
-    <a href="/share"><img src="/img/share_mob.jpeg" alt='Share your art'></a></div>
-    <div class="col-last-container-mobile"><a href="/rating"><img src="/img/share_mob.jpeg" alt="Watch&Rate"></a>
-    <a href="#"><img src="/img/share_mob.jpeg" alt="Buy"></a></div>
+    <a href="/pencils"><img src="/img/pencilsmob.jpg" alt="Pencils"></a></div>
+    <div class="col-last-container-mobile"><a href="/rating/pic/<?php echo $last_pic['id'];?>"><img src="/img/rating.gif" alt='Watch&Rate'></a>
+    <a href="/markers"><img src="/img/markers.jpg" alt="Markers"></a></div>
 </div>   <!--finish mobile contain 4pics -->
+<div class="container-mobile"> <!--begin mobile contain 4pics -->
+    <div><a href="/paints"><img src="/img/paints.png" alt='Paints'></a>
+</div>
+    <div class="col-last-container-mobile"><a href="/share"><img src="/img/share_mob.jpeg" alt="Share"></a>
+   </div>
+</div>   <!--finish mobile contain 4pics -->
+
 <div id="mob-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, itaque, nemo, nisi, excepturi labore perferendis tempore dolorem laborum eligendi autem neque ad at sequi ullam sunt velit dignissimos harum aperiam!</div>
     <!--end mobile content -->  
 <script src="/js/index.js"></script>

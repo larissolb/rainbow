@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 /*header
 for 768 px, 480 px, 320 px
 */
@@ -149,17 +149,37 @@ body .container-mobile {
 }
   
  /*rating.html*/
- body .container-rating .right {
+ body .container-rating .right, .container-rating .left {
     display:none;
   } 
   
+  body .container-rating .center {
+      margin: 1em 3em 1em 3em;
+  }
+  
   body .actions {
-    width: 94%;
+    width: 100%;
   }
   body .galleria {
     width: 550px; 
     height: 400px;
     margin: 0;
+  }
+  
+  body .about-pic p, span {
+      font-size: 0.7em;
+  }
+  
+  body #like {
+      width: 14%;
+  }
+  
+  body .like {
+      width: 50%;
+  }
+  
+  body #like textarea, .btn-comment, #comments {
+      font-size: 0.8em;
   }
   
    /*about.html*/
@@ -190,12 +210,12 @@ body .container-share .center .item-mobile {
 }
 
 .container-share .center-mobile .item-mobile{
-    width: 52%;
+    width: 70%;
     margin: 1em;
 }
 
 .container-share textarea {
-    width: 180%;
+    width: 130%;
 }
 .container-share .center-mobile .field {
     margin-right: 0px;
@@ -221,6 +241,15 @@ body .container-share .center .item-mobile {
     font-weight: bold;
 }
 
+  /*index*/
+  body #mob-text {
+    display: block;
+    font-size: small;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0.5em;
+}    
+
 /*footer
 for 768 px, 480 px
 */
@@ -237,7 +266,7 @@ body .footer-m {
 }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 415px){
  /*rating.html*/
  body .container-rating .left, body .container-rating .right {
     display:none;
@@ -245,17 +274,14 @@ body .footer-m {
  
  body .container-rating .center {
     flex: 1;
-    margin: 1em 0 1em 1em;
+    margin: 1em 1em 1em 1em;
 }
   
   body .galleria {
     width: 450px; 
     height: 300px;
   }
-  body .actions {
-    width: 90%;
-  }
-  
+
   #print {
     display: none;
   }
@@ -263,7 +289,35 @@ body .footer-m {
 .btn-comment {
 font-size: 59%;
 }
-
+  body .about-pic p {
+      font-size: 0.7em;
+      margin: 0;
+      margin-bottom: 0.5em;
+  }
+  
+  body .about-pic  span {
+      font-size: 0.7em;
+      margin: 1em;
+  }
+  
+  body #like {
+      width: 20%;
+      padding: 0;
+  }
+  
+  body .like {
+      width: 50%;
+  }
+  
+  bodytextarea, #comments {
+      font-size: 1em;
+  }
+#like {
+      font-size: 0.9em;
+  }
+.btn-comment {
+      font-size: 0.7em;
+  }
 fieldset {
     padding-bottom: 0;
 }
@@ -281,6 +335,19 @@ fieldset {
       font-size: small;
       margin: 0.2em;
   }
+ 
+body .container-about iframe{
+  margin-top: 1em;   
+}
+  
+  /*index*/
+  body #mob-text {
+    display: block;
+    font-size: small;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0.5em;
+}    
 
 /*footer*/
 body .footer {
@@ -303,7 +370,7 @@ body .footer-m {
 
 }
 
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 360px) {
   
 /*index.html*/
 body #mob-text {
@@ -326,8 +393,15 @@ body .container-share .center textarea {
    font-size: small;
 }
 
+/*about*/
+body .container-about .center {
+    margin: 0;
+    padding: 0 1em  0 1em ;
+}
 
-
+body .container-about iframe{
+  margin-bottom: -3em;   
+}
 
 /*rating.html*/
   body .galleria {
@@ -335,6 +409,130 @@ body .container-share .center textarea {
     height: 250px;
     margin: 0;
   }
+  .btn-comment {
+font-size: 59%;
+}
+  body .about-pic p {
+      font-size: 0.7em;
+      margin: 0;
+      margin-bottom: 0.5em;
+  }
+  
+  body .about-pic  span {
+      font-size: 0.7em;
+      margin: 4em;
+  }
+  
+  body #like {
+      width: 25%;
+      padding: 0;
+  }
+  
+  body .like {
+      width: 50%;
+  }
+  
+  body #like textarea, #comments {
+      font-size: 1em;
+  }
+  .btn-comment, #like {
+      font-size: 0.8em;
+  }
 
+  @media screen and (max-width: 320px) {
+  
+/*index.html*/
+body #mob-text {
+    display: block;
+    font-size: small;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0.5em;
+}    
+body .footer-m {
+    background: rgba(30, 144, 255, 0.3);
+}
 
+/*share.html*/
+body .container-share .center .field {
+    border: none;
+    font-size: small;
+}
+body .container-share .center textarea {
+   font-size: small;
+}
+
+/*about*/
+body .container-about .center {
+    margin: 0;
+    padding: 0 1em  0 1em ;
+}
+
+body .container-about iframe{
+  margin-bottom: -1em; 
+height: 60%;  
+}
+
+/*rating.html*/
+  body .galleria {
+    width: 300px; 
+    height: 250px;
+    margin: 0;
+  }
+  .btn-comment {
+font-size: 59%;
+}
+  body .about-pic p {
+      font-size: 0.7em;
+      margin: 0;
+      margin-bottom: 0.5em;
+  }
+  
+  body .about-pic  span {
+      font-size: 0.6em;
+      margin: 4em;
+  }
+  
+  body #like {
+      width: 20%;
+      padding: 0;
+  }
+  
+  body .like {
+      width: 40%;
+      height: 11px;
+  }
+  
+  body textarea, #comments {
+      font-size: 1em;
+  }
+  .btn-comment, #like {
+      font-size: 0.6em;
+  }
+  /*share*/
+  
+  .container-share textarea{
+      width: 120%;
+  }
+  
+ .container-share #BtnEnter {
+      width: 100%;
+      
+      
+  }
+  .container-share .button-shareit {
+      width: 90%;
+      margin-bottom: 2em;
+  }
+  
+  .container-share .center-mobile .item-list{
+      width: 90%;
+  }
+  .center > div > h3, p{
+      width: 50%;
+  }
+  .container-share .center-mobile input{
+      width: 100%;
+  }
+}
 }
