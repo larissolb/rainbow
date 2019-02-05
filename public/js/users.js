@@ -61,10 +61,10 @@ if(result === true){
           console.log(response);
         if (response === "USER_ADDED") { //регистрация прошла успешно
             alert("Welcome to Rainbow world!");
-            window.location.href = "/rating";
+            window.location.href = "/share";
         } else if (response === "USER_AUTH"){ //пользователь успешно авторизовался
             alert("Wow! We glad to see you!");
-            window.location.href = "/share";
+            location.reload();
         }else if (response === "EMAIL_ERROR"){ //при попытке авторизации емейл не найден в БД
             emtext.innerHTML = "Ups..your email is not found. Pass registration or try again";
         }else if (response === "PSW_ERROR"){ //при попытке авторизации пароль введен неверно

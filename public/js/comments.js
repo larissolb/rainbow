@@ -16,6 +16,7 @@ let text = formComment.elements.comment; //нахождение элемента
         // console.log(place); //проверка места родителя
         place.insertBefore(newDiv, place.childNodes[0]); //местоположение создаваемых дивов, после родителя, т.е. будет каждый новый коммент сверху
         newDiv.innerHTML += (text.value); //вывод самого текста комментария
+        location.reload();
         formComment.reset();
         }
         }else { 
@@ -48,7 +49,7 @@ let text = formComment.elements.comment; //нахождение элемента
     function responseHandler(response) {
         if (response === "COMMENT_SAVED") {
             saveNewComment(1);
-            console.log("comment add!");
+            
         }else if (response === "GO_AUTH"){
             alert("Please, sign in or register");
             formComment.reset();

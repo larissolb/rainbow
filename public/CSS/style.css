@@ -21,6 +21,9 @@ h2 {
     margin-top: 0;
 }
 
+#hide {
+    display: none;
+}
 /*header */
 #header {
     background: url(../img/main.jpg);
@@ -863,6 +866,7 @@ h4 {
   cursor: pointer;
 }
 
+ 
 fieldset {
   border: none;
   resize: none;
@@ -874,6 +878,22 @@ fieldset {
   font-size: 1.1em;
   font-weight: 300;
   color: darkcyan;
+}
+
+#comments  > .startend{
+    color: #D2691E;
+    background-color: #F5F5F5;
+    
+}
+
+#comments  > .startend > p{
+    text-align: end;
+}
+
+#comments > .startend > #text {
+    color: darkcyan;
+    text-align: justify;
+    font-style: italic;
 }
 
 /*about.html*/

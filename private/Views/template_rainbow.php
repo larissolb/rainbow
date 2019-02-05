@@ -188,8 +188,9 @@
             <div class="up"><a href="#header"><img src="/img/icon/up.png" alt="Up"></a></div>
         </div>
     </div>     <!-- finish footer -->          
+    <div id='hide'>
     <p id='BtnEnter'></p>
-        <p id='createBtn'></p>
+        <p id='createBtn'></p></div>
 <!--      скрипты          -->
     <script src="/js/header.js"></script>
     <script src="/js/users.js"></script>

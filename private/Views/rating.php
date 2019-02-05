@@ -42,9 +42,13 @@
                 <fieldset>
                     <div id="comments">
                         
+                        <?php foreach ($comments as $key=>$comment):?>
+                        <div class="startend"><?php echo "From " . $comment['Users_login'] . ":"; ?>
+                            <p id="text"><?php echo '"'.$comment['comment'] . '"'; ?></p>
+                            <p class="startend"><?php echo $comment['Date']; ?></p>
                         
-                       <?php foreach ($comments as $key=>$comment):?>
-                        <div><?php echo $comment['comment']; ?></div>
+                        </div>
+                        
                         <?php endforeach;?>
                         
                     </div>

@@ -28,7 +28,7 @@ protected $response;
 
     public function getComments($id) {
              //получение комментариев к картинке
-        $sql = "SELECT comment FROM Comments WHERE Pics_id=:Pics_id";
+        $sql = "SELECT comment, Users_login, Date FROM Comments WHERE Pics_id=:Pics_id";
         $params = [
             'Pics_id'=>$id
                 ];
@@ -138,7 +138,7 @@ protected $response;
     public function loadPics($data) {
 
         $pics = $_FILES;
-        
+
         foreach ($pics["picture"]["error"] as $key => $error) {
         $tmp_name = $pics["picture"]["tmp_name"][$key];
         $name = basename($pics["picture"]["name"][$key]);
@@ -151,9 +151,12 @@ protected $response;
     $types = array('image/png','image/jpeg', 'image/jpg');
     
     $finfo = finfo_open(FILEINFO_MIME_TYPE);   
-        
+                    
         foreach ($pics["picture"]["error"] as $key => $error) {
         $tmp_name = $pics["picture"]["tmp_name"][$key];
+        if($tmp_name == ""){
+            return self::NO_PIC;
+        }
         $type_pic = finfo_file($finfo, $tmp_name);
         
         //choose theme
@@ -221,15 +224,17 @@ public function saveComment($comData) {
         } else {
             $login = $_SESSION['login'];
             $idPic = $_SESSION['idPics'];
-            
-        $sql = "INSERT INTO Comments (Comment, Users_login, Pics_id)
-              VALUES (:Comment, :Users_login, :Pics_id)";
+            $date = date("H:m d/F/Y ");
+                        
+        $sql = "INSERT INTO Comments (Comment, Date, Users_login, Pics_id)
+              VALUES (:Comment, :Date, :Users_login, :Pics_id)";
         $params = [
             'Comment'=>$comData['comment'],
+            'Date'=>$date,
             'Users_login'=>$login,
             'Pics_id'=> $idPic
         ];
-//        var_dump($params);
+
         $statement = $this->DBConnection->execute($sql, $params, false);
         if($statement) {
             return self::DB_ERROR;

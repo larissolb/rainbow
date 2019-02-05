@@ -29,6 +29,12 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::LoadPicsAction",
         "method": "POST"
 },
+    "loadPicsM":{
+        "path":"/share/loadpicsM",
+        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::loadPicsMAction",
+        "method": "POST"
+          
+},
     "ratingPencils":{
         "path":"/pencils",
         "controller":"Larissolb\\Rainbow\\Controllers\\RatingController::PencilsAction",

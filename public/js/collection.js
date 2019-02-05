@@ -27,9 +27,9 @@
             alert("Your pic has uploaded!");
             window.location.href = "/share";
         } else if (response === "TYPE_ERROR"){
-            alert("Sorry, this pic has bad type. Use only .png images");
+            alert("Sorry, this pic has bad type. Use only .png/.jpeg/.jpg images");
         } else if (response === "SIZE_ERROR"){
-            alert("Size is more than 50kb");         
+            alert("Size is more than 500kb");         
         }else if (response === "NO_PIC"){
             alert("You've forgotten your pic :-('");          
         }
@@ -39,12 +39,16 @@
         }
     }
 
-    function addFormListener() {
-        for (let i = 0; i < document.forms.length; i++) {
-            document.forms[i].addEventListener('submit', sendForm);
-        }
-    }
-
-    addFormListener();
-
+    let shareBtn = document.forms.Upload;
+    shareBtn.addEventListener('submit', sendForm);
+    
+    let shareMob = document.getElementById('shareMob');
+    shareMob.addEventListener('submit', sendMobForm);
+   
+    function sendMobForm(event) {
+       event.preventDefault();
+       window.location.href = "/share";
+   }
+   
+    
 }());
