@@ -46,7 +46,7 @@
             </div>  
         <fieldset id="share">
             <div>
-                <label for="pics">Upload your best picture</label>
+                <label for="pics">Upload your best picture (aspect ratio - 2.26 or 860x380)</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="512000">         
                 <input id="pics" name="picture[]" type="file" multiple accept="image/*">
             </div>
@@ -130,4 +130,3 @@
 </div> <!--конец главной рамки-->
 
 <script src="/js/collection.js"></script>
-      

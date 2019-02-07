@@ -1170,6 +1170,8 @@ border: none;
 .center .about-pic img {
     margin-top: 0;
     margin-left: 0;
+    width: 860px;
+    height: auto;
 }
 
 .container-share .right a img {

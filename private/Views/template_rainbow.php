@@ -7,7 +7,9 @@
         <meta name="keywords" content="раскраски, хобби, творчество, сообщество, общение, радужные события">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.3/croppie.css" />
         <link rel="stylesheet" href="/CSS/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
     <div id="header"> <!--header-->

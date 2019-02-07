@@ -193,6 +193,13 @@ protected $response;
     }
     
     move_uploaded_file($tmp_name, "img/$name");
+    $pic_new = "img/$name";
+    $info = getimagesize($pic_new);
+        $width  = $info[0];
+        $height = $info[1];
+ 
+    $w = 860;
+    $h = 380;
         
     }
     
