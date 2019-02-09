@@ -33,7 +33,7 @@ CREATE TABLE `Comments` (
   KEY `fk_Comments_Pics1_idx` (`Pics_id`),
   CONSTRAINT `fk_Comments_Pics1` FOREIGN KEY (`Pics_id`) REFERENCES `Pics` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Comments_Users1` FOREIGN KEY (`Users_login`) REFERENCES `Users` (`login`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `Comments` (
 
 LOCK TABLES `Comments` WRITE;
 /*!40000 ALTER TABLE `Comments` DISABLE KEYS */;
-INSERT INTO `Comments` VALUES (1,'sunny..interesting..so good colors','03:02 05/February/2019 ','123',4),(2,' second comment','03:02 05/February/2019 ','123',4),(3,' Do you see this rainbow bear?) so funny','03:02 05/February/2019 ','123',6),(16,' it\'s like game with land, building and so on','03:02 05/February/2019 ','123',3),(17,' This is real painting from instagram from user Abhashrivastava1999','03:02 05/February/2019 ','123',8),(18,' This is picture from real user','03:02 05/February/2019 ','123',7),(19,' hah!  My brothers from forest','03:02 07/February/2019 ','Fox',6);
+INSERT INTO `Comments` VALUES (21,' amazing pic!','22:02 09/February/2019 ','Fox',5);
 /*!40000 ALTER TABLE `Comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +70,7 @@ CREATE TABLE `Pics` (
   CONSTRAINT `fk_Pics_Themes1` FOREIGN KEY (`Themes_id`) REFERENCES `Themes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pics_Types1` FOREIGN KEY (`Types_id`) REFERENCES `Types` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pics_Users1` FOREIGN KEY (`Users_login`) REFERENCES `Users` (`login`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +79,7 @@ CREATE TABLE `Pics` (
 
 LOCK TABLES `Pics` WRITE;
 /*!40000 ALTER TABLE `Pics` DISABLE KEYS */;
-INSERT INTO `Pics` VALUES (1,'',NULL,NULL,'default.png',NULL,6,6,'123'),(2,'A story in forest',15,'from my trip in Australia','slide1.jpeg',3,3,5,'123'),(3,'Village',100,'My summer time in village','slide2.jpg',36,6,2,'123'),(4,'Houses',17,'this is my first project','slide3.jpg',9,5,2,'123'),(5,'Birds in winter',14,'Last time I often ask myself where are the winter birds??','slide5.jpg',6,3,3,'123'),(6,'Funny bears',25,'Fantasy about bears','slide.jpg',9,3,3,'123'),(7,'Bridge and Moon',5,'Moon light scenery of bridge with oil pastels','slide4.png',7,1,3,'123'),(8,'Rainbow unicorn',5,'Indian sketchers','rainbow_unicorn.jpg',5,3,2,'123');
+INSERT INTO `Pics` VALUES (1,'Share with all the world',NULL,NULL,'default.png',NULL,6,6,'123'),(2,'Cat on the bench',10,'new year’s paint at the a bar','cat.jpeg',1,3,2,'123'),(3,'A story in the forest',10,'from my trip in Australia','slide1.jpeg',1,3,2,'Fox'),(4,'Village',100,'My summer time in village','slide2.jpg',0,5,3,'Fox'),(5,'Houses',17,'this is my first project','slide3.jpg',1,5,3,'Fox');
 /*!40000 ALTER TABLE `Pics` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-07  3:22:56
+-- Dump completed on 2019-02-09 22:59:50

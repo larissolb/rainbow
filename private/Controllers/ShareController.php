@@ -47,11 +47,13 @@ class ShareController extends Controller
         $type = $this->picModel->loadPics($postData);
         $title = 'Share with this world ';
         $view = 'share.php';
+        $last_pic = $this->picModel->getLastLoadPics();
         
         $data = [
             'title'=>$title,
             'type'=>$type,
-            'data'=>$postData
+            'data'=>$postData,
+            'last_pic'=>$last_pic,
         ];
         
         return parent::generateResponse($view, $data);

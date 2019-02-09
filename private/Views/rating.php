@@ -16,9 +16,18 @@
       <img src="/img/<?php echo $pics['img_path']; ?> " alt="<?php echo $pics['img_path'];?> ">
     </a>
 <p><?php echo $pics['text'];?></p>
-<div><span>Theme: <?php echo $pics['Themes_id'];?></span>
-<span>Instruments: <?php echo $pics['Types_id'];?></span>
-<span>Amount of colours: <?php echo $pics['amount'];?></span></div>
+<div class="mobile">
+    <p class="aboutpic">Theme: <?php echo $pics['Themes_id'];?></p>
+    <p class="aboutpic">Instruments: <?php echo $pics['Types_id'];?></p>
+    <p class="aboutpic">Amount of colours: <?php echo $pics['amount'];?></p>
+</div>
+<div class="main">
+    <p class="aboutpic">
+        Theme: <?php echo $pics['Themes_id'];?>&nbsp;&nbsp;
+        Instruments: <?php echo $pics['Types_id'];?>&nbsp;&nbsp;
+        Amount of colours: <?php echo $pics['amount'];?>
+    </p>
+</div>
 </div>
               
         <div class="actions">

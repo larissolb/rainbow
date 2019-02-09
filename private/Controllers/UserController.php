@@ -4,17 +4,20 @@
 namespace Larissolb\Rainbow\Controllers;
 use Larissolb\Rainbow\Base\Controller;
 use Larissolb\Rainbow\Models\UserModel;
+use Larissolb\Rainbow\Models\PicModel;
 use Larissolb\Rainbow\Base\Session;
 
 class UserController extends Controller
 {
         private $userModel;
+        private $picModel;
         private  $session;
 
 
         public function __construct()
     {
      $this->userModel = new UserModel();  
+     $this->picModel = new PicModel();
      $this->session = new Session();
     }
 
@@ -29,9 +32,11 @@ class UserController extends Controller
         $answer = $this->userModel->addMUser($postData);   
         $title = 'Register';
         $view = 'reg_mob.php';
+        $last_pic = $this->picModel->getLastLoadPics();
         $data = [
             'title'=>$title,
-            'answer'=>$answer
+            'answer'=>$answer,
+            'last_pic'=>$last_pic
         ];
         return parent::generateResponse($view, $data, $template='template_mobile.php');
     }    

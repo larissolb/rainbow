@@ -166,8 +166,12 @@ body .container-mobile {
     margin: 0;
   }
   
-  body .about-pic p, span {
-      font-size: 0.7em;
+  body .about-pic .mobile {
+      display: block;
+  }
+  
+  body .about-pic .main {
+      display: none;
   }
   
   body #like {
@@ -294,10 +298,17 @@ font-size: 59%;
       margin: 0;
       margin-bottom: 0.5em;
   }
+  body .about-pic .mobile {
+      display: block;
+  }
   
-  body .about-pic  span {
+  body .about-pic .main {
+      display: none;
+  }
+  body .about-pic p.aboutpic {
       font-size: 0.7em;
-      margin: 1em;
+      text-align: start;
+      color: #8B0000;
   }
   
   body #like {
@@ -418,9 +429,18 @@ font-size: 59%;
       margin-bottom: 0.5em;
   }
   
-  body .about-pic  span {
-      font-size: 0.7em;
-      margin: 4em;
+  body .about-pic p.aboutpic {
+      font-size: 0.6em;
+      text-align: start;
+      color: #8B0000;
+  }
+  
+  body .about-pic .mobile {
+      display: block;
+  }
+  
+  body .about-pic .main {
+      display: none;
   }
   
   body #like {
@@ -488,9 +508,18 @@ font-size: 59%;
       margin-bottom: 0.5em;
   }
   
-  body .about-pic  span {
+  body .about-pic p.aboutpic {
       font-size: 0.6em;
-      margin: 4em;
+      text-align: start;
+      color: #8B0000;
+  }
+  
+    body .about-pic .mobile {
+      display: block;
+  }
+  
+  body .about-pic .main {
+      display: none;
   }
   
   body #like {
@@ -499,7 +528,7 @@ font-size: 59%;
   }
   
   body .like {
-      width: 40%;
+      width: 50%;
       height: 11px;
   }
   
@@ -527,9 +556,6 @@ font-size: 59%;
   
   .container-share .center-mobile .item-list{
       width: 90%;
-  }
-  .center > div > h3, p{
-      width: 50%;
   }
   .container-share .center-mobile input{
       width: 100%;

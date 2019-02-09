@@ -1163,9 +1163,14 @@ border: none;
     margin-bottom: 1em;
     color: #8B0000;
 }
-.about-pic span {
-    margin: 1em;
-}
+  body .about-pic p.aboutpic {
+      text-align: center;
+      color: #8B0000;
+  }
+  
+  .mobile {
+      display: none;
+  }
 
 .center .about-pic img {
     margin-top: 0;
