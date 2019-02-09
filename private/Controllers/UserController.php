@@ -70,9 +70,13 @@ class UserController extends Controller
         $not = $this->userModel->recmData($postData);
         $title = 'Recovery';
         $view = 'rec_mob.php';
+        $last_pic = $this->picModel->getLastLoadPics();
         $data = [
             'title'=>$title,
-            'not'=>$not
+            'not'=>$not,
+            'answer'=>1,
+            'last_pic'=>$last_pic
+            
         ];
         return parent::generateResponse($view, $data, $template='template_mobile.php');
     }

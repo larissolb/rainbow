@@ -63,7 +63,8 @@
         </ul>
         </nav> <!-- final mobile menu         -->
     </div>  <!--final top -->
-    <?php if($answer == "EMAIL_ERROR") :?>
+    <?php if($answer == 1) :?>
+    <?php elseif($answer == "EMAIL_ERROR") :?>
         <div id="red"><?php echo 'EMAIL ERROR, try again'; ?></div>
         <?php elseif($answer == "PSW_ERROR") :?>
         <div id="red"><?php echo 'PASSWORD ERROR, try again'; ?></div>
