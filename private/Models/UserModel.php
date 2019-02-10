@@ -1,8 +1,6 @@
 <?php
 namespace Larissolb\Rainbow\Models;
 use Larissolb\Rainbow\Base\DBConnection;
-
-
 class UserModel
 {    
     const USER_ADDED = "USER_ADDED";
@@ -14,16 +12,13 @@ class UserModel
     const DB_ERROR = "DB_ERROR";
     const COUNTRY_EMPTY = "COUNTRY_EMPTY";
     const PSW_WRONG = "PSW_WRONG";
-
 protected $DBConnection;
-
     
     public function __construct() 
             {
             $this->DBConnection = new DBConnection();
   
     }
-
     public function loginExists($userData){
         if ($userData == NULL){
             return;
@@ -33,7 +28,6 @@ protected $DBConnection;
         $statement = $this->DBConnection->execute($sql, $params, false);
         return $statement;            
         }
-
     }
     
     public function recData($userData){
@@ -45,7 +39,39 @@ protected $DBConnection;
         if(!$statement){
             return self::EMAIL_ERROR;
         }
+        
+        //новые данные для восстановления
+        $email = $userData['emailRec'];
+        $letters="qazxswedcvfrtgbnhyujmkiolp";
+        $biglet="QAZXSWEDCVFRTGBNHYUJMKIOLP";
+        $num="1234567890";
+        $max=2;
+        $size=StrLen($letters)-1;
+        $size1=StrLen($biglet)-1;
+        $size2=StrLen($num)-1;
+        $password=null; 
+        
+        while($max--) {
+              $password.=$letters[rand(0,$size)].$biglet[rand(0,$size1)].$num[rand(0,$size2)];
+        }
+        
+        $title = 'Recovery your password from Rainbow world';
+        $letter = 'Your new password is:' .$password.  '\r\n Have a nice day! \r\n Your Rainbow team';
+        
+        if(mail($email, $title, $letter)){
+            $sql1 = "UPDATE Users SET psw=:psw WHERE email=:email";
+           
+            $params1 = [
+            'psw'=>password_hash($password, PASSWORD_DEFAULT),
+            'email'=>$email
+            ];
+        $statement1 = $this->DBConnection->execute($sql1, $params1, false);
+            if($statement1) {
+                return self::DB_ERROR;
+            }
+        }
         return self::USER_EXISTS;
+
     }
     
     public function recmData($userData){
@@ -60,9 +86,41 @@ protected $DBConnection;
         if(!$statement){
             $not = "2";
         } else {
-        $not = "3";
+                        //новые данные для восстановления
+        $email = $userData['emailRec'];
+        $letters="qazxswedcvfrtgbnhyujmkiolp";
+        $biglet="QAZXSWEDCVFRTGBNHYUJMKIOLP";
+        $num="1234567890";
+        $max=2;
+        $size=StrLen($letters)-1;
+        $size1=StrLen($biglet)-1;
+        $size2=StrLen($num)-1;
+        $password=null; 
+        
+        while($max--) {
+              $password.=$letters[rand(0,$size)].$biglet[rand(0,$size1)].$num[rand(0,$size2)];
+        }
+        
+        $title = 'Recovery your password from Rainbow world';
+        $letter = 'Your new password is:' .$password.  '\r\n Have a nice day! \r\n Your Rainbow team';
+        
+        if(mail($email, $title, $letter)){
+            $sql1 = "UPDATE Users SET psw=:psw WHERE email=:email";
+           
+            $params1 = [
+            'psw'=>password_hash($password, PASSWORD_DEFAULT),
+            'email'=>$email
+            ];
+        $statement1 = $this->DBConnection->execute($sql1, $params1, false);
+            if($statement1) {
+                return self::DB_ERROR;
+            }
+        }
+        $not = $password;
         }
         }
+
+    
         return $not;
     }
     
@@ -92,7 +150,6 @@ protected $DBConnection;
         $_SESSION['login'] = $userData['login'];
         return self::USER_ADDED;
     }
-
         public function addMUser($userData){
         if ($userData == NULL){
         $total = "OK";

@@ -6,7 +6,7 @@
 "username":"larissolb",
 "pwd":"pwd",
 "options":"[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]"
-    },
+},
     
 "urls": {
     "index":{

@@ -10,9 +10,8 @@
     
     <a href="/rating/pic/<?php echo $link;?>" title="next">
         <?php else:?>
-        <a href="/share" title="share">
+        <a href="/share#authorization" title="share">
             <?php endif;?>
-        
       <img src="/img/<?php echo $pics['img_path']; ?> " alt="<?php echo $pics['img_path'];?> ">
     </a>
 <p><?php echo $pics['text'];?></p>

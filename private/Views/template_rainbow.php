@@ -127,12 +127,14 @@
                     <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
                     <ul>    
                     <li><a href="/">Home</a></li>
-                    <li><a href="/about">Why I am here?</a></li>
                            <?php if (isset($_SESSION['auth'])): ?>                        
                     <li><a href="/share">Share art &#10000;</a></li>
 <!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
                     <?php endif; ?>
                     <li><a href="/rating/pic/<?php echo $last_pic['id'];?>">Watch&Rate</a></li>
+                    <li><a href="/pencils">By Pencils</a></li>
+                    <li><a href="/paints">By Paints</a></li>
+                    <li><a href="/markers">By Markers</a></li>
                 </ul>
                </li>      
             </ul>                               

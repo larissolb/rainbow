@@ -29,6 +29,8 @@ let current = Number.parseInt(plus.value);
         if (response === "LIKE") {
             plus.value = (current + 1);
             plus.innerHTML = plus.value; //вывод кол-ва кликов
+//             location.reload();
+   
         } else if (response === "GO_AUTH"){
             alert("Please, sign in or register");
             return "GO_AUTH";
