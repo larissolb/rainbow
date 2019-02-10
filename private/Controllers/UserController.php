@@ -50,11 +50,13 @@ class UserController extends Controller
     public function authorizationMAction($request){
        $postData = $request->post(); 
        $answer = $this->userModel->authMUser($postData);
-       $title = 'Error';
+       $title = 'Rainbow world';
+        $last_pic = $this->picModel->getLastLoadPics();
         $view = 'index_view.php';
         $data = [
             'title'=>$title,
-            'answer'=>$answer
+            'answer'=>$answer,
+            'last_pic'=>$last_pic
         ];
         return parent::generateResponse($view, $data, $template='template_mobile.php');
     }

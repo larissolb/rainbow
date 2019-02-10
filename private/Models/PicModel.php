@@ -12,6 +12,7 @@ const TYPE_ERROR = "TYPE_ERROR";
 const LOAD_SUCCESS = "LOAD_SUCCESS";
 const NO_PIC = "NO_PIC";
 const COMMENT_SAVED =  "COMMENT_SAVED";
+const COMMENT_EMPTY =  "COMMENT_EMPTY";
 const LIKE =  "LIKE";
 const GO_AUTH = "GO_AUTH";
 
@@ -224,10 +225,11 @@ protected $response;
 }
 
 public function saveComment($comData) {
-
         
        if(!isset($_SESSION['login'])){
          return self::GO_AUTH;   
+        }elseif($comData['comment'] == " "){
+            return self::COMMENT_EMPTY;
         } else {
             $login = $_SESSION['login'];
             $idPic = $_SESSION['idPics'];

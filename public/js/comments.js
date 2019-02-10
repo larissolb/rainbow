@@ -20,7 +20,7 @@ let text = formComment.elements.comment; //нахождение элемента
         formComment.reset();
         }
         }else { 
-          alert('Add comment into field');
+          return responseHandler("COMMENT_EMPTY");
       
     }
       }
@@ -54,7 +54,10 @@ let text = formComment.elements.comment; //нахождение элемента
             alert("Please, sign in or register");
             formComment.reset();
             return "GO_AUTH";
-        }   else {
+        }else if (response === "COMMENT_EMPTY"){
+            alert('Add comment into field');
+        }   
+        else {
             console.log("system error");
         }
     }
