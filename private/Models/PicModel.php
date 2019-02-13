@@ -193,15 +193,30 @@ protected $response;
         return self::TYPE_ERROR;
     }
     
-    move_uploaded_file($tmp_name, "img/$name");
-    $pic_new = "img/$name";
-    $info = getimagesize($pic_new);
-        $width  = $info[0];
-        $height = $info[1];
- 
-    $w = 860;
-    $h = 380;
-        
+        $collection = "img/";
+       
+        move_uploaded_file($tmp_name, "img/".$name);
+        if(preg_match('/[.](GIF)|(gif)$/', $name)) {
+            $img = imagecreatefromgif($collection.$name) ;
+        }
+        if(preg_match('/[.](PNG)|(png)$/', $name)) {
+            $img = imagecreatefrompng($collection.$name) ;
+        }
+        if(preg_match('/[.](JPG)|(jpg)|(jpeg)|(JPEG)$/', $name)) {
+            $img = imagecreatefromjpeg($collection.$name); 
+        }
+        $w = 860;
+        $h = 380;
+        $w_src = imagesx($img); //вычисляем ширину
+        $h_src = imagesy($img); //вычисляем высоту изображения
+        $dest = imagecreatetruecolor($w,$h);
+        imagecopyresampled($dest, $img, 0, 0, 0, 0, $w, $h, $w_src, $h_src);
+        $date=time(); //вычисляем время в настоящий момент.
+        $pic_new = $date.".jpg";
+        imagejpeg($dest, $collection.$date.".jpg");
+        $delfull = $collection.$name;
+        unlink($delfull);
+
     }
     
     $login = $_SESSION['login'];
@@ -212,7 +227,7 @@ protected $response;
         'nameBook'=>$data['nameBook'],
         'amount'=>$data['amount'],
         'text'=>$data['text'],
-        'img_path'=>$name,
+        'img_path'=>$pic_new,
         'Themes_id'=>$themes,
         'Types_id'=>$type,
         'Users_login'=>$login,
