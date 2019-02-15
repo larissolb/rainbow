@@ -1,82 +1,65 @@
 <?php
 
-//соединение с базой данных rainbow
-//$server = 'rainbow';
-//$db_name = 'rainbow'; // имя базы данных
-//$username = 'larissolb';
-//$pwd = 'pwd';
-//$options = [
-//    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-//];
-//
-
 namespace Larissolb\Rainbow\Base;
 
 class DBConnection
 {
-    protected $connection;
-    
-    private $server = "localhost";
-    private $db_name = 'rainbow';
-    private $username = 'larissolb';
-    private $pwd = 'pwd';
+    private $connection;
+    private static $dbconnection;
 
-    public function __construct() {
-        $this->connection = $this->connect($this->server,$this->db_name, $this->username, $this->pwd);
+    public static function getDBConnection() {
+        if (!self::$dbconnection) {
+            self::$dbconnection = new self();
+        }
+        return self::$dbconnection;
     }
-    
-    protected function connect($server, $db_name, $username, $pwd, array $opt=[]) {
 
+    public function setConnection($settings) {
+        $this->connection = $this->connect($settings['server'], $settings['db_name'], $settings['username'], $settings['pwd']);
+    }
+
+    private function connect(
+        $server, $db_name,
+        $username, $pwd, array $opt=[]
+    )
+    {
+        $connection = null;
         try {
-
-       $connection = new \PDO("mysql:host=$server;dbname=$db_name",
-            $username, $pwd, $opt);
-//        var_dump("connection is good");
-
-        } catch (\PDOException $exception) {
-            //здесь надо логировать, т.е. записывать все исключения в файл=ошибки
-            var_dump($exception->getTrace());
+            $connection =  new \PDO("mysql:host=$server;dbname=$db_name",
+                $username, $pwd, $opt);
+        } catch (\PDOException $exception){
+            // обработка ошибки
         }
         return $connection;
-}
-
-    public function exec($sql_string) {
-        return $this->connection->exec($sql_string); //будет возвращено либо true, либо false
     }
-    
-    public function queryAll($sql_string) {  
+    // неподготовленный запрос
+    public function exec($sql_string){
+
+        return $this->connection->exec($sql_string);
+    }
+    // неподготовленный запрос
+    public function queryAll($sql_string){
         $statement = $this->connection->query($sql_string);
-        if(!$statement){
-            return FALSE; //либо сообщение
+        if (!$statement) {
+            return false; // либо сообщение
         }
-        
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
-        
-//        $data = $statement->fetchAll(\PDO::FETCH_ASSOC);
-//        var_dump($data);
     }
-    
-    public function query($sql_string) {  
+    // неподготовленный запрос
+    public function query($sql_string){
         $statement = $this->connection->query($sql_string);
-        if(!$statement){
-            return FALSE; //либо сообщение
+        if (!$statement) {
+            return false; 
         }
-        
-        $data = $statement->fetch(\PDO::FETCH_ASSOC);
-        var_dump($data);
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
-
-    public function execute($sql_string, $params, $all=true) {
+    // подготовленный запрос
+    public function execute($sql_string, $params, $all=true){
         $statement = $this->connection->prepare($sql_string);
         $statement->execute($params);
-        
-        if(!$all) {
+        if (!$all) {
             return $statement->fetch(\PDO::FETCH_ASSOC);
         }
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
-        
     }
-    
-
-    
 }
