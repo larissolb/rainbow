@@ -17,12 +17,12 @@ const LIKE =  "LIKE";
 const GO_AUTH = "GO_AUTH";
 
   
-protected $DBConnection;
+private $db;
 protected $response;
     
     public function __construct() 
             {
-            $this->DBConnection = new DBConnection();
+            $this->db = DBConnection::getDBConnection();
             $this->response = new Response();
     }
 
@@ -33,7 +33,7 @@ protected $response;
         $params = [
             'Pics_id'=>$id
                 ];
-        $statement = $this->DBConnection->execute($sql, $params, true);
+        $statement = $this->db->execute($sql, $params, true);
         
         $comments = [];
         
@@ -51,7 +51,7 @@ protected $response;
         $params = [
             'id'=>$id
                 ];
-        $statement = $this->DBConnection->execute($sql, $params, FALSE);
+        $statement = $this->db->execute($sql, $params, FALSE);
         $likes = $statement['like'];
 
         $_SESSION['idPic'] = $id;
@@ -61,7 +61,7 @@ protected $response;
     
     public function getLastLoadPics() {
         $sql = "SELECT *  FROM Pics ORDER BY id ASC";
-        $last_pics = $this->DBConnection->queryAll($sql);
+        $last_pics = $this->db->queryAll($sql);
 
         foreach($last_pics as $arr){
             $last_pic = $arr;
@@ -72,7 +72,7 @@ protected $response;
     
     public function getRandomPics() {
         $sql = "SELECT id, img_path  FROM Pics ORDER BY id DESC LIMIT 4";
-        $pics_arr = $this->DBConnection->queryAll($sql);
+        $pics_arr = $this->db->queryAll($sql);
         
         $pics = [];
         
@@ -90,7 +90,7 @@ protected $response;
         $params = [
             'id'=>$id
                 ];
-        $pic_arr = $this->DBConnection->execute($sql, $params, true);
+        $pic_arr = $this->db->execute($sql, $params, true);
         
   foreach ($pic_arr as $pics) { 
         //choose theme
@@ -99,7 +99,7 @@ protected $response;
         $params = [
             'id'=>$id_theme
                 ];
-        $theme_arr = $this->DBConnection->execute($sql, $params, true);
+        $theme_arr = $this->db->execute($sql, $params, true);
         foreach ($theme_arr as $key => $value) {
             $theme = $value["theme"];            
         }
@@ -111,7 +111,7 @@ protected $response;
         $params_type = [
             'id'=>$id_type
                 ];
-        $type_arr = $this->DBConnection->execute($sql_type, $params_type, true);
+        $type_arr = $this->db->execute($sql_type, $params_type, true);
         foreach ($type_arr as $key => $value) {
             $type = $value["type"];
         }
@@ -130,7 +130,7 @@ protected $response;
         $params = [
             'Types_id'=>$type
                 ];
-        $pics = $this->DBConnection->execute($sql, $params, true);
+        $pics = $this->db->execute($sql, $params, true);
         
             return $pics;       
         }  
@@ -234,7 +234,7 @@ protected $response;
         'like'=>0
     ];
     
-    $statement = $this->DBConnection->execute($sql, $params, false);
+    $statement = $this->db->execute($sql, $params, false);
           return self::LOAD_SUCCESS;
     }
 }
@@ -259,7 +259,7 @@ public function saveComment($comData) {
             'Pics_id'=> $idPic
         ];
 
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
         if($statement) {
             return self::DB_ERROR;
         }
@@ -286,7 +286,7 @@ public function addLike() {
             'id'=>$idPic
         ];
 
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
         if($statement) {
             return self::DB_ERROR;
         }
@@ -296,6 +296,7 @@ public function addLike() {
     }        
    
 }
+
 
 
 
