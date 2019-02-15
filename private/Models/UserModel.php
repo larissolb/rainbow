@@ -12,11 +12,11 @@ class UserModel
     const DB_ERROR = "DB_ERROR";
     const COUNTRY_EMPTY = "COUNTRY_EMPTY";
     const PSW_WRONG = "PSW_WRONG";
-protected $DBConnection;
+    private $db;
     
     public function __construct() 
             {
-            $this->DBConnection = new DBConnection();
+            $this->db = DBConnection::getDBConnection();
   
     }
     public function loginExists($userData){
@@ -25,7 +25,7 @@ protected $DBConnection;
         }else{
         $sql = 'SELECT login FROM Users WHERE login =:login';
         $params = ['login'=>$userData['login']];
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
         return $statement;            
         }
     }
@@ -35,7 +35,7 @@ protected $DBConnection;
         $params = [
             'email'=>$userData['emailRec']
         ];
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
         if(!$statement){
             return self::EMAIL_ERROR;
         }
@@ -65,7 +65,7 @@ protected $DBConnection;
             'psw'=>password_hash($password, PASSWORD_DEFAULT),
             'email'=>$email
             ];
-        $statement1 = $this->DBConnection->execute($sql1, $params1, false);
+        $statement1 = $this->db->execute($sql1, $params1, false);
             if($statement1) {
                 return self::DB_ERROR;
             }
@@ -82,7 +82,7 @@ protected $DBConnection;
         $params = [
             'email'=>$userData['emailRec']
         ];
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
         if(!$statement){
             $not = "2";
         } else {
@@ -111,7 +111,7 @@ protected $DBConnection;
             'psw'=>password_hash($password, PASSWORD_DEFAULT),
             'email'=>$email
             ];
-        $statement1 = $this->DBConnection->execute($sql1, $params1, false);
+        $statement1 = $this->db->execute($sql1, $params1, false);
             if($statement1) {
                 return self::DB_ERROR;
             }
@@ -142,7 +142,7 @@ protected $DBConnection;
             'psw'=>password_hash($userData['psw'], PASSWORD_DEFAULT),
             'email'=>$userData['email'],
         ];
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
         if($statement) {
             return self::DB_ERROR;
         }
@@ -175,7 +175,7 @@ protected $DBConnection;
             'psw'=>password_hash($userData['psw'], PASSWORD_DEFAULT),
             'email'=>$userData['email'],
         ];
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
         if($statement) {
             return self::DB_ERROR;
         }
@@ -195,7 +195,7 @@ protected $DBConnection;
             'email'=>$userData['email']
         ];
              
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
                         
         if (!$statement){
             return self::EMAIL_ERROR;
@@ -217,7 +217,7 @@ protected $DBConnection;
             'email'=>$userData['email']
         ];
              
-        $statement = $this->DBConnection->execute($sql, $params, false);
+        $statement = $this->db->execute($sql, $params, false);
                         
         if (!$statement){
             return self::EMAIL_ERROR;
