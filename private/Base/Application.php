@@ -20,6 +20,11 @@ class Application
     }
 
     public function handleRequest(Request $request){
+
+	$dbconf =  $this->config['db'];
+        $db = DBConnection::getDBConnection();
+        $db->setConnection($this->config['db']);
+
         $router = new Router($this->config['urls']);
 
         $routeInfo = $router->dispatch($request->getMethod(), $request->getUri());
