@@ -138,27 +138,29 @@ protected $response;
  //check size and type
     public function loadPics($data) {
 
-        $pics = $_FILES;
+        $iWidth = 860;
+        $iHeight = 380;
+        $iJpgQuality = 100;
 
-        foreach ($pics["picture"]["error"] as $key => $error) {
-        $tmp_name = $pics["picture"]["tmp_name"][$key];
-        $name = basename($pics["picture"]["name"][$key]);
-//        var_dump($name);
-    
+        $pics = $_FILES;
+        
+        if ($pics) {
+      
+        $tmp_name = $pics["picture"]["tmp_name"];
+        if($tmp_name == ""){
+            return self::NO_PIC;
+        }
+        
+        $error = $pics['picture']['error'];
+       
         if($error == UPLOAD_ERR_FORM_SIZE){
         return self::SIZE_ERROR;
     } 
 
+    //check types
     $types = array('image/png','image/jpeg', 'image/jpg');
-    
     $finfo = finfo_open(FILEINFO_MIME_TYPE);   
-                    
-        foreach ($pics["picture"]["error"] as $key => $error) {
-        $tmp_name = $pics["picture"]["tmp_name"][$key];
-        if($tmp_name == ""){
-            return self::NO_PIC;
-        }
-        $type_pic = finfo_file($finfo, $tmp_name);
+    $type_pic = finfo_file($finfo, $tmp_name);
         
         //choose theme
         if($data["theme"] === "Nature") {
@@ -193,31 +195,62 @@ protected $response;
         return self::TYPE_ERROR;
     }
     
-        $collection = "img/";
-       
-        move_uploaded_file($tmp_name, "img/".$name);
-        if(preg_match('/[.](GIF)|(gif)$/', $name)) {
-            $img = imagecreatefromgif($collection.$name) ;
-        }
-        if(preg_match('/[.](PNG)|(png)$/', $name)) {
-            $img = imagecreatefrompng($collection.$name) ;
-        }
-        if(preg_match('/[.](JPG)|(jpg)|(jpeg)|(JPEG)$/', $name)) {
-            $img = imagecreatefromjpeg($collection.$name); 
-        }
-        $w = 860;
-        $h = 380;
-        $w_src = imagesx($img); //вычисляем ширину
-        $h_src = imagesy($img); //вычисляем высоту изображения
-        $dest = imagecreatetruecolor($w,$h);
-        imagecopyresampled($dest, $img, 0, 0, 0, 0, $w, $h, $w_src, $h_src);
-        $date=time(); //вычисляем время в настоящий момент.
-        $pic_new = $date.".jpg";
-        imagejpeg($dest, $collection.$date.".jpg");
-        $delfull = $collection.$name;
-        unlink($delfull);
+                    // new unique filename
+                    $sTempFileName = 'img/' . time();
 
-    }
+                    // move uploaded file into cache folder
+                    move_uploaded_file($pics['picture']['tmp_name'], $sTempFileName);
+
+                    // change file permission to 644
+                    @chmod($sTempFileName, 0644);
+
+                    if (file_exists($sTempFileName) && filesize($sTempFileName) > 0) {
+                        $aSize = getimagesize($sTempFileName); // try to obtain image info
+                        if (!$aSize) {
+                            @unlink($sTempFileName);
+                            return;
+                        }
+
+                        // check for image type
+                        switch($aSize[2]) {
+                            case IMAGETYPE_JPEG:
+                                $sExt = '.jpg';
+
+                                // create a new image from file 
+                                $vImg = @imagecreatefromjpeg($sTempFileName);
+                                break;
+                            /*case IMAGETYPE_GIF:
+                                $sExt = '.gif';
+
+                                // create a new image from file 
+                                $vImg = @imagecreatefromgif($sTempFileName);
+                                break;*/
+                            case IMAGETYPE_PNG:
+                                $sExt = '.png';
+
+                                // create a new image from file 
+                                $vImg = @imagecreatefrompng($sTempFileName);
+                                break;
+                            default:
+                                @unlink($sTempFileName);
+                                return;
+                        }
+
+                        // create a new true color image
+                        $vDstImg = @imagecreatetruecolor( $iWidth, $iHeight );
+
+                        // copy and resize part of an image with resampling
+                        imagecopyresampled($vDstImg, $vImg, 0, 0, (int)$_POST['x1'], (int)$_POST['y1'], $iWidth, $iHeight, (int)$_POST['w'], (int)$_POST['h']);
+
+                        // define a result image filename
+                        $sResultFileName = time() . $sExt;
+
+                        // output image to file
+                        imagejpeg($vDstImg, 'img/'.$sResultFileName, $iJpgQuality);
+                        @unlink($sTempFileName);
+                        
+                    }
+
     
     $login = $_SESSION['login'];
  
@@ -227,7 +260,7 @@ protected $response;
         'nameBook'=>$data['nameBook'],
         'amount'=>$data['amount'],
         'text'=>$data['text'],
-        'img_path'=>$pic_new,
+        'img_path'=>$sResultFileName,
         'Themes_id'=>$themes,
         'Types_id'=>$type,
         'Users_login'=>$login,
@@ -238,6 +271,7 @@ protected $response;
           return self::LOAD_SUCCESS;
     }
 }
+
 
 public function saveComment($comData) {
         

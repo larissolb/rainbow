@@ -11,7 +11,7 @@ body {
     background-color: rgba(248, 248, 255, 0.2);
 }
 
-img {
+.img {
    max-width: 100%;
    height: auto;
    max-height: 100%;
@@ -839,6 +839,11 @@ h4 {
  .container-share .like{
   width: 30%;
  }
+ 
+ .container-share .imgleft {
+     max-width: 100%;
+ }
+ 
 .comments {
     width: 100%;
     padding-top: 0.5em;

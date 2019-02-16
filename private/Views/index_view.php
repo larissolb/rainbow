@@ -4,7 +4,7 @@
 
 <div class="container"> <!--begin container -->
     <div class="left"> <!-- left -->
-        <img src="/img/leftpic.png" alt="advertising">
+        <img src="/img/leftpic.png" alt="advertising" class="img">
         <div class="logocontainer">
             <div class="yellowpencil">
                 <div class="yellowstrip"></div>
@@ -81,21 +81,21 @@
         </div>
     </div> <!-- finish center -->
     <div class="right"> <!-- right  -->
-        <img src="/img/icon2.jpg" alt="img">
-        <img src="/img/icon2.jpg" alt="img">
+        <img src="/img/icon2.jpg" alt="img" class="img">
+        <img src="/img/icon2.jpg" alt="img" class="img">
     </div> <!-- finish right  -->
 </div> <!--finish container-->
             <!--mobile version -->
 <div class="container-mobile"> <!--begin mobile contain 4pics -->
-    <div><a href="/about"><img src="/img/about-mob.gif" alt='Where am I?'></a>
-    <a href="/pencils"><img src="/img/pencilsmob.jpg" alt="Pencils"></a></div>
-    <div class="col-last-container-mobile"><a href="/rating/pic/<?php echo $last_pic['id'];?>"><img src="/img/rating.gif" alt='Watch&Rate'></a>
-    <a href="/markers"><img src="/img/markers.jpg" alt="Markers"></a></div>
+    <div><a href="/about"><img src="/img/about-mob.gif" alt='Where am I?' class="img"></a>
+    <a href="/pencils"><img src="/img/pencilsmob.jpg" alt="Pencils" class="img"></a></div>
+    <div class="col-last-container-mobile"><a href="/rating/pic/<?php echo $last_pic['id'];?>"><img src="/img/rating.gif" alt='Watch&Rate' class="img"></a>
+    <a href="/markers"><img src="/img/markers.jpg" alt="Markers" class="img"></a></div>
 </div>   <!--finish mobile contain 4pics -->
 <div class="container-mobile"> <!--begin mobile contain 4pics -->
-    <div><a href="/paints"><img src="/img/paints.png" alt='Paints'></a>
+    <div><a href="/paints"><img src="/img/paints.png" alt='Paints' class="img"></a>
 </div>
-    <div class="col-last-container-mobile"><a href="/share#openwindow"><img src="/img/share_mob.jpeg" alt="Share"></a>
+    <div class="col-last-container-mobile"><a href="/share#openwindow"><img src="/img/share_mob.jpeg" alt="Share" class="img"></a>
    </div>
 </div>   <!--finish mobile contain 4pics -->
 

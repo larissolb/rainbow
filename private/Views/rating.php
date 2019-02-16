@@ -1,7 +1,7 @@
 
 <div class="container-rating"> <!--begin container -->
     <div class="left"> <!-- left advertising  -->
-        <img src="/img/ad.png" alt="advertising">
+        <img src="/img/ad.png" alt="advertising" class='img'>
     </div>  <!--final left -->   
     <div class="center">
         <div class="about-pic">
@@ -12,7 +12,7 @@
         <?php else:?>
         <a href="/share#authorization" title="share">
             <?php endif;?>
-      <img src="/img/<?php echo $pics['img_path']; ?> " alt="<?php echo $pics['img_path'];?> ">
+      <img src="/img/<?php echo $pics['img_path']; ?> " alt="<?php echo $pics['img_path'];?> " class='img'>
     </a>
 <p><?php echo $pics['text'];?></p>
 <div class="mobile">
@@ -35,7 +35,7 @@
             <fieldset>   
                 <div>
                 <textarea name='like' class="like"><?php echo $likes; ?></textarea>
-            <img src='/img/icon/like.png' alt='like'>
+            <img src='/img/icon/like.png' alt='like' class='img'>
                 </div>
             </fieldset>
             </form></div>
@@ -63,14 +63,14 @@
                 </fieldset>
             </form>
         </div>
-        <div id="print"><img src="/img/icon/print.png" alt="print"></div>
+        <div id="print"><img src="/img/icon/print.png" alt="print" class='img'></div>
       </div>
 
     </div> <!--finish center--> 
     <div class="right"> <!-- beginright   -->
-        <a href='/pencils'><img src="/img/a_pencils_rat.jpg" alt="watch paints by pencils"></a>
-        <a href='/paints'><img src="/img/a_watercolors_rat.png" alt="watch paints by paints"></a>
-        <a href='/markers'><img src="/img/a_markers_rat.jpg" alt="watch paints by markers"></a>
+        <a href='/pencils'><img src="/img/a_pencils_rat.jpg" alt="watch paints by pencils" class='img'></a>
+        <a href='/paints'><img src="/img/a_watercolors_rat.png" alt="watch paints by paints" class='img'></a>
+        <a href='/markers'><img src="/img/a_markers_rat.jpg" alt="watch paints by markers" class='img'></a>
     </div><!-- finish right  -->
 </div> <!--finish container-->                         
 <!--      скрипты          -->

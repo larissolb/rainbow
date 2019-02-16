@@ -17,7 +17,7 @@
                 
         <nav class="mobile-menu" > <!-- mobile menu -->
                 <ul>
-                    <li><a href="#"><img src="../img/icon/menu.png" alt="Menu"></a>
+                    <li><a href="#"><img src="../img/icon/menu.png" alt="Menu" class='img'></a>
                     <ul>    
                     <li><a href="/">Home</a></li>
                     <?php if (isset($_SESSION['auth'])): ?>                        
@@ -77,22 +77,22 @@
         <div id="footer" class="footer">
             <div class="socnet">
                 <a href="https://www.whatsapp.com" target="_blank">
-                <img src="/img/icon/whatsup.png" alt="Whats'up"></a>
+                <img src="/img/icon/whatsup.png" alt="Whats'up" class='img'></a>
                 <a href="https://www.viber.com/download" target="_blank">
-                <img src="/img/icon/viber.png" alt="Viber"></a>
+                <img src="/img/icon/viber.png" alt="Viber" class='img'></a>
                 <a href="https://www.instagram.com/ShareRainbow" target="_blank">
-                <img src="/img/icon/instagram.png" alt="Instagram"></a>
+                <img src="/img/icon/instagram.png" alt="Instagram" class='img'></a>
                 <a href="https://www.vk.com" target="_blank">
-                <img src="/img/icon/vk.png" alt="Vkontakte"></a>
+                <img src="/img/icon/vk.png" alt="Vkontakte" class='img'></a>
             </div>
             <div>
                 <a href="#" target="_blank">  
-                <img src="/img/icon/donate2.png" alt="Donate"></a> 
+                <img src="/img/icon/donate2.png" alt="Donate" class='img'></a> 
             </div>
         </div>
         <div class="footer footer-m">
             <span>2018, ShareRainbow. All rights reserved</span>
-            <div class="up"><a href="#header"><img src="/img/icon/up.png" alt="Up"></a></div>
+            <div class="up"><a href="#header"><img src="/img/icon/up.png" alt="Up" class='img'></a></div>
         </div>
 </div>   <!--       finish footer           -->
     <script src="/js/header.js"></script>

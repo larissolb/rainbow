@@ -1,8 +1,8 @@
         <div class="container-about"> <!--begin container -->
             <div class="left"> <!-- begin left pics -->
-                <img src="/img/icon2.jpg" alt="img">
-                <img src="/img/icon2.jpg" alt="img">
-                <img src="/img/icon2.jpg" alt="img">
+                <img src="/img/icon2.jpg" alt="img" class="img">
+                <img src="/img/icon2.jpg" alt="img" class="img">
+                <img src="/img/icon2.jpg" alt="img" class="img">
             </div> <!-- end left pics -->
             <div class="center"> <!-- begin center -->
                 <div>             
@@ -16,8 +16,8 @@
             <iframe src="https://www.youtube.com/embed/4TapFg5Nxfw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>        
               </div><!--end center-->
             <div class="right"> <!-- begin right pics -->
-                <img src="/img/icon2.jpg" alt="img">
-                <img src="/img/icon2.jpg" alt="img">
-                <img src="/img/icon2.jpg" alt="img">
+                <img src="/img/icon2.jpg" alt="img" class="img">
+                <img src="/img/icon2.jpg" alt="img" class="img">
+                <img src="/img/icon2.jpg" alt="img" class="img">
             </div> <!-- end right pics -->
         </div> <!--end container -->
