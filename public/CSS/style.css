@@ -9,6 +9,7 @@
 body {
     background: url(../img/bfon.png);
     background-color: rgba(248, 248, 255, 0.2);
+    min-height:100%;
 }
 
 .img {
@@ -1193,6 +1194,12 @@ border: none;
 }
 
 /*footer*/
+.footer-main {
+   position:absolute;
+   bottom:-40%;
+   width:100%;
+}
+
 .footer {
     display: flex;
     flex: 1;
@@ -1225,6 +1232,17 @@ border: none;
 
 #red {
     color: red;
+}
+
+/*colorbook*/
+.center-cb {
+display: flex;
+display: -webkit-flex;
+display: -moz-flex;
+flex-direction: row;
+-webkit-flex-direction: row;
+-moz-flex-direction: row;
+position: relative;
 }
 
 @font-face {

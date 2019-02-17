@@ -34,5 +34,14 @@ class IndexController extends Controller
         ];
         return parent::generateResponse($view, $data);
     }
+    
+    public function pbAction(){
+        $title = 'Do it this world rainbow';
+        $view = 'paintbook.php';
+        $data = [
+            'title'=>$title
+        ];
+        return parent::generateResponse($view, $data, $template="paintbook.php");
+    }    
 
 }

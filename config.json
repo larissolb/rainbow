@@ -113,6 +113,12 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::recmAction",
         "method": "GET"
 },
+    "paintbook":{
+        "path":"/colorbook",
+        "controller":"Larissolb\\Rainbow\\Controllers\\IndexController::pbAction",
+        "method": "GET"
+          
+},
     "out":{
         "path":"/{out}",
         "controller":"Larissolb\\Rainbow\\Controllers\\UserController::outAction",
