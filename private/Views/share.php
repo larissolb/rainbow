@@ -1,3 +1,8 @@
+        <link href="/CSS/jquery.Jcrop.min.css" rel="stylesheet" type="text/css" />
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.Jcrop.min.js"></script>
+        <script src="/js/script.js"></script>
+        
 <div class="container-share"> <!--главная рамка-->
     <div class="left"> <!--position column left main-->
         <h2>Last updates</h2>

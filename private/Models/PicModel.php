@@ -272,6 +272,146 @@ protected $response;
     }
 }
 
+        public function loadPicsM($data){
+        if ($data == NULL){
+        $total = "OK";
+        return $total;
+        
+        }else {
+        $iWidth = 860;
+        $iHeight = 380;
+        $iJpgQuality = 100;
+
+        $pics = $_FILES;
+        
+        if ($pics) {
+        $tmp_name = $pics["picture"]["tmp_name"];
+        
+        if($tmp_name == ""){
+            $total = "NO_PIC";
+            return $total;
+        }
+        
+        $error = $pics['picture']['error'];
+       
+        if($error == UPLOAD_ERR_FORM_SIZE){
+            $total = "SIZE_ERROR";
+            return $total;        
+    } 
+
+    //check types
+    $types = array('image/png','image/jpeg', 'image/jpg');
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);   
+    $type_pic = finfo_file($finfo, $tmp_name);
+        
+        //choose theme
+        if($data["theme"] === "Nature") {
+            $themes = 1;    
+        }elseif($data["theme"] === "Space"){
+            $themes = 2;    
+        }elseif($data["theme"] === "Animals"){
+            $themes = 3;    
+        }elseif($data["theme"] === "Cars"){
+            $themes = 4;    
+        }elseif($data["theme"] === "Cities"){
+            $themes = 5;    
+        }else{
+            $themes = 6;
+        }
+            
+        //choose type
+        if($data["type"] === "pen") {
+            $type = 1;    
+        }elseif($data["type"] === "pencil"){
+            $type = 2;    
+        }elseif($data["type"] === "paints"){
+            $type = 3;    
+        }elseif($data["type"] === "monochrome"){
+            $type = 4;    
+        }else{
+            $type = 5;    
+        }
+        
+        if(!in_array($type_pic, $types)){
+        finfo_close($finfo);
+        $total = "TYPE_ERROR";
+        return $total;                
+        }
+        
+        // new unique filename
+        $sTempFileName = 'img/' . time();
+
+        // move uploaded file into cache folder
+        move_uploaded_file($pics['picture']['tmp_name'], $sTempFileName);
+
+        // change file permission to 644
+        @chmod($sTempFileName, 0644);
+            if (file_exists($sTempFileName) && filesize($sTempFileName) > 0) {
+                $aSize = getimagesize($sTempFileName); // try to obtain image info
+                if (!$aSize) {
+                @unlink($sTempFileName);
+                return;
+                }
+
+        // check for image type
+            switch($aSize[2]) {
+            case IMAGETYPE_JPEG:
+            $sExt = '.jpg';
+
+        // create a new image from file 
+            $vImg = @imagecreatefromjpeg($sTempFileName);
+            break;
+            /*case IMAGETYPE_GIF:
+            $sExt = '.gif';
+        // create a new image from file 
+            $vImg = @imagecreatefromgif($sTempFileName);
+            break;*/
+            case IMAGETYPE_PNG:
+            $sExt = '.png';
+        // create a new image from file 
+            $vImg = @imagecreatefrompng($sTempFileName);
+            break;
+            default:
+            @unlink($sTempFileName);
+            return;
+            }
+        
+        // create a new true color image
+            $vDstImg = @imagecreatetruecolor( $iWidth, $iHeight );
+
+        // copy and resize part of an image with resampling
+            imagecopyresampled($vDstImg, $vImg, 0, 0, (int)$_POST['x1'], (int)$_POST['y1'], $iWidth, $iHeight, (int)$_POST['w'], (int)$_POST['h']);
+        
+        // define a result image filename
+            $sResultFileName = time() . $sExt;
+        
+        // output image to file
+            imagejpeg($vDstImg, 'img/'.$sResultFileName, $iJpgQuality);
+            @unlink($sTempFileName);
+            }
+    
+    //add to DB        
+    $login = $_SESSION['login'];
+ 
+    $sql = "INSERT INTO Pics (nameBook, amount, text, `like`, img_path, Themes_id, Types_id, Users_login)
+              VALUES (:nameBook, :amount, :text, :like, :img_path, :Themes_id, :Types_id, :Users_login)";
+    $params = [
+        'nameBook'=>$data['nameBook'],
+        'amount'=>$data['amount'],
+        'text'=>$data['text'],
+        'img_path'=>$sResultFileName,
+        'Themes_id'=>$themes,
+        'Types_id'=>$type,
+        'Users_login'=>$login,
+        'like'=>0
+    ];
+    
+    $statement = $this->db->execute($sql, $params, false);
+      $total = 'LOAD_SUCCESS';      
+        return $total;
+        } 
+    }
+}   
 
 public function saveComment($comData) {
         

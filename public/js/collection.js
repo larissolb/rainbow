@@ -42,13 +42,4 @@
     let shareBtn = document.forms.Upload;
     shareBtn.addEventListener('submit', sendForm);
     
-    let shareMob = document.getElementById('shareMob');
-    shareMob.addEventListener('submit', sendMobForm);
-   
-    function sendMobForm(event) {
-       event.preventDefault();
-       window.location.href = "/share";
-   }
-   
-    
 }());

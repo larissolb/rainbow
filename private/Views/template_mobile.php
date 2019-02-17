@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
         <link rel="stylesheet" href="/CSS/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
    <div id="header"> <!-- header-->
@@ -21,7 +22,7 @@
                     <ul>    
                     <li><a href="/">Home</a></li>
                     <?php if (isset($_SESSION['auth'])): ?>                        
-                    <li><a href="/share">Share art &#10000;</a></li>
+                    <li><a href="/share/">Share art &#10000;</a></li>
 <!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
                     <?php endif; ?>
                     <li><a href="/rating/pic/<?php echo $last_pic['id'];?>">Watch&Rate</a></li>

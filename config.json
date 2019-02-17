@@ -29,9 +29,14 @@
         "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::LoadPicsAction",
         "method": "POST"
 },
+    "shareMob":{
+        "path":"/share/",
+        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::shareMAction",
+        "method": "GET"
+},
     "loadPicsM":{
         "path":"/share/loadpicsM",
-        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::loadPicsMAction",
+        "controller":"Larissolb\\Rainbow\\Controllers\\ShareController::shareMAction",
         "method": "POST"
           
 },

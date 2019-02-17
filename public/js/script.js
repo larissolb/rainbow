@@ -18,11 +18,11 @@ function bytesToSize(bytes) {
 };
 
 // check for selected crop region
-function checkForm() {
-    if (parseInt($('#w').val())) return true;
-    $('.error').html('Please select a crop region and then press Upload').show();
-    return false;
-};
+//function checkForm() {
+//    if (parseInt($('#w').val())) return true;
+//    $('.error').html('Please select a crop region and then press Upload').show();
+//    return false;
+//};
 
 // update info by cropping (onChange and onSelect events handler)
 function updateInfo(e) {
