@@ -6,7 +6,7 @@
         <meta name="description" content="Сообщество любителей раскраски и делать этот мир ярким">
         <meta name="keywords" content="раскраски, хобби, творчество, сообщество, общение, радужные события">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/x-icon" href="img/icon.jpg">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/icon.jpg">
         <link rel="stylesheet" href="/CSS/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
@@ -170,7 +170,7 @@
         
         <?php include_once $view; ?>
         
-    <div> <!-- footer -->
+    <div class="footer-main"> <!-- footer -->
         <div id="footer" class="footer">
             <div class="socnet">
                 <a href="https://www.whatsapp.com" target="_blank">
@@ -182,9 +182,17 @@
                 <a href="https://www.vk.com" target="_blank">
                 <img src="/img/icon/vk.png" alt="Vkontakte" class="img"></a>
             </div>
-            <div>
-                <a href="#" target="_blank">  
-                <img src="/img/icon/donate2.png" alt="Donate" class="img"></a> 
+            <div class="donate">
+                <a href="https://yasobe.ru/na/sharerainbow" target="_blank">  
+                <img src="/img/icon/yadonate.png" alt="DonateRub" class='img'></a> 
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_donations" />
+                    <input type="hidden" name="business" value="S5QW568GFZHYS" />
+                    <input type="hidden" name="item_name" value="for developing" />
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="image" src="/img/icon/donate2.png" border="0" name="submit" class="img" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                    <img alt="" border="0" src="https://www.paypal.com/en_RU/i/scr/pixel.gif" width="1" height="1" />
+                </form>
             </div>
         </div>
         <div class="footer footer-m">

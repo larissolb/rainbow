@@ -196,7 +196,7 @@ protected $response;
     }
     
                     // new unique filename
-                    $sTempFileName = 'img/' . time();
+                    $sTempFileName = 'img/imgUsers/' . time();
 
                     // move uploaded file into cache folder
                     move_uploaded_file($pics['picture']['tmp_name'], $sTempFileName);
@@ -246,7 +246,7 @@ protected $response;
                         $sResultFileName = time() . $sExt;
 
                         // output image to file
-                        imagejpeg($vDstImg, 'img/'.$sResultFileName, $iJpgQuality);
+                        imagejpeg($vDstImg, 'img/imgUsers/'.$sResultFileName, $iJpgQuality);
                         @unlink($sTempFileName);
                         
                     }
@@ -260,7 +260,7 @@ protected $response;
         'nameBook'=>$data['nameBook'],
         'amount'=>$data['amount'],
         'text'=>$data['text'],
-        'img_path'=>$sResultFileName,
+        'img_path'=>'/imgUsers/' . $sResultFileName,
         'Themes_id'=>$themes,
         'Types_id'=>$type,
         'Users_login'=>$login,
@@ -339,7 +339,7 @@ protected $response;
         }
         
         // new unique filename
-        $sTempFileName = 'img/' . time();
+        $sTempFileName = 'img/imgUsers/' . time();
 
         // move uploaded file into cache folder
         move_uploaded_file($pics['picture']['tmp_name'], $sTempFileName);
@@ -386,7 +386,7 @@ protected $response;
             $sResultFileName = time() . $sExt;
         
         // output image to file
-            imagejpeg($vDstImg, 'img/'.$sResultFileName, $iJpgQuality);
+            imagejpeg($vDstImg, 'img/imgUsers/'.$sResultFileName, $iJpgQuality);
             @unlink($sTempFileName);
             }
     
@@ -399,7 +399,7 @@ protected $response;
         'nameBook'=>$data['nameBook'],
         'amount'=>$data['amount'],
         'text'=>$data['text'],
-        'img_path'=>$sResultFileName,
+        'img_path'=>'/imgUsers/' . $sResultFileName,
         'Themes_id'=>$themes,
         'Types_id'=>$type,
         'Users_login'=>$login,

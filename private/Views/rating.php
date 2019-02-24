@@ -1,7 +1,8 @@
 
 <div class="container-rating"> <!--begin container -->
     <div class="left"> <!-- left advertising  -->
-        <img src="/img/ad.png" alt="advertising" class='img'>
+<!--        <img src="/img/ad.png" alt="advertising" class='img'>-->
+        <a href="https://payeer.com/09539553" target="_blank"><img src="https://payeer.com/style/images/banner/en/160x600.gif" alt="Payeer" class="imgadv"></a>
     </div>  <!--final left -->   
     <div class="center">
         <div class="about-pic">

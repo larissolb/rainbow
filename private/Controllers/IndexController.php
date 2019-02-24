@@ -38,10 +38,13 @@ class IndexController extends Controller
     public function pbAction(){
         $title = 'Do it this world rainbow';
         $view = 'paintbook.php';
+        $last_pic = $this->picModel->getLastLoadPics();        
         $data = [
-            'title'=>$title
+            'title'=>$title,
+            'last_pic'=>$last_pic
         ];
         return parent::generateResponse($view, $data, $template="paintbook.php");
     }    
-
+        
+    
 }

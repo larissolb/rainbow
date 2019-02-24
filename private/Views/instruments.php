@@ -14,7 +14,7 @@
     </div> <!--end share left side -->
     <div class="center"> <!-- center -->
         <h1><?php echo $header; ?></h1>
-
+        
     <div class="about-pic">
         <?php foreach ($pics as $pic):?>
          <div class="hrefleft"><img src="/img/<?php echo $pic['img_path']; ?> " alt="<?php echo $pic['img_path'];?> " class="img">
