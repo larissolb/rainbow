@@ -31,7 +31,8 @@
         } else if (response === "SIZE_ERROR"){
             alert("Size is more than 500kb");         
         }else if (response === "NO_PIC"){
-            alert("You've forgotten your pic :-('");          
+            alert("You've forgotten your pic :-('"); 
+            
         }
         
         else {

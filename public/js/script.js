@@ -18,11 +18,11 @@ function bytesToSize(bytes) {
 };
 
 // check for selected crop region
-//function checkForm() {
-//    if (parseInt($('#w').val())) return true;
-//    $('.error').html('Please select a crop region and then press Upload').show();
-//    return false;
-//};
+function checkForm() {
+    if (parseInt($('#w').val())) return true;
+    $('.error').html('Please select a crop region and then press Upload').show();
+    return false;
+};
 
 // update info by cropping (onChange and onSelect events handler)
 function updateInfo(e) {
@@ -90,7 +90,7 @@ function fileSelectHandler() {
 
             // initialize Jcrop
             $('#preview').Jcrop({
-                minSize: [300, 300], // min crop size
+                minSize: [860, 380], // min crop size
                 aspectRatio : 2.26, // keep aspect ratio 1:1
                 bgFade: true, // use fade effect
                 bgOpacity: .3, // fade opacity

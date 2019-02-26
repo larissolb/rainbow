@@ -62,9 +62,11 @@
                 <div><input type="file" name="picture" id="pics" onchange="fileSelectHandler()" /></div>
                 <div class="error"></div>
                 <div class="step2">
-                <img id="preview" />
+                <div id="sizes">
                 <input type="text" id="w" name="w" />
                 <input type="text" id="h" name="h" />
+                </div>
+                    <img id="preview" />
                     <input type="submit" class="button default" value="Crop&Share" id='createBtn' id='shareBtn' class="Btn"/>
                 </div>
             </div>

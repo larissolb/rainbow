@@ -35,6 +35,10 @@ h2 {
 /*header */
 #header {
     background: url(../img/main.jpg);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex:1;
     -webkit-flex: 1;
@@ -57,7 +61,11 @@ h1 {
 
 /*menu*/
 .top {
-    display: flex;
+    display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
     margin-bottom: 1em;
 }
 .menu {
@@ -67,23 +75,28 @@ h1 {
 }
 
 .menu ul{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex: 1;
     -webkit-flex: 1;
     -moz-flex: 1;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
-/*    position:absolute;*/
     list-style:none;
     margin: 0;
-/*    padding:0 0 0.5em 1.5em;*/
     background: #40E0D0;
-/*    width: 99%;*/
 }
 
 .menu ul li {
     padding: 0.5em 0 0.5em 0.5em;
     position:relative;
     float:left;    
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
     justify-content: center;
     z-index: 100;
 }
@@ -119,6 +132,8 @@ h1 {
     flex: 1;
     -webkit-flex: 1;
     -moz-flex: 1;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     position:absolute;
     list-style:none;
@@ -382,9 +397,11 @@ h4 {
 }
 
 .container, .container-about {
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
-    display: -moz-flex;
+    display: flex;
     flex-direction: row;
     -webkit-flex-direction: row;
     -moz-flex-direction: row;    
@@ -712,9 +729,11 @@ h4 {
 
 /*rating*/
 .container-rating {
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
-    display: -moz-flex;
+    display: flex;
     flex-direction: row;
     -webkit-flex-direction: row;
     -moz-flex-direction: row;    
@@ -735,6 +754,10 @@ h4 {
 }
 
 .about-pic .hrefleft {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     width: 49%;
@@ -787,6 +810,10 @@ h4 {
 
 /*for sliders*/
 .actions {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     align-self: center;
     background: #F0FFF0;
@@ -794,7 +821,13 @@ h4 {
 }
 
 .icons-rate {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     
 }
@@ -1017,9 +1050,11 @@ iframe {
 
 /*share*/
 .container-share {
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
-    display: -moz-flex;
+    display: flex;
     flex-direction: row;
     -webkit-flex-direction: row;
     -moz-flex-direction: row;    
@@ -1094,15 +1129,25 @@ font-weight:bold;
     margin-bottom: 1em; 
 }
 .container-share .center .button-shareit {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     border: hidden;
     margin: 1em 0 1em 0;
     width:100%;
     flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-around;
     justify-content:  space-around;
 }
 
 .container-share .center .field {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     background:  #e6e6ff;
     padding: 1em;
@@ -1117,7 +1162,14 @@ font-weight:bold;
 .container-share textarea, .container-share .center input {
   background: #e6fff7;
 }
+#pics {
+      float: right;
+      margin-top: -0.3em;
+}
 
+#sizes {
+    margin-bottom: 2em;
+}
 .container-share .center img {
   margin: 1em;
 }
@@ -1195,6 +1247,8 @@ border: none;
   
   .center .about-pic {
     display: inline-flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     flex-wrap: wrap;
   }
@@ -1225,6 +1279,10 @@ border: none;
 }
 
 .footer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex: 1;
     -webkit-flex: 1;
@@ -1263,14 +1321,20 @@ border: none;
 }
 
 .donate {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
 }
 
 /*colorbook*/
 .center-cb {
-display: flex;
-display: -webkit-flex;
-display: -moz-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 flex-direction: row;
 -webkit-flex-direction: row;
 -moz-flex-direction: row;

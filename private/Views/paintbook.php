@@ -84,135 +84,9 @@
                         <li><a href="/out">Go out</a> </li>
                     </ul>
                     </li>
-                        <?php else: ?>     
-                    <li>
-            <a href="#authorization" class="authorization">Sign in</a> <!-- authorization -->
-            <form action="/user/authorization" method="post" name="authorization">
-                <fieldset id="authorization" class="open-window">
-                    <div><input id="email" name="email" type="email" placeholder="Your Email" required></div>
-                    <div><input id="psw" name="psw" type="password" placeholder="Your Password" required></div>           
-                    <button type="submit" name="signIN"  id='BtnEnter'>enter</button>
-                    <a href="#" id="aBtnlater"><input type="button" value="later" class="Btn"></a>
-                    <div class="links-authorization"> <!-- links inside form authorization-->
-                        <a href="#forgot">Forgot?</a>
-                        <a href="#register">Register</a>
-                    </div> <!-- final links inside authorization-->
-                </fieldset>
-            </form>         
-        <a href="#" class="recovery" id="forgot"></a> <!--recovery psw -->
-        <div class="recovery-window">
-            <form action="/user/recovery" method="post" name="recovery">
-                <fieldset id="recovery">
-                    <legend><h4>Recovery your password</h4></legend>
-                    <div>
-                        <label for="emailRec" id="emtext">Please input your email:</label>
-                        <input id="emailRec" type="email" name="emailRec" placeholder="Your Email" required> 
-                    </div>
-                    <button id="send" type="submit" name="Recovery" class="Btn">Send new password</button>
-                    <a href="/" id="back" class="Btn">OK</a>
-                    <a href="#register" id="sendhref">Register</a>
-                    
-                </fieldset>  
-                </form>
-                <a  href="#close" class="close-button" title="Close"></a>
-        </div><!--final recovery psw -->
-            <a href="#" class="register" id="register"></a> <!-- form register-->
-            <div class="register-window">
-                <form action="/user/registration" method="post" name="create">
-                <fieldset id="create">
-                    <legend><h4>Creat an account</h4></legend>
-                    <div>
-                        <label for="loginReg">Your name</label> 
-                        <input id="loginReg" type="text" name='login' placeholder="Your name" required>
-                    </div>
-                     <div id="busyLogin">It is occupied!</div>
-                    <div>
-                        <label for="emailReg">Your email</label> 
-                        <input id="emailReg" type="email" name="email" placeholder="Your email" required>
-                    </div>
-                      <div id="busyEmail">It is occupied!</div>
-                    <div>
-                        <label for="pswReg">Your password</label> 
-                        <input id="pswReg" type="password" name='psw' placeholder="Your password" required>
-                    </div>
-                    <div id="info">Password must content min 5 characters, 1 upper letter and 1 number</div>
-                    <div><label for="country">Your country</label>
-                        <select id="country" name='country' required> 
-                            <option>Choose country</option> 
-                            <optgroup label="Europe"> 
-                            <option value="E1">Portugal</option> 
-                            <option value="E2">Spain</option> 
-                            <option value="E3">France</option> 
-                            <option value="E4">Italy</option>
-                            <option value="E5">Germany</option>
-                            <option value="E6">Great Britain</option>
-                            <option value="E7">Russia</option>
-                            </optgroup>
-                            <optgroup label="Asia">
-                            <option value="A1">Japan</option> 
-                            <option value="A2">China</option> 
-                            <option value="A3">Thailand</option> 
-                            <option value="A4">Vietnam</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    <div id="noCountry">Choose your country</div>
-                    <button type="submit" name="signUP" id="createBtn">join</button>
-                    <button type="reset" class="Btn">Reset</button>
-                </fieldset>
-                </form>
-                 <a  href="#close" class="close-button" title="Закрыть"></a>
-                </div> <!-- final form register-->        
-                <?php endif; ?>
-                        
-                    </li>
+                    <?php endif; ?>
                 </ul>       
         </nav> <!-- final menu -->
-        
-        <nav class="mobile-menu" > <!-- mobile menu -->
-                <ul>
-                    <li><a href="#"><img src="../img/icon/menu.png" alt="Menu" class="img"></a>
-                    <ul>    
-                    <li><a href="/">Home</a></li>
-                           <?php if (isset($_SESSION['auth'])): ?>                        
-                    <li><a href="/share/">Share art &#10000;</a></li>
-<!--                    <li><a href="https://www.instagram.com/ShareRainbow">Goods for creation</a></li>-->
-                    <?php endif; ?>
-                    <li><a href="/rating/pic/<?php echo $last_pic['id'];?>">Watch&Rate</a></li>
-                    <li><a href="/pencils">By Pencils</a></li>
-                    <li><a href="/paints">By Paints</a></li>
-                    <li><a href="/markers">By Markers</a></li>
-                </ul>
-               </li>      
-            </ul>                               
-        </nav> 
-        <nav class="mobile-menu">    <ul>    
-                   <?php if (isset($_SESSION['auth'])): ?>                        
-                    <li><a href="#" class="authorization"><?php echo $_SESSION['login'] . " ;-)"; ?></a>
-                    <ul>
-                        <li><a href="/out">Go out</a> </li>
-                    </ul>
-                    </li>
-                        <?php else: ?>     
-                    <li>
-            <a href="#openwindow" class="authorization">Sign in</a> <!-- authorization -->
-            <form action="/user/authorizationM" method="post" name="authorization">
-                <fieldset id="openwindow" class="open-window">
-                    <div><input id="email" name="email" type="email" placeholder="Your Email" required></div>
-                    <div><input id="psw" name="psw" type="password" placeholder="Your Password" required></div>           
-                    <button type="submit" name="signIN"  id='BtnEnter'>enter</button>
-                    <a href="#" id="aBtnlater"><input type="button" value="later" class="Btn"></a>
-                    <div class="links-authorization"> 
-                        <a href="/forgot">Forgot?</a>
-                        <a href="/register">Register</a>
-                    </div>  <!--final links inside authorization-->
-                 </fieldset>
-            </form>         
-                <?php endif; ?>   
-                    </li>
-        </ul>
-        </nav> <!-- final mobile menu         -->
-        
     </div> <!-- final top -->
     <div class="center-cb">
            <div class="left"> <!-- beginright   -->
@@ -231,8 +105,7 @@
         <img src="/img/ad.png" alt="advertising" class='img'>
     </div>  <!--final left -->   
 </div>
-        <!-- Run the game code -->
-        <script type="text/javascript" src="/SAM/coloringbook.js"></script>
+
     <div class="footer-main"> <!-- footer -->
         <div id="footer" class="footer">
             <div class="socnet">
@@ -250,13 +123,10 @@
                 <img src="/img/icon/donate2.png" alt="Donate" class="img"></a> 
             </div>
         </div>
-        <div class="footer footer-m">
-            <span>2018, ShareRainbow. All rights reserved</span>
-            <div class="up"><a href="#header"><img src="/img/icon/up.png" alt="Up" class="img"></a></div>
-        </div>
     </div>     <!-- finish footer -->          
     <div id='hide'>
     <p id='BtnEnter'></p>
         <p id='createBtn'></p></div>
 <!--      скрипты          -->
     <script src="/js/users.js"></script>
+    <script type="text/javascript" src="/SAM/coloringbook.js"></script>
